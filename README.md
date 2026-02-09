@@ -54,12 +54,10 @@ All papers are organized according to our mechanism-driven taxonomy,<br>which cl
 
 <table width="100%">
 <tr>
-<td width="16%" align="center"><h3>📊 19</h3><sub>Evaluation Benchmarks</sub></td>
-<td width="16%" align="center"><h3>🛠️ 23</h3><sub>Mitigation Methods</sub></td>
-<td width="18%" align="center"><h3>🔷 2</h3><sub>Hallucination Types</sub></td>
-<td width="16%" align="center"><h3>📂 4</h3><sub>Sub-Categories</sub></td>
-<td width="16%" align="center"><h3>🏛️ 15+</h3><sub>Top-tier Venues</sub></td>
-<td width="18%" align="center"><h3>📅 2023–2026</h3><sub>Coverage Period</sub></td>
+<td width="25%" align="center"><h3>📊 19</h3><sub>Evaluation Benchmarks</sub></td>
+<td width="25%" align="center"><h3>🛠️ 23</h3><sub>Mitigation Methods</sub></td>
+<td width="25%" align="center"><h3>🏛️ 15+</h3><sub>Top-tier Venues</sub></td>
+<td width="25%" align="center"><h3>📅 2023–2026</h3><sub>Coverage Period</sub></td>
 </tr>
 </table>
 
