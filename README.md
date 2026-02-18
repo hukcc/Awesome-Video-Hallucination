@@ -12,7 +12,7 @@
 
 <br>
 
-[![TechRxiv](https://img.shields.io/badge/TechRxiv-Paper-blue?style=for-the-badge&logo=arxiv)](# )
+[![TechRxiv](https://img.shields.io/badge/TechRxiv-Paper-blue?style=for-the-badge&logo=arxiv)](https://www.techrxiv.org/users/1027166/articles/1387324-distorted-or-fabricated-a-survey-on-hallucination-in-video-llms)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
 [![Papers](https://img.shields.io/badge/Papers-42-red?style=for-the-badge)](#evaluation-benchmarks)
 [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen?style=for-the-badge)](https://github.com)
