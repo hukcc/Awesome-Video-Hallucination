@@ -30,6 +30,8 @@ A curated and structured collection of papers on **hallucination in Video Large 
 
 - **[2026/03]** 🤖 Automated monthly arXiv paper search is now live! A GitHub Action runs on the 1st of each month to find new video hallucination papers and open a PR automatically. Newly discovered papers that have not yet been classified can be found in [`new_papers.md`](new_papers.md).
 
+---
+
 <details open>
 <summary><b>📖 Table of Contents</b></summary>
 
