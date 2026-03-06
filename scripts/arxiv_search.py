@@ -28,10 +28,17 @@ SEARCH_QUERIES = [
     'all:"temporal hallucination" AND all:video',
     'all:hallucination AND all:"video understanding"',
     'all:hallucination AND all:"video language model"',
+    'all:hallucination AND all:"video LLM"',
+    'all:hallucination AND all:"video model"',
+    'all:hallucination AND all:"video caption"',
+    'all:hallucination AND all:"video generation"',
+    'all:hallucination AND all:"Vid-LLM"',
+    'all:hallucination AND all:"video question answering"',
+    'all:hallucination AND all:"video grounding"',
 ]
 
-MAX_RESULTS_PER_QUERY = 50
-SEARCH_DAYS = 30
+MAX_RESULTS_PER_QUERY = 100
+SEARCH_DAYS = 60
 REQUEST_DELAY = 3
 
 
@@ -110,17 +117,19 @@ def format_date(entry):
 def is_hallucination_paper(title, abstract):
     """Reject papers that only mention 'hallucination' in passing.
 
-    Both title and abstract are checked (case-insensitive).  The word
-    'hallucin' (covering hallucination/hallucinations/hallucinate) must
-    appear in either the title *or* at least twice in the abstract to
-    count as a genuinely relevant paper.
+    A paper is considered relevant if:
+    - 'hallucin*' appears in the title, OR
+    - 'hallucin*' appears in the abstract AND 'video' appears in the
+      title or abstract (ensures the paper is about video + hallucination,
+      not just a passing mention).
     """
     t_lower = title.lower()
     a_lower = abstract.lower()
     if "hallucin" in t_lower:
         return True
-    count_in_abstract = a_lower.count("hallucin")
-    return count_in_abstract >= 2
+    has_hallucin_in_abstract = "hallucin" in a_lower
+    has_video = "video" in t_lower or "video" in a_lower
+    return has_hallucin_in_abstract and has_video
 
 
 def clean_text(text):
