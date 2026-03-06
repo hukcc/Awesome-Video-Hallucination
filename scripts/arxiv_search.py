@@ -107,6 +107,22 @@ def format_date(entry):
         return "N/A"
 
 
+def is_hallucination_paper(title, abstract):
+    """Reject papers that only mention 'hallucination' in passing.
+
+    Both title and abstract are checked (case-insensitive).  The word
+    'hallucin' (covering hallucination/hallucinations/hallucinate) must
+    appear in either the title *or* at least twice in the abstract to
+    count as a genuinely relevant paper.
+    """
+    t_lower = title.lower()
+    a_lower = abstract.lower()
+    if "hallucin" in t_lower:
+        return True
+    count_in_abstract = a_lower.count("hallucin")
+    return count_in_abstract >= 2
+
+
 def clean_text(text):
     """Collapse whitespace and strip."""
     return re.sub(r"\s+", " ", text.replace("\n", " ")).strip()
@@ -195,6 +211,10 @@ def main():
 
         title = clean_text(entry.get("title", ""))
         abstract = clean_text(entry.get("summary", ""))
+
+        if not is_hallucination_paper(title, abstract):
+            continue
+
         url = f"https://arxiv.org/abs/{arxiv_id}"
         date = format_date(entry)
 
