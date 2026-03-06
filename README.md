@@ -88,7 +88,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
 > [!NOTE]
 > Benchmarks are organized by our mechanism-driven taxonomy. Each entry includes venue, date, and links to code/project pages where available.
 >
-> **Legend:** <a href="#"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?style=flat-square&logo=readthedocs&logoColor=white" alt="page"></a> = Project Page &ensp; <a href="#"><img src="https://img.shields.io/github/stars/octocat/Hello-World?style=flat-square&logo=github&label=Code%20%E2%AD%90" alt="code"></a> = GitHub Repository &ensp; `-` = Not Available
+> **Legend:** <a href="#"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?logo=readthedocs&logoColor=white" alt="page"></a> = Project Page &ensp; <a href="#"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a> = GitHub Repository &ensp; `-` = Not Available
 
 ### 🔵 Spatiotemporal Dynamics Benchmarks (Dynamic Distortion)
 
@@ -111,28 +111,28 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <td align="center">VidHalluc</td>
       <td align="center">CVPR 2025</td>
       <td align="center">12/2024</td>
-      <td align="center"><a href="https://people-robots.github.io/vidhalluc"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?style=flat-square&logo=readthedocs&logoColor=white" alt="page"></a> <a href="https://github.com/CyL97/VidHalluc"><img src="https://img.shields.io/github/stars/CyL97/VidHalluc?style=flat-square&logo=github&label=Code%20%E2%AD%90" alt="code"></a></td>
+      <td align="center"><a href="https://people-robots.github.io/vidhalluc"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?logo=readthedocs&logoColor=white" alt="page"></a> <a href="https://github.com/CyL97/VidHalluc"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
     <tr>
       <td align="left"><a href="https://arxiv.org/abs/2503.19622"><b>Exploring Hallucination of Large Multimodal Models in Video Understanding: Benchmark, Analysis and Mitigation</b></a></td>
       <td align="center">HAVEN</td>
       <td align="center">arXiv 2025</td>
       <td align="center">03/2025</td>
-      <td align="center"><a href="https://github.com/Hongcheng-Gao/HAVEN"><img src="https://img.shields.io/github/stars/Hongcheng-Gao/HAVEN?style=flat-square&logo=github&label=Code%20%E2%AD%90" alt="code"></a></td>
+      <td align="center"><a href="https://github.com/Hongcheng-Gao/HAVEN"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
     <tr>
       <td align="left"><a href="https://ojs.aaai.org/index.php/AAAI/article/view/32463"><b>MHBench: Demystifying Motion Hallucination in VideoLLMs</b></a></td>
       <td align="center">MHBench</td>
       <td align="center">AAAI 2025</td>
       <td align="center">01/2025</td>
-      <td align="center"><a href="https://github.com/xzhouzeng/MHBench"><img src="https://img.shields.io/github/stars/xzhouzeng/MHBench?style=flat-square&logo=github&label=Code%20%E2%AD%90" alt="code"></a></td>
+      <td align="center"><a href="https://github.com/xzhouzeng/MHBench"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
     <tr>
       <td align="left"><a href="https://arxiv.org/abs/2506.07371"><b>ARGUS: Hallucination and Omission Evaluation in Video-LLMs</b></a></td>
       <td align="center">ARGUS</td>
       <td align="center">ICCV 2025</td>
       <td align="center">06/2025</td>
-      <td align="center"><a href="https://github.com/JARVVVIS/argus"><img src="https://img.shields.io/github/stars/JARVVVIS/argus?style=flat-square&logo=github&label=Code%20%E2%AD%90" alt="code"></a></td>
+      <td align="center"><a href="https://github.com/JARVVVIS/argus"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
   </tbody>
 </table>
@@ -158,14 +158,14 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <td align="center">VideoHallucer</td>
       <td align="center">arXiv 2024</td>
       <td align="center">06/2024</td>
-      <td align="center"><a href="https://github.com/patrick-tssn/VideoHallucer"><img src="https://img.shields.io/github/stars/patrick-tssn/VideoHallucer?style=flat-square&logo=github&label=Code%20%E2%AD%90" alt="code"></a></td>
+      <td align="center"><a href="https://github.com/patrick-tssn/VideoHallucer"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
     <tr>
       <td align="left"><a href="https://arxiv.org/abs/2501.00584"><b>Online Video Understanding: OVBench and VideoChat-Online</b></a></td>
       <td align="center">OVBench</td>
       <td align="center">CVPR 2025</td>
       <td align="center">01/2025</td>
-      <td align="center"><a href="https://videochat-online.github.io/"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?style=flat-square&logo=readthedocs&logoColor=white" alt="page"></a> <a href="https://github.com/mcg-nju/videochat-online"><img src="https://img.shields.io/github/stars/mcg-nju/videochat-online?style=flat-square&logo=github&label=Code%20%E2%AD%90" alt="code"></a></td>
+      <td align="center"><a href="https://videochat-online.github.io/"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?logo=readthedocs&logoColor=white" alt="page"></a> <a href="https://github.com/mcg-nju/videochat-online"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
   </tbody>
 </table>
@@ -191,14 +191,14 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <td align="center">VidHal</td>
       <td align="center">arXiv 2024</td>
       <td align="center">11/2024</td>
-      <td align="center"><a href="https://github.com/Lookuz/VidHal"><img src="https://img.shields.io/github/stars/Lookuz/VidHal?style=flat-square&logo=github&label=Code%20%E2%AD%90" alt="code"></a></td>
+      <td align="center"><a href="https://github.com/Lookuz/VidHal"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
     <tr>
       <td align="left"><a href="https://arxiv.org/abs/2406.06040"><b>Vript: A Video Is Worth Thousands of Words</b></a></td>
       <td align="center">Vript</td>
       <td align="center">NeurIPS 2024</td>
       <td align="center">06/2024</td>
-      <td align="center"><a href="https://github.com/mutonix/Vript"><img src="https://img.shields.io/github/stars/mutonix/Vript?style=flat-square&logo=github&label=Code%20%E2%AD%90" alt="code"></a></td>
+      <td align="center"><a href="https://github.com/mutonix/Vript"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
   </tbody>
 </table>
@@ -226,14 +226,14 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <td align="center">EGOILLUSION</td>
       <td align="center">EMNLP 2025</td>
       <td align="center">11/2025</td>
-      <td align="center"><a href="https://sites.google.com/view/egoillusion-demo/home"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?style=flat-square&logo=readthedocs&logoColor=white" alt="page"></a></td>
+      <td align="center"><a href="https://sites.google.com/view/egoillusion-demo/home"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?logo=readthedocs&logoColor=white" alt="page"></a></td>
     </tr>
     <tr>
       <td align="left"><a href="https://arxiv.org/abs/2509.08538"><b>MESH: Measuring Hallucinations in Large Video Models</b></a></td>
       <td align="center">MESH</td>
       <td align="center">ACM MM 2025</td>
       <td align="center">09/2025</td>
-      <td align="center"><a href="https://github.com/HCYANG2000/MESH-Benchmark"><img src="https://img.shields.io/github/stars/HCYANG2000/MESH-Benchmark?style=flat-square&logo=github&label=Code%20%E2%AD%90" alt="code"></a></td>
+      <td align="center"><a href="https://github.com/HCYANG2000/MESH-Benchmark"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
   </tbody>
 </table>
@@ -259,7 +259,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <td align="center">ELV-Halluc</td>
       <td align="center">arXiv 2025</td>
       <td align="center">08/2025</td>
-      <td align="center"><a href="https://github.com/hlsv02/ELV-Halluc"><img src="https://img.shields.io/github/stars/hlsv02/ELV-Halluc?style=flat-square&logo=github&label=Code%20%E2%AD%90" alt="code"></a></td>
+      <td align="center"><a href="https://github.com/hlsv02/ELV-Halluc"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
   </tbody>
 </table>
@@ -287,14 +287,14 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <td align="center">VideoHallu</td>
       <td align="center">NeurIPS 2025</td>
       <td align="center">05/2025</td>
-      <td align="center"><a href="https://github.com/zli12321/VideoHallu"><img src="https://img.shields.io/github/stars/zli12321/VideoHallu?style=flat-square&logo=github&label=Code%20%E2%AD%90" alt="code"></a></td>
+      <td align="center"><a href="https://github.com/zli12321/VideoHallu"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
     <tr>
       <td align="left"><a href="https://arxiv.org/abs/2303.02961"><b>Models See Hallucinations: Evaluating the Factuality in Video Captioning</b></a></td>
       <td align="center">FactVC</td>
       <td align="center">EMNLP 2023</td>
       <td align="center">03/2023</td>
-      <td align="center"><a href="https://github.com/PKULiuHui/FactVC"><img src="https://img.shields.io/github/stars/PKULiuHui/FactVC?style=flat-square&logo=github&label=Code%20%E2%AD%90" alt="code"></a></td>
+      <td align="center"><a href="https://github.com/PKULiuHui/FactVC"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
   </tbody>
 </table>
@@ -320,21 +320,21 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <td align="center">EventHallusion</td>
       <td align="center">arXiv 2024</td>
       <td align="center">09/2024</td>
-      <td align="center"><a href="https://github.com/Stevetich/EventHallusion"><img src="https://img.shields.io/github/stars/Stevetich/EventHallusion?style=flat-square&logo=github&label=Code%20%E2%AD%90" alt="code"></a></td>
+      <td align="center"><a href="https://github.com/Stevetich/EventHallusion"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
     <tr>
       <td align="left"><a href="https://arxiv.org/abs/2511.06475"><b>NOAH: Benchmarking Narrative Prior driven Hallucination and Omission in Video Large Language Models</b></a></td>
       <td align="center">NOAH</td>
       <td align="center">arXiv 2025</td>
       <td align="center">11/2025</td>
-      <td align="center"><a href="https://anonymous550520.github.io/"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?style=flat-square&logo=readthedocs&logoColor=white" alt="page"></a> <a href="https://github.com/anonymous550520/NOAH"><img src="https://img.shields.io/github/stars/anonymous550520/NOAH?style=flat-square&logo=github&label=Code%20%E2%AD%90" alt="code"></a></td>
+      <td align="center"><a href="https://anonymous550520.github.io/"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?logo=readthedocs&logoColor=white" alt="page"></a> <a href="https://github.com/anonymous550520/NOAH"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
     <tr>
       <td align="left"><a href="https://openaccess.thecvf.com/content/CVPR2025/papers/Parikh_RoadSocial_A_Diverse_VideoQA_Dataset_and_Benchmark_for_Road_Event_CVPR_2025_paper.pdf"><b>RoadSocial: A Diverse VideoQA Dataset and Benchmark for Road Event Understanding from Social Video Narratives</b></a></td>
       <td align="center">RoadSocial</td>
       <td align="center">CVPR 2025</td>
       <td align="center">02/2025</td>
-      <td align="center"><a href="https://roadsocial.github.io/"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?style=flat-square&logo=readthedocs&logoColor=white" alt="page"></a> <a href="https://github.com/roadsocial/roadsocial"><img src="https://img.shields.io/github/stars/roadsocial/roadsocial?style=flat-square&logo=github&label=Code%20%E2%AD%90" alt="code"></a></td>
+      <td align="center"><a href="https://roadsocial.github.io/"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?logo=readthedocs&logoColor=white" alt="page"></a> <a href="https://github.com/roadsocial/roadsocial"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
   </tbody>
 </table>
@@ -362,14 +362,14 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <td align="center">AVHBench</td>
       <td align="center">ICLR 2025</td>
       <td align="center">10/2024</td>
-      <td align="center"><a href="https://github.com/kaist-ami/AVHBench"><img src="https://img.shields.io/github/stars/kaist-ami/AVHBench?style=flat-square&logo=github&label=Code%20%E2%AD%90" alt="code"></a></td>
+      <td align="center"><a href="https://github.com/kaist-ami/AVHBench"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
     <tr>
       <td align="left"><a href="https://arxiv.org/abs/2410.12787"><b>The Curse of Multi-Modalities: Evaluating Hallucinations of Large Multimodal Models across Language, Visual, and Audio</b></a></td>
       <td align="center">CMM</td>
       <td align="center">arXiv 2024</td>
       <td align="center">10/2024</td>
-      <td align="center"><a href="https://cmm-damovl.site/"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?style=flat-square&logo=readthedocs&logoColor=white" alt="page"></a> <a href="https://github.com/DAMO-NLP-SG/CMM"><img src="https://img.shields.io/github/stars/DAMO-NLP-SG/CMM?style=flat-square&logo=github&label=Code%20%E2%AD%90" alt="code"></a></td>
+      <td align="center"><a href="https://cmm-damovl.site/"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?logo=readthedocs&logoColor=white" alt="page"></a> <a href="https://github.com/DAMO-NLP-SG/CMM"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
   </tbody>
 </table>
@@ -395,7 +395,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <td align="center">EmotionHallucer</td>
       <td align="center">arXiv 2025</td>
       <td align="center">05/2025</td>
-      <td align="center"><a href="https://github.com/xxtars/EmotionHallucer"><img src="https://img.shields.io/github/stars/xxtars/EmotionHallucer?style=flat-square&logo=github&label=Code%20%E2%AD%90" alt="code"></a></td>
+      <td align="center"><a href="https://github.com/xxtars/EmotionHallucer"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
   </tbody>
 </table>
@@ -407,7 +407,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
 ## Mitigation Strategies
 
 > [!NOTE]
-> Methods are classified by the type of hallucination they target. The **Training-Free** column indicates whether the method requires additional training (✘) or not (✔).
+> Methods are classified by the type of hallucination they target. The **Training-Free** column indicates whether the method requires additional training (✘) or not (✔︎).
 
 ### 🔵 Spatiotemporal Dynamics Mitigation (Dynamic Distortion)
 
@@ -440,7 +440,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <td align="center">arXiv 2025</td>
       <td align="center">03/2025</td>
       <td align="center">✘</td>
-      <td align="center"><a href="https://github.com/Hongcheng-Gao/HAVEN"><img src="https://img.shields.io/github/stars/Hongcheng-Gao/HAVEN?style=flat-square&logo=github&label=Code%20%E2%AD%90" alt="code"></a></td>
+      <td align="center"><a href="https://github.com/Hongcheng-Gao/HAVEN"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
     <tr>
       <td align="left"><a href="https://arxiv.org/abs/2512.18671"><b>SmartSight: Mitigating Hallucination in Video-LLMs via Temporal Attention Collapse</b></a></td>
@@ -484,7 +484,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <td align="center">CVPR 2025</td>
       <td align="center">12/2024</td>
       <td align="center">✔︎</td>
-      <td align="center"><a href="https://people-robots.github.io/vidhalluc"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?style=flat-square&logo=readthedocs&logoColor=white" alt="page"></a> <a href="https://github.com/CyL97/VidHalluc"><img src="https://img.shields.io/github/stars/CyL97/VidHalluc?style=flat-square&logo=github&label=Code%20%E2%AD%90" alt="code"></a></td>
+      <td align="center"><a href="https://people-robots.github.io/vidhalluc"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?logo=readthedocs&logoColor=white" alt="page"></a> <a href="https://github.com/CyL97/VidHalluc"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
     <tr>
       <td align="left"><a href="https://arxiv.org/abs/2505.12826"><b>Mitigating Hallucination in VideoLLMs via Temporal-Aware Activation Engineering</b></a></td>
@@ -520,7 +520,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <td align="center">AAAI 2025</td>
       <td align="center">05/2024</td>
       <td align="center">✘</td>
-      <td align="center"><a href="https://github.com/gyxxyg/VTG-LLM"><img src="https://img.shields.io/github/stars/gyxxyg/VTG-LLM?style=flat-square&logo=github&label=Code%20%E2%AD%90" alt="code"></a></td>
+      <td align="center"><a href="https://github.com/gyxxyg/VTG-LLM"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
     <tr>
       <td align="left"><a href="https://arxiv.org/abs/2406.06040"><b>Vript: A Video Is Worth Thousands of Words</b></a></td>
@@ -528,7 +528,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <td align="center">NeurIPS 2024</td>
       <td align="center">06/2024</td>
       <td align="center">✘</td>
-      <td align="center"><a href="https://github.com/mutonix/Vript"><img src="https://img.shields.io/github/stars/mutonix/Vript?style=flat-square&logo=github&label=Code%20%E2%AD%90" alt="code"></a></td>
+      <td align="center"><a href="https://github.com/mutonix/Vript"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
   </tbody>
 </table>
@@ -558,7 +558,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <td align="center">CVPR 2024</td>
       <td align="center">12/2023</td>
       <td align="center">✘</td>
-      <td align="center"><a href="https://jinxxian.github.io/Vista-LLaMA/"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?style=flat-square&logo=readthedocs&logoColor=white" alt="page"></a> <a href="https://github.com/Flowerfan/VistaLLaMA"><img src="https://img.shields.io/github/stars/Flowerfan/VistaLLaMA?style=flat-square&logo=github&label=Code%20%E2%AD%90" alt="code"></a></td>
+      <td align="center"><a href="https://jinxxian.github.io/Vista-LLaMA/"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?logo=readthedocs&logoColor=white" alt="page"></a> <a href="https://github.com/Flowerfan/VistaLLaMA"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
     <tr>
       <td align="left"><a href="https://arxiv.org/abs/2511.18463"><b>Alternating Perception-Reasoning for Hallucination-Resistant Video Understanding</b></a></td>
@@ -566,7 +566,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <td align="center">arXiv 2025</td>
       <td align="center">11/2025</td>
       <td align="center">✘</td>
-      <td align="center"><a href="https://github.com/BoweiPu/VideoPLR"><img src="https://img.shields.io/github/stars/BoweiPu/VideoPLR?style=flat-square&logo=github&label=Code%20%E2%AD%90" alt="code"></a></td>
+      <td align="center"><a href="https://github.com/BoweiPu/VideoPLR"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
   </tbody>
 </table>
@@ -594,7 +594,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <td align="center">arXiv 2025</td>
       <td align="center">08/2025</td>
       <td align="center">✘</td>
-      <td align="center"><a href="https://github.com/hlsv02/ELV-Halluc"><img src="https://img.shields.io/github/stars/hlsv02/ELV-Halluc?style=flat-square&logo=github&label=Code%20%E2%AD%90" alt="code"></a></td>
+      <td align="center"><a href="https://github.com/hlsv02/ELV-Halluc"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
     <tr>
       <td align="left"><a href="https://arxiv.org/abs/2501.00584"><b>Online Video Understanding: OVBench and VideoChat-Online</b></a></td>
@@ -602,7 +602,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <td align="center">CVPR 2025</td>
       <td align="center">01/2025</td>
       <td align="center">✘</td>
-      <td align="center"><a href="https://videochat-online.github.io/"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?style=flat-square&logo=readthedocs&logoColor=white" alt="page"></a> <a href="https://github.com/mcg-nju/videochat-online"><img src="https://img.shields.io/github/stars/mcg-nju/videochat-online?style=flat-square&logo=github&label=Code%20%E2%AD%90" alt="code"></a></td>
+      <td align="center"><a href="https://videochat-online.github.io/"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?logo=readthedocs&logoColor=white" alt="page"></a> <a href="https://github.com/mcg-nju/videochat-online"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
   </tbody>
 </table>
@@ -632,7 +632,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <td align="center">WACV 2026</td>
       <td align="center">12/2025</td>
       <td align="center">✘</td>
-      <td align="center"><a href="https://kpc0810.github.io/santa/"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?style=flat-square&logo=readthedocs&logoColor=white" alt="page"></a></td>
+      <td align="center"><a href="https://kpc0810.github.io/santa/"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?logo=readthedocs&logoColor=white" alt="page"></a></td>
     </tr>
     <tr>
       <td align="left"><a href="https://arxiv.org/abs/2409.16597"><b>EventHallusion: Diagnosing Event Hallucinations in Video LLMs</b></a></td>
@@ -640,7 +640,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <td align="center">arXiv 2024</td>
       <td align="center">09/2024</td>
       <td align="center">✔︎</td>
-      <td align="center"><a href="https://github.com/Stevetich/EventHallusion"><img src="https://img.shields.io/github/stars/Stevetich/EventHallusion?style=flat-square&logo=github&label=Code%20%E2%AD%90" alt="code"></a></td>
+      <td align="center"><a href="https://github.com/Stevetich/EventHallusion"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
   </tbody>
 </table>
@@ -712,7 +712,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <td align="center">ICML 2025</td>
       <td align="center">04/2025</td>
       <td align="center">✘</td>
-      <td align="center"><a href="https://github.com/HaroldChen19/VistaDPO"><img src="https://img.shields.io/github/stars/HaroldChen19/VistaDPO?style=flat-square&logo=github&label=Code%20%E2%AD%90" alt="code"></a></td>
+      <td align="center"><a href="https://github.com/HaroldChen19/VistaDPO"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
     <tr>
       <td align="left"><a href="https://arxiv.org/abs/2505.01481"><b>VideoHallu: Evaluating and Mitigating Multi-modal Hallucinations on Synthetic Video Understanding</b></a></td>
@@ -720,7 +720,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <td align="center">NeurIPS 2025</td>
       <td align="center">05/2025</td>
       <td align="center">✘</td>
-      <td align="center"><a href="https://github.com/zli12321/VideoHallu"><img src="https://img.shields.io/github/stars/zli12321/VideoHallu?style=flat-square&logo=github&label=Code%20%E2%AD%90" alt="code"></a></td>
+      <td align="center"><a href="https://github.com/zli12321/VideoHallu"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
   </tbody>
 </table>
@@ -750,7 +750,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <td align="center">ICLR 2025</td>
       <td align="center">10/2024</td>
       <td align="center">✘</td>
-      <td align="center"><a href="https://github.com/kaist-ami/AVHBench"><img src="https://img.shields.io/github/stars/kaist-ami/AVHBench?style=flat-square&logo=github&label=Code%20%E2%AD%90" alt="code"></a></td>
+      <td align="center"><a href="https://github.com/kaist-ami/AVHBench"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
     <tr>
       <td align="left"><a href="https://arxiv.org/abs/2505.20862"><b>AVCD: Mitigating Hallucinations in Audio-Visual Large Language Models through Contrastive Decoding</b></a></td>
@@ -758,7 +758,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <td align="center">NeurIPS 2025</td>
       <td align="center">05/2025</td>
       <td align="center">✔︎</td>
-      <td align="center"><a href="https://github.com/kaistmm/AVCD"><img src="https://img.shields.io/github/stars/kaistmm/AVCD?style=flat-square&logo=github&label=Code%20%E2%AD%90" alt="code"></a></td>
+      <td align="center"><a href="https://github.com/kaistmm/AVCD"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
   </tbody>
 </table>
@@ -786,7 +786,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <td align="center">arXiv 2025</td>
       <td align="center">05/2025</td>
       <td align="center">✔︎</td>
-      <td align="center"><a href="https://github.com/xxtars/EmotionHallucer"><img src="https://img.shields.io/github/stars/xxtars/EmotionHallucer?style=flat-square&logo=github&label=Code%20%E2%AD%90" alt="code"></a></td>
+      <td align="center"><a href="https://github.com/xxtars/EmotionHallucer"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
   </tbody>
 </table>
