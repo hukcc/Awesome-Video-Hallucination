@@ -133,9 +133,9 @@ def is_hallucination_paper(title, abstract):
 
 
 def highlight_hallucination(text):
-    """Bold all occurrences of hallucin* words in text."""
+    """Highlight all occurrences of hallucin* words with bold + inline code."""
     return re.sub(
-        r"(hallucin\w*)", r"**\1**", text, flags=re.IGNORECASE
+        r"(hallucin\w*)", r"**`\1`**", text, flags=re.IGNORECASE
     )
 
 
