@@ -1,12 +1,6 @@
 # Awesome-Video-Hallucination [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-[![TechRxiv](https://img.shields.io/badge/TechRxiv-2025-b31b1b.svg)](https://www.techrxiv.org/users/1027166/articles/1387324-distorted-or-fabricated-a-survey-on-hallucination-in-video-llms)
-[![Papers](https://img.shields.io/badge/Papers-42-blue.svg)](#evaluation-benchmarks)
-[![Auto arXiv Search](https://img.shields.io/badge/arXiv%20Search-Monthly-blueviolet.svg)](new_papers.md)
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)](#contributing)
-[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://github.com)
+[![TechRxiv](https://img.shields.io/badge/TechRxiv-2025-b31b1b.svg)](https://www.techrxiv.org/users/1027166/articles/1387324-distorted-or-fabricated-a-survey-on-hallucination-in-video-llms) [![Papers](https://img.shields.io/badge/Papers-42-blue.svg)](#evaluation-benchmarks) [![Auto arXiv Search](https://img.shields.io/badge/arXiv%20Search-Monthly-blueviolet.svg)](new_papers.md) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)](#contributing) [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://github.com)
 
 A curated and structured collection of papers on **hallucination in Video Large Language Models (Vid-LLMs)**, covering **19 evaluation benchmarks** and **23 mitigation methods**. Automatically updated monthly via arXiv search.
 
