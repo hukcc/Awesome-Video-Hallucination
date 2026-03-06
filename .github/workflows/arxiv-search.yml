@@ -1,4 +1,4 @@
-name: Monthly arXiv Paper Search
+name: Monthly arXiv Paper Update
 
 on:
   schedule:
