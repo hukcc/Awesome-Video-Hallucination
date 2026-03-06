@@ -1,34 +1,34 @@
-<div align="center">
-
 # Awesome-Video-Hallucination [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-### Distorted or Fabricated? A Survey on Hallucination in Video LLMs
+[![TechRxiv](https://img.shields.io/badge/TechRxiv-2025-b31b1b.svg)](https://www.techrxiv.org/users/1027166/articles/1387324-distorted-or-fabricated-a-survey-on-hallucination-in-video-llms)
+[![Papers](https://img.shields.io/badge/Papers-42-blue.svg)](#evaluation-benchmarks)
+[![Auto arXiv Search](https://img.shields.io/badge/arXiv%20Search-Monthly-blueviolet.svg)](new_papers.md)
 
-*Yiyang Huang<sup>1</sup>, Yitian Zhang<sup>1</sup>, Yizhou Wang<sup>1</sup>, Mingyuan Zhang<sup>1</sup>, Liang Shi<sup>1</sup>, Huimin Zeng<sup>1</sup>, Yun Fu<sup>1,2</sup>*
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)](#contributing)
+[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://github.com)
 
-<sup>1</sup>Department of Electrical and Computer Engineering, Northeastern University
-<br>
-<sup>2</sup>Khoury College of Computer Science, Northeastern University
+A curated and structured collection of papers on **hallucination in Video Large Language Models (Vid-LLMs)**, covering **19 evaluation benchmarks** and **23 mitigation methods**. Automatically updated monthly via arXiv search.
 
-<br>
+> 📄 **Based on the survey**: *[Distorted or Fabricated? A Survey on Hallucination in Video LLMs](https://www.techrxiv.org/users/1027166/articles/1387324-distorted-or-fabricated-a-survey-on-hallucination-in-video-llms)*
 
-[![TechRxiv](https://img.shields.io/badge/TechRxiv-Paper-blue?style=for-the-badge&logo=arxiv)](https://www.techrxiv.org/users/1027166/articles/1387324-distorted-or-fabricated-a-survey-on-hallucination-in-video-llms)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
-[![Papers](https://img.shields.io/badge/Papers-42-red?style=for-the-badge)](#evaluation-benchmarks)
-[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen?style=for-the-badge)](https://github.com)
+![Framework overview](imgs/teaser.png)
 
-<br>
+## Overview at a Glance
 
-<img src="imgs/teaser.png" width="96%" />
+<table width="100%">
+<tr>
+<td width="20%" align="center"><h3>📊 19</h3><sub>Evaluation Benchmarks</sub></td>
+<td width="20%" align="center"><h3>🛠️ 23</h3><sub>Mitigation Methods</sub></td>
+<td width="20%" align="center"><h3>🏛️ 15+</h3><sub>Top-tier Venues</sub></td>
+<td width="20%" align="center"><h3>📅 2023–2026</h3><sub>Coverage Period</sub></td>
+<td width="20%" align="center"><h3>🤖 Auto</h3><sub>Monthly Paper Search</sub></td>
+</tr>
+</table>
 
-<br>
+## 🔔 News
 
-A curated and structured collection of papers on **hallucination in Video Large Language Models (Vid-LLMs)**,<br>covering **19 evaluation benchmarks** and **23 mitigation methods**.<br>
-All papers are organized according to our mechanism-driven taxonomy,<br>which classifies video hallucinations into *Dynamic Distortion* and *Content Fabrication*.
-
-</div>
-
----
+- **[2026/03]** 🤖 Automated monthly arXiv paper search is now live! A GitHub Action runs on the 1st of each month to find new video hallucination papers and open a PR automatically. Newly discovered papers that have not yet been classified can be found in [`new_papers.md`](new_papers.md).
 
 <details open>
 <summary><b>📖 Table of Contents</b></summary>
@@ -47,19 +47,6 @@ All papers are organized according to our mechanism-driven taxonomy,<br>which cl
 <br>&emsp;🤝 [Contributing](#contributing)
 
 </details>
-
----
-
-## Overview at a Glance
-
-<table width="100%">
-<tr>
-<td width="25%" align="center"><h3>📊 19</h3><sub>Evaluation Benchmarks</sub></td>
-<td width="25%" align="center"><h3>🛠️ 23</h3><sub>Mitigation Methods</sub></td>
-<td width="25%" align="center"><h3>🏛️ 15+</h3><sub>Top-tier Venues</sub></td>
-<td width="25%" align="center"><h3>📅 2023–2026</h3><sub>Coverage Period</sub></td>
-</tr>
-</table>
 
 ---
 
