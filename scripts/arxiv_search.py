@@ -132,6 +132,13 @@ def is_hallucination_paper(title, abstract):
     return has_hallucin_in_abstract and has_video
 
 
+def highlight_hallucination(text):
+    """Bold all occurrences of hallucin* words in text."""
+    return re.sub(
+        r"(hallucin\w*)", r"**\1**", text, flags=re.IGNORECASE
+    )
+
+
 def clean_text(text):
     """Collapse whitespace and strip."""
     return re.sub(r"\s+", " ", text.replace("\n", " ")).strip()
@@ -151,9 +158,7 @@ def generate_new_papers_md(papers, output_path):
     ]
 
     for paper in papers:
-        abstract_preview = paper["abstract"]
-        if len(abstract_preview) > 200:
-            abstract_preview = abstract_preview[:200] + "..."
+        abstract_highlighted = highlight_hallucination(paper["abstract"])
 
         lines.append(f'### [{paper["title"]}]({paper["url"]})')
         lines.append("")
@@ -168,7 +173,7 @@ def generate_new_papers_md(papers, output_path):
         else:
             lines.append("- **Code:** -")
 
-        lines.append(f"- **Abstract:** {abstract_preview}")
+        lines.append(f"- **Abstract:** {abstract_highlighted}")
         lines.append("")
         lines.append("---")
         lines.append("")
