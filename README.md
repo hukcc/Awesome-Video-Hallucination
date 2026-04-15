@@ -1,6 +1,6 @@
 # Awesome-Video-Hallucination [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-[![arXiv](https://img.shields.io/badge/arXiv-2604.12944-b31b1b.svg)](https://arxiv.org/abs/2604.12944) [![Papers](https://img.shields.io/badge/Papers-42-blue.svg)](#evaluation-benchmarks) [![Auto arXiv Update](https://img.shields.io/badge/arXiv%20Update-Monthly-blueviolet.svg)](new_papers.md) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)](#contributing) [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://github.com) [![Last Commit](https://img.shields.io/github/last-commit/hukcc/Awesome-Video-Hallucination)](https://github.com/hukcc/Awesome-Video-Hallucination/commits/main) ![Visitors](https://komarev.com/ghpvc/?username=hukcc-Awesome-Video-Hallucination&label=Visitors&color=blue&style=flat)
+[![arXiv](https://img.shields.io/badge/arXiv-2604.12944-b31b1b.svg)](https://arxiv.org/abs/2604.12944) [![ACL 2026 Findings](https://img.shields.io/badge/ACL%202026-Findings-2ea44f)](https://arxiv.org/abs/2604.12944) [![Papers](https://img.shields.io/badge/Papers-42-blue.svg)](#evaluation-benchmarks) [![Auto arXiv Update](https://img.shields.io/badge/arXiv%20Update-Monthly-blueviolet.svg)](new_papers.md) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)](#contributing) [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://github.com) [![Last Commit](https://img.shields.io/github/last-commit/hukcc/Awesome-Video-Hallucination)](https://github.com/hukcc/Awesome-Video-Hallucination/commits/main) ![Visitors](https://komarev.com/ghpvc/?username=hukcc-Awesome-Video-Hallucination&label=Visitors&color=blue&style=flat)
 
 A curated and structured collection of papers on **hallucination in Video Large Language Models (Vid-LLMs)**, covering **19 evaluation benchmarks** and **23 mitigation methods**. Automatically updated monthly via arXiv search.
 
@@ -22,7 +22,7 @@ A curated and structured collection of papers on **hallucination in Video Large 
 
 ## 🔔 News
 
-- **[2026/04]** 🌟 Our Vid-LLM hallucination survey has been accepted to **ACL 2026 Findings**! 👉 [arXiv:2604.12944](https://arxiv.org/abs/2604.12944)
+- **[2026/04]** 🌟 Our survey has been accepted to **ACL 2026 Findings**! 👉 [arXiv:2604.12944](https://arxiv.org/abs/2604.12944)
 - **[2026/03]** 🤖 Automated monthly arXiv paper update is now live! A GitHub Action runs on the 1st of each month to find new video hallucination papers and commit directly to the main branch. Newly discovered papers that have not yet been classified can be found in [`new_papers.md`](new_papers.md).
 
 ---
