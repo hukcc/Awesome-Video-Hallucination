@@ -1,10 +1,10 @@
 # Awesome-Video-Hallucination [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-[![TechRxiv](https://img.shields.io/badge/TechRxiv-2025-b31b1b.svg)](https://www.techrxiv.org/users/1027166/articles/1387324-distorted-or-fabricated-a-survey-on-hallucination-in-video-llms) [![Papers](https://img.shields.io/badge/Papers-42-blue.svg)](#evaluation-benchmarks) [![Auto arXiv Update](https://img.shields.io/badge/arXiv%20Update-Monthly-blueviolet.svg)](new_papers.md) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)](#contributing) [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://github.com) [![Last Commit](https://img.shields.io/github/last-commit/hukcc/Awesome-Video-Hallucination)](https://github.com/hukcc/Awesome-Video-Hallucination/commits/main) ![Visitors](https://komarev.com/ghpvc/?username=hukcc-Awesome-Video-Hallucination&label=Visitors&color=blue&style=flat)
+[![arXiv](https://img.shields.io/badge/arXiv-2604.12944-b31b1b.svg)](https://arxiv.org/abs/2604.12944) [![Papers](https://img.shields.io/badge/Papers-42-blue.svg)](#evaluation-benchmarks) [![Auto arXiv Update](https://img.shields.io/badge/arXiv%20Update-Monthly-blueviolet.svg)](new_papers.md) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)](#contributing) [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://github.com) [![Last Commit](https://img.shields.io/github/last-commit/hukcc/Awesome-Video-Hallucination)](https://github.com/hukcc/Awesome-Video-Hallucination/commits/main) ![Visitors](https://komarev.com/ghpvc/?username=hukcc-Awesome-Video-Hallucination&label=Visitors&color=blue&style=flat)
 
 A curated and structured collection of papers on **hallucination in Video Large Language Models (Vid-LLMs)**, covering **19 evaluation benchmarks** and **23 mitigation methods**. Automatically updated monthly via arXiv search.
 
-> 📄 **Based on the survey**: *[Distorted or Fabricated? A Survey on Hallucination in Video LLMs](https://www.techrxiv.org/users/1027166/articles/1387324-distorted-or-fabricated-a-survey-on-hallucination-in-video-llms)*
+> 📄 **Based on the survey**: *[Distorted or Fabricated? A Survey on Hallucination in Video LLMs](https://arxiv.org/abs/2604.12944)*
 
 ![Framework overview](imgs/teaser.png)
 
@@ -22,6 +22,7 @@ A curated and structured collection of papers on **hallucination in Video Large 
 
 ## 🔔 News
 
+- **[2026/04]** 🌟 Our Vid-LLM hallucination survey has been accepted to **ACL 2026 Findings**! 👉 [arXiv:2604.12944](https://arxiv.org/abs/2604.12944)
 - **[2026/03]** 🤖 Automated monthly arXiv paper update is now live! A GitHub Action runs on the 1st of each month to find new video hallucination papers and commit directly to the main branch. Newly discovered papers that have not yet been classified can be found in [`new_papers.md`](new_papers.md).
 
 ---
