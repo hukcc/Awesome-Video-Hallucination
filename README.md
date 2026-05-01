@@ -395,7 +395,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
     <tr>
       <td align="left"><a href="https://arxiv.org/abs/2604.25584"><b>DualFact+: A Multimodal Fact Verification Framework for Procedural Video Understanding</b></a></td>
       <td align="center">DualFact</td>
-      <td align="center">arXiv 2026</td>
+      <td align="center">ACL 2026 Findings</td>
       <td align="center">04/2026</td>
       <td align="center">-</td>
     </tr>
@@ -451,7 +451,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
     <tr>
       <td align="left"><a href="https://arxiv.org/abs/2604.23860"><b>Exploring Audio Hallucination in Egocentric Video Understanding</b></a></td>
       <td align="center">Audio Hallucination QA</td>
-      <td align="center">arXiv 2026</td>
+      <td align="center">ICASSP 2026</td>
       <td align="center">04/2026</td>
       <td align="center">-</td>
     </tr>
@@ -628,7 +628,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
     <tr>
       <td align="left"><a href="https://arxiv.org/abs/2601.07761"><b>Video Evidence to Reasoning Efficient Video Understanding via Explicit Evidence Grounding</b></a></td>
       <td align="center">CoE</td>
-      <td align="center">arXiv 2026</td>
+      <td align="center">ICME 2026</td>
       <td align="center">01/2026</td>
       <td align="center">✘</td>
       <td align="center">-</td>
