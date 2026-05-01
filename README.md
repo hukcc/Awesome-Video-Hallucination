@@ -404,7 +404,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <td align="center">GasVideo-1000</td>
       <td align="center">arXiv 2026</td>
       <td align="center">04/2026</td>
-      <td align="center">-</td>
+      <td align="center"><a href="https://pengkun-jiao.github.io/GasVideo-1000"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?logo=readthedocs&logoColor=white" alt="page"></a></td>
     </tr>
     <tr>
       <td align="left"><a href="https://arxiv.org/abs/2604.17375"><b>When Text Hijacks Vision: Benchmarking and Mitigating Text Overlay-Induced Hallucination in Vision Language Models</b></a></td>
@@ -460,7 +460,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <td align="center">AVHalluBench</td>
       <td align="center">arXiv 2024</td>
       <td align="center">05/2024</td>
-      <td align="center">-</td>
+      <td align="center"><a href="https://huggingface.co/datasets/scb10x/avhallubench"><img src="https://img.shields.io/badge/Dataset-HuggingFace-yellow?logo=huggingface" alt="dataset"></a> <a href="https://huggingface.co/spaces/scb10x/multimodal-hallucination-leaderboard"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Leaderboard-228B22?logo=readthedocs&logoColor=white" alt="leaderboard"></a></td>
     </tr>
   </tbody>
 </table>
@@ -547,7 +547,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <td align="center">arXiv 2026</td>
       <td align="center">02/2026</td>
       <td align="center">✘</td>
-      <td align="center">-</td>
+      <td align="center"><a href="https://liuwq-bit.github.io/VideoTemp-o3/"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?logo=readthedocs&logoColor=white" alt="page"></a> <a href="https://github.com/Kwai-Keye/VideoTemp-o3"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
     <tr>
       <td align="left"><a href="https://arxiv.org/abs/2601.04778"><b>CounterVid: Counterfactual Video Generation for Mitigating Action and Temporal Hallucinations in Video-Language Models</b></a></td>
@@ -1009,7 +1009,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <td align="center">arXiv 2024</td>
       <td align="center">10/2024</td>
       <td align="center">✘</td>
-      <td align="center"><a href="https://video-salmonn-2.github.io/"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?logo=readthedocs&logoColor=white" alt="page"></a></td>
+      <td align="center"><a href="https://video-salmonn-2.github.io/"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?logo=readthedocs&logoColor=white" alt="page"></a> <a href="https://github.com/bytedance/video-SALMONN-2"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
   </tbody>
 </table>
