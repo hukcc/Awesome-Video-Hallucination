@@ -1,8 +1,8 @@
 # Awesome-Video-Hallucination [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-[![arXiv](https://img.shields.io/badge/arXiv-2604.12944-b31b1b.svg)](https://arxiv.org/abs/2604.12944) [![ACL 2026 Findings](https://img.shields.io/badge/ACL%202026-Findings-2ea44f)](https://arxiv.org/abs/2604.12944) [![Papers](https://img.shields.io/badge/Papers-42-blue.svg)](#evaluation-benchmarks) [![Auto arXiv Update](https://img.shields.io/badge/arXiv%20Update-Monthly-blueviolet.svg)](new_papers.md) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)](#contributing) [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://github.com) [![Last Commit](https://img.shields.io/github/last-commit/hukcc/Awesome-Video-Hallucination)](https://github.com/hukcc/Awesome-Video-Hallucination/commits/main) ![Visitors](https://komarev.com/ghpvc/?username=hukcc-Awesome-Video-Hallucination&label=Visitors&color=blue&style=flat)
+[![arXiv](https://img.shields.io/badge/arXiv-2604.12944-b31b1b.svg)](https://arxiv.org/abs/2604.12944) [![ACL 2026 Findings](https://img.shields.io/badge/ACL%202026-Findings-2ea44f)](https://arxiv.org/abs/2604.12944) [![Papers](https://img.shields.io/badge/Papers-69-blue.svg)](#evaluation-benchmarks) [![Auto arXiv Update](https://img.shields.io/badge/arXiv%20Update-Monthly-blueviolet.svg)](new_papers.md) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)](#contributing) [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://github.com) [![Last Commit](https://img.shields.io/github/last-commit/hukcc/Awesome-Video-Hallucination)](https://github.com/hukcc/Awesome-Video-Hallucination/commits/main) ![Visitors](https://komarev.com/ghpvc/?username=hukcc-Awesome-Video-Hallucination&label=Visitors&color=blue&style=flat)
 
-A curated and structured collection of papers on **hallucination in Video Large Language Models (Vid-LLMs)**, covering **19 evaluation benchmarks** and **23 mitigation methods**. Automatically updated monthly via arXiv search.
+A curated and structured collection of papers on **hallucination in Video Large Language Models (Vid-LLMs)**, covering **28 evaluation benchmarks** and **41 mitigation methods**. Automatically updated monthly via arXiv search.
 
 > 📄 **Based on the survey**: *[Distorted or Fabricated? A Survey on Hallucination in Video LLMs](https://arxiv.org/abs/2604.12944)*
 
@@ -12,8 +12,8 @@ A curated and structured collection of papers on **hallucination in Video Large 
 
 <table width="100%">
 <tr>
-<td width="20%" align="center"><h3>📊 19</h3><sub>Evaluation Benchmarks</sub></td>
-<td width="20%" align="center"><h3>🛠️ 23</h3><sub>Mitigation Methods</sub></td>
+<td width="20%" align="center"><h3>📊 28</h3><sub>Evaluation Benchmarks</sub></td>
+<td width="20%" align="center"><h3>🛠️ 41</h3><sub>Mitigation Methods</sub></td>
 <td width="20%" align="center"><h3>🏛️ 15+</h3><sub>Top-tier Venues</sub></td>
 <td width="20%" align="center"><h3>📅 2023–2026</h3><sub>Coverage Period</sub></td>
 <td width="20%" align="center"><h3>🤖 Auto</h3><sub>Monthly Paper Update</sub></td>
@@ -22,6 +22,7 @@ A curated and structured collection of papers on **hallucination in Video Large 
 
 ## 🔔 News
 
+- **[2026/05]** 📚 Classified recent papers from [`new_papers.md`](new_papers.md), expanding the taxonomy to 28 video hallucination benchmarks and 41 mitigation methods.
 - **[2026/04]** 🌟 Our survey has been accepted to **ACL 2026 Findings**! 👉 [arXiv:2604.12944](https://arxiv.org/abs/2604.12944)
 - **[2026/03]** 🤖 Automated monthly arXiv paper update is now live! A GitHub Action runs on the 1st of each month to find new video hallucination papers and commit directly to the main branch. Newly discovered papers that have not yet been classified can be found in [`new_papers.md`](new_papers.md).
 
@@ -31,12 +32,12 @@ A curated and structured collection of papers on **hallucination in Video Large 
 <summary><b>📖 Table of Contents</b></summary>
 
 &emsp;📋 [Taxonomy of Video Hallucinations](#taxonomy-of-video-hallucinations)
-<br>&emsp;📊 [Evaluation Benchmarks](#evaluation-benchmarks) — 19 benchmarks
+<br>&emsp;📊 [Evaluation Benchmarks](#evaluation-benchmarks) — 28 benchmarks
 <br>&emsp;&emsp;&emsp;🔵 [Spatiotemporal Dynamics](#-spatiotemporal-dynamics-benchmarks-dynamic-distortion)
 <br>&emsp;&emsp;&emsp;🟢 [Referential Inconsistency](#-referential-inconsistency-benchmarks-dynamic-distortion)
 <br>&emsp;&emsp;&emsp;🟠 [Context-Driven Fabrication](#-context-driven-fabrication-benchmarks-content-fabrication)
 <br>&emsp;&emsp;&emsp;🟣 [Audio-Visual Conflict](#-audio-visual-conflict-benchmarks-content-fabrication)
-<br>&emsp;🛠️ [Mitigation Strategies](#mitigation-strategies) — 23 methods
+<br>&emsp;🛠️ [Mitigation Strategies](#mitigation-strategies) — 41 methods
 <br>&emsp;&emsp;&emsp;🔵 [Spatiotemporal Dynamics](#-spatiotemporal-dynamics-mitigation-dynamic-distortion)
 <br>&emsp;&emsp;&emsp;🟢 [Referential Inconsistency](#-referential-inconsistency-mitigation-dynamic-distortion)
 <br>&emsp;&emsp;&emsp;🟠 [Context-Driven Fabrication](#-context-driven-fabrication-mitigation-content-fabrication)
@@ -94,7 +95,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
 ### 🔵 Spatiotemporal Dynamics Benchmarks (Dynamic Distortion)
 
 <details open>
-<summary><b>Event Misordering</b> (4 papers)</summary>
+<summary><b>Event Misordering</b> (5 papers)</summary>
 
 <table width="100%">
   <thead>
@@ -127,6 +128,13 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <td align="center">AAAI 2025</td>
       <td align="center">01/2025</td>
       <td align="center"><a href="https://github.com/xzhouzeng/MHBench"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
+    </tr>
+    <tr>
+      <td align="left"><a href="https://arxiv.org/abs/2602.17768"><b>KPM-Bench: A Kinematic Parsing Motion Benchmark for Fine-grained Motion-centric Video Understanding</b></a></td>
+      <td align="center">KPM-Bench</td>
+      <td align="center">arXiv 2026</td>
+      <td align="center">02/2026</td>
+      <td align="center">-</td>
     </tr>
     <tr>
       <td align="left"><a href="https://arxiv.org/abs/2506.07371"><b>ARGUS: Hallucination and Omission Evaluation in Video-LLMs</b></a></td>
@@ -303,7 +311,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
 </details>
 
 <details open>
-<summary><b>Scene-Event Hallucination</b> (3 papers)</summary>
+<summary><b>Scene-Event Hallucination</b> (4 papers)</summary>
 
 <table width="100%">
   <thead>
@@ -337,6 +345,74 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <td align="center">02/2025</td>
       <td align="center"><a href="https://roadsocial.github.io/"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?logo=readthedocs&logoColor=white" alt="page"></a> <a href="https://github.com/roadsocial/roadsocial"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
+    <tr>
+      <td align="left"><a href="https://arxiv.org/abs/2604.20460"><b>CCTVBench: Contrastive Consistency Traffic VideoQA Benchmark for Multimodal LLMs</b></a></td>
+      <td align="center">CCTVBench</td>
+      <td align="center">arXiv 2026</td>
+      <td align="center">04/2026</td>
+      <td align="center">-</td>
+    </tr>
+  </tbody>
+</table>
+
+</details>
+
+<details open>
+<summary><b>Compositional and Factuality Hallucination</b> (6 papers)</summary>
+
+<table width="100%">
+  <thead>
+    <tr>
+      <th width="54%" align="left">Title</th>
+      <th width="12%" align="center">Benchmark</th>
+      <th width="10%" align="center">Venue</th>
+      <th width="7%" align="center">Date</th>
+      <th width="17%" align="center">Code</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="left"><a href="https://arxiv.org/abs/2603.11481"><b>INFACT: A Diagnostic Benchmark for Induced Faithfulness and Factuality Hallucinations in Video-LLMs</b></a></td>
+      <td align="center">INFACT</td>
+      <td align="center">arXiv 2026</td>
+      <td align="center">03/2026</td>
+      <td align="center">-</td>
+    </tr>
+    <tr>
+      <td align="left"><a href="https://arxiv.org/abs/2602.00559"><b>Learning to Decode Against Compositional Hallucination in Video Multimodal Large Language Models</b></a></td>
+      <td align="center">OmniVCHall</td>
+      <td align="center">arXiv 2026</td>
+      <td align="center">01/2026</td>
+      <td align="center"><a href="https://github.com/BMRETURN/OmniVCHall"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
+    </tr>
+    <tr>
+      <td align="left"><a href="https://arxiv.org/abs/2601.08557"><b>VideoHEDGE: Entropy-Based Hallucination Detection for Video-VLMs via Semantic Clustering and Spatiotemporal Perturbations</b></a></td>
+      <td align="center">VideoHEDGE</td>
+      <td align="center">arXiv 2026</td>
+      <td align="center">01/2026</td>
+      <td align="center"><a href="https://github.com/Simula/HEDGE"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
+    </tr>
+    <tr>
+      <td align="left"><a href="https://arxiv.org/abs/2604.25584"><b>DualFact+: A Multimodal Fact Verification Framework for Procedural Video Understanding</b></a></td>
+      <td align="center">DualFact</td>
+      <td align="center">arXiv 2026</td>
+      <td align="center">04/2026</td>
+      <td align="center">-</td>
+    </tr>
+    <tr>
+      <td align="left"><a href="https://arxiv.org/abs/2604.17873"><b>Spatiotemporal Sycophancy: Negation-Based Gaslighting in Video Large Language Models</b></a></td>
+      <td align="center">GasVideo-1000</td>
+      <td align="center">arXiv 2026</td>
+      <td align="center">04/2026</td>
+      <td align="center">-</td>
+    </tr>
+    <tr>
+      <td align="left"><a href="https://arxiv.org/abs/2604.17375"><b>When Text Hijacks Vision: Benchmarking and Mitigating Text Overlay-Induced Hallucination in Vision Language Models</b></a></td>
+      <td align="center">VisualTextTrap</td>
+      <td align="center">arXiv 2026</td>
+      <td align="center">04/2026</td>
+      <td align="center">-</td>
+    </tr>
   </tbody>
 </table>
 
@@ -345,7 +421,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
 ### 🟣 Audio-Visual Conflict Benchmarks (Content Fabrication)
 
 <details open>
-<summary><b>Action Attribution</b> (2 papers)</summary>
+<summary><b>Action Attribution</b> (3 papers)</summary>
 
 <table width="100%">
   <thead>
@@ -371,6 +447,13 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <td align="center">arXiv 2024</td>
       <td align="center">10/2024</td>
       <td align="center"><a href="https://cmm-damovl.site/"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?logo=readthedocs&logoColor=white" alt="page"></a> <a href="https://github.com/DAMO-NLP-SG/CMM"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
+    </tr>
+    <tr>
+      <td align="left"><a href="https://arxiv.org/abs/2604.23860"><b>Exploring Audio Hallucination in Egocentric Video Understanding</b></a></td>
+      <td align="center">Audio Hallucination QA</td>
+      <td align="center">arXiv 2026</td>
+      <td align="center">04/2026</td>
+      <td align="center">-</td>
     </tr>
   </tbody>
 </table>
@@ -413,7 +496,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
 ### 🔵 Spatiotemporal Dynamics Mitigation (Dynamic Distortion)
 
 <details open>
-<summary><b>Event Misordering</b> (3 papers)</summary>
+<summary><b>Event Misordering</b> (5 papers)</summary>
 
 <table width="100%">
   <thead>
@@ -451,13 +534,29 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <td align="center">✔︎</td>
       <td align="center">-</td>
     </tr>
+    <tr>
+      <td align="left"><a href="https://arxiv.org/abs/2602.07801"><b>VideoTemp-o3: Harmonizing Temporal Grounding and Video Understanding in Agentic Thinking-with-Videos</b></a></td>
+      <td align="center">VideoTemp-o3</td>
+      <td align="center">arXiv 2026</td>
+      <td align="center">02/2026</td>
+      <td align="center">✘</td>
+      <td align="center">-</td>
+    </tr>
+    <tr>
+      <td align="left"><a href="https://arxiv.org/abs/2601.04778"><b>CounterVid: Counterfactual Video Generation for Mitigating Action and Temporal Hallucinations in Video-Language Models</b></a></td>
+      <td align="center">MixDPO</td>
+      <td align="center">arXiv 2026</td>
+      <td align="center">01/2026</td>
+      <td align="center">✘</td>
+      <td align="center">-</td>
+    </tr>
   </tbody>
 </table>
 
 </details>
 
 <details open>
-<summary><b>Duration Distortion</b> (3 papers)</summary>
+<summary><b>Duration Distortion</b> (8 papers)</summary>
 
 <table width="100%">
   <thead>
@@ -495,13 +594,53 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <td align="center">✘</td>
       <td align="center">-</td>
     </tr>
+    <tr>
+      <td align="left"><a href="https://arxiv.org/abs/2603.25021"><b>VideoTIR: Accurate Understanding for Long Videos with Efficient Tool-Integrated Reasoning</b></a></td>
+      <td align="center">VideoTIR</td>
+      <td align="center">arXiv 2026</td>
+      <td align="center">03/2026</td>
+      <td align="center">✘</td>
+      <td align="center">-</td>
+    </tr>
+    <tr>
+      <td align="left"><a href="https://arxiv.org/abs/2603.16256"><b>When Thinking Hurts: Mitigating Visual Forgetting in Video Reasoning via Frame Repetition</b></a></td>
+      <td align="center">FrameRepeat</td>
+      <td align="center">arXiv 2026</td>
+      <td align="center">03/2026</td>
+      <td align="center">✘</td>
+      <td align="center">-</td>
+    </tr>
+    <tr>
+      <td align="left"><a href="https://arxiv.org/abs/2602.18702"><b>Think with Grounding: Curriculum Reinforced Reasoning with Video Grounding for Long Video Understanding</b></a></td>
+      <td align="center">Video-TwG</td>
+      <td align="center">arXiv 2026</td>
+      <td align="center">02/2026</td>
+      <td align="center">✘</td>
+      <td align="center">-</td>
+    </tr>
+    <tr>
+      <td align="left"><a href="https://arxiv.org/abs/2601.07761"><b>Video Evidence to Reasoning Efficient Video Understanding via Explicit Evidence Grounding</b></a></td>
+      <td align="center">CoE</td>
+      <td align="center">arXiv 2026</td>
+      <td align="center">01/2026</td>
+      <td align="center">✘</td>
+      <td align="center">-</td>
+    </tr>
+    <tr>
+      <td align="left"><a href="https://arxiv.org/abs/2604.12582"><b>Relaxing Anchor-Frame Dominance for Mitigating Hallucinations in Video Large Language Models</b></a></td>
+      <td align="center">DTR</td>
+      <td align="center">arXiv 2026</td>
+      <td align="center">04/2026</td>
+      <td align="center">✔︎</td>
+      <td align="center">-</td>
+    </tr>
   </tbody>
 </table>
 
 </details>
 
 <details open>
-<summary><b>Frequency Confusion</b> (2 papers)</summary>
+<summary><b>Frequency Confusion</b> (3 papers)</summary>
 
 <table width="100%">
   <thead>
@@ -530,6 +669,14 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <td align="center">06/2024</td>
       <td align="center">✘</td>
       <td align="center"><a href="https://github.com/mutonix/Vript"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
+    </tr>
+    <tr>
+      <td align="left"><a href="https://arxiv.org/abs/2602.17768"><b>KPM-Bench: A Kinematic Parsing Motion Benchmark for Fine-grained Motion-centric Video Understanding</b></a></td>
+      <td align="center">MoPE</td>
+      <td align="center">arXiv 2026</td>
+      <td align="center">02/2026</td>
+      <td align="center">✘</td>
+      <td align="center">-</td>
     </tr>
   </tbody>
 </table>
@@ -649,7 +796,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
 </details>
 
 <details open>
-<summary><b>Scene-Event Hallucination</b> (3 papers)</summary>
+<summary><b>Scene-Event Hallucination</b> (9 papers)</summary>
 
 <table width="100%">
   <thead>
@@ -687,13 +834,61 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <td align="center">✘</td>
       <td align="center">-</td>
     </tr>
+    <tr>
+      <td align="left"><a href="https://arxiv.org/abs/2603.15008"><b>Clue Matters: Leveraging Latent Visual Clues to Empower Video Reasoning</b></a></td>
+      <td align="center">ClueNet</td>
+      <td align="center">arXiv 2026</td>
+      <td align="center">03/2026</td>
+      <td align="center">✘</td>
+      <td align="center">-</td>
+    </tr>
+    <tr>
+      <td align="left"><a href="https://arxiv.org/abs/2602.17555"><b>GraphThinker: Reinforcing Video Reasoning with Event Graph Thinking</b></a></td>
+      <td align="center">GraphThinker</td>
+      <td align="center">arXiv 2026</td>
+      <td align="center">02/2026</td>
+      <td align="center">✘</td>
+      <td align="center">-</td>
+    </tr>
+    <tr>
+      <td align="left"><a href="https://arxiv.org/abs/2602.01740"><b>MACD: Model-Aware Contrastive Decoding via Counterfactual Data</b></a></td>
+      <td align="center">MACD</td>
+      <td align="center">arXiv 2026</td>
+      <td align="center">02/2026</td>
+      <td align="center">✔︎</td>
+      <td align="center">-</td>
+    </tr>
+    <tr>
+      <td align="left"><a href="https://arxiv.org/abs/2601.22574"><b>Mitigating Hallucinations in Video Large Language Models via Spatiotemporal-Semantic Contrastive Decoding</b></a></td>
+      <td align="center">STSCD</td>
+      <td align="center">arXiv 2026</td>
+      <td align="center">01/2026</td>
+      <td align="center">✔︎</td>
+      <td align="center">-</td>
+    </tr>
+    <tr>
+      <td align="left"><a href="https://arxiv.org/abs/2604.20473"><b>Video-ToC: Video Tree-of-Cue Reasoning</b></a></td>
+      <td align="center">Video-ToC</td>
+      <td align="center">arXiv 2026</td>
+      <td align="center">04/2026</td>
+      <td align="center">✘</td>
+      <td align="center"><a href="https://github.com/qizhongtan/Video-ToC"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
+    </tr>
+    <tr>
+      <td align="left"><a href="https://arxiv.org/abs/2604.20460"><b>CCTVBench: Contrastive Consistency Traffic VideoQA Benchmark for Multimodal LLMs</b></a></td>
+      <td align="center">C-TCD</td>
+      <td align="center">arXiv 2026</td>
+      <td align="center">04/2026</td>
+      <td align="center">✔︎</td>
+      <td align="center">-</td>
+    </tr>
   </tbody>
 </table>
 
 </details>
 
 <details open>
-<summary><b>Both Object-Action & Scene-Event</b> (2 papers)</summary>
+<summary><b>Both Object-Action & Scene-Event</b> (7 papers)</summary>
 
 <table width="100%">
   <thead>
@@ -722,6 +917,46 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <td align="center">05/2025</td>
       <td align="center">✘</td>
       <td align="center"><a href="https://github.com/zli12321/VideoHallu"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
+    </tr>
+    <tr>
+      <td align="left"><a href="https://arxiv.org/abs/2602.00559"><b>Learning to Decode Against Compositional Hallucination in Video Multimodal Large Language Models</b></a></td>
+      <td align="center">TriCD</td>
+      <td align="center">arXiv 2026</td>
+      <td align="center">01/2026</td>
+      <td align="center">✘</td>
+      <td align="center"><a href="https://github.com/BMRETURN/OmniVCHall"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
+    </tr>
+    <tr>
+      <td align="left"><a href="https://arxiv.org/abs/2604.20937"><b>Sink-Token-Aware Pruning for Fine-Grained Video Understanding in Efficient Video LLMs</b></a></td>
+      <td align="center">SToP</td>
+      <td align="center">arXiv 2026</td>
+      <td align="center">04/2026</td>
+      <td align="center">✔︎</td>
+      <td align="center">-</td>
+    </tr>
+    <tr>
+      <td align="left"><a href="https://arxiv.org/abs/2604.17375"><b>When Text Hijacks Vision: Benchmarking and Mitigating Text Overlay-Induced Hallucination in Vision Language Models</b></a></td>
+      <td align="center">VTHM-MoE</td>
+      <td align="center">arXiv 2026</td>
+      <td align="center">04/2026</td>
+      <td align="center">✘</td>
+      <td align="center">-</td>
+    </tr>
+    <tr>
+      <td align="left"><a href="https://arxiv.org/abs/2604.03045"><b>STEAR: Layer-Aware Spatiotemporal Evidence Intervention for Hallucination Mitigation in Video Large Language Models</b></a></td>
+      <td align="center">STEAR</td>
+      <td align="center">arXiv 2026</td>
+      <td align="center">04/2026</td>
+      <td align="center">✔︎</td>
+      <td align="center">-</td>
+    </tr>
+    <tr>
+      <td align="left"><a href="https://arxiv.org/abs/2604.01460"><b>Reinforcing Consistency in Video MLLMs with Structured Rewards</b></a></td>
+      <td align="center">Structured Rewards</td>
+      <td align="center">arXiv 2026</td>
+      <td align="center">04/2026</td>
+      <td align="center">✘</td>
+      <td align="center">-</td>
     </tr>
   </tbody>
 </table>
