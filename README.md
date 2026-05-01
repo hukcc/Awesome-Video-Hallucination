@@ -1,8 +1,8 @@
 # Awesome-Video-Hallucination [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-[![arXiv](https://img.shields.io/badge/arXiv-2604.12944-b31b1b.svg)](https://arxiv.org/abs/2604.12944) [![ACL 2026 Findings](https://img.shields.io/badge/ACL%202026-Findings-2ea44f)](https://arxiv.org/abs/2604.12944) [![Papers](https://img.shields.io/badge/Papers-69-blue.svg)](#evaluation-benchmarks) [![Auto arXiv Update](https://img.shields.io/badge/arXiv%20Update-Monthly-blueviolet.svg)](new_papers.md) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)](#contributing) [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://github.com) [![Last Commit](https://img.shields.io/github/last-commit/hukcc/Awesome-Video-Hallucination)](https://github.com/hukcc/Awesome-Video-Hallucination/commits/main) ![Visitors](https://komarev.com/ghpvc/?username=hukcc-Awesome-Video-Hallucination&label=Visitors&color=blue&style=flat)
+[![arXiv](https://img.shields.io/badge/arXiv-2604.12944-b31b1b.svg)](https://arxiv.org/abs/2604.12944) [![ACL 2026 Findings](https://img.shields.io/badge/ACL%202026-Findings-2ea44f)](https://arxiv.org/abs/2604.12944) [![Papers](https://img.shields.io/badge/Papers-71-blue.svg)](#evaluation-benchmarks) [![Auto arXiv Update](https://img.shields.io/badge/arXiv%20Update-Monthly-blueviolet.svg)](new_papers.md) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)](#contributing) [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://github.com) [![Last Commit](https://img.shields.io/github/last-commit/hukcc/Awesome-Video-Hallucination)](https://github.com/hukcc/Awesome-Video-Hallucination/commits/main) ![Visitors](https://komarev.com/ghpvc/?username=hukcc-Awesome-Video-Hallucination&label=Visitors&color=blue&style=flat)
 
-A curated and structured collection of papers on **hallucination in Video Large Language Models (Vid-LLMs)**, covering **28 evaluation benchmarks** and **41 mitigation methods**. Automatically updated monthly via arXiv search.
+A curated and structured collection of papers on **hallucination in Video Large Language Models (Vid-LLMs)**, covering **29 evaluation benchmarks** and **42 mitigation methods**. Automatically updated monthly via arXiv search.
 
 > 📄 **Based on the survey**: *[Distorted or Fabricated? A Survey on Hallucination in Video LLMs](https://arxiv.org/abs/2604.12944)*
 
@@ -12,8 +12,8 @@ A curated and structured collection of papers on **hallucination in Video Large 
 
 <table width="100%">
 <tr>
-<td width="20%" align="center"><h3>📊 28</h3><sub>Evaluation Benchmarks</sub></td>
-<td width="20%" align="center"><h3>🛠️ 41</h3><sub>Mitigation Methods</sub></td>
+<td width="20%" align="center"><h3>📊 29</h3><sub>Evaluation Benchmarks</sub></td>
+<td width="20%" align="center"><h3>🛠️ 42</h3><sub>Mitigation Methods</sub></td>
 <td width="20%" align="center"><h3>🏛️ 15+</h3><sub>Top-tier Venues</sub></td>
 <td width="20%" align="center"><h3>📅 2023–2026</h3><sub>Coverage Period</sub></td>
 <td width="20%" align="center"><h3>🤖 Auto</h3><sub>Monthly Paper Update</sub></td>
@@ -22,7 +22,7 @@ A curated and structured collection of papers on **hallucination in Video Large 
 
 ## 🔔 News
 
-- **[2026/05]** 📚 Classified recent papers from [`new_papers.md`](new_papers.md), expanding the taxonomy to 28 video hallucination benchmarks and 41 mitigation methods.
+- **[2026/05]** 📚 Classified recent papers from [`new_papers.md`](new_papers.md), expanding the taxonomy to 29 video hallucination benchmarks and 42 mitigation methods.
 - **[2026/04]** 🌟 Our survey has been accepted to **ACL 2026 Findings**! 👉 [arXiv:2604.12944](https://arxiv.org/abs/2604.12944)
 - **[2026/03]** 🤖 Automated monthly arXiv paper update is now live! A GitHub Action runs on the 1st of each month to find new video hallucination papers and commit directly to the main branch. Newly discovered papers that have not yet been classified can be found in [`new_papers.md`](new_papers.md).
 
@@ -32,12 +32,12 @@ A curated and structured collection of papers on **hallucination in Video Large 
 <summary><b>📖 Table of Contents</b></summary>
 
 &emsp;📋 [Taxonomy of Video Hallucinations](#taxonomy-of-video-hallucinations)
-<br>&emsp;📊 [Evaluation Benchmarks](#evaluation-benchmarks) — 28 benchmarks
+<br>&emsp;📊 [Evaluation Benchmarks](#evaluation-benchmarks) — 29 benchmarks
 <br>&emsp;&emsp;&emsp;🔵 [Spatiotemporal Dynamics](#-spatiotemporal-dynamics-benchmarks-dynamic-distortion)
 <br>&emsp;&emsp;&emsp;🟢 [Referential Inconsistency](#-referential-inconsistency-benchmarks-dynamic-distortion)
 <br>&emsp;&emsp;&emsp;🟠 [Context-Driven Fabrication](#-context-driven-fabrication-benchmarks-content-fabrication)
 <br>&emsp;&emsp;&emsp;🟣 [Audio-Visual Conflict](#-audio-visual-conflict-benchmarks-content-fabrication)
-<br>&emsp;🛠️ [Mitigation Strategies](#mitigation-strategies) — 41 methods
+<br>&emsp;🛠️ [Mitigation Strategies](#mitigation-strategies) — 42 methods
 <br>&emsp;&emsp;&emsp;🔵 [Spatiotemporal Dynamics](#-spatiotemporal-dynamics-mitigation-dynamic-distortion)
 <br>&emsp;&emsp;&emsp;🟢 [Referential Inconsistency](#-referential-inconsistency-mitigation-dynamic-distortion)
 <br>&emsp;&emsp;&emsp;🟠 [Context-Driven Fabrication](#-context-driven-fabrication-mitigation-content-fabrication)
@@ -421,7 +421,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
 ### 🟣 Audio-Visual Conflict Benchmarks (Content Fabrication)
 
 <details open>
-<summary><b>Action Attribution</b> (3 papers)</summary>
+<summary><b>Action Attribution</b> (4 papers)</summary>
 
 <table width="100%">
   <thead>
@@ -453,6 +453,13 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <td align="center">Audio Hallucination QA</td>
       <td align="center">arXiv 2026</td>
       <td align="center">04/2026</td>
+      <td align="center">-</td>
+    </tr>
+    <tr>
+      <td align="left"><a href="https://arxiv.org/abs/2405.13684"><b>CrossCheckGPT: Universal Hallucination Ranking for Multimodal Foundation Models</b></a></td>
+      <td align="center">AVHalluBench</td>
+      <td align="center">arXiv 2024</td>
+      <td align="center">05/2024</td>
       <td align="center">-</td>
     </tr>
   </tbody>
@@ -966,7 +973,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
 ### 🟣 Audio-Visual Conflict Mitigation (Content Fabrication)
 
 <details open>
-<summary><b>Action Attribution</b> (2 papers)</summary>
+<summary><b>Action Attribution</b> (3 papers)</summary>
 
 <table width="100%">
   <thead>
@@ -995,6 +1002,14 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <td align="center">05/2025</td>
       <td align="center">✔︎</td>
       <td align="center"><a href="https://github.com/kaistmm/AVCD"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
+    </tr>
+    <tr>
+      <td align="left"><a href="https://arxiv.org/abs/2410.06682"><b>Enhancing Multimodal LLM for Detailed and Accurate Video Captioning using Multi-Round Preference Optimization</b></a></td>
+      <td align="center">mrDPO</td>
+      <td align="center">arXiv 2024</td>
+      <td align="center">10/2024</td>
+      <td align="center">✘</td>
+      <td align="center"><a href="https://video-salmonn-2.github.io/"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?logo=readthedocs&logoColor=white" alt="page"></a></td>
     </tr>
   </tbody>
 </table>
