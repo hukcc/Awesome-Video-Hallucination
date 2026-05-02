@@ -10,8 +10,6 @@ A curated and structured collection of papers on **hallucination in Video Large 
 
 > 🔎 **Interactive Browser**: [Search and filter the paper database](https://hukcc.github.io/Awesome-Video-Hallucination/) by type, mechanism, venue, year, and resources.
 
-![Interactive paper browser preview](imgs/browser_preview.png)
-
 ## Table of Contents
 
 - [Taxonomy of Video Hallucinations](#taxonomy-of-video-hallucinations)
@@ -35,7 +33,7 @@ A curated and structured collection of papers on **hallucination in Video Large 
 We organize video hallucinations into two mechanism-level families: **Dynamic Distortion**, where models misrepresent temporal progression or references, and **Content Fabrication**, where outputs are weakly grounded in the video evidence. The paper lists below follow this taxonomy across four subtypes: spatiotemporal dynamics, referential inconsistency, context-driven fabrication, and audio-visual conflict.
 
 <p align="center">
-    <img src="imgs/taxonomy_tree.png" width="96%" />
+    <img src="imgs/fig2_taxonomy.png" width="96%" />
     <br>
     <em>Mechanism-driven taxonomy of Vid-LLM hallucinations. Solid fill = benchmarks; striped fill = mitigation methods.</em>
 </p>
