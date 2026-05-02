@@ -8,20 +8,20 @@ A curated and structured collection of papers on **hallucination in Video Large 
 
 ![Framework overview](imgs/teaser.png)
 
-## 🔔 News
-
-- **[2026/05]** 📚 Classified recent papers from [`new_papers.md`](new_papers.md), expanding the taxonomy to 29 video hallucination benchmarks and 42 mitigation methods.
-- **[2026/04]** 🌟 Our survey has been accepted to **ACL 2026 Findings**! 👉 [arXiv:2604.12944](https://arxiv.org/abs/2604.12944)
-- **[2026/03]** 🤖 Automated monthly arXiv paper update is now live! A GitHub Action runs on the 1st of each month to find new video hallucination papers and commit directly to the main branch. Newly discovered papers that have not yet been classified can be found in [`new_papers.md`](new_papers.md).
-
----
-
 ## Table of Contents
 
 - [Taxonomy of Video Hallucinations](#taxonomy-of-video-hallucinations)
 - [Evaluation Benchmarks](#evaluation-benchmarks) — 29 benchmarks
 - [Mitigation Strategies](#mitigation-strategies) — 42 methods
 - [Contributing](#contributing)
+
+---
+
+## Latest Updates
+
+- **[2026/05]** Classified recent papers from [`new_papers.md`](new_papers.md), expanding the taxonomy to 29 video hallucination benchmarks and 42 mitigation methods.
+- **[2026/04]** Our survey has been accepted to **ACL 2026 Findings**. 👉 [arXiv:2604.12944](https://arxiv.org/abs/2604.12944)
+- **[2026/03]** Automated monthly arXiv paper update is now live. A GitHub Action runs on the 1st of each month to find new video hallucination papers and commit directly to the main branch. Newly discovered papers that have not yet been classified can be found in [`new_papers.md`](new_papers.md).
 
 ---
 
