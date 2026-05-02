@@ -61,7 +61,7 @@ We organize video hallucinations into two mechanism-level families: **Dynamic Di
 
 ### 🔵 Spatiotemporal Dynamics Benchmarks (Dynamic Distortion)
 
-<details>
+<details open>
 <summary><b>Event Misordering</b> (5 papers)</summary>
 
 <table width="100%">
@@ -115,7 +115,7 @@ We organize video hallucinations into two mechanism-level families: **Dynamic Di
 
 </details>
 
-<details>
+<details open>
 <summary><b>Duration Distortion</b> (2 papers)</summary>
 
 <table width="100%">
@@ -148,7 +148,7 @@ We organize video hallucinations into two mechanism-level families: **Dynamic Di
 
 </details>
 
-<details>
+<details open>
 <summary><b>Frequency Confusion</b> (2 papers)</summary>
 
 <table width="100%">
@@ -183,7 +183,7 @@ We organize video hallucinations into two mechanism-level families: **Dynamic Di
 
 ### 🟢 Referential Inconsistency Benchmarks (Dynamic Distortion)
 
-<details>
+<details open>
 <summary><b>Character Conflation</b> (2 papers)</summary>
 
 <table width="100%">
@@ -216,7 +216,7 @@ We organize video hallucinations into two mechanism-level families: **Dynamic Di
 
 </details>
 
-<details>
+<details open>
 <summary><b>Scene Conflation</b> (1 paper)</summary>
 
 <table width="100%">
@@ -244,7 +244,7 @@ We organize video hallucinations into two mechanism-level families: **Dynamic Di
 
 ### 🟠 Context-Driven Fabrication Benchmarks (Content Fabrication)
 
-<details>
+<details open>
 <summary><b>Object-Action Hallucination</b> (2 papers)</summary>
 
 <table width="100%">
@@ -277,7 +277,7 @@ We organize video hallucinations into two mechanism-level families: **Dynamic Di
 
 </details>
 
-<details>
+<details open>
 <summary><b>Scene-Event Hallucination</b> (4 papers)</summary>
 
 <table width="100%">
@@ -324,7 +324,7 @@ We organize video hallucinations into two mechanism-level families: **Dynamic Di
 
 </details>
 
-<details>
+<details open>
 <summary><b>Compositional and Factuality Hallucination</b> (6 papers)</summary>
 
 <table width="100%">
@@ -387,7 +387,7 @@ We organize video hallucinations into two mechanism-level families: **Dynamic Di
 
 ### 🟣 Audio-Visual Conflict Benchmarks (Content Fabrication)
 
-<details>
+<details open>
 <summary><b>Action Attribution</b> (4 papers)</summary>
 
 <table width="100%">
@@ -434,7 +434,7 @@ We organize video hallucinations into two mechanism-level families: **Dynamic Di
 
 </details>
 
-<details>
+<details open>
 <summary><b>Emotion Inference</b> (1 paper)</summary>
 
 <table width="100%">
@@ -469,7 +469,7 @@ We organize video hallucinations into two mechanism-level families: **Dynamic Di
 
 ### 🔵 Spatiotemporal Dynamics Mitigation (Dynamic Distortion)
 
-<details>
+<details open>
 <summary><b>Event Misordering</b> (5 papers)</summary>
 
 <table width="100%">
@@ -529,7 +529,7 @@ We organize video hallucinations into two mechanism-level families: **Dynamic Di
 
 </details>
 
-<details>
+<details open>
 <summary><b>Duration Distortion</b> (8 papers)</summary>
 
 <table width="100%">
@@ -613,7 +613,7 @@ We organize video hallucinations into two mechanism-level families: **Dynamic Di
 
 </details>
 
-<details>
+<details open>
 <summary><b>Frequency Confusion</b> (3 papers)</summary>
 
 <table width="100%">
@@ -659,7 +659,7 @@ We organize video hallucinations into two mechanism-level families: **Dynamic Di
 
 ### 🟢 Referential Inconsistency Mitigation (Dynamic Distortion)
 
-<details>
+<details open>
 <summary><b>Character Conflation</b> (2 papers)</summary>
 
 <table width="100%">
@@ -695,7 +695,7 @@ We organize video hallucinations into two mechanism-level families: **Dynamic Di
 
 </details>
 
-<details>
+<details open>
 <summary><b>Scene Conflation</b> (2 papers)</summary>
 
 <table width="100%">
@@ -733,7 +733,7 @@ We organize video hallucinations into two mechanism-level families: **Dynamic Di
 
 ### 🟠 Context-Driven Fabrication Mitigation (Content Fabrication)
 
-<details>
+<details open>
 <summary><b>Object-Action Hallucination</b> (2 papers)</summary>
 
 <table width="100%">
@@ -769,7 +769,7 @@ We organize video hallucinations into two mechanism-level families: **Dynamic Di
 
 </details>
 
-<details>
+<details open>
 <summary><b>Scene-Event Hallucination</b> (9 papers)</summary>
 
 <table width="100%">
@@ -861,7 +861,7 @@ We organize video hallucinations into two mechanism-level families: **Dynamic Di
 
 </details>
 
-<details>
+<details open>
 <summary><b>Both Object-Action & Scene-Event</b> (7 papers)</summary>
 
 <table width="100%">
@@ -939,7 +939,7 @@ We organize video hallucinations into two mechanism-level families: **Dynamic Di
 
 ### 🟣 Audio-Visual Conflict Mitigation (Content Fabrication)
 
-<details>
+<details open>
 <summary><b>Action Attribution</b> (3 papers)</summary>
 
 <table width="100%">
@@ -983,7 +983,7 @@ We organize video hallucinations into two mechanism-level families: **Dynamic Di
 
 </details>
 
-<details>
+<details open>
 <summary><b>Emotion Inference</b> (1 paper)</summary>
 
 <table width="100%">
