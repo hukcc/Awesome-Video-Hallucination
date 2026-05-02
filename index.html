@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Awesome Video Hallucination Papers</title>
+    <meta
+      name="description"
+      content="Interactive paper browser for hallucination in Video Large Language Models."
+    />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="top-nav" aria-label="Primary navigation">
+        <a href="https://github.com/hukcc/Awesome-Video-Hallucination">GitHub</a>
+        <a href="https://arxiv.org/abs/2604.12944">Survey</a>
+        <a href="new_papers.md">New Papers</a>
+      </nav>
+      <div class="hero">
+        <p class="eyebrow">Awesome Video Hallucination</p>
+        <h1>Interactive Paper Browser</h1>
+        <p>
+          Search and filter papers on hallucination in Video Large Language Models,
+          organized by benchmark, mitigation method, hallucination mechanism, venue,
+          year, and available resources.
+        </p>
+      </div>
+      <section class="stats" aria-label="Paper collection statistics">
+        <div>
+          <strong id="total-count">0</strong>
+          <span>Total Entries</span>
+        </div>
+        <div>
+          <strong id="benchmark-count">0</strong>
+          <span>Benchmarks</span>
+        </div>
+        <div>
+          <strong id="mitigation-count">0</strong>
+          <span>Mitigation Methods</span>
+        </div>
+        <div>
+          <strong id="resource-count">0</strong>
+          <span>With Resources</span>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section class="toolbar" aria-label="Search and filters">
+        <label class="search-box" for="search-input">
+          <span>Search</span>
+          <input
+            id="search-input"
+            type="search"
+            placeholder="Title, method, benchmark, venue, arXiv..."
+            autocomplete="off"
+          />
+        </label>
+
+        <div class="filters">
+          <label>
+            Type
+            <select id="type-filter">
+              <option value="">All</option>
+            </select>
+          </label>
+          <label>
+            Mechanism
+            <select id="mechanism-filter">
+              <option value="">All</option>
+            </select>
+          </label>
+          <label>
+            Category
+            <select id="category-filter">
+              <option value="">All</option>
+            </select>
+          </label>
+          <label>
+            Year
+            <select id="year-filter">
+              <option value="">All</option>
+            </select>
+          </label>
+          <label>
+            Resource
+            <select id="resource-filter">
+              <option value="">All</option>
+              <option value="code">With code</option>
+              <option value="project">With project page</option>
+              <option value="dataset">With dataset</option>
+              <option value="leaderboard">With leaderboard</option>
+              <option value="missing-code">Missing code</option>
+              <option value="missing-project">Missing project page</option>
+            </select>
+          </label>
+        </div>
+      </section>
+
+      <section class="results-meta" aria-live="polite">
+        <p><strong id="visible-count">0</strong> entries shown</p>
+        <button id="reset-button" type="button">Reset filters</button>
+      </section>
+
+      <section id="paper-grid" class="paper-grid" aria-label="Filtered papers"></section>
+    </main>
+
+    <template id="paper-card-template">
+      <article class="paper-card">
+        <div class="card-topline">
+          <span class="type-pill"></span>
+          <span class="date-pill"></span>
+        </div>
+        <h2><a class="paper-title" href=""></a></h2>
+        <dl>
+          <div>
+            <dt>Name</dt>
+            <dd class="paper-name"></dd>
+          </div>
+          <div>
+            <dt>Venue</dt>
+            <dd class="paper-venue"></dd>
+          </div>
+          <div>
+            <dt>Category</dt>
+            <dd class="paper-category"></dd>
+          </div>
+          <div class="training-row">
+            <dt>Training-Free</dt>
+            <dd class="paper-training"></dd>
+          </div>
+        </dl>
+        <div class="resource-links"></div>
+      </article>
+    </template>
+
+    <script src="assets/app.js"></script>
+  </body>
+</html>
