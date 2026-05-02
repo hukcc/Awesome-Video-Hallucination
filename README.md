@@ -18,6 +18,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 - [Citation](#citation)
 - [Contributing](#contributing)
 
+---
 
 ## Latest Updates
 
@@ -25,6 +26,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 - **[2026/04]** Our survey has been accepted to **ACL 2026 Findings**. 👉 [arXiv:2604.12944](https://arxiv.org/abs/2604.12944)
 - **[2026/03]** Monthly arXiv search is live. Newly found, unclassified papers are listed in [`new_papers.md`](new_papers.md).
 
+---
 
 ## Taxonomy of Video Hallucinations
 
@@ -34,6 +36,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
     <em>Mechanism-driven taxonomy of Vid-LLM hallucinations. Solid fill = benchmarks; striped fill = mitigation methods.</em>
 </p>
 
+---
 
 ## Evaluation Benchmarks
 
@@ -443,6 +446,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 
 </details>
 
+---
 
 ## Mitigation Strategies
 
@@ -993,6 +997,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 
 </details>
 
+---
 
 ## Citation
 
@@ -1007,6 +1012,7 @@ If this repository or survey helps your work, please cite:
 }
 ```
 
+---
 
 ## Contributing
 
@@ -1035,6 +1041,7 @@ Use this structure for new entries:
 
 </details>
 
+---
 
 <div align="center">
 
