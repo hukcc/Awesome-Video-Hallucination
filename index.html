@@ -8,6 +8,11 @@
       name="description"
       content="Interactive paper browser for hallucination in Video Large Language Models."
     />
+    <meta property="og:title" content="Awesome Video Hallucination Papers" />
+    <meta property="og:description" content="Search and filter papers on hallucination in Video Large Language Models." />
+    <meta property="og:image" content="https://hukcc.github.io/Awesome-Video-Hallucination/imgs/browser_preview.png" />
+    <meta property="og:url" content="https://hukcc.github.io/Awesome-Video-Hallucination/" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="stylesheet" href="assets/styles.css" />
   </head>
   <body>
@@ -16,6 +21,7 @@
         <a href="https://github.com/hukcc/Awesome-Video-Hallucination">GitHub</a>
         <a href="https://arxiv.org/abs/2604.12944">Survey</a>
         <a href="new_papers.md">New Papers</a>
+        <a href="https://github.com/hukcc/Awesome-Video-Hallucination/issues">Contribute</a>
       </nav>
       <div class="hero">
         <p class="eyebrow">Awesome Video Hallucination</p>
@@ -25,6 +31,11 @@
           organized by benchmark, mitigation method, hallucination mechanism, venue,
           year, and available resources.
         </p>
+        <div class="hero-actions" aria-label="Featured links">
+          <a class="button-link primary" href="https://arxiv.org/abs/2604.12944">Read the Survey</a>
+          <a class="button-link" href="https://github.com/hukcc/Awesome-Video-Hallucination">Star on GitHub</a>
+          <a class="button-link" href="https://github.com/hukcc/Awesome-Video-Hallucination/issues">Contribute Links</a>
+        </div>
       </div>
       <section class="stats" aria-label="Paper collection statistics">
         <div>
@@ -47,6 +58,14 @@
     </header>
 
     <main>
+      <section class="quick-links" aria-label="Quick filters">
+        <button type="button" data-filter-type="benchmark">Benchmarks</button>
+        <button type="button" data-filter-type="mitigation">Mitigation Methods</button>
+        <button type="button" data-filter-resource="code">With Code</button>
+        <button type="button" data-filter-resource="missing-code">Missing Code</button>
+        <button type="button" data-filter-resource="missing-project">Missing Project Page</button>
+      </section>
+
       <section class="toolbar" aria-label="Search and filters">
         <label class="search-box" for="search-input">
           <span>Search</span>
@@ -132,6 +151,10 @@
           </div>
         </dl>
         <div class="resource-links"></div>
+        <div class="copy-actions">
+          <button class="copy-markdown" type="button">Copy Markdown</button>
+          <button class="copy-bibtex" type="button">Copy BibTeX</button>
+        </div>
       </article>
     </template>
 

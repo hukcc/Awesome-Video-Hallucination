@@ -25,6 +25,7 @@ const elements = {
   year: document.querySelector("#year-filter"),
   resource: document.querySelector("#resource-filter"),
   reset: document.querySelector("#reset-button"),
+  quickFilters: document.querySelector(".quick-links"),
 };
 
 const resourceLabels = {
@@ -71,6 +72,33 @@ function matchesResource(entry, resource) {
   return Boolean(entry.resources[resource]);
 }
 
+function citationKey(entry) {
+  const firstWord = entry.title.split(/\s+/)[0].replace(/[^a-z0-9]/gi, "").toLowerCase();
+  return `${firstWord || "paper"}${entry.year || ""}${entry.name.replace(/[^a-z0-9]/gi, "")}`;
+}
+
+function markdownFor(entry) {
+  return `- [**${entry.title}**](${entry.paper_url}) (${entry.venue}, ${entry.date})`;
+}
+
+function bibtexFor(entry) {
+  const idLine = entry.arxiv_id ? `\n  eprint={${entry.arxiv_id}},\n  archivePrefix={arXiv},` : "";
+  return `@article{${citationKey(entry)},\n  title={${entry.title}},\n  journal={${entry.venue}},${idLine}\n  year={${entry.year || ""}}\n}`;
+}
+
+async function copyText(text, button) {
+  try {
+    await navigator.clipboard.writeText(text);
+    const previous = button.textContent;
+    button.textContent = "Copied";
+    window.setTimeout(() => {
+      button.textContent = previous;
+    }, 1400);
+  } catch {
+    window.prompt("Copy this text:", text);
+  }
+}
+
 function filteredEntries() {
   const query = state.filters.search.trim().toLowerCase();
   return state.entries.filter((entry) => {
@@ -98,6 +126,8 @@ function renderCard(entry) {
   const title = fragment.querySelector(".paper-title");
   const trainingRow = fragment.querySelector(".training-row");
   const resources = fragment.querySelector(".resource-links");
+  const copyMarkdown = fragment.querySelector(".copy-markdown");
+  const copyBibtex = fragment.querySelector(".copy-bibtex");
 
   card.dataset.type = entry.type;
   typePill.textContent = entry.type === "benchmark" ? "Benchmark" : "Mitigation";
@@ -131,6 +161,9 @@ function renderCard(entry) {
     resources.append(missing);
   }
 
+  copyMarkdown.addEventListener("click", () => copyText(markdownFor(entry), copyMarkdown));
+  copyBibtex.addEventListener("click", () => copyText(bibtexFor(entry), copyBibtex));
+
   return fragment;
 }
 
@@ -152,6 +185,8 @@ function render() {
 
 function setFilter(key, value) {
   state.filters[key] = value;
+  const input = key === "search" ? elements.search : elements[key];
+  if (input) input.value = value;
   render();
 }
 
@@ -183,6 +218,19 @@ function initializeFilters(entries) {
     elements.year.value = "";
     elements.resource.value = "";
     render();
+  });
+  elements.quickFilters.addEventListener("click", (event) => {
+    const button = event.target.closest("button");
+    if (!button) return;
+
+    if (button.dataset.filterType) {
+      setFilter("type", button.dataset.filterType);
+      return;
+    }
+
+    if (button.dataset.filterResource) {
+      setFilter("resource", button.dataset.filterResource);
+    }
   });
 
   const params = new URLSearchParams(window.location.search);

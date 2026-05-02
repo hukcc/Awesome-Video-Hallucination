@@ -4,17 +4,31 @@
 
 A curated and structured collection of papers on **hallucination in Video Large Language Models (Vid-LLMs)**, covering **29 evaluation benchmarks** and **42 mitigation methods**. Automatically updated monthly via arXiv search.
 
-> 📄 **Based on the survey**: *[Distorted or Fabricated? A Survey on Hallucination in Video LLMs](https://arxiv.org/abs/2604.12944)*
-
-> 🔎 **Interactive browser**: [Search and filter the paper database](https://hukcc.github.io/Awesome-Video-Hallucination/)
-
-![Framework overview](imgs/teaser.png)
+<table>
+<tr>
+<td width="50%" align="center" valign="top">
+<a href="https://arxiv.org/abs/2604.12944"><img src="imgs/teaser.png" alt="Survey overview" width="100%"></a>
+<br>
+<b><a href="https://arxiv.org/abs/2604.12944">Survey Paper</a></b>
+<br>
+<sub>Distorted or Fabricated? A Survey on Hallucination in Video LLMs</sub>
+</td>
+<td width="50%" align="center" valign="top">
+<a href="https://hukcc.github.io/Awesome-Video-Hallucination/"><img src="imgs/browser_preview.png" alt="Interactive paper browser preview" width="100%"></a>
+<br>
+<b><a href="https://hukcc.github.io/Awesome-Video-Hallucination/">Interactive Paper Browser</a></b>
+<br>
+<sub>Search and filter papers by type, mechanism, venue, year, and resources</sub>
+</td>
+</tr>
+</table>
 
 ## Table of Contents
 
 - [Taxonomy of Video Hallucinations](#taxonomy-of-video-hallucinations)
 - [Evaluation Benchmarks](#evaluation-benchmarks) — 29 benchmarks
 - [Mitigation Strategies](#mitigation-strategies) — 42 methods
+- [Citation](#citation)
 - [Contributing](#contributing)
 
 ---
@@ -997,6 +1011,21 @@ We organize video hallucinations into two mechanism-level families: **Dynamic Di
 </table>
 
 </details>
+
+---
+
+## Citation
+
+If you find this repository or survey useful, please cite:
+
+```bibtex
+@article{huang2026distorted,
+  title={Distorted or Fabricated? A Survey on Hallucination in Video LLMs},
+  author={Huang, Yiyang and Zhang, Yitian and Wang, Yizhou and Zhang, Mingyuan and Shi, Liang and Zeng, Huimin and Fu, Yun},
+  journal={arXiv preprint arXiv:2604.12944},
+  year={2026}
+}
+```
 
 ---
 

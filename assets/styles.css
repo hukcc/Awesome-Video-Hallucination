@@ -81,6 +81,35 @@ h1 {
   font-size: 1.08rem;
 }
 
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.35rem;
+}
+
+.button-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.button-link.primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.button-link:hover {
+  text-decoration: none;
+  border-color: var(--accent-strong);
+}
+
 .stats {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -114,6 +143,26 @@ main {
   max-width: 1180px;
   margin: 0 auto;
   padding: 1.5rem 1.25rem 3rem;
+}
+
+.quick-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.quick-links button {
+  width: auto;
+  min-height: 38px;
+  background: #fff;
+  color: var(--accent);
+  border-color: var(--line);
+  font-weight: 700;
+}
+
+.quick-links button:hover {
+  color: #fff;
 }
 
 .toolbar {
@@ -289,6 +338,27 @@ button:hover {
   border-radius: 6px;
   background: #fff;
   font-size: 0.86rem;
+}
+
+.copy-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.copy-actions button {
+  width: auto;
+  min-height: 34px;
+  padding: 0.35rem 0.6rem;
+  background: #f7f9fc;
+  color: var(--ink);
+  border-color: var(--line);
+  font-size: 0.84rem;
+}
+
+.copy-actions button:hover {
+  background: var(--ink);
+  color: #fff;
 }
 
 .resource-links span {
