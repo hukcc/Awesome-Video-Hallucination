@@ -2,11 +2,11 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv-2604.12944-b31b1b.svg)](https://arxiv.org/abs/2604.12944) [![ACL 2026 Findings](https://img.shields.io/badge/ACL%202026-Findings-2ea44f)](https://arxiv.org/abs/2604.12944) [![Papers](https://img.shields.io/badge/Papers-71-blue.svg)](#evaluation-benchmarks) [![Auto arXiv Update](https://img.shields.io/badge/arXiv%20Update-Monthly-blueviolet.svg)](new_papers.md) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Last Commit](https://img.shields.io/github/last-commit/hukcc/Awesome-Video-Hallucination)](https://github.com/hukcc/Awesome-Video-Hallucination/commits/main)
 
-A curated and structured collection of papers on **hallucination in Video Large Language Models (Vid-LLMs)**, covering **29 evaluation benchmarks** and **42 mitigation methods**. Automatically updated monthly via arXiv search.
+A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs)**, covering **29 benchmarks** and **42 mitigation methods**. Updated monthly via arXiv search.
 
 > 📄 **Survey Paper**: *[Distorted or Fabricated? A Survey on Hallucination in Video LLMs](https://arxiv.org/abs/2604.12944)*
 
-> 🔎 **Interactive Browser**: [Search and filter the paper database](https://hukcc.github.io/Awesome-Video-Hallucination/) by type, mechanism, venue, year, and resources.
+> 🔎 **Interactive Browser**: [Search and filter papers](https://hukcc.github.io/Awesome-Video-Hallucination/) by type, mechanism, venue, year, and resources.
 
 ![Framework overview](imgs/teaser.png)
 
@@ -22,15 +22,15 @@ A curated and structured collection of papers on **hallucination in Video Large 
 
 ## Latest Updates
 
-- **[2026/05]** Classified recent papers from [`new_papers.md`](new_papers.md), expanding the taxonomy to 29 video hallucination benchmarks and 42 mitigation methods.
+- **[2026/05]** Classified recent papers from [`new_papers.md`](new_papers.md), expanding the list to 29 benchmarks and 42 mitigation methods.
 - **[2026/04]** Our survey has been accepted to **ACL 2026 Findings**. 👉 [arXiv:2604.12944](https://arxiv.org/abs/2604.12944)
-- **[2026/03]** Automated monthly arXiv paper update is now live. A GitHub Action runs on the 1st of each month to find new video hallucination papers and commit directly to the main branch. Newly discovered papers that have not yet been classified can be found in [`new_papers.md`](new_papers.md).
+- **[2026/03]** Monthly arXiv search is live. Newly found, unclassified papers are listed in [`new_papers.md`](new_papers.md).
 
 ---
 
 ## Taxonomy of Video Hallucinations
 
-We organize video hallucinations into two mechanism-level families: **Dynamic Distortion**, where models misrepresent temporal progression or references, and **Content Fabrication**, where outputs are weakly grounded in the video evidence. The paper lists below follow this taxonomy across four subtypes: spatiotemporal dynamics, referential inconsistency, context-driven fabrication, and audio-visual conflict.
+We organize video hallucinations into two mechanism-level families: **Dynamic Distortion** and **Content Fabrication**. The paper lists below follow four subtypes: spatiotemporal dynamics, referential inconsistency, context-driven fabrication, and audio-visual conflict.
 
 <p align="center">
     <img src="imgs/fig2_taxonomy.png" width="96%" />
@@ -43,7 +43,7 @@ We organize video hallucinations into two mechanism-level families: **Dynamic Di
 ## Evaluation Benchmarks
 
 > [!NOTE]
-> Benchmarks are organized by our mechanism-driven taxonomy. Each entry includes venue, date, and available project, code, dataset, or leaderboard links.
+> Benchmarks follow the taxonomy above. Each entry includes venue, date, and available resources.
 >
 > **Legend:** <a href="#"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?logo=readthedocs&logoColor=white" alt="page"></a> = Project Page &ensp; <a href="#"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a> = GitHub Repository &ensp; <a href="#"><img src="https://img.shields.io/badge/Dataset-HuggingFace-yellow?logo=huggingface" alt="dataset"></a> = Dataset &ensp; `-` = Not Available
 
@@ -453,7 +453,7 @@ We organize video hallucinations into two mechanism-level families: **Dynamic Di
 ## Mitigation Strategies
 
 > [!NOTE]
-> Methods are classified by the type of hallucination they target. The **Training-Free** column indicates whether the method requires additional training (✘) or not (✔︎).
+> Methods are grouped by target hallucination type. **Training-Free** marks whether extra training is required (✘) or not (✔︎).
 
 ### 🔵 Spatiotemporal Dynamics Mitigation (Dynamic Distortion)
 
@@ -1003,7 +1003,7 @@ We organize video hallucinations into two mechanism-level families: **Dynamic Di
 
 ## Citation
 
-If you find this repository or survey useful, please cite:
+If this repository or survey helps your work, please cite:
 
 ```bibtex
 @article{huang2026distorted,
@@ -1019,12 +1019,12 @@ If you find this repository or survey useful, please cite:
 ## Contributing
 
 > [!TIP]
-> We welcome contributions from the community! Here's how you can help:
+> Contributions are welcome:
 >
 > **🔀 Pull Request** — Add new papers, update resource links, or correct errors
 > <br>**🐛 Open an Issue** — Report mistakes, suggest missing papers, or request features
 
-Current resource gaps tracked in [`data/papers.json`](data/papers.json):
+Resource gaps tracked in [`data/papers.json`](data/papers.json):
 
 - Add official code links for **33** entries. Browse: [missing code](https://hukcc.github.io/Awesome-Video-Hallucination/?resource=missing-code)
 - Add official project pages for **58** entries. Browse: [missing project pages](https://hukcc.github.io/Awesome-Video-Hallucination/?resource=missing-project)
@@ -1035,7 +1035,7 @@ Current resource gaps tracked in [`data/papers.json`](data/papers.json):
 
 <br>
 
-Please follow this table structure when adding new entries:
+Use this structure for new entries:
 
 ```
 | [**Paper Title**](paper_link) | Method/Benchmark Name | Venue | MM/YYYY | Resources |
@@ -1047,7 +1047,7 @@ Please follow this table structure when adding new entries:
 
 <div align="center">
 
-**If you find this repository helpful, please consider giving it a** ⭐
+**If this repository helps, please consider giving it a** ⭐
 
 *Maintained by the [SmileLab](https://web.northeastern.edu/smilelab/) team at Northeastern University.*
 
