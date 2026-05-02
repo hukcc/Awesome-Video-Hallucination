@@ -8,18 +8,6 @@ A curated and structured collection of papers on **hallucination in Video Large 
 
 ![Framework overview](imgs/teaser.png)
 
-## Overview at a Glance
-
-<table width="100%">
-<tr>
-<td width="20%" align="center"><h3>📊 29</h3><sub>Evaluation Benchmarks</sub></td>
-<td width="20%" align="center"><h3>🛠️ 42</h3><sub>Mitigation Methods</sub></td>
-<td width="20%" align="center"><h3>🏛️ 15+</h3><sub>Top-tier Venues</sub></td>
-<td width="20%" align="center"><h3>📅 2023–2026</h3><sub>Coverage Period</sub></td>
-<td width="20%" align="center"><h3>🤖 Auto</h3><sub>Monthly Paper Update</sub></td>
-</tr>
-</table>
-
 ## 🔔 News
 
 - **[2026/05]** 📚 Classified recent papers from [`new_papers.md`](new_papers.md), expanding the taxonomy to 29 video hallucination benchmarks and 42 mitigation methods.
@@ -28,15 +16,12 @@ A curated and structured collection of papers on **hallucination in Video Large 
 
 ---
 
-<details>
-<summary><b>📖 Table of Contents</b></summary>
+## Table of Contents
 
-&emsp;📋 [Taxonomy of Video Hallucinations](#taxonomy-of-video-hallucinations)
-<br>&emsp;📊 [Evaluation Benchmarks](#evaluation-benchmarks) — 29 benchmarks
-<br>&emsp;🛠️ [Mitigation Strategies](#mitigation-strategies) — 42 methods
-<br>&emsp;🤝 [Contributing](#contributing)
-
-</details>
+- [Taxonomy of Video Hallucinations](#taxonomy-of-video-hallucinations)
+- [Evaluation Benchmarks](#evaluation-benchmarks) — 29 benchmarks
+- [Mitigation Strategies](#mitigation-strategies) — 42 methods
+- [Contributing](#contributing)
 
 ---
 
