@@ -30,8 +30,6 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 
 ## Taxonomy of Video Hallucinations
 
-We organize video hallucinations into two mechanism-level families: **Dynamic Distortion** and **Content Fabrication**. The paper lists below follow four subtypes: spatiotemporal dynamics, referential inconsistency, context-driven fabrication, and audio-visual conflict.
-
 <p align="center">
     <img src="imgs/fig2_taxonomy.png" width="96%" />
     <br>
