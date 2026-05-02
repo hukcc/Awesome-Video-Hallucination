@@ -4,24 +4,13 @@
 
 A curated and structured collection of papers on **hallucination in Video Large Language Models (Vid-LLMs)**, covering **29 evaluation benchmarks** and **42 mitigation methods**. Automatically updated monthly via arXiv search.
 
-<table>
-<tr>
-<td width="50%" align="center" valign="top">
-<a href="https://arxiv.org/abs/2604.12944"><img src="imgs/teaser.png" alt="Survey overview" width="100%"></a>
-<br>
-<b><a href="https://arxiv.org/abs/2604.12944">Survey Paper</a></b>
-<br>
-<sub>Distorted or Fabricated? A Survey on Hallucination in Video LLMs</sub>
-</td>
-<td width="50%" align="center" valign="top">
-<a href="https://hukcc.github.io/Awesome-Video-Hallucination/"><img src="imgs/browser_preview.png" alt="Interactive paper browser preview" width="100%"></a>
-<br>
-<b><a href="https://hukcc.github.io/Awesome-Video-Hallucination/">Interactive Paper Browser</a></b>
-<br>
-<sub>Search and filter papers by type, mechanism, venue, year, and resources</sub>
-</td>
-</tr>
-</table>
+> 📄 **Survey Paper**: *[Distorted or Fabricated? A Survey on Hallucination in Video LLMs](https://arxiv.org/abs/2604.12944)*
+
+![Framework overview](imgs/teaser.png)
+
+> 🔎 **Interactive Browser**: [Search and filter the paper database](https://hukcc.github.io/Awesome-Video-Hallucination/) by type, mechanism, venue, year, and resources.
+
+![Interactive paper browser preview](imgs/browser_preview.png)
 
 ## Table of Contents
 
