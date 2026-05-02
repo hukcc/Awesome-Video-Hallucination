@@ -12,7 +12,6 @@ A curated and structured collection of papers on **hallucination in Video Large 
 
 ## Table of Contents
 
-- [Help Wanted: Missing Resources](#help-wanted-missing-resources)
 - [Taxonomy of Video Hallucinations](#taxonomy-of-video-hallucinations)
 - [Evaluation Benchmarks](#evaluation-benchmarks) — 29 benchmarks
 - [Mitigation Strategies](#mitigation-strategies) — 42 methods
@@ -25,16 +24,6 @@ A curated and structured collection of papers on **hallucination in Video Large 
 - **[2026/05]** Classified recent papers from [`new_papers.md`](new_papers.md), expanding the taxonomy to 29 video hallucination benchmarks and 42 mitigation methods.
 - **[2026/04]** Our survey has been accepted to **ACL 2026 Findings**. 👉 [arXiv:2604.12944](https://arxiv.org/abs/2604.12944)
 - **[2026/03]** Automated monthly arXiv paper update is now live. A GitHub Action runs on the 1st of each month to find new video hallucination papers and commit directly to the main branch. Newly discovered papers that have not yet been classified can be found in [`new_papers.md`](new_papers.md).
-
----
-
-## Help Wanted: Missing Resources
-
-We track resource gaps in [`data/papers.json`](data/papers.json). Current priorities:
-
-- Add official code links for **33** entries. Browse: [missing code](https://hukcc.github.io/Awesome-Video-Hallucination/?resource=missing-code)
-- Add official project pages for **58** entries. Browse: [missing project pages](https://hukcc.github.io/Awesome-Video-Hallucination/?resource=missing-project)
-- Add official dataset or leaderboard links when available.
 
 ---
 
@@ -1018,6 +1007,12 @@ We organize video hallucinations into two mechanism-level families: **Dynamic Di
 >
 > **🔀 Pull Request** — Add new papers, update resource links, or correct errors
 > <br>**🐛 Open an Issue** — Report mistakes, suggest missing papers, or request features
+
+Current resource gaps tracked in [`data/papers.json`](data/papers.json):
+
+- Add official code links for **33** entries. Browse: [missing code](https://hukcc.github.io/Awesome-Video-Hallucination/?resource=missing-code)
+- Add official project pages for **58** entries. Browse: [missing project pages](https://hukcc.github.io/Awesome-Video-Hallucination/?resource=missing-project)
+- Add official dataset or leaderboard links when available.
 
 <details>
 <summary><b>📝 PR Format Guide</b></summary>
