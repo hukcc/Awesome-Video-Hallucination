@@ -1,6 +1,6 @@
 # Awesome-Video-Hallucination [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-[![arXiv](https://img.shields.io/badge/arXiv-2604.12944-b31b1b.svg)](https://arxiv.org/abs/2604.12944) [![ACL 2026 Findings](https://img.shields.io/badge/ACL%202026-Findings-2ea44f)](https://arxiv.org/abs/2604.12944) [![Papers](https://img.shields.io/badge/Papers-71-blue.svg)](#evaluation-benchmarks) [![Auto arXiv Update](https://img.shields.io/badge/arXiv%20Update-Monthly-blueviolet.svg)](new_papers.md) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)](#contributing) [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://github.com) [![Last Commit](https://img.shields.io/github/last-commit/hukcc/Awesome-Video-Hallucination)](https://github.com/hukcc/Awesome-Video-Hallucination/commits/main) ![Visitors](https://komarev.com/ghpvc/?username=hukcc-Awesome-Video-Hallucination&label=Visitors&color=blue&style=flat)
+[![arXiv](https://img.shields.io/badge/arXiv-2604.12944-b31b1b.svg)](https://arxiv.org/abs/2604.12944) [![ACL 2026 Findings](https://img.shields.io/badge/ACL%202026-Findings-2ea44f)](https://arxiv.org/abs/2604.12944) [![Papers](https://img.shields.io/badge/Papers-71-blue.svg)](#evaluation-benchmarks) [![Auto arXiv Update](https://img.shields.io/badge/arXiv%20Update-Monthly-blueviolet.svg)](new_papers.md) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Last Commit](https://img.shields.io/github/last-commit/hukcc/Awesome-Video-Hallucination)](https://github.com/hukcc/Awesome-Video-Hallucination/commits/main)
 
 A curated and structured collection of papers on **hallucination in Video Large Language Models (Vid-LLMs)**, covering **29 evaluation benchmarks** and **42 mitigation methods**. Automatically updated monthly via arXiv search.
 
@@ -28,20 +28,12 @@ A curated and structured collection of papers on **hallucination in Video Large 
 
 ---
 
-<details open>
+<details>
 <summary><b>📖 Table of Contents</b></summary>
 
 &emsp;📋 [Taxonomy of Video Hallucinations](#taxonomy-of-video-hallucinations)
 <br>&emsp;📊 [Evaluation Benchmarks](#evaluation-benchmarks) — 29 benchmarks
-<br>&emsp;&emsp;&emsp;🔵 [Spatiotemporal Dynamics](#-spatiotemporal-dynamics-benchmarks-dynamic-distortion)
-<br>&emsp;&emsp;&emsp;🟢 [Referential Inconsistency](#-referential-inconsistency-benchmarks-dynamic-distortion)
-<br>&emsp;&emsp;&emsp;🟠 [Context-Driven Fabrication](#-context-driven-fabrication-benchmarks-content-fabrication)
-<br>&emsp;&emsp;&emsp;🟣 [Audio-Visual Conflict](#-audio-visual-conflict-benchmarks-content-fabrication)
 <br>&emsp;🛠️ [Mitigation Strategies](#mitigation-strategies) — 42 methods
-<br>&emsp;&emsp;&emsp;🔵 [Spatiotemporal Dynamics](#-spatiotemporal-dynamics-mitigation-dynamic-distortion)
-<br>&emsp;&emsp;&emsp;🟢 [Referential Inconsistency](#-referential-inconsistency-mitigation-dynamic-distortion)
-<br>&emsp;&emsp;&emsp;🟠 [Context-Driven Fabrication](#-context-driven-fabrication-mitigation-content-fabrication)
-<br>&emsp;&emsp;&emsp;🟣 [Audio-Visual Conflict](#-audio-visual-conflict-mitigation-content-fabrication)
 <br>&emsp;🤝 [Contributing](#contributing)
 
 </details>
@@ -50,32 +42,7 @@ A curated and structured collection of papers on **hallucination in Video Large 
 
 ## Taxonomy of Video Hallucinations
 
-We propose a **mechanism-driven taxonomy** that classifies hallucinations in Video Large Language Models (Vid-LLMs) into two primary types:
-
-<table>
-<tr>
-<td width="50%" valign="top">
-
-🔷 **Dynamic Distortion**
-
-The model correctly detects entities but misrepresents their temporal progression or referential consistency.
-
-- 🔵 *Spatiotemporal Dynamics* — Errors in event ordering, duration estimation, or frequency counting.
-- 🟢 *Referential Inconsistency* — Characters or scenes are conflated across temporal boundaries.
-
-</td>
-<td width="50%" valign="top">
-
-🔶 **Content Fabrication**
-
-The model produces outputs that lack grounding in visual evidence and are instead influenced by learned priors.
-
-- 🟠 *Context-Driven Fabrication* — Common object-action or scene-event associations lead to unsupported predictions.
-- 🟣 *Audio-Visual Conflict* — Dominant auditory cues override visual input.
-
-</td>
-</tr>
-</table>
+We organize video hallucinations into two mechanism-level families: **Dynamic Distortion**, where models misrepresent temporal progression or references, and **Content Fabrication**, where outputs are weakly grounded in the video evidence. The paper lists below follow this taxonomy across four subtypes: spatiotemporal dynamics, referential inconsistency, context-driven fabrication, and audio-visual conflict.
 
 <p align="center">
     <img src="imgs/taxonomy.png" width="96%" />
@@ -88,13 +55,13 @@ The model produces outputs that lack grounding in visual evidence and are instea
 ## Evaluation Benchmarks
 
 > [!NOTE]
-> Benchmarks are organized by our mechanism-driven taxonomy. Each entry includes venue, date, and links to code/project pages where available.
+> Benchmarks are organized by our mechanism-driven taxonomy. Each entry includes venue, date, and available project, code, dataset, or leaderboard links.
 >
-> **Legend:** <a href="#"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?logo=readthedocs&logoColor=white" alt="page"></a> = Project Page &ensp; <a href="#"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a> = GitHub Repository &ensp; `-` = Not Available
+> **Legend:** <a href="#"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?logo=readthedocs&logoColor=white" alt="page"></a> = Project Page &ensp; <a href="#"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a> = GitHub Repository &ensp; <a href="#"><img src="https://img.shields.io/badge/Dataset-HuggingFace-yellow?logo=huggingface" alt="dataset"></a> = Dataset &ensp; `-` = Not Available
 
 ### 🔵 Spatiotemporal Dynamics Benchmarks (Dynamic Distortion)
 
-<details open>
+<details>
 <summary><b>Event Misordering</b> (5 papers)</summary>
 
 <table width="100%">
@@ -104,7 +71,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <th width="12%" align="center">Benchmark</th>
       <th width="10%" align="center">Venue</th>
       <th width="7%" align="center">Date</th>
-      <th width="17%" align="center">Code</th>
+      <th width="17%" align="center">Resources</th>
     </tr>
   </thead>
   <tbody>
@@ -148,7 +115,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
 
 </details>
 
-<details open>
+<details>
 <summary><b>Duration Distortion</b> (2 papers)</summary>
 
 <table width="100%">
@@ -158,7 +125,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <th width="12%" align="center">Benchmark</th>
       <th width="10%" align="center">Venue</th>
       <th width="7%" align="center">Date</th>
-      <th width="17%" align="center">Code</th>
+      <th width="17%" align="center">Resources</th>
     </tr>
   </thead>
   <tbody>
@@ -181,7 +148,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
 
 </details>
 
-<details open>
+<details>
 <summary><b>Frequency Confusion</b> (2 papers)</summary>
 
 <table width="100%">
@@ -191,7 +158,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <th width="12%" align="center">Benchmark</th>
       <th width="10%" align="center">Venue</th>
       <th width="7%" align="center">Date</th>
-      <th width="17%" align="center">Code</th>
+      <th width="17%" align="center">Resources</th>
     </tr>
   </thead>
   <tbody>
@@ -216,7 +183,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
 
 ### 🟢 Referential Inconsistency Benchmarks (Dynamic Distortion)
 
-<details open>
+<details>
 <summary><b>Character Conflation</b> (2 papers)</summary>
 
 <table width="100%">
@@ -226,7 +193,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <th width="12%" align="center">Benchmark</th>
       <th width="10%" align="center">Venue</th>
       <th width="7%" align="center">Date</th>
-      <th width="17%" align="center">Code</th>
+      <th width="17%" align="center">Resources</th>
     </tr>
   </thead>
   <tbody>
@@ -249,7 +216,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
 
 </details>
 
-<details open>
+<details>
 <summary><b>Scene Conflation</b> (1 paper)</summary>
 
 <table width="100%">
@@ -259,7 +226,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <th width="12%" align="center">Benchmark</th>
       <th width="10%" align="center">Venue</th>
       <th width="7%" align="center">Date</th>
-      <th width="17%" align="center">Code</th>
+      <th width="17%" align="center">Resources</th>
     </tr>
   </thead>
   <tbody>
@@ -277,7 +244,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
 
 ### 🟠 Context-Driven Fabrication Benchmarks (Content Fabrication)
 
-<details open>
+<details>
 <summary><b>Object-Action Hallucination</b> (2 papers)</summary>
 
 <table width="100%">
@@ -287,7 +254,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <th width="12%" align="center">Benchmark</th>
       <th width="10%" align="center">Venue</th>
       <th width="7%" align="center">Date</th>
-      <th width="17%" align="center">Code</th>
+      <th width="17%" align="center">Resources</th>
     </tr>
   </thead>
   <tbody>
@@ -310,7 +277,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
 
 </details>
 
-<details open>
+<details>
 <summary><b>Scene-Event Hallucination</b> (4 papers)</summary>
 
 <table width="100%">
@@ -320,7 +287,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <th width="12%" align="center">Benchmark</th>
       <th width="10%" align="center">Venue</th>
       <th width="7%" align="center">Date</th>
-      <th width="17%" align="center">Code</th>
+      <th width="17%" align="center">Resources</th>
     </tr>
   </thead>
   <tbody>
@@ -357,7 +324,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
 
 </details>
 
-<details open>
+<details>
 <summary><b>Compositional and Factuality Hallucination</b> (6 papers)</summary>
 
 <table width="100%">
@@ -367,7 +334,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <th width="12%" align="center">Benchmark</th>
       <th width="10%" align="center">Venue</th>
       <th width="7%" align="center">Date</th>
-      <th width="17%" align="center">Code</th>
+      <th width="17%" align="center">Resources</th>
     </tr>
   </thead>
   <tbody>
@@ -420,7 +387,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
 
 ### 🟣 Audio-Visual Conflict Benchmarks (Content Fabrication)
 
-<details open>
+<details>
 <summary><b>Action Attribution</b> (4 papers)</summary>
 
 <table width="100%">
@@ -430,7 +397,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <th width="12%" align="center">Benchmark</th>
       <th width="10%" align="center">Venue</th>
       <th width="7%" align="center">Date</th>
-      <th width="17%" align="center">Code</th>
+      <th width="17%" align="center">Resources</th>
     </tr>
   </thead>
   <tbody>
@@ -467,7 +434,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
 
 </details>
 
-<details open>
+<details>
 <summary><b>Emotion Inference</b> (1 paper)</summary>
 
 <table width="100%">
@@ -477,7 +444,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <th width="12%" align="center">Benchmark</th>
       <th width="10%" align="center">Venue</th>
       <th width="7%" align="center">Date</th>
-      <th width="17%" align="center">Code</th>
+      <th width="17%" align="center">Resources</th>
     </tr>
   </thead>
   <tbody>
@@ -502,7 +469,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
 
 ### 🔵 Spatiotemporal Dynamics Mitigation (Dynamic Distortion)
 
-<details open>
+<details>
 <summary><b>Event Misordering</b> (5 papers)</summary>
 
 <table width="100%">
@@ -513,7 +480,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <th width="10%" align="center">Venue</th>
       <th width="7%" align="center">Date</th>
       <th width="11%" align="center">Training-Free</th>
-      <th width="17%" align="center">Code</th>
+      <th width="17%" align="center">Resources</th>
     </tr>
   </thead>
   <tbody>
@@ -562,7 +529,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
 
 </details>
 
-<details open>
+<details>
 <summary><b>Duration Distortion</b> (8 papers)</summary>
 
 <table width="100%">
@@ -573,7 +540,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <th width="10%" align="center">Venue</th>
       <th width="7%" align="center">Date</th>
       <th width="11%" align="center">Training-Free</th>
-      <th width="17%" align="center">Code</th>
+      <th width="17%" align="center">Resources</th>
     </tr>
   </thead>
   <tbody>
@@ -646,7 +613,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
 
 </details>
 
-<details open>
+<details>
 <summary><b>Frequency Confusion</b> (3 papers)</summary>
 
 <table width="100%">
@@ -657,7 +624,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <th width="10%" align="center">Venue</th>
       <th width="7%" align="center">Date</th>
       <th width="11%" align="center">Training-Free</th>
-      <th width="17%" align="center">Code</th>
+      <th width="17%" align="center">Resources</th>
     </tr>
   </thead>
   <tbody>
@@ -692,7 +659,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
 
 ### 🟢 Referential Inconsistency Mitigation (Dynamic Distortion)
 
-<details open>
+<details>
 <summary><b>Character Conflation</b> (2 papers)</summary>
 
 <table width="100%">
@@ -703,7 +670,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <th width="10%" align="center">Venue</th>
       <th width="7%" align="center">Date</th>
       <th width="11%" align="center">Training-Free</th>
-      <th width="17%" align="center">Code</th>
+      <th width="17%" align="center">Resources</th>
     </tr>
   </thead>
   <tbody>
@@ -728,7 +695,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
 
 </details>
 
-<details open>
+<details>
 <summary><b>Scene Conflation</b> (2 papers)</summary>
 
 <table width="100%">
@@ -739,7 +706,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <th width="10%" align="center">Venue</th>
       <th width="7%" align="center">Date</th>
       <th width="11%" align="center">Training-Free</th>
-      <th width="17%" align="center">Code</th>
+      <th width="17%" align="center">Resources</th>
     </tr>
   </thead>
   <tbody>
@@ -766,7 +733,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
 
 ### 🟠 Context-Driven Fabrication Mitigation (Content Fabrication)
 
-<details open>
+<details>
 <summary><b>Object-Action Hallucination</b> (2 papers)</summary>
 
 <table width="100%">
@@ -777,7 +744,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <th width="10%" align="center">Venue</th>
       <th width="7%" align="center">Date</th>
       <th width="11%" align="center">Training-Free</th>
-      <th width="17%" align="center">Code</th>
+      <th width="17%" align="center">Resources</th>
     </tr>
   </thead>
   <tbody>
@@ -802,7 +769,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
 
 </details>
 
-<details open>
+<details>
 <summary><b>Scene-Event Hallucination</b> (9 papers)</summary>
 
 <table width="100%">
@@ -813,7 +780,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <th width="10%" align="center">Venue</th>
       <th width="7%" align="center">Date</th>
       <th width="11%" align="center">Training-Free</th>
-      <th width="17%" align="center">Code</th>
+      <th width="17%" align="center">Resources</th>
     </tr>
   </thead>
   <tbody>
@@ -894,7 +861,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
 
 </details>
 
-<details open>
+<details>
 <summary><b>Both Object-Action & Scene-Event</b> (7 papers)</summary>
 
 <table width="100%">
@@ -905,7 +872,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <th width="10%" align="center">Venue</th>
       <th width="7%" align="center">Date</th>
       <th width="11%" align="center">Training-Free</th>
-      <th width="17%" align="center">Code</th>
+      <th width="17%" align="center">Resources</th>
     </tr>
   </thead>
   <tbody>
@@ -972,7 +939,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
 
 ### 🟣 Audio-Visual Conflict Mitigation (Content Fabrication)
 
-<details open>
+<details>
 <summary><b>Action Attribution</b> (3 papers)</summary>
 
 <table width="100%">
@@ -983,7 +950,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <th width="10%" align="center">Venue</th>
       <th width="7%" align="center">Date</th>
       <th width="11%" align="center">Training-Free</th>
-      <th width="17%" align="center">Code</th>
+      <th width="17%" align="center">Resources</th>
     </tr>
   </thead>
   <tbody>
@@ -1016,7 +983,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
 
 </details>
 
-<details open>
+<details>
 <summary><b>Emotion Inference</b> (1 paper)</summary>
 
 <table width="100%">
@@ -1027,7 +994,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
       <th width="10%" align="center">Venue</th>
       <th width="7%" align="center">Date</th>
       <th width="11%" align="center">Training-Free</th>
-      <th width="17%" align="center">Code</th>
+      <th width="17%" align="center">Resources</th>
     </tr>
   </thead>
   <tbody>
@@ -1051,7 +1018,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
 > [!TIP]
 > We welcome contributions from the community! Here's how you can help:
 >
-> **🔀 Pull Request** — Add new papers, update code links, or correct errors
+> **🔀 Pull Request** — Add new papers, update resource links, or correct errors
 > <br>**🐛 Open an Issue** — Report mistakes, suggest missing papers, or request features
 
 <details>
@@ -1062,7 +1029,7 @@ The model produces outputs that lack grounding in visual evidence and are instea
 Please follow this table structure when adding new entries:
 
 ```
-| [**Paper Title**](paper_link) | Method/Benchmark Name | Venue | MM/YYYY | [code](code_link) |
+| [**Paper Title**](paper_link) | Method/Benchmark Name | Venue | MM/YYYY | Resources |
 ```
 
 </details>
