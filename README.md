@@ -6,9 +6,9 @@ A curated and structured collection of papers on **hallucination in Video Large 
 
 > 📄 **Survey Paper**: *[Distorted or Fabricated? A Survey on Hallucination in Video LLMs](https://arxiv.org/abs/2604.12944)*
 
-![Framework overview](imgs/teaser.png)
-
 > 🔎 **Interactive Browser**: [Search and filter the paper database](https://hukcc.github.io/Awesome-Video-Hallucination/) by type, mechanism, venue, year, and resources.
+
+![Framework overview](imgs/teaser.png)
 
 ## Table of Contents
 
