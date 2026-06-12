@@ -13,7 +13,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 ## Table of Contents
 
 - [Taxonomy of Video Hallucinations](#taxonomy-of-video-hallucinations)
-- [Evaluation Benchmarks](#evaluation-benchmarks) — 29 benchmarks
+- [Evaluation Benchmarks](#evaluation-benchmarks) — 30 benchmarks
 - [Mitigation Strategies](#mitigation-strategies) — 42 methods
 - [Citation](#citation)
 - [Contributing](#contributing)
@@ -231,7 +231,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 ### 🟠 Context-Driven Fabrication Benchmarks (Content Fabrication)
 
 <details open>
-<summary><b>Object-Action Hallucination</b> (2 papers)</summary>
+<summary><b>Object-Action Hallucination</b> (3 papers)</summary>
 
 <table width="100%">
   <thead>
@@ -244,6 +244,13 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td align="left"><a href="https://arxiv.org/abs/2603.24329"><b>GameplayQA: A Benchmarking Framework for Decision-Dense POV-Synced Multi-Video Understanding of 3D Virtual Agents</b></a></td>
+      <td align="center">GameplayQA</td>
+      <td align="center">ACL 2026</td>
+      <td align="center">03/2026</td>
+      <td align="center"><a href="https://hats-ict.github.io/gameplayqa/"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?logo=readthedocs&logoColor=white" alt="page"></a> <a href="https://github.com/HATS-ICT/GameplayQA"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a> <a href="https://huggingface.co/datasets/wangyz1999/GameplayQA"><img src="https://img.shields.io/badge/Dataset-HuggingFace-yellow?logo=huggingface" alt="dataset"></a></td>
+    </tr>
     <tr>
       <td align="left"><a href="https://arxiv.org/abs/2505.01481"><b>VideoHallu: Evaluating and Mitigating Multi-modal Hallucinations on Synthetic Video Understanding</b></a></td>
       <td align="center">VideoHallu</td>
