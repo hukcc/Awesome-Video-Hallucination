@@ -1,8 +1,8 @@
 {
   "generated_from": "README.md",
-  "entry_count": 71,
-  "benchmark_count": 29,
-  "mitigation_count": 42,
+  "entry_count": 78,
+  "benchmark_count": 34,
+  "mitigation_count": 44,
   "entries": [
     {
       "id": "benchmark--spatiotemporal-dynamics--event-misordering--vidhalluc--2412-03735",
@@ -141,8 +141,8 @@
       "subtype": "Duration Distortion",
       "name": "OVBench",
       "venue": "CVPR 2025",
-      "date": "01/2025",
-      "year": 2025,
+      "date": "12/2024",
+      "year": 2024,
       "training_free": null,
       "resources": {
         "project": "https://videochat-online.github.io/",
@@ -216,7 +216,7 @@
     },
     {
       "id": "benchmark--referential-inconsistency--character-conflation--mesh--2509-08538",
-      "title": "MESH: Measuring Hallucinations in Large Video Models",
+      "title": "MESH -- Understanding Videos Like Human: Measuring Hallucinations in Large Video Models",
       "paper_url": "https://arxiv.org/abs/2509.08538",
       "arxiv_id": "2509.08538",
       "type": "benchmark",
@@ -231,6 +231,48 @@
       "resources": {
         "project": null,
         "code": "https://github.com/HCYANG2000/MESH-Benchmark",
+        "dataset": null,
+        "leaderboard": null
+      }
+    },
+    {
+      "id": "benchmark--referential-inconsistency--character-conflation--toc-bench--2605-09904",
+      "title": "TOC-Bench: A Temporal Object Consistency Benchmark for Video Large Language Models",
+      "paper_url": "https://arxiv.org/abs/2605.09904",
+      "arxiv_id": "2605.09904",
+      "type": "benchmark",
+      "category": "Referential Inconsistency",
+      "mechanism": "Dynamic Distortion",
+      "subtype": "Character Conflation",
+      "name": "TOC-Bench",
+      "venue": "arXiv 2026",
+      "date": "05/2026",
+      "year": 2026,
+      "training_free": null,
+      "resources": {
+        "project": null,
+        "code": "https://github.com/cjzcjz666/toc_bench",
+        "dataset": null,
+        "leaderboard": null
+      }
+    },
+    {
+      "id": "benchmark--referential-inconsistency--character-conflation--stemo-bench--2605-08974",
+      "title": "Tracking the Truth: Object-Centric Spatio-Temporal Monitoring for Video Large Language Models",
+      "paper_url": "https://arxiv.org/abs/2605.08974",
+      "arxiv_id": "2605.08974",
+      "type": "benchmark",
+      "category": "Referential Inconsistency",
+      "mechanism": "Dynamic Distortion",
+      "subtype": "Character Conflation",
+      "name": "STEMO-Bench",
+      "venue": "arXiv 2026",
+      "date": "05/2026",
+      "year": 2026,
+      "training_free": null,
+      "resources": {
+        "project": null,
+        "code": "https://github.com/nguyentthong/video_hallucination",
         "dataset": null,
         "leaderboard": null
       }
@@ -253,6 +295,48 @@
         "project": null,
         "code": "https://github.com/hlsv02/ELV-Halluc",
         "dataset": null,
+        "leaderboard": null
+      }
+    },
+    {
+      "id": "benchmark--referential-inconsistency--scene-conflation--distractionbench--2605-27101",
+      "title": "Pop-Up Distractions Reveal Bag-of-Events Behavior in Video Large Language Models",
+      "paper_url": "https://arxiv.org/abs/2605.27101",
+      "arxiv_id": "2605.27101",
+      "type": "benchmark",
+      "category": "Referential Inconsistency",
+      "mechanism": "Dynamic Distortion",
+      "subtype": "Scene Conflation",
+      "name": "DistractionBench",
+      "venue": "arXiv 2026",
+      "date": "05/2026",
+      "year": 2026,
+      "training_free": null,
+      "resources": {
+        "project": null,
+        "code": null,
+        "dataset": null,
+        "leaderboard": null
+      }
+    },
+    {
+      "id": "benchmark--context-driven-fabrication--object-action-hallucination--gameplayqa--2603-24329",
+      "title": "GameplayQA: A Benchmarking Framework for Decision-Dense POV-Synced Multi-Video Understanding of 3D Virtual Agents",
+      "paper_url": "https://arxiv.org/abs/2603.24329",
+      "arxiv_id": "2603.24329",
+      "type": "benchmark",
+      "category": "Context-Driven Fabrication",
+      "mechanism": "Content Fabrication",
+      "subtype": "Object-Action Hallucination",
+      "name": "GameplayQA",
+      "venue": "ACL 2026",
+      "date": "03/2026",
+      "year": 2026,
+      "training_free": null,
+      "resources": {
+        "project": "https://hats-ict.github.io/gameplayqa/",
+        "code": "https://github.com/HATS-ICT/GameplayQA",
+        "dataset": "https://huggingface.co/datasets/wangyz1999/GameplayQA",
         "leaderboard": null
       }
     },
@@ -572,6 +656,27 @@
       }
     },
     {
+      "id": "benchmark--audio-visual-conflict--action-attribution--traceav-bench--2605-07593",
+      "title": "TraceAV-Bench: Benchmarking Multi-Hop Trajectory Reasoning over Long Audio-Visual Videos",
+      "paper_url": "https://arxiv.org/abs/2605.07593",
+      "arxiv_id": "2605.07593",
+      "type": "benchmark",
+      "category": "Audio-Visual Conflict",
+      "mechanism": "Content Fabrication",
+      "subtype": "Action Attribution",
+      "name": "TraceAV-Bench",
+      "venue": "arXiv 2026",
+      "date": "05/2026",
+      "year": 2026,
+      "training_free": null,
+      "resources": {
+        "project": null,
+        "code": null,
+        "dataset": null,
+        "leaderboard": null
+      }
+    },
+    {
       "id": "benchmark--audio-visual-conflict--action-attribution--avhallubench--2405-13684",
       "title": "CrossCheckGPT: Universal Hallucination Ranking for Multimodal Foundation Models",
       "paper_url": "https://arxiv.org/abs/2405.13684",
@@ -657,7 +762,7 @@
     },
     {
       "id": "mitigation--spatiotemporal-dynamics--event-misordering--smartsight--2512-18671",
-      "title": "SmartSight: Mitigating Hallucination in Video-LLMs via Temporal Attention Collapse",
+      "title": "SmartSight: Mitigating Hallucination in Video-LLMs Without Compromising Video Understanding via Temporal Attention Collapse",
       "paper_url": "https://arxiv.org/abs/2512.18671",
       "arxiv_id": "2512.18671",
       "type": "mitigation",
@@ -720,7 +825,7 @@
     },
     {
       "id": "mitigation--spatiotemporal-dynamics--duration-distortion--temporal-insight--2401-09861",
-      "title": "Temporal Insight Enhancement: Mitigating Temporal Hallucination in Video Understanding by MLLMs",
+      "title": "Temporal Insight Enhancement: Mitigating Temporal Hallucination in Multimodal Large Language Models",
       "paper_url": "https://arxiv.org/abs/2401.09861",
       "arxiv_id": "2401.09861",
       "type": "mitigation",
@@ -992,6 +1097,27 @@
       }
     },
     {
+      "id": "mitigation--referential-inconsistency--character-conflation--stemo-track--2605-08974",
+      "title": "Tracking the Truth: Object-Centric Spatio-Temporal Monitoring for Video Large Language Models",
+      "paper_url": "https://arxiv.org/abs/2605.08974",
+      "arxiv_id": "2605.08974",
+      "type": "mitigation",
+      "category": "Referential Inconsistency",
+      "mechanism": "Dynamic Distortion",
+      "subtype": "Character Conflation",
+      "name": "STEMO-Track",
+      "venue": "arXiv 2026",
+      "date": "05/2026",
+      "year": 2026,
+      "training_free": "✔︎",
+      "resources": {
+        "project": null,
+        "code": "https://github.com/nguyentthong/video_hallucination",
+        "dataset": null,
+        "leaderboard": null
+      }
+    },
+    {
       "id": "mitigation--referential-inconsistency--scene-conflation--elv-halluc-dpo--2508-21496",
       "title": "ELV-Halluc: Benchmarking Semantic Aggregation Hallucinations in Long Video Understanding",
       "paper_url": "https://arxiv.org/abs/2508.21496",
@@ -1023,8 +1149,8 @@
       "subtype": "Scene Conflation",
       "name": "VideoChat-Online",
       "venue": "CVPR 2025",
-      "date": "01/2025",
-      "year": 2025,
+      "date": "12/2024",
+      "year": 2024,
       "training_free": "✘",
       "resources": {
         "project": "https://videochat-online.github.io/",
@@ -1071,6 +1197,27 @@
       "resources": {
         "project": null,
         "code": "https://github.com/Stevetich/EventHallusion",
+        "dataset": null,
+        "leaderboard": null
+      }
+    },
+    {
+      "id": "mitigation--context-driven-fabrication--object-action-hallucination--stvg-r1--2602-11730",
+      "title": "STVG-R1: Incentivizing Instance-Level Reasoning and Grounding in Videos via Reinforcement Learning",
+      "paper_url": "https://arxiv.org/abs/2602.11730",
+      "arxiv_id": "2602.11730",
+      "type": "mitigation",
+      "category": "Context-Driven Fabrication",
+      "mechanism": "Content Fabrication",
+      "subtype": "Object-Action Hallucination",
+      "name": "STVG-R1",
+      "venue": "arXiv 2026",
+      "date": "02/2026",
+      "year": 2026,
+      "training_free": "✘",
+      "resources": {
+        "project": null,
+        "code": null,
         "dataset": null,
         "leaderboard": null
       }
@@ -1161,7 +1308,7 @@
     },
     {
       "id": "mitigation--context-driven-fabrication--scene-event-hallucination--graphthinker--2602-17555",
-      "title": "GraphThinker: Reinforcing Video Reasoning with Event Graph Thinking",
+      "title": "GraphThinker: Reinforcing Temporally Grounded Video Reasoning with Event Graph Thinking",
       "paper_url": "https://arxiv.org/abs/2602.17555",
       "arxiv_id": "2602.17555",
       "type": "mitigation",
@@ -1203,7 +1350,7 @@
     },
     {
       "id": "mitigation--context-driven-fabrication--scene-event-hallucination--stscd--2601-22574",
-      "title": "Mitigating Hallucinations in Video Large Language Models via Spatiotemporal-Semantic Contrastive Decoding",
+      "title": "Enhancing Video Representations with Spatiotemporal-Semantic Residual to Mitigate Hallucinations in Video Large Multimodal Models",
       "paper_url": "https://arxiv.org/abs/2601.22574",
       "arxiv_id": "2601.22574",
       "type": "mitigation",

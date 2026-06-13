@@ -1,8 +1,8 @@
 # Awesome-Video-Hallucination [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-[![arXiv](https://img.shields.io/badge/arXiv-2604.12944-b31b1b.svg)](https://arxiv.org/abs/2604.12944) [![ACL 2026 Findings](https://img.shields.io/badge/ACL%202026-Findings-2ea44f)](https://arxiv.org/abs/2604.12944) [![Papers](https://img.shields.io/badge/Papers-71-blue.svg)](#evaluation-benchmarks) [![Auto arXiv Update](https://img.shields.io/badge/arXiv%20Update-Monthly-blueviolet.svg)](new_papers.md) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Last Commit](https://img.shields.io/github/last-commit/hukcc/Awesome-Video-Hallucination)](https://github.com/hukcc/Awesome-Video-Hallucination/commits/main)
+[![arXiv](https://img.shields.io/badge/arXiv-2604.12944-b31b1b.svg)](https://arxiv.org/abs/2604.12944) [![ACL 2026 Findings](https://img.shields.io/badge/ACL%202026-Findings-2ea44f)](https://arxiv.org/abs/2604.12944) [![Papers](https://img.shields.io/badge/Papers-78-blue.svg)](#evaluation-benchmarks) [![Auto arXiv Update](https://img.shields.io/badge/arXiv%20Update-Monthly-blueviolet.svg)](new_papers.md) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Last Commit](https://img.shields.io/github/last-commit/hukcc/Awesome-Video-Hallucination)](https://github.com/hukcc/Awesome-Video-Hallucination/commits/main)
 
-A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs)**, covering **29 benchmarks** and **42 mitigation methods**. Updated monthly via arXiv search.
+A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs)**, covering **34 benchmarks** and **44 mitigation methods**. Updated monthly via arXiv search.
 
 > 📄 **Survey Paper**: *[Distorted or Fabricated? A Survey on Hallucination in Video LLMs](https://arxiv.org/abs/2604.12944)*
 
@@ -13,8 +13,8 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 ## Table of Contents
 
 - [Taxonomy of Video Hallucinations](#taxonomy-of-video-hallucinations)
-- [Evaluation Benchmarks](#evaluation-benchmarks) — 30 benchmarks
-- [Mitigation Strategies](#mitigation-strategies) — 42 methods
+- [Evaluation Benchmarks](#evaluation-benchmarks) — 34 benchmarks
+- [Mitigation Strategies](#mitigation-strategies) — 44 methods
 - [Citation](#citation)
 - [Contributing](#contributing)
 
@@ -22,6 +22,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 
 ## Latest Updates
 
+- **[2026/06]** Classified recent papers from [`new_papers.md`](new_papers.md), expanding the list to 34 benchmarks and 44 mitigation methods.
 - **[2026/05]** Classified recent papers from [`new_papers.md`](new_papers.md), expanding the list to 29 benchmarks and 42 mitigation methods.
 - **[2026/04]** Our survey has been accepted to **ACL 2026 Findings**. 👉 [arXiv:2604.12944](https://arxiv.org/abs/2604.12944)
 - **[2026/03]** Monthly arXiv search is live. Newly found, unclassified papers are listed in [`new_papers.md`](new_papers.md).
@@ -126,7 +127,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
       <td align="left"><a href="https://arxiv.org/abs/2501.00584"><b>Online Video Understanding: OVBench and VideoChat-Online</b></a></td>
       <td align="center">OVBench</td>
       <td align="center">CVPR 2025</td>
-      <td align="center">01/2025</td>
+      <td align="center">12/2024</td>
       <td align="center"><a href="https://videochat-online.github.io/"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?logo=readthedocs&logoColor=white" alt="page"></a> <a href="https://github.com/mcg-nju/videochat-online"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
   </tbody>
@@ -170,7 +171,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 ### 🟢 Referential Inconsistency Benchmarks (Dynamic Distortion)
 
 <details open>
-<summary><b>Character Conflation</b> (2 papers)</summary>
+<summary><b>Character Conflation</b> (4 papers)</summary>
 
 <table width="100%">
   <thead>
@@ -191,11 +192,25 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
       <td align="center"><a href="https://sites.google.com/view/egoillusion-demo/home"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?logo=readthedocs&logoColor=white" alt="page"></a></td>
     </tr>
     <tr>
-      <td align="left"><a href="https://arxiv.org/abs/2509.08538"><b>MESH: Measuring Hallucinations in Large Video Models</b></a></td>
+      <td align="left"><a href="https://arxiv.org/abs/2509.08538"><b>MESH -- Understanding Videos Like Human: Measuring Hallucinations in Large Video Models</b></a></td>
       <td align="center">MESH</td>
       <td align="center">ACM MM 2025</td>
       <td align="center">09/2025</td>
       <td align="center"><a href="https://github.com/HCYANG2000/MESH-Benchmark"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
+    </tr>
+    <tr>
+      <td align="left"><a href="https://arxiv.org/abs/2605.09904"><b>TOC-Bench: A Temporal Object Consistency Benchmark for Video Large Language Models</b></a></td>
+      <td align="center">TOC-Bench</td>
+      <td align="center">arXiv 2026</td>
+      <td align="center">05/2026</td>
+      <td align="center"><a href="https://github.com/cjzcjz666/toc_bench"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
+    </tr>
+    <tr>
+      <td align="left"><a href="https://arxiv.org/abs/2605.08974"><b>Tracking the Truth: Object-Centric Spatio-Temporal Monitoring for Video Large Language Models</b></a></td>
+      <td align="center">STEMO-Bench</td>
+      <td align="center">arXiv 2026</td>
+      <td align="center">05/2026</td>
+      <td align="center"><a href="https://github.com/nguyentthong/video_hallucination"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
   </tbody>
 </table>
@@ -203,7 +218,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 </details>
 
 <details open>
-<summary><b>Scene Conflation</b> (1 paper)</summary>
+<summary><b>Scene Conflation</b> (2 papers)</summary>
 
 <table width="100%">
   <thead>
@@ -222,6 +237,13 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
       <td align="center">arXiv 2025</td>
       <td align="center">08/2025</td>
       <td align="center"><a href="https://github.com/hlsv02/ELV-Halluc"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
+    </tr>
+    <tr>
+      <td align="left"><a href="https://arxiv.org/abs/2605.27101"><b>Pop-Up Distractions Reveal Bag-of-Events Behavior in Video Large Language Models</b></a></td>
+      <td align="center">DistractionBench</td>
+      <td align="center">arXiv 2026</td>
+      <td align="center">05/2026</td>
+      <td align="center">-</td>
     </tr>
   </tbody>
 </table>
@@ -381,7 +403,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 ### 🟣 Audio-Visual Conflict Benchmarks (Content Fabrication)
 
 <details open>
-<summary><b>Action Attribution</b> (4 papers)</summary>
+<summary><b>Action Attribution</b> (5 papers)</summary>
 
 <table width="100%">
   <thead>
@@ -413,6 +435,13 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
       <td align="center">Audio Hallucination QA</td>
       <td align="center">ICASSP 2026</td>
       <td align="center">04/2026</td>
+      <td align="center">-</td>
+    </tr>
+    <tr>
+      <td align="left"><a href="https://arxiv.org/abs/2605.07593"><b>TraceAV-Bench: Benchmarking Multi-Hop Trajectory Reasoning over Long Audio-Visual Videos</b></a></td>
+      <td align="center">TraceAV-Bench</td>
+      <td align="center">arXiv 2026</td>
+      <td align="center">05/2026</td>
       <td align="center">-</td>
     </tr>
     <tr>
@@ -494,7 +523,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
       <td align="center"><a href="https://github.com/Hongcheng-Gao/HAVEN"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
     <tr>
-      <td align="left"><a href="https://arxiv.org/abs/2512.18671"><b>SmartSight: Mitigating Hallucination in Video-LLMs via Temporal Attention Collapse</b></a></td>
+      <td align="left"><a href="https://arxiv.org/abs/2512.18671"><b>SmartSight: Mitigating Hallucination in Video-LLMs Without Compromising Video Understanding via Temporal Attention Collapse</b></a></td>
       <td align="center">SmartSight</td>
       <td align="center">AAAI 2026</td>
       <td align="center">12/2025</td>
@@ -538,7 +567,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
   </thead>
   <tbody>
     <tr>
-      <td align="left"><a href="https://arxiv.org/abs/2401.09861"><b>Temporal Insight Enhancement: Mitigating Temporal Hallucination in Video Understanding by MLLMs</b></a></td>
+      <td align="left"><a href="https://arxiv.org/abs/2401.09861"><b>Temporal Insight Enhancement: Mitigating Temporal Hallucination in Multimodal Large Language Models</b></a></td>
       <td align="center">Temporal Insight</td>
       <td align="center">ICPR 2024</td>
       <td align="center">01/2024</td>
@@ -653,7 +682,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 ### 🟢 Referential Inconsistency Mitigation (Dynamic Distortion)
 
 <details open>
-<summary><b>Character Conflation</b> (2 papers)</summary>
+<summary><b>Character Conflation</b> (3 papers)</summary>
 
 <table width="100%">
   <thead>
@@ -682,6 +711,14 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
       <td align="center">11/2025</td>
       <td align="center">✘</td>
       <td align="center"><a href="https://github.com/BoweiPu/VideoPLR"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
+    </tr>
+    <tr>
+      <td align="left"><a href="https://arxiv.org/abs/2605.08974"><b>Tracking the Truth: Object-Centric Spatio-Temporal Monitoring for Video Large Language Models</b></a></td>
+      <td align="center">STEMO-Track</td>
+      <td align="center">arXiv 2026</td>
+      <td align="center">05/2026</td>
+      <td align="center">✔︎</td>
+      <td align="center"><a href="https://github.com/nguyentthong/video_hallucination"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
   </tbody>
 </table>
@@ -715,7 +752,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
       <td align="left"><a href="https://arxiv.org/abs/2501.00584"><b>Online Video Understanding: OVBench and VideoChat-Online</b></a></td>
       <td align="center">VideoChat-Online</td>
       <td align="center">CVPR 2025</td>
-      <td align="center">01/2025</td>
+      <td align="center">12/2024</td>
       <td align="center">✘</td>
       <td align="center"><a href="https://videochat-online.github.io/"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?logo=readthedocs&logoColor=white" alt="page"></a> <a href="https://github.com/mcg-nju/videochat-online"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
@@ -727,7 +764,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 ### 🟠 Context-Driven Fabrication Mitigation (Content Fabrication)
 
 <details open>
-<summary><b>Object-Action Hallucination</b> (2 papers)</summary>
+<summary><b>Object-Action Hallucination</b> (3 papers)</summary>
 
 <table width="100%">
   <thead>
@@ -756,6 +793,14 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
       <td align="center">09/2024</td>
       <td align="center">✔︎</td>
       <td align="center"><a href="https://github.com/Stevetich/EventHallusion"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
+    </tr>
+    <tr>
+      <td align="left"><a href="https://arxiv.org/abs/2602.11730"><b>STVG-R1: Incentivizing Instance-Level Reasoning and Grounding in Videos via Reinforcement Learning</b></a></td>
+      <td align="center">STVG-R1</td>
+      <td align="center">arXiv 2026</td>
+      <td align="center">02/2026</td>
+      <td align="center">✘</td>
+      <td align="center">-</td>
     </tr>
   </tbody>
 </table>
@@ -810,7 +855,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
       <td align="center">-</td>
     </tr>
     <tr>
-      <td align="left"><a href="https://arxiv.org/abs/2602.17555"><b>GraphThinker: Reinforcing Video Reasoning with Event Graph Thinking</b></a></td>
+      <td align="left"><a href="https://arxiv.org/abs/2602.17555"><b>GraphThinker: Reinforcing Temporally Grounded Video Reasoning with Event Graph Thinking</b></a></td>
       <td align="center">GraphThinker</td>
       <td align="center">arXiv 2026</td>
       <td align="center">02/2026</td>
@@ -826,7 +871,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
       <td align="center">-</td>
     </tr>
     <tr>
-      <td align="left"><a href="https://arxiv.org/abs/2601.22574"><b>Mitigating Hallucinations in Video Large Language Models via Spatiotemporal-Semantic Contrastive Decoding</b></a></td>
+      <td align="left"><a href="https://arxiv.org/abs/2601.22574"><b>Enhancing Video Representations with Spatiotemporal-Semantic Residual to Mitigate Hallucinations in Video Large Multimodal Models</b></a></td>
       <td align="center">STSCD</td>
       <td align="center">arXiv 2026</td>
       <td align="center">01/2026</td>
@@ -1031,8 +1076,8 @@ If this repository or survey helps your work, please cite:
 
 Resource gaps tracked in [`data/papers.json`](data/papers.json):
 
-- Add official code links for **33** entries. Browse: [missing code](https://hukcc.github.io/Awesome-Video-Hallucination/?resource=missing-code)
-- Add official project pages for **58** entries. Browse: [missing project pages](https://hukcc.github.io/Awesome-Video-Hallucination/?resource=missing-project)
+- Add official code links for **36** entries. Browse: [missing code](https://hukcc.github.io/Awesome-Video-Hallucination/?resource=missing-code)
+- Add official project pages for **64** entries. Browse: [missing project pages](https://hukcc.github.io/Awesome-Video-Hallucination/?resource=missing-project)
 - Add official dataset or leaderboard links when available.
 
 <details>
@@ -1043,7 +1088,7 @@ Resource gaps tracked in [`data/papers.json`](data/papers.json):
 Use this structure for new entries:
 
 ```
-| [**Paper Title**](paper_link) | Method/Benchmark Name | Venue | MM/YYYY | Resources |
+| Paper Title with link | Method/Benchmark Name | Venue | MM/YYYY | Resources |
 ```
 
 </details>
