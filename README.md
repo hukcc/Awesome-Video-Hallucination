@@ -22,7 +22,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 
 ## Latest Updates
 
-- **[2026/08]** Reviewed the July and August arXiv batches, adding 3 benchmarks and 4 mitigation methods after abstract-and-introduction verification.
+- **[2026/08]** Classified recent papers from [`new_papers.md`](new_papers.md), expanding the list to 37 benchmarks and 48 mitigation methods.
 - **[2026/06]** Classified recent papers from [`new_papers.md`](new_papers.md), expanding the list to 34 benchmarks and 44 mitigation methods.
 - **[2026/05]** Classified recent papers from [`new_papers.md`](new_papers.md), expanding the list to 29 benchmarks and 42 mitigation methods.
 - **[2026/04]** Our survey has been accepted to **ACL 2026 Findings**. 👉 [arXiv:2604.12944](https://arxiv.org/abs/2604.12944)
