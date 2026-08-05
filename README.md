@@ -33,9 +33,11 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 ## Taxonomy of Video Hallucinations
 
 <p align="center">
-    <img src="imgs/fig2_taxonomy.png" width="96%" />
+    <a href="imgs/fig2_taxonomy.png"><img src="imgs/fig2_taxonomy.png" width="96%" alt="Mechanism-driven taxonomy of Vid-LLM hallucinations" /></a>
     <br>
     <em>Mechanism-driven taxonomy of Vid-LLM hallucinations. Solid fill = benchmarks; striped fill = mitigation methods.</em>
+    <br>
+    <sub>Generated from <a href="data/papers.json">paper data</a> using the <a href="figs/taxonomy_tree.tex">LaTeX tree source</a>.</sub>
 </p>
 
 ---
