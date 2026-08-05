@@ -57,7 +57,7 @@
       "subtype": "Event Misordering",
       "name": "MHBench",
       "venue": "AAAI 2025",
-      "date": "01/2025",
+      "date": "04/2025",
       "year": 2025,
       "training_free": null,
       "resources": {
@@ -103,7 +103,7 @@
       "year": 2025,
       "training_free": null,
       "resources": {
-        "project": null,
+        "project": "https://ruchitrawal.github.io/argus",
         "code": "https://github.com/JARVVVIS/argus",
         "dataset": null,
         "leaderboard": null
@@ -467,17 +467,17 @@
       }
     },
     {
-      "id": "benchmark--context-driven-fabrication--scene-event-hallucination--roadsocial--roadsocial-a-diverse-videoqa-dataset-and-benchmark-for-road-event-understanding-from-social-video-narratives",
+      "id": "benchmark--context-driven-fabrication--scene-event-hallucination--roadsocial--2503-21459",
       "title": "RoadSocial: A Diverse VideoQA Dataset and Benchmark for Road Event Understanding from Social Video Narratives",
-      "paper_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Parikh_RoadSocial_A_Diverse_VideoQA_Dataset_and_Benchmark_for_Road_Event_CVPR_2025_paper.pdf",
-      "arxiv_id": null,
+      "paper_url": "https://arxiv.org/abs/2503.21459",
+      "arxiv_id": "2503.21459",
       "type": "benchmark",
       "category": "Context-Driven Fabrication",
       "mechanism": "Content Fabrication",
       "subtype": "Scene-Event Hallucination",
       "name": "RoadSocial",
       "venue": "CVPR 2025",
-      "date": "02/2025",
+      "date": "03/2025",
       "year": 2025,
       "training_free": null,
       "resources": {
@@ -756,8 +756,8 @@
       "resources": {
         "project": null,
         "code": null,
-        "dataset": "https://huggingface.co/datasets/scb10x/avhallubench",
-        "leaderboard": "https://huggingface.co/spaces/scb10x/multimodal-hallucination-leaderboard"
+        "dataset": "https://huggingface.co/datasets/typhoon-ai/avhallubench",
+        "leaderboard": "https://huggingface.co/spaces/typhoon-ai/multimodal-hallucination-leaderboard"
       }
     },
     {
@@ -783,7 +783,7 @@
     },
     {
       "id": "mitigation--spatiotemporal-dynamics--event-misordering--season--2512-04643",
-      "title": "SEASON: Mitigating Temporal Hallucination in Video LLMs via Self-Diagnostic Contrastive Decoding",
+      "title": "SEASON: Mitigating Temporal Hallucination in Video Large Language Models via Self-Diagnostic Contrastive Decoding",
       "paper_url": "https://arxiv.org/abs/2512.04643",
       "arxiv_id": "2512.04643",
       "type": "mitigation",
@@ -1182,7 +1182,7 @@
     },
     {
       "id": "mitigation--referential-inconsistency--character-conflation--videoplr--2511-18463",
-      "title": "Alternating Perception-Reasoning for Hallucination-Resistant Video Understanding",
+      "title": "Decoupling Perception from Reasoning for Hallucination-Resistant Video Understanding",
       "paper_url": "https://arxiv.org/abs/2511.18463",
       "arxiv_id": "2511.18463",
       "type": "mitigation",
@@ -1610,7 +1610,7 @@
       "mechanism": "Content Fabrication",
       "subtype": "Both Object-Action & Scene-Event",
       "name": "SToP",
-      "venue": "arXiv 2026",
+      "venue": "ECCV 2026",
       "date": "04/2026",
       "year": 2026,
       "training_free": "✔︎",

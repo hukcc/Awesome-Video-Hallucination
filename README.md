@@ -81,7 +81,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
       <td align="left"><a href="https://ojs.aaai.org/index.php/AAAI/article/view/32463"><b>MHBench: Demystifying Motion Hallucination in VideoLLMs</b></a></td>
       <td align="center">MHBench</td>
       <td align="center">AAAI 2025</td>
-      <td align="center">01/2025</td>
+      <td align="center">04/2025</td>
       <td align="center"><a href="https://github.com/xzhouzeng/MHBench"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
     <tr>
@@ -96,7 +96,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
       <td align="center">ARGUS</td>
       <td align="center">ICCV 2025</td>
       <td align="center">06/2025</td>
-      <td align="center"><a href="https://github.com/JARVVVIS/argus"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
+      <td align="center"><a href="https://ruchitrawal.github.io/argus"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?logo=readthedocs&logoColor=white" alt="page"></a> <a href="https://github.com/JARVVVIS/argus"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
     <tr>
       <td align="left"><a href="https://arxiv.org/abs/2606.23061"><b>MotionHalluc: Diagnosing Kinematic Hallucinations in Fine-Grained Motion Reasoning</b></a></td>
@@ -336,10 +336,10 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
       <td align="center"><a href="https://anonymous550520.github.io/"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?logo=readthedocs&logoColor=white" alt="page"></a> <a href="https://github.com/anonymous550520/NOAH"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
     <tr>
-      <td align="left"><a href="https://openaccess.thecvf.com/content/CVPR2025/papers/Parikh_RoadSocial_A_Diverse_VideoQA_Dataset_and_Benchmark_for_Road_Event_CVPR_2025_paper.pdf"><b>RoadSocial: A Diverse VideoQA Dataset and Benchmark for Road Event Understanding from Social Video Narratives</b></a></td>
+      <td align="left"><a href="https://arxiv.org/abs/2503.21459"><b>RoadSocial: A Diverse VideoQA Dataset and Benchmark for Road Event Understanding from Social Video Narratives</b></a></td>
       <td align="center">RoadSocial</td>
       <td align="center">CVPR 2025</td>
-      <td align="center">02/2025</td>
+      <td align="center">03/2025</td>
       <td align="center"><a href="https://roadsocial.github.io/"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?logo=readthedocs&logoColor=white" alt="page"></a> <a href="https://github.com/roadsocial/roadsocial"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
     <tr>
@@ -471,7 +471,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
       <td align="center">AVHalluBench</td>
       <td align="center">arXiv 2024</td>
       <td align="center">05/2024</td>
-      <td align="center"><a href="https://huggingface.co/datasets/scb10x/avhallubench"><img src="https://img.shields.io/badge/Dataset-HuggingFace-yellow?logo=huggingface" alt="dataset"></a> <a href="https://huggingface.co/spaces/scb10x/multimodal-hallucination-leaderboard"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Leaderboard-228B22?logo=readthedocs&logoColor=white" alt="leaderboard"></a></td>
+      <td align="center"><a href="https://huggingface.co/datasets/typhoon-ai/avhallubench"><img src="https://img.shields.io/badge/Dataset-HuggingFace-yellow?logo=huggingface" alt="dataset"></a> <a href="https://huggingface.co/spaces/typhoon-ai/multimodal-hallucination-leaderboard"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Leaderboard-228B22?logo=readthedocs&logoColor=white" alt="leaderboard"></a></td>
     </tr>
   </tbody>
 </table>
@@ -529,7 +529,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
   </thead>
   <tbody>
     <tr>
-      <td align="left"><a href="https://arxiv.org/abs/2512.04643"><b>SEASON: Mitigating Temporal Hallucination in Video LLMs via Self-Diagnostic Contrastive Decoding</b></a></td>
+      <td align="left"><a href="https://arxiv.org/abs/2512.04643"><b>SEASON: Mitigating Temporal Hallucination in Video Large Language Models via Self-Diagnostic Contrastive Decoding</b></a></td>
       <td align="center">SEASON</td>
       <td align="center">arXiv 2025</td>
       <td align="center">12/2025</td>
@@ -743,7 +743,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
       <td align="center"><a href="https://jinxxian.github.io/Vista-LLaMA/"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?logo=readthedocs&logoColor=white" alt="page"></a> <a href="https://github.com/Flowerfan/VistaLLaMA"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
     <tr>
-      <td align="left"><a href="https://arxiv.org/abs/2511.18463"><b>Alternating Perception-Reasoning for Hallucination-Resistant Video Understanding</b></a></td>
+      <td align="left"><a href="https://arxiv.org/abs/2511.18463"><b>Decoupling Perception from Reasoning for Hallucination-Resistant Video Understanding</b></a></td>
       <td align="center">VideoPLR</td>
       <td align="center">arXiv 2025</td>
       <td align="center">11/2025</td>
@@ -987,7 +987,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
     <tr>
       <td align="left"><a href="https://arxiv.org/abs/2604.20937"><b>Sink-Token-Aware Pruning for Fine-Grained Video Understanding in Efficient Video LLMs</b></a></td>
       <td align="center">SToP</td>
-      <td align="center">arXiv 2026</td>
+      <td align="center">ECCV 2026</td>
       <td align="center">04/2026</td>
       <td align="center">✔︎</td>
       <td align="center">-</td>

@@ -19,7 +19,7 @@ README_PATH = os.path.join(REPO_ROOT, "README.md")
 KNOWN_PAPERS_PATH = os.path.join(REPO_ROOT, "data", "known_papers.json")
 OUTPUT_PATH = os.path.join(REPO_ROOT, "new_papers.md")
 
-ARXIV_API_URL = "http://export.arxiv.org/api/query"
+ARXIV_API_URL = "https://export.arxiv.org/api/query"
 
 SEARCH_QUERIES = [
     'all:"video hallucination"',
@@ -219,10 +219,12 @@ def main():
 
     # Collect entries from all queries, dedup by arXiv ID
     all_entries: dict = {}
+    successful_queries = 0
     for query in SEARCH_QUERIES:
         print(f"Searching: {query}")
         try:
             entries = search_arxiv(query, MAX_RESULTS_PER_QUERY)
+            successful_queries += 1
             for entry in entries:
                 arxiv_id = extract_arxiv_id(entry)
                 if arxiv_id and arxiv_id not in all_entries:
@@ -230,6 +232,9 @@ def main():
         except Exception as e:
             print(f"  Error querying arXiv: {e}")
         time.sleep(REQUEST_DELAY)
+
+    if successful_queries == 0:
+        raise RuntimeError("All arXiv queries failed; refusing to update state.")
 
     print(f"Total unique papers from arXiv: {len(all_entries)}")
 
