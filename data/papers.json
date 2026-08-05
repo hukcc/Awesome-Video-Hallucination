@@ -1,8 +1,8 @@
 {
   "generated_from": "README.md",
-  "entry_count": 78,
-  "benchmark_count": 34,
-  "mitigation_count": 44,
+  "entry_count": 85,
+  "benchmark_count": 37,
+  "mitigation_count": 48,
   "entries": [
     {
       "id": "benchmark--spatiotemporal-dynamics--event-misordering--vidhalluc--2412-03735",
@@ -105,6 +105,48 @@
       "resources": {
         "project": null,
         "code": "https://github.com/JARVVVIS/argus",
+        "dataset": null,
+        "leaderboard": null
+      }
+    },
+    {
+      "id": "benchmark--spatiotemporal-dynamics--event-misordering--motionhalluc--2606-23061",
+      "title": "MotionHalluc: Diagnosing Kinematic Hallucinations in Fine-Grained Motion Reasoning",
+      "paper_url": "https://arxiv.org/abs/2606.23061",
+      "arxiv_id": "2606.23061",
+      "type": "benchmark",
+      "category": "Spatiotemporal Dynamics",
+      "mechanism": "Dynamic Distortion",
+      "subtype": "Event Misordering",
+      "name": "MotionHalluc",
+      "venue": "arXiv 2026",
+      "date": "06/2026",
+      "year": 2026,
+      "training_free": null,
+      "resources": {
+        "project": null,
+        "code": null,
+        "dataset": "https://huggingface.co/datasets/motionhalluc/MotionHalluc",
+        "leaderboard": null
+      }
+    },
+    {
+      "id": "benchmark--spatiotemporal-dynamics--event-misordering--mohallbench--2607-01117",
+      "title": "MoHallBench: A Benchmark for Motion Hallucination in Video Large Language Models",
+      "paper_url": "https://arxiv.org/abs/2607.01117",
+      "arxiv_id": "2607.01117",
+      "type": "benchmark",
+      "category": "Spatiotemporal Dynamics",
+      "mechanism": "Dynamic Distortion",
+      "subtype": "Event Misordering",
+      "name": "MoHallBench",
+      "venue": "arXiv 2026",
+      "date": "07/2026",
+      "year": 2026,
+      "training_free": null,
+      "resources": {
+        "project": null,
+        "code": null,
         "dataset": null,
         "leaderboard": null
       }
@@ -593,6 +635,27 @@
       }
     },
     {
+      "id": "benchmark--context-driven-fabrication--compositional-and-factuality-hallucination--vidpair-halluc--2606-31933",
+      "title": "No Place to Hide: Benchmarking Video Hallucination with Background-Controlled Pairs",
+      "paper_url": "https://arxiv.org/abs/2606.31933",
+      "arxiv_id": "2606.31933",
+      "type": "benchmark",
+      "category": "Context-Driven Fabrication",
+      "mechanism": "Content Fabrication",
+      "subtype": "Compositional and Factuality Hallucination",
+      "name": "VidPair-Halluc",
+      "venue": "ECCV 2026",
+      "date": "06/2026",
+      "year": 2026,
+      "training_free": null,
+      "resources": {
+        "project": "https://jethrojames.github.io/VidPair-Halluc/",
+        "code": null,
+        "dataset": null,
+        "leaderboard": null
+      }
+    },
+    {
       "id": "benchmark--audio-visual-conflict--action-attribution--avhbench--2410-18325",
       "title": "AVHBench: A Cross-Modal Hallucination Benchmark for Audio-Visual Large Language Models",
       "paper_url": "https://arxiv.org/abs/2410.18325",
@@ -824,6 +887,27 @@
       }
     },
     {
+      "id": "mitigation--spatiotemporal-dynamics--event-misordering--ppv--2606-23061",
+      "title": "MotionHalluc: Diagnosing Kinematic Hallucinations in Fine-Grained Motion Reasoning",
+      "paper_url": "https://arxiv.org/abs/2606.23061",
+      "arxiv_id": "2606.23061",
+      "type": "mitigation",
+      "category": "Spatiotemporal Dynamics",
+      "mechanism": "Dynamic Distortion",
+      "subtype": "Event Misordering",
+      "name": "PPV",
+      "venue": "arXiv 2026",
+      "date": "06/2026",
+      "year": 2026,
+      "training_free": "✔︎",
+      "resources": {
+        "project": null,
+        "code": null,
+        "dataset": "https://huggingface.co/datasets/motionhalluc/MotionHalluc",
+        "leaderboard": null
+      }
+    },
+    {
       "id": "mitigation--spatiotemporal-dynamics--duration-distortion--temporal-insight--2401-09861",
       "title": "Temporal Insight Enhancement: Mitigating Temporal Hallucination in Multimodal Large Language Models",
       "paper_url": "https://arxiv.org/abs/2401.09861",
@@ -988,6 +1072,27 @@
         "project": null,
         "code": null,
         "dataset": null,
+        "leaderboard": null
+      }
+    },
+    {
+      "id": "mitigation--spatiotemporal-dynamics--duration-distortion--reflect-r1--2606-27922",
+      "title": "Reflect-R1: Evidence-Driven Reflection for Self-Correction in Long Video Understanding",
+      "paper_url": "https://arxiv.org/abs/2606.27922",
+      "arxiv_id": "2606.27922",
+      "type": "mitigation",
+      "category": "Spatiotemporal Dynamics",
+      "mechanism": "Dynamic Distortion",
+      "subtype": "Duration Distortion",
+      "name": "Reflect-R1",
+      "venue": "ECCV 2026",
+      "date": "06/2026",
+      "year": 2026,
+      "training_free": "✘",
+      "resources": {
+        "project": null,
+        "code": "https://github.com/ShuimuChen-hyq/Reflect-R1",
+        "dataset": "https://huggingface.co/datasets/CSDDSFSFSAFSAF/Reflect-R1-data",
         "leaderboard": null
       }
     },
@@ -1218,6 +1323,27 @@
       "resources": {
         "project": null,
         "code": null,
+        "dataset": null,
+        "leaderboard": null
+      }
+    },
+    {
+      "id": "mitigation--context-driven-fabrication--object-action-hallucination--procap--2607-21022",
+      "title": "ProCap: Prominence-guided Object Rectification for Faithful and Comprehensive Video Captioning",
+      "paper_url": "https://arxiv.org/abs/2607.21022",
+      "arxiv_id": "2607.21022",
+      "type": "mitigation",
+      "category": "Context-Driven Fabrication",
+      "mechanism": "Content Fabrication",
+      "subtype": "Object-Action Hallucination",
+      "name": "ProCap",
+      "venue": "arXiv 2026",
+      "date": "07/2026",
+      "year": 2026,
+      "training_free": "✔︎",
+      "resources": {
+        "project": null,
+        "code": "https://github.com/Debjyoti-Adhikary/ProCap",
         "dataset": null,
         "leaderboard": null
       }
@@ -1549,6 +1675,27 @@
       "name": "Structured Rewards",
       "venue": "arXiv 2026",
       "date": "04/2026",
+      "year": 2026,
+      "training_free": "✘",
+      "resources": {
+        "project": null,
+        "code": null,
+        "dataset": null,
+        "leaderboard": null
+      }
+    },
+    {
+      "id": "mitigation--context-driven-fabrication--both-object-action-scene-event--multitop--2606-11792",
+      "title": "MultiToP: Learning to Patch Visual Tokens to Mitigate Hallucinations in Video Large Multimodal Models",
+      "paper_url": "https://arxiv.org/abs/2606.11792",
+      "arxiv_id": "2606.11792",
+      "type": "mitigation",
+      "category": "Context-Driven Fabrication",
+      "mechanism": "Content Fabrication",
+      "subtype": "Both Object-Action & Scene-Event",
+      "name": "MultiToP",
+      "venue": "arXiv 2026",
+      "date": "06/2026",
       "year": 2026,
       "training_free": "✘",
       "resources": {
