@@ -260,7 +260,9 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
       <td align="center">DistractionBench</td>
       <td align="center">arXiv 2026</td>
       <td align="center">05/2026</td>
-      <td align="center">-</td>
+      <td align="center">
+        <a href="https://github.com/lab-flair/video-llm-boe"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a>
+        <a href="https://huggingface.co/datasets/lab-flair/VideoLLM-BoE"><img src="https://img.shields.io/badge/Dataset-HuggingFace-yellow?logo=huggingface" alt="dataset"></a></td>
     </tr>
   </tbody>
 </table>
