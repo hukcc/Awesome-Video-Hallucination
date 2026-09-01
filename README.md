@@ -1,8 +1,8 @@
 # Awesome-Video-Hallucination [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-[![arXiv](https://img.shields.io/badge/arXiv-2604.12944-b31b1b.svg)](https://arxiv.org/abs/2604.12944) [![ACL 2026 Findings](https://img.shields.io/badge/ACL%202026-Findings-2ea44f)](https://arxiv.org/abs/2604.12944) [![Papers](https://img.shields.io/badge/Papers-85-blue.svg)](#evaluation-benchmarks) [![Auto arXiv Update](https://img.shields.io/badge/arXiv%20Update-Monthly-blueviolet.svg)](new_papers.md) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Last Commit](https://img.shields.io/github/last-commit/hukcc/Awesome-Video-Hallucination)](https://github.com/hukcc/Awesome-Video-Hallucination/commits/main)
+[![arXiv](https://img.shields.io/badge/arXiv-2604.12944-b31b1b.svg)](https://arxiv.org/abs/2604.12944) [![ACL 2026 Findings](https://img.shields.io/badge/ACL%202026-Findings-2ea44f)](https://arxiv.org/abs/2604.12944) [![Papers](https://img.shields.io/badge/Papers-87-blue.svg)](#evaluation-benchmarks) [![Auto arXiv Update](https://img.shields.io/badge/arXiv%20Update-Monthly-blueviolet.svg)](new_papers.md) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Last Commit](https://img.shields.io/github/last-commit/hukcc/Awesome-Video-Hallucination)](https://github.com/hukcc/Awesome-Video-Hallucination/commits/main)
 
-A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs)**, covering **37 benchmarks** and **48 mitigation methods**. Updated monthly via arXiv search.
+A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs)**, covering **37 benchmarks** and **50 mitigation methods**. Updated monthly via arXiv search.
 
 > 📄 **Survey Paper**: *[Distorted or Fabricated? A Survey on Hallucination in Video LLMs](https://arxiv.org/abs/2604.12944)*
 
@@ -14,7 +14,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 
 - [Taxonomy of Video Hallucinations](#taxonomy-of-video-hallucinations)
 - [Evaluation Benchmarks](#evaluation-benchmarks) — 37 benchmarks
-- [Mitigation Strategies](#mitigation-strategies) — 48 methods
+- [Mitigation Strategies](#mitigation-strategies) — 50 methods
 - [Citation](#citation)
 - [Contributing](#contributing)
 
@@ -22,6 +22,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 
 ## Latest Updates
 
+- **[2026/09]** Classified recent papers from [`new_papers.md`](new_papers.md), expanding the list to 37 benchmarks and 50 mitigation methods.
 - **[2026/08]** Classified recent papers from [`new_papers.md`](new_papers.md), expanding the list to 37 benchmarks and 48 mitigation methods.
 - **[2026/06]** Classified recent papers from [`new_papers.md`](new_papers.md), expanding the list to 34 benchmarks and 44 mitigation methods.
 - **[2026/05]** Classified recent papers from [`new_papers.md`](new_papers.md), expanding the list to 29 benchmarks and 42 mitigation methods.
@@ -454,7 +455,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
       <td align="center">CMM</td>
       <td align="center">arXiv 2024</td>
       <td align="center">10/2024</td>
-      <td align="center"><a href="https://cmm-damovl.site/"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?logo=readthedocs&logoColor=white" alt="page"></a> <a href="https://github.com/DAMO-NLP-SG/CMM"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
+      <td align="center"><a href="https://github.com/DAMO-NLP-SG/CMM"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
     <tr>
       <td align="left"><a href="https://arxiv.org/abs/2604.23860"><b>Exploring Audio Hallucination in Egocentric Video Understanding</b></a></td>
@@ -858,7 +859,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 </details>
 
 <details open>
-<summary><b>Scene-Event Hallucination</b> (9 papers)</summary>
+<summary><b>Scene-Event Hallucination</b> (10 papers)</summary>
 
 <table width="100%">
   <thead>
@@ -943,6 +944,42 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
       <td align="center">04/2026</td>
       <td align="center">✔︎</td>
       <td align="center">-</td>
+    </tr>
+    <tr>
+      <td align="left"><a href="https://arxiv.org/abs/2608.08622"><b>VADER: Adaptive Debiasing for Hallucination Mitigation in Video Large Language Models</b></a></td>
+      <td align="center">VADER</td>
+      <td align="center">arXiv 2026</td>
+      <td align="center">08/2026</td>
+      <td align="center">✔︎</td>
+      <td align="center">-</td>
+    </tr>
+  </tbody>
+</table>
+
+</details>
+
+<details open>
+<summary><b>Compositional and Factuality Hallucination</b> (1 paper)</summary>
+
+<table width="100%">
+  <thead>
+    <tr>
+      <th width="42%" align="left">Title</th>
+      <th width="13%" align="center">Method</th>
+      <th width="10%" align="center">Venue</th>
+      <th width="7%" align="center">Date</th>
+      <th width="11%" align="center">Training-Free</th>
+      <th width="17%" align="center">Resources</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="left"><a href="https://arxiv.org/abs/2608.15574"><b>Catching Hallucinated Citations in Video-LLM Question Answering: A Self-Verification Pipeline and Verifier Ablation Study</b></a></td>
+      <td align="center">GroundedVQA</td>
+      <td align="center">arXiv 2026</td>
+      <td align="center">08/2026</td>
+      <td align="center">✔︎</td>
+      <td align="center"><a href="https://github.com/yogesh-iitj/grounded-video-qa"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code"></a></td>
     </tr>
   </tbody>
 </table>
@@ -1134,8 +1171,8 @@ If this repository or survey helps your work, please cite:
 
 Resource gaps tracked in [`data/papers.json`](data/papers.json):
 
-- Add official code links for **36** entries. Browse: [missing code](https://hukcc.github.io/Awesome-Video-Hallucination/?resource=missing-code)
-- Add official project pages for **64** entries. Browse: [missing project pages](https://hukcc.github.io/Awesome-Video-Hallucination/?resource=missing-project)
+- Add official code links for **41** entries. Browse: [missing code](https://hukcc.github.io/Awesome-Video-Hallucination/?resource=missing-code)
+- Add official project pages for **72** entries. Browse: [missing project pages](https://hukcc.github.io/Awesome-Video-Hallucination/?resource=missing-project)
 - Add official dataset or leaderboard links when available.
 
 <details>

@@ -1,8 +1,8 @@
 {
   "generated_from": "README.md",
-  "entry_count": 85,
+  "entry_count": 87,
   "benchmark_count": 37,
-  "mitigation_count": 48,
+  "mitigation_count": 50,
   "entries": [
     {
       "id": "benchmark--spatiotemporal-dynamics--event-misordering--vidhalluc--2412-03735",
@@ -356,8 +356,8 @@
       "training_free": null,
       "resources": {
         "project": null,
-        "code": null,
-        "dataset": null,
+        "code": "https://github.com/lab-flair/video-llm-boe",
+        "dataset": "https://huggingface.co/datasets/lab-flair/VideoLLM-BoE",
         "leaderboard": null
       }
     },
@@ -691,7 +691,7 @@
       "year": 2024,
       "training_free": null,
       "resources": {
-        "project": "https://cmm-damovl.site/",
+        "project": null,
         "code": "https://github.com/DAMO-NLP-SG/CMM",
         "dataset": null,
         "leaderboard": null
@@ -1533,6 +1533,48 @@
       "resources": {
         "project": null,
         "code": null,
+        "dataset": null,
+        "leaderboard": null
+      }
+    },
+    {
+      "id": "mitigation--context-driven-fabrication--scene-event-hallucination--vader--2608-08622",
+      "title": "VADER: Adaptive Debiasing for Hallucination Mitigation in Video Large Language Models",
+      "paper_url": "https://arxiv.org/abs/2608.08622",
+      "arxiv_id": "2608.08622",
+      "type": "mitigation",
+      "category": "Context-Driven Fabrication",
+      "mechanism": "Content Fabrication",
+      "subtype": "Scene-Event Hallucination",
+      "name": "VADER",
+      "venue": "arXiv 2026",
+      "date": "08/2026",
+      "year": 2026,
+      "training_free": "✔︎",
+      "resources": {
+        "project": null,
+        "code": null,
+        "dataset": null,
+        "leaderboard": null
+      }
+    },
+    {
+      "id": "mitigation--context-driven-fabrication--compositional-and-factuality-hallucination--groundedvqa--2608-15574",
+      "title": "Catching Hallucinated Citations in Video-LLM Question Answering: A Self-Verification Pipeline and Verifier Ablation Study",
+      "paper_url": "https://arxiv.org/abs/2608.15574",
+      "arxiv_id": "2608.15574",
+      "type": "mitigation",
+      "category": "Context-Driven Fabrication",
+      "mechanism": "Content Fabrication",
+      "subtype": "Compositional and Factuality Hallucination",
+      "name": "GroundedVQA",
+      "venue": "arXiv 2026",
+      "date": "08/2026",
+      "year": 2026,
+      "training_free": "✔︎",
+      "resources": {
+        "project": null,
+        "code": "https://github.com/yogesh-iitj/grounded-video-qa",
         "dataset": null,
         "leaderboard": null
       }
