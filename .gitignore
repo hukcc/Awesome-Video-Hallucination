@@ -12,3 +12,6 @@ Thumbs.db
 # Python
 __pycache__/
 *.pyc
+
+# Read-only remote audit output
+reports/remote-sources/

@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { DEFAULTS, groupPapers, filterPapers, normalizeSearch, sortPapers, readState, stateQuery, resourcesFor, trainingValue, bibtexFor, markdownFor, paperKey } from '../assets/catalog.mjs';
+import { DEFAULTS, ROUTES, SCOPE_LABELS, groupPapers, filterPapers, normalizeSearch, sortPapers, readState, stateQuery, resourcesFor, trainingValue, bibtexFor, markdownFor, paperKey } from '../assets/catalog.mjs';
 
 const data = JSON.parse(readFileSync(new URL('../data/papers.json', import.meta.url)));
 const metadata = JSON.parse(readFileSync(new URL('../data/paper_details.json', import.meta.url)));
@@ -132,11 +132,56 @@ test('recently added uses repository history, not publication date', () => {
 });
 
 test('shared URLs round-trip every filter, sort, view, and tab', () => {
-  const f = { ...DEFAULTS, search: 'video llm A&B', task: 'Video QA', type: 'mitigation', mechanism: 'Dynamic Distortion', category: 'Spatiotemporal Dynamics', subtype: 'Event Misordering', training: 'yes', venue: 'CVPR 2025', year: '2024', resource: 'code', sort: 'added', view: 'cards', tab: 'guide' };
+  const f = { ...DEFAULTS, search: 'video llm A&B', task: 'Video QA', route: 'Decoding', scope: 'direct', type: 'mitigation', mechanism: 'Dynamic Distortion', category: 'Spatiotemporal Dynamics', subtype: 'Event Misordering', training: 'yes', venue: 'CVPR 2025', year: '2024', resource: 'code', sort: 'added', view: 'cards', tab: 'guide' };
   assert.deepEqual(readState(stateQuery(f)), f);
   assert.equal(stateQuery(DEFAULTS), '');
   assert.equal(readState('?sort=bad&view=bad&tab=bad').sort, 'newest');
   assert.equal(readState('?resource=missing-code').resource, 'missing-code');
+});
+
+test('technical routes are controlled, evidence-backed, and contribution-specific', () => {
+  for (const entry of data.entries) {
+    if (entry.type !== 'mitigation') {
+      assert.equal(entry.routes, undefined);
+      continue;
+    }
+    assert.ok(entry.routes.length && entry.routes.every(r => ROUTES.includes(r)), entry.name);
+    assert.equal(new Set(entry.routes).size, entry.routes.length);
+    assert.equal(entry.routes.includes('Training'), trainingValue(entry) === 'no', entry.name);
+    assert.ok(metadata.papers[paperKey(entry)].source_url);
+  }
+  assert.equal(select({ type: 'benchmark', route: 'Training' }).length, 0);
+  assert.equal(select({ training: 'yes', route: 'Training' }).length, 0);
+  assert.equal(select({ search: 'DINO-HEAL', route: 'Grounding' })[0].matches.length, 1);
+  assert.ok(select({ search: 'TriCD', route: 'Decoding', training: 'no' }).length);
+  assert.equal(select({ route: 'Unknown' }).length, 0);
+});
+
+test('relevance judgments retain evidence and leave related-work decisions pending', () => {
+  for (const paper of papers) {
+    const review = paper.detail.scope_review;
+    assert.ok(Object.hasOwn(SCOPE_LABELS, review.scope));
+    assert.ok(review.reason && review.evidence.includes('Abstract'));
+    assert.match(review.source_url, /^https:\/\//);
+    assert.match(review.reviewed_on, /^\d{4}-\d{2}-\d{2}$/);
+    assert.equal(review.decision, review.scope === 'related' ? 'pending-manual-review' : 'retain');
+  }
+  assert.equal(select({ scope: 'related' }).length, 8);
+  assert.equal(select({ scope: 'direct' }).length + select({ scope: 'broader' }).length + select({ scope: 'related' }).length, papers.length);
+  for (const key of ['2501.00584', '2503.21459', '2604.20937', '2601.07761', '2604.20473']) {
+    assert.equal(metadata.papers[key].scope_review.scope, 'broader', key);
+  }
+  assert.equal(select({ scope: 'unknown' }).length, 0);
+  const missing = structuredClone(papers[0]);
+  delete missing.detail.scope_review;
+  assert.equal(filterPapers([missing], { scope: 'direct' }).length, 0);
+  assert.equal(filterPapers([missing], { scope: 'unreviewed' }).length, 1);
+});
+
+test('reading guide uses the verified thinking-based TDPO definition', () => {
+  const html = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
+  assert.ok(html.includes('thinking-based direct preference optimization'));
+  assert.ok(!html.includes('temporal preference optimization'));
 });
 
 test('empty and unknown queries do not silently show all papers', () => {

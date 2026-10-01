@@ -1,7 +1,9 @@
 export const TYPE_LABELS = { benchmark: 'Benchmark', mitigation: 'Mitigation', analysis: 'Analysis' };
 export const RESOURCE_LABELS = { code: 'Code', dataset: 'Dataset', project: 'Project', leaderboard: 'Leaderboard' };
+export const ROUTES = ['Decoding', 'Training', 'Grounding', 'Verification'];
+export const SCOPE_LABELS = { direct: 'Direct focus', broader: 'Broader evaluation', related: 'Related work (review)', unreviewed: 'Not reviewed' };
 export const DEFAULTS = Object.freeze({
-  search: '', type: '', task: '', mechanism: '', category: '', subtype: '',
+  search: '', type: '', task: '', route: '', scope: '', mechanism: '', category: '', subtype: '',
   training: '', venue: '', year: '', resource: '', sort: 'newest', view: 'auto', tab: 'papers',
 });
 
@@ -47,16 +49,18 @@ export function filterPapers(papers, filters = {}) {
   if (f.search.trim() && !words.length) return [];
   return papers.flatMap(paper => {
     if (f.task && !(paper.detail.tasks || []).includes(f.task)) return [];
+    if (f.scope && (paper.detail.scope_review?.scope || 'unreviewed') !== f.scope) return [];
     if (f.year && String(paper.year) !== f.year) return [];
     // Contribution filters must agree on one entry, not borrow a role from another.
     const matches = paper.entries.filter(entry =>
       ['type', 'mechanism', 'category', 'subtype', 'venue'].every(key => !f[key] || entry[key] === f[key]) &&
+      (!f.route || (entry.routes || []).includes(f.route)) &&
       (!f.training || trainingValue(entry) === f.training) && matchesResource(entry, f.resource));
     if (!matches.length) return [];
     const haystack = normalizeSearch([
       paper.title, paper.arxiv_id, paper.date, paper.detail.summary,
       ...(paper.detail.tasks || []), ...(paper.detail.aliases || []), ...(paper.detail.authors || []),
-      ...matches.flatMap(e => [e.name, e.description, e.type, e.venue, e.category, e.mechanism, e.subtype]),
+      ...matches.flatMap(e => [e.name, e.description, e.type, e.venue, e.category, e.mechanism, e.subtype, ...(e.routes || [])]),
     ].join(' '));
     if (!words.every(word => haystack.includes(word))) return [];
     return [{ ...paper, matches }];

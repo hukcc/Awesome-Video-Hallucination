@@ -4,6 +4,7 @@
 
 - `data/papers.json` is the shared contribution catalog for the README, browser, and taxonomy. It retains one entry per benchmark, mitigation method, or evaluation analysis, including a contribution-specific `description`. Do not remove a contribution merely because another entry cites the same paper.
 - `scripts/generate_readme.py` generates the README task index and paper tables between marked comments. Edit the shared data, not generated rows. Content outside these regions remains hand-maintained.
+- The same generator renders a collapsed Recently Added section from the latest verified repository-addition date, capped at eight papers. It groups contributions from the same paper and never substitutes publication dates for missing addition records.
 - `data/paper_details.json` contains one record per distinct paper, keyed by arXiv ID or publisher URL. It adds a curator-written summary, task tags, primary-source link, evidence section, review date, first-publication date, and first recorded README appearance.
 - `figs/taxonomy_tree.tex` is generated from `data/papers.json`. The three taxonomy image aliases must remain identical.
 - `new_papers.md` records discovery and inclusion decisions. Automated discovery is not automatic admission to the curated collection.
@@ -31,6 +32,29 @@ Use these task labels consistently:
 Keep the existing mechanism/category/subtype taxonomy. A primary placement is not exclusive coverage. A paper can have several task tags and multiple contributions.
 
 Training-free means the listed method does not require learning additional parameters for its intervention. Freezing the base model while training an auxiliary module is not training-free. Benchmarks and analyses use `null` (not applicable), not `false`.
+
+## Relevance and Technical Routes
+
+`scope_review` in `data/paper_details.json` records a paper-level editorial assessment, reason, source, inspected sections, review date, and decision status. The [relevance report](RELEVANCE_REVIEW.md) is generated from these records. Direct focus, broader evaluation, and related-work candidates are distinct from taxonomy placement and scientific quality. Related-work candidates remain in the catalog until a human approves a move or removal. Missing scope evidence is displayed as Not reviewed, not as direct focus.
+
+Each mitigation contribution has one or more `routes` in `data/papers.json`. These are source-backed discovery labels, not mutually exclusive method classes:
+
+| Route | Meaning |
+| --- | --- |
+| Decoding | Token selection, generation-time attention/activation intervention, or response selection/termination |
+| Training | Parameter learning in the backbone or an auxiliary component, including supervised learning, preference optimization, and reinforcement learning |
+| Grounding | Explicit visual evidence selection, localization, alignment, preservation, or reweighting |
+| Verification | Explicit factuality, physical consistency, or answer-reliability checks, including checks used as training rewards |
+
+Tags summarize the intervention described in the linked source, not every component used by a model. Benchmark and analysis entries do not borrow routes from a sibling method. Route filtering therefore applies to contributions; relevance filtering applies to papers. Tagging a related-work candidate does not approve its inclusion as a dedicated hallucination method.
+
+## Remote Source Checks
+
+`python3 scripts/check_remote_sources.py` performs read-only GET checks of paper URLs, resource links, README badge images, and pinned evidence links. It also compares current arXiv submission histories with reviewed versions and flags explicit withdrawal notices. Results are saved as Markdown and JSON under `reports/remote-sources/`; this output is not committed by default.
+
+The **Audit remote paper sources** workflow runs on relevant pull requests and main-branch updates, and can be started manually. It uploads the reports and displays a run summary; it does not block publication on a transient external failure or edit collection data. There is no recurring schedule. Existing monthly discovery is unchanged.
+
+Treat successful HTTP responses as reachability only. Recheck 404/410 responses before removal; 401/403/429, challenge pages, transport failures, or an unrecognized arXiv record remain unverified. Read a changed paper version before updating evidence. Publisher-only retractions and version changes still require manual publisher review. Automated checks never establish relevance or authenticity on their own.
 
 ## Dates and Versions
 
@@ -62,6 +86,7 @@ Tables remain expanded and use four columns for benchmarks/analyses or five for 
 3. Add or revise the paper-level summary, tasks, source URL, evidence section, review date, authors, and dates. Pin reviewed arXiv versions.
 4. Backfill the first README inclusion commit and date from Git history, not the current modification date.
 5. Run `python3 scripts/generate_readme.py` to regenerate the task index and paper list. Update the hand-maintained overview/counts and concise news only when necessary.
+   Also run `python3 scripts/generate_relevance_review.py` after changing scope evidence, and review remote-source audit flags before publishing.
 6. Regenerate the LaTeX taxonomy if entry names or placements change; compile and inspect the output, then refresh all three PNG aliases.
 7. Run the checks below and test README task/related links, desktop/mobile layouts, combined filters, empty states, shared URLs, browser history, copy actions, and the reading guide.
 
@@ -69,6 +94,7 @@ Tables remain expanded and use four columns for benchmarks/analyses or five for 
 node --test tests/catalog.test.mjs
 python3 -m unittest discover -s tests -p 'test_*.py'
 python3 scripts/generate_readme.py --check
+python3 scripts/generate_relevance_review.py --check
 python3 scripts/check_catalog.py
 python3 scripts/generate_taxonomy_tree.py --check
 ```

@@ -949,7 +949,10 @@
         "code": null,
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Decoding"
+      ]
     },
     {
       "id": "mitigation--spatiotemporal-dynamics--event-misordering--video-thinking-tdpo--2503-19622",
@@ -971,7 +974,10 @@
         "code": "https://github.com/Hongcheng-Gao/HAVEN",
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Training"
+      ]
     },
     {
       "id": "mitigation--spatiotemporal-dynamics--event-misordering--smartsight--2512-18671",
@@ -993,7 +999,11 @@
         "code": null,
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Decoding",
+        "Verification"
+      ]
     },
     {
       "id": "mitigation--spatiotemporal-dynamics--event-misordering--videotemp-o3--2602-07801",
@@ -1015,7 +1025,11 @@
         "code": "https://github.com/Kwai-Keye/VideoTemp-o3",
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Training",
+        "Grounding"
+      ]
     },
     {
       "id": "mitigation--spatiotemporal-dynamics--event-misordering--mixdpo--2601-04778",
@@ -1037,7 +1051,10 @@
         "code": null,
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Training"
+      ]
     },
     {
       "id": "mitigation--spatiotemporal-dynamics--event-misordering--ppv--2606-23061",
@@ -1059,7 +1076,11 @@
         "code": null,
         "dataset": "https://huggingface.co/datasets/motionhalluc/MotionHalluc",
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Grounding",
+        "Verification"
+      ]
     },
     {
       "id": "mitigation--spatiotemporal-dynamics--duration-distortion--temporal-insight--2401-09861",
@@ -1081,7 +1102,10 @@
         "code": null,
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Grounding"
+      ]
     },
     {
       "id": "mitigation--spatiotemporal-dynamics--duration-distortion--dino-heal--2412-03735",
@@ -1103,7 +1127,10 @@
         "code": "https://github.com/CyL97/VidHalluc",
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Grounding"
+      ]
     },
     {
       "id": "mitigation--spatiotemporal-dynamics--duration-distortion--taae--2505-12826",
@@ -1125,7 +1152,11 @@
         "code": null,
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Decoding",
+        "Training"
+      ]
     },
     {
       "id": "mitigation--spatiotemporal-dynamics--duration-distortion--videotir--2603-25021",
@@ -1147,7 +1178,11 @@
         "code": null,
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Training",
+        "Grounding"
+      ]
     },
     {
       "id": "mitigation--spatiotemporal-dynamics--duration-distortion--framerepeat--2603-16256",
@@ -1169,7 +1204,11 @@
         "code": null,
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Training",
+        "Grounding"
+      ]
     },
     {
       "id": "mitigation--spatiotemporal-dynamics--duration-distortion--video-twg--2602-18702",
@@ -1191,7 +1230,11 @@
         "code": null,
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Training",
+        "Grounding"
+      ]
     },
     {
       "id": "mitigation--spatiotemporal-dynamics--duration-distortion--coe--2601-07761",
@@ -1213,7 +1256,11 @@
         "code": null,
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Training",
+        "Grounding"
+      ]
     },
     {
       "id": "mitigation--spatiotemporal-dynamics--duration-distortion--dtr--2604-12582",
@@ -1235,7 +1282,11 @@
         "code": null,
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Decoding",
+        "Grounding"
+      ]
     },
     {
       "id": "mitigation--spatiotemporal-dynamics--duration-distortion--reflect-r1--2606-27922",
@@ -1257,7 +1308,12 @@
         "code": "https://github.com/ShuimuChen-hyq/Reflect-R1",
         "dataset": "https://huggingface.co/datasets/CSDDSFSFSAFSAF/Reflect-R1-data",
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Training",
+        "Grounding",
+        "Verification"
+      ]
     },
     {
       "id": "mitigation--spatiotemporal-dynamics--frequency-confusion--vtg-llm--2405-13382",
@@ -1279,7 +1335,11 @@
         "code": "https://github.com/gyxxyg/VTG-LLM",
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Training",
+        "Grounding"
+      ]
     },
     {
       "id": "mitigation--spatiotemporal-dynamics--frequency-confusion--vriptor--2406-06040",
@@ -1301,7 +1361,10 @@
         "code": "https://github.com/mutonix/Vript",
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Training"
+      ]
     },
     {
       "id": "mitigation--spatiotemporal-dynamics--frequency-confusion--mope--2602-17768",
@@ -1323,7 +1386,11 @@
         "code": null,
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Training",
+        "Verification"
+      ]
     },
     {
       "id": "mitigation--referential-inconsistency--character-conflation--vista-llama--2312-08870",
@@ -1345,7 +1412,11 @@
         "code": "https://github.com/Flowerfan/VistaLLaMA",
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Training",
+        "Grounding"
+      ]
     },
     {
       "id": "mitigation--referential-inconsistency--character-conflation--videoplr--2511-18463",
@@ -1367,7 +1438,12 @@
         "code": "https://github.com/BoweiPu/VideoPLR",
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Training",
+        "Grounding",
+        "Verification"
+      ]
     },
     {
       "id": "mitigation--referential-inconsistency--character-conflation--strand-trajectory-reasoning--2609-29607",
@@ -1389,7 +1465,10 @@
         "code": "https://github.com/nguyentthong/video_hallucination",
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Grounding"
+      ]
     },
     {
       "id": "mitigation--referential-inconsistency--scene-conflation--elv-halluc-dpo--2508-21496",
@@ -1411,7 +1490,10 @@
         "code": "https://github.com/hlsv02/ELV-Halluc",
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Training"
+      ]
     },
     {
       "id": "mitigation--referential-inconsistency--scene-conflation--videochat-online--2501-00584",
@@ -1433,7 +1515,10 @@
         "code": "https://github.com/mcg-nju/videochat-online",
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Training"
+      ]
     },
     {
       "id": "mitigation--context-driven-fabrication--object-action-hallucination--santa--2512-04356",
@@ -1455,7 +1540,11 @@
         "code": null,
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Training",
+        "Grounding"
+      ]
     },
     {
       "id": "mitigation--context-driven-fabrication--object-action-hallucination--tcd--2409-16597",
@@ -1477,7 +1566,10 @@
         "code": "https://github.com/Stevetich/EventHallusion",
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Decoding"
+      ]
     },
     {
       "id": "mitigation--context-driven-fabrication--object-action-hallucination--stvg-r1--2602-11730",
@@ -1499,7 +1591,11 @@
         "code": null,
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Training",
+        "Grounding"
+      ]
     },
     {
       "id": "mitigation--context-driven-fabrication--object-action-hallucination--procap--2607-21022",
@@ -1521,7 +1617,11 @@
         "code": "https://github.com/Debjyoti-Adhikary/ProCap",
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Grounding",
+        "Verification"
+      ]
     },
     {
       "id": "mitigation--context-driven-fabrication--object-action-hallucination--gm-dpo--2609-36628",
@@ -1543,7 +1643,10 @@
         "code": null,
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Training"
+      ]
     },
     {
       "id": "mitigation--context-driven-fabrication--scene-event-hallucination--mash-vlm--2503-15871",
@@ -1565,7 +1668,11 @@
         "code": null,
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Training",
+        "Grounding"
+      ]
     },
     {
       "id": "mitigation--context-driven-fabrication--scene-event-hallucination--pami-vdpo--2504-05810",
@@ -1587,7 +1694,10 @@
         "code": null,
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Training"
+      ]
     },
     {
       "id": "mitigation--context-driven-fabrication--scene-event-hallucination--mma--hallucination-reduction-in-video-language-models-via-hierarchical-multimodal-consistency",
@@ -1609,7 +1719,10 @@
         "code": null,
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Training"
+      ]
     },
     {
       "id": "mitigation--context-driven-fabrication--scene-event-hallucination--cluenet--2603-15008",
@@ -1631,7 +1744,11 @@
         "code": null,
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Training",
+        "Grounding"
+      ]
     },
     {
       "id": "mitigation--context-driven-fabrication--scene-event-hallucination--graphthinker--2602-17555",
@@ -1653,7 +1770,11 @@
         "code": null,
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Training",
+        "Grounding"
+      ]
     },
     {
       "id": "mitigation--context-driven-fabrication--scene-event-hallucination--macd--2602-01740",
@@ -1675,7 +1796,10 @@
         "code": null,
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Decoding"
+      ]
     },
     {
       "id": "mitigation--context-driven-fabrication--scene-event-hallucination--stscd--2601-22574",
@@ -1697,7 +1821,11 @@
         "code": null,
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Training",
+        "Grounding"
+      ]
     },
     {
       "id": "mitigation--context-driven-fabrication--scene-event-hallucination--video-toc--2604-20473",
@@ -1719,7 +1847,11 @@
         "code": "https://github.com/qizhongtan/Video-ToC",
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Training",
+        "Grounding"
+      ]
     },
     {
       "id": "mitigation--context-driven-fabrication--scene-event-hallucination--c-tcd--2604-20460",
@@ -1741,7 +1873,10 @@
         "code": null,
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Decoding"
+      ]
     },
     {
       "id": "mitigation--context-driven-fabrication--scene-event-hallucination--vader--2608-08622",
@@ -1763,7 +1898,11 @@
         "code": null,
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Decoding",
+        "Grounding"
+      ]
     },
     {
       "id": "mitigation--context-driven-fabrication--compositional-and-factuality-hallucination--groundedvqa--2608-15574",
@@ -1785,7 +1924,11 @@
         "code": "https://github.com/yogesh-iitj/grounded-video-qa",
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Grounding",
+        "Verification"
+      ]
     },
     {
       "id": "mitigation--context-driven-fabrication--compositional-and-factuality-hallucination--trace-rc--2609-13288",
@@ -1807,7 +1950,11 @@
         "code": "https://github.com/sydney-machine-learning/video-hallucination-diagnosis",
         "dataset": "https://www.kaggle.com/datasets/mlopssss/video-hallucination-diagnosis",
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Training",
+        "Verification"
+      ]
     },
     {
       "id": "mitigation--context-driven-fabrication--both-object-action-scene-event--vistadpo--2504-13122",
@@ -1829,7 +1976,11 @@
         "code": "https://github.com/HaroldChen19/VistaDPO",
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Training",
+        "Grounding"
+      ]
     },
     {
       "id": "mitigation--context-driven-fabrication--both-object-action-scene-event--videohallu-grpo--2505-01481",
@@ -1851,7 +2002,10 @@
         "code": "https://github.com/zli12321/VideoHallu",
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Training"
+      ]
     },
     {
       "id": "mitigation--context-driven-fabrication--both-object-action-scene-event--tricd--2602-00559",
@@ -1873,7 +2027,12 @@
         "code": "https://github.com/BMRETURN/OmniVCHall",
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Decoding",
+        "Training",
+        "Grounding"
+      ]
     },
     {
       "id": "mitigation--context-driven-fabrication--both-object-action-scene-event--stop--2604-20937",
@@ -1895,7 +2054,10 @@
         "code": null,
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Grounding"
+      ]
     },
     {
       "id": "mitigation--context-driven-fabrication--both-object-action-scene-event--vthm-moe--2604-17375",
@@ -1917,7 +2079,10 @@
         "code": null,
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Training"
+      ]
     },
     {
       "id": "mitigation--context-driven-fabrication--both-object-action-scene-event--stear--2604-03045",
@@ -1939,7 +2104,12 @@
         "code": null,
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Decoding",
+        "Grounding",
+        "Verification"
+      ]
     },
     {
       "id": "mitigation--context-driven-fabrication--both-object-action-scene-event--structured-rewards--2604-01460",
@@ -1961,7 +2131,12 @@
         "code": null,
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Training",
+        "Grounding",
+        "Verification"
+      ]
     },
     {
       "id": "mitigation--context-driven-fabrication--both-object-action-scene-event--multitop--2606-11792",
@@ -1983,7 +2158,11 @@
         "code": null,
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Training",
+        "Grounding"
+      ]
     },
     {
       "id": "mitigation--audio-visual-conflict--action-attribution--avhmodel-align-ft--2410-18325",
@@ -2005,7 +2184,10 @@
         "code": "https://github.com/kaist-ami/AVHBench",
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Training"
+      ]
     },
     {
       "id": "mitigation--audio-visual-conflict--action-attribution--avcd--2505-20862",
@@ -2027,7 +2209,10 @@
         "code": "https://github.com/kaistmm/AVCD",
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Decoding"
+      ]
     },
     {
       "id": "mitigation--audio-visual-conflict--action-attribution--mrdpo--2410-06682",
@@ -2049,7 +2234,10 @@
         "code": "https://github.com/bytedance/video-SALMONN-2",
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Training"
+      ]
     },
     {
       "id": "mitigation--audio-visual-conflict--emotion-inference--pep-mek--2505-11405",
@@ -2071,7 +2259,10 @@
         "code": "https://github.com/xxtars/EmotionHallucer",
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "routes": [
+        "Grounding"
+      ]
     },
     {
       "id": "analysis--context-driven-fabrication--compositional-and-factuality-hallucination--beneath-the-scores--2609-28991",

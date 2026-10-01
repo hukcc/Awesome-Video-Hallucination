@@ -9,7 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / 'scripts'))
 from check_catalog import Document
-from generate_readme import anchor, newest_first, paper_list, render, replace_region, resource_badge, task_index
+from generate_readme import anchor, newest_first, paper_list, recently_added, render, replace_region, resource_badge, task_index
 
 
 class ReadmeTests(unittest.TestCase):
@@ -37,6 +37,30 @@ class ReadmeTests(unittest.TestCase):
         self.assertEqual(ordered[0]['arxiv_id'], '2609.36628')
         self.assertEqual(ordered[-1]['arxiv_id'], '2303.02961')
         self.assertEqual(self.entries, before)
+
+    def test_recent_additions_use_history_and_link_all_sibling_contributions(self):
+        output = recently_added(self.entries, self.metadata)
+        self.assertIn('2026-10-01 &middot; 7 papers', output)
+        self.assertNotIn('<details open>', output)
+        doc = Document()
+        doc.feed(output)
+        expected = [anchor(e) for e in self.entries
+                    if self.metadata['papers'][e['arxiv_id'] or e['paper_url']]['added']['date'] == '2026-10-01']
+        self.assertCountEqual([href[1:] for href in doc.links if href.startswith('#')], expected)
+
+    def test_unknown_addition_dates_are_not_invented_and_large_batches_are_bounded(self):
+        metadata = copy.deepcopy(self.metadata)
+        for paper in metadata['papers'].values():
+            paper['added'] = None
+        self.assertEqual(recently_added(self.entries, metadata), '')
+        for paper in metadata['papers'].values():
+            paper['added'] = {'date': '2026-10-01', 'commit': 'a' * 40}
+        doc = Document()
+        doc.feed(recently_added(self.entries, metadata))
+        ids = {href[1:] for href in doc.links if href.startswith('#')}
+        displayed = {e['arxiv_id'] or e['paper_url'] for e in self.entries if anchor(e) in ids}
+        self.assertEqual(len(displayed), 8)
+        self.assertIn('https://hukcc.github.io/Awesome-Video-Hallucination/?sort=added', doc.links)
 
     def test_all_contributions_have_unique_anchors_and_resolvable_links(self):
         doc = Document()

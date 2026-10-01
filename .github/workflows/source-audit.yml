@@ -1,0 +1,41 @@
+name: Audit remote paper sources
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'data/**'
+      - 'scripts/check_remote_sources.py'
+      - '.github/workflows/source-audit.yml'
+  pull_request:
+    paths:
+      - 'data/**'
+      - 'scripts/check_remote_sources.py'
+      - '.github/workflows/source-audit.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+      - name: Check paper links, resources, badges, and arXiv revisions
+        run: python3 scripts/check_remote_sources.py
+      - name: Publish review summary
+        if: always()
+        run: |
+          if [ -f reports/remote-sources/report.md ]; then
+            cat reports/remote-sources/report.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Retain audit evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: remote-source-audit
+          path: reports/remote-sources/
+          retention-days: 30
+          if-no-files-found: warn

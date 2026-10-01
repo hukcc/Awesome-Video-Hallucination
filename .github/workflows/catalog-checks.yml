@@ -17,5 +17,6 @@ jobs:
           node --test tests/catalog.test.mjs
           python3 -m unittest discover -s tests -p 'test_*.py'
           python3 scripts/generate_readme.py --check
+          python3 scripts/generate_relevance_review.py --check
           python3 scripts/check_catalog.py
           python3 scripts/generate_taxonomy_tree.py --check

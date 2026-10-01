@@ -1,5 +1,5 @@
 import {
-  DEFAULTS, TYPE_LABELS, RESOURCE_LABELS, groupPapers, filterPapers, sortPapers,
+  DEFAULTS, TYPE_LABELS, RESOURCE_LABELS, ROUTES, SCOPE_LABELS, groupPapers, filterPapers, sortPapers,
   readState, stateQuery, trainingValue, resourcesFor, markdownFor, bibtexFor,
 } from './catalog.mjs';
 
@@ -95,6 +95,7 @@ function details(paper) {
     item.append(node('p', '', entry.description));
     item.append(node('p', '', `${entry.mechanism} > ${entry.category} > ${entry.subtype}`));
     if (entry.type === 'mitigation') item.append(node('p', '', `Training-free: ${trainingValue(entry) === 'yes' ? 'Yes' : 'No'}`));
+    if (entry.routes?.length) item.append(node('p', '', `Technical route: ${entry.routes.join(' / ')}`));
     const resources = resourceLinks({ entries: [entry] });
     if (resourcesFor({ entries: [entry] }).length) item.append(resources);
     list.append(item);
@@ -108,6 +109,13 @@ function details(paper) {
     container.append(provenance);
   }
   if (paper.detail.note) container.append(node('p', 'source-note', paper.detail.note));
+  if (paper.detail.scope_review) {
+    const review = paper.detail.scope_review;
+    const note = node('p', 'source-note', `Scope: ${SCOPE_LABELS[review.scope]}. ${review.reason} `);
+    note.append(link('Review evidence', review.source_url),
+      document.createTextNode(` / ${review.evidence}; reviewed ${review.reviewed_on}.`));
+    container.append(note);
+  }
   if (paper.detail.added) {
     const added = node('p', 'source-note');
     added.append(link(`First listed ${paper.detail.added.date}`,
@@ -139,6 +147,7 @@ function scope(paper) {
   const section = node('div');
   section.append(roles(paper), node('p', 'venue', [...new Set(paper.matches.map(e => e.venue))].join(' / ')));
   section.append(node('p', 'scope-text', [...new Set(paper.matches.map(e => e.category))].join('; ')));
+  section.append(node('p', 'scope-text', SCOPE_LABELS[paper.detail.scope_review?.scope || 'unreviewed']));
   const requirements = [...new Set(paper.matches.filter(e => e.type === 'mitigation').map(trainingValue))];
   if (requirements.length) section.append(node('p', 'scope-text', `Training-free: ${requirements.map(v => v === 'yes' ? 'Yes' : 'No').join(' / ')}`));
   return section;
@@ -328,6 +337,8 @@ async function init() {
     state.papers = groupPapers(data.entries, metadata.papers);
     options($('#type-filter'), Object.keys(TYPE_LABELS), TYPE_LABELS);
     options($('#task-filter'), metadata.task_vocabulary);
+    options($('#route-filter'), ROUTES);
+    options($('#scope-filter'), Object.keys(SCOPE_LABELS), SCOPE_LABELS);
     for (const key of ['mechanism', 'category', 'subtype', 'venue', 'year']) {
       const values = [...new Set(data.entries.map(e => String(e[key])))].sort((a, b) => a.localeCompare(b));
       options($(`#${key}-filter`), key === 'year' ? values.reverse() : values);

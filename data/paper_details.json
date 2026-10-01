@@ -32,6 +32,14 @@
       "added": {
         "date": "2026-02-09",
         "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Explicitly evaluates video action, event-order, and transition hallucinations and introduces a mitigation intervention.",
+        "source_url": "https://arxiv.org/html/2412.03735v2",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2503.19622": {
@@ -59,6 +67,14 @@
       "added": {
         "date": "2026-02-09",
         "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Dedicated video hallucination benchmark, causal-factor analysis, and reasoning-based mitigation framework.",
+        "source_url": "https://arxiv.org/html/2503.19622v1",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "https://ojs.aaai.org/index.php/AAAI/article/view/32463": {
@@ -75,6 +91,14 @@
       "added": {
         "date": "2026-02-09",
         "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Publisher abstract explicitly defines motion hallucination in video models and evaluates adversarial action videos.",
+        "source_url": "https://ojs.aaai.org/index.php/AAAI/article/view/32463",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2602.17768": {
@@ -98,6 +122,14 @@
       "added": {
         "date": "2026-05-01",
         "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Contains a dedicated motion-caption hallucination evaluation and uses motion parsing to train more faithful captions.",
+        "source_url": "https://arxiv.org/html/2602.17768v1",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2506.07371": {
@@ -120,6 +152,14 @@
       "added": {
         "date": "2026-02-09",
         "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Measures unsupported statements and omissions in free-form video captions against human descriptions.",
+        "source_url": "https://arxiv.org/html/2506.07371v2",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2606.23061": {
@@ -143,6 +183,14 @@
       "added": {
         "date": "2026-08-05",
         "commit": "06621b639d0669c9b71366ca6f6c7d0edea4b3f4"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Dedicated paired-video motion hallucination diagnosis with measurement-based verification.",
+        "source_url": "https://arxiv.org/html/2606.23061v1",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2607.01117": {
@@ -165,6 +213,14 @@
       "added": {
         "date": "2026-08-05",
         "commit": "06621b639d0669c9b71366ca6f6c7d0edea4b3f4"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Explicitly tests motions absent from video and distinguishes recognition from hallucination resistance.",
+        "source_url": "https://arxiv.org/html/2607.01117v2",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2406.16338": {
@@ -187,6 +243,14 @@
       "added": {
         "date": "2026-02-09",
         "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Dedicated intrinsic and extrinsic video hallucination evaluation using adversarial question pairs.",
+        "source_url": "https://arxiv.org/html/2406.16338v1",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2501.00584": {
@@ -214,6 +278,14 @@
       "added": {
         "date": "2026-02-09",
         "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      },
+      "scope_review": {
+        "scope": "broader",
+        "reason": "General streaming-video benchmark with a dedicated Temporal Hallucination Verification task; do not describe the entire benchmark or VideoChat-Online as hallucination-specific.",
+        "source_url": "https://arxiv.org/html/2501.00584v2",
+        "evidence": "Abstract; Introduction; Section 3.1 and Table 1 (Temporal Hallucination Verification)",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2411.16771": {
@@ -235,6 +307,14 @@
       "added": {
         "date": "2026-02-09",
         "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Dedicated temporal hallucination benchmark with captions ordered by factual distortion.",
+        "source_url": "https://arxiv.org/html/2411.16771v3",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2406.06040": {
@@ -261,6 +341,14 @@
       "added": {
         "date": "2026-02-09",
         "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      },
+      "scope_review": {
+        "scope": "broader",
+        "reason": "Broad captioning corpus and model study includes the explicit Vript-HAL object/action hallucination benchmark; distinguish that subset from Vript-RR and Vript-ERO.",
+        "source_url": "https://arxiv.org/html/2406.06040v2",
+        "evidence": "Abstract; Introduction (Vript-HAL versus broader tasks)",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "https://aclanthology.org/2025.emnlp-main.1446/": {
@@ -278,6 +366,14 @@
       "added": {
         "date": "2026-02-09",
         "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Publisher abstract explicitly evaluates visual and auditory hallucinations in egocentric videos.",
+        "source_url": "https://aclanthology.org/2025.emnlp-main.1446/",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2509.08538": {
@@ -303,6 +399,14 @@
       "added": {
         "date": "2026-02-09",
         "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Explicit hallucination benchmark across objects, attributes, and subject-action relations in videos.",
+        "source_url": "https://arxiv.org/html/2509.08538v2",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2605.09904": {
@@ -326,6 +430,14 @@
       "added": {
         "date": "2026-06-13",
         "commit": "80616d38f49fc37fd46d9efc0f44f26a79c0209a"
+      },
+      "scope_review": {
+        "scope": "broader",
+        "reason": "Object-consistency benchmark includes hallucination-aware variants and Hallucination Diagnostic Accuracy, providing direct relevance within a wider evaluation.",
+        "source_url": "https://arxiv.org/html/2605.09904v2",
+        "evidence": "Abstract; Introduction (hallucination-aware variants and HDA)",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2609.29607": {
@@ -350,6 +462,14 @@
       "added": {
         "date": "2026-10-01",
         "commit": "96e8786c440cb21d01c66c53fa86abe53e07191f"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Targets hallucinations from failed object-state monitoring and tests consistent trajectory-grounded answers.",
+        "source_url": "https://arxiv.org/html/2609.29607v1",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2508.21496": {
@@ -375,6 +495,14 @@
       "added": {
         "date": "2026-02-09",
         "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Dedicated long-video semantic aggregation hallucination evaluation and preference-based mitigation.",
+        "source_url": "https://arxiv.org/html/2508.21496v2",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2605.27101": {
@@ -399,6 +527,14 @@
       "added": {
         "date": "2026-06-13",
         "commit": "80616d38f49fc37fd46d9efc0f44f26a79c0209a"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Controlled video insertions directly test hallucinated subject-event associations across unrelated segments.",
+        "source_url": "https://arxiv.org/html/2605.27101v2",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2603.24329": {
@@ -423,6 +559,14 @@
       "added": {
         "date": "2026-06-11",
         "commit": "fbdebdb81950d395bdb46cc2c843394ecb593bd5"
+      },
+      "scope_review": {
+        "scope": "broader",
+        "reason": "Agent-centric video understanding benchmark explicitly diagnoses temporal, role, and fabricated-content errors through structured distractors.",
+        "source_url": "https://arxiv.org/html/2603.24329v2",
+        "evidence": "Abstract; Introduction (structured distractor taxonomy)",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2505.01481": {
@@ -449,6 +593,14 @@
       "added": {
         "date": "2026-02-09",
         "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Tests video-model answers against deliberately implausible visual events; the subject is model hallucination, not merely synthetic-video artifacts.",
+        "source_url": "https://arxiv.org/html/2505.01481v4",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2303.02961": {
@@ -468,6 +620,14 @@
       "added": {
         "date": "2026-02-09",
         "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Directly measures factual errors unsupported by video captions' visual inputs, including pre-VideoLLM captioning models.",
+        "source_url": "https://arxiv.org/html/2303.02961v1",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2609.36628": {
@@ -491,6 +651,14 @@
       "added": {
         "date": "2026-10-01",
         "commit": "96e8786c440cb21d01c66c53fa86abe53e07191f"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Explicitly penalizes fabricated limb actions in captions and trains preferences according to error severity.",
+        "source_url": "https://arxiv.org/html/2609.36628v1",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2409.16597": {
@@ -516,6 +684,14 @@
       "added": {
         "date": "2026-02-09",
         "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Dedicated event hallucination evaluation and temporal contrastive decoding intervention.",
+        "source_url": "https://arxiv.org/html/2409.16597v6",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2511.06475": {
@@ -538,6 +714,14 @@
       "added": {
         "date": "2026-02-09",
         "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Controlled clip insertions measure narrative-prior hallucinations and omissions in video outputs.",
+        "source_url": "https://arxiv.org/html/2511.06475v1",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2503.21459": {
@@ -560,6 +744,14 @@
       "added": {
         "date": "2026-08-05",
         "commit": "f34e55bf3b810621b712e9f0daa85df63baea1fd"
+      },
+      "scope_review": {
+        "scope": "broader",
+        "reason": "Road-event VideoQA includes non-road videos and irrelevant/adversarial questions specifically testing hallucination robustness; the broad title does not justify exclusion.",
+        "source_url": "https://arxiv.org/html/2503.21459v1",
+        "evidence": "Abstract; Introduction (robustness evaluation contribution)",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2604.20460": {
@@ -585,6 +777,14 @@
       "added": {
         "date": "2026-05-01",
         "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Counterfactual traffic pairs explicitly diagnose negative hallucinations and inconsistent hazard judgments.",
+        "source_url": "https://arxiv.org/html/2604.20460v1",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2609.21521": {
@@ -609,6 +809,14 @@
       "added": {
         "date": "2026-10-01",
         "commit": "96e8786c440cb21d01c66c53fa86abe53e07191f"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Directly tests whether generated caption events are supported by video and measures hallucination detection failures.",
+        "source_url": "https://arxiv.org/html/2609.21521v1",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2603.11481": {
@@ -632,6 +840,14 @@
       "added": {
         "date": "2026-05-01",
         "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Dedicated diagnostic evaluation of video faithfulness and factuality hallucinations under evidence interventions.",
+        "source_url": "https://arxiv.org/html/2603.11481v1",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2602.00559": {
@@ -655,6 +871,14 @@
       "added": {
         "date": "2026-05-01",
         "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Explicitly benchmarks and mitigates isolated and compositional hallucinations in video models.",
+        "source_url": "https://arxiv.org/html/2602.00559v1",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2601.08557": {
@@ -677,6 +901,14 @@
       "added": {
         "date": "2026-05-01",
         "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Direct hallucination detection via semantic uncertainty over original and perturbed video responses.",
+        "source_url": "https://arxiv.org/html/2601.08557v1",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2604.25584": {
@@ -698,6 +930,14 @@
       "added": {
         "date": "2026-05-01",
         "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Evaluates video-caption factuality through conceptual and visually grounded arguments, including hallucination judgments.",
+        "source_url": "https://arxiv.org/html/2604.25584v1",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2604.17873": {
@@ -721,6 +961,14 @@
       "added": {
         "date": "2026-05-01",
         "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Tests unsupported spatiotemporal explanations induced by misleading conversational feedback about videos.",
+        "source_url": "https://arxiv.org/html/2604.17873v1",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2604.17375": {
@@ -744,6 +992,14 @@
       "added": {
         "date": "2026-05-01",
         "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Explicitly defines and measures video hallucinations induced by contradictory on-screen text.",
+        "source_url": "https://arxiv.org/html/2604.17375v1",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2606.31933": {
@@ -770,6 +1026,14 @@
       "added": {
         "date": "2026-08-05",
         "commit": "06621b639d0669c9b71366ca6f6c7d0edea4b3f4"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Dedicated spatial and temporal hallucination evaluation with background-controlled video pairs.",
+        "source_url": "https://arxiv.org/html/2606.31933v1",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2609.13288": {
@@ -789,6 +1053,14 @@
       "added": {
         "date": "2026-10-01",
         "commit": "96e8786c440cb21d01c66c53fa86abe53e07191f"
+      },
+      "scope_review": {
+        "scope": "broader",
+        "reason": "Reliability estimation includes a hallucination diagnostic set. TRACE-RC improves ranking and selective deferral, not the underlying generated answers.",
+        "source_url": "https://arxiv.org/html/2609.13288v1",
+        "evidence": "Abstract; Introduction (unchanged answers and selective prediction)",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2609.09895": {
@@ -810,6 +1082,14 @@
       "added": {
         "date": "2026-10-01",
         "commit": "96e8786c440cb21d01c66c53fa86abe53e07191f"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Dedicated evaluation of video hallucination detectors on adversarial questions and captions.",
+        "source_url": "https://arxiv.org/html/2609.09895v1",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2410.18325": {
@@ -833,6 +1113,14 @@
       "added": {
         "date": "2026-02-09",
         "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Explicit audio-visual hallucination evaluation and benchmark-based mitigation training.",
+        "source_url": "https://arxiv.org/html/2410.18325v2",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2410.12787": {
@@ -860,6 +1148,14 @@
       "added": {
         "date": "2026-02-09",
         "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Explicitly diagnoses hallucinations caused by priors and correlations across language, visual, and audio inputs.",
+        "source_url": "https://arxiv.org/html/2410.12787v1",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2604.23860": {
@@ -890,6 +1186,14 @@
       "added": {
         "date": "2026-05-01",
         "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Directly measures imagined sounds inferred from visible but inaudible events in egocentric videos.",
+        "source_url": "https://arxiv.org/html/2604.23860v1",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2605.07593": {
@@ -917,6 +1221,14 @@
       "added": {
         "date": "2026-06-13",
         "commit": "80616d38f49fc37fd46d9efc0f44f26a79c0209a"
+      },
+      "scope_review": {
+        "scope": "broader",
+        "reason": "Long audio-visual reasoning benchmark explicitly includes a multimodal hallucination dimension alongside three broader reasoning dimensions.",
+        "source_url": "https://arxiv.org/html/2605.07593v2",
+        "evidence": "Abstract; Introduction (multimodal hallucination dimension)",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2405.13684": {
@@ -941,6 +1253,14 @@
       "added": {
         "date": "2026-05-01",
         "commit": "cd32dd77ae032ce09194b7fb6126fe8e88f6bb2a"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Includes a dedicated audio-visual hallucination benchmark within a multimodal hallucination-ranking study.",
+        "source_url": "https://arxiv.org/html/2405.13684v1",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2609.17248": {
@@ -972,6 +1292,14 @@
       "added": {
         "date": "2026-10-01",
         "commit": "96e8786c440cb21d01c66c53fa86abe53e07191f"
+      },
+      "scope_review": {
+        "scope": "broader",
+        "reason": "Primarily long audio-visual reasoning, but evidence-conditioned scoring penalizes unsupported evidence. Its token-compression method is not separately listed as hallucination mitigation.",
+        "source_url": "https://arxiv.org/html/2609.17248v1",
+        "evidence": "Abstract; Introduction (evidence-conditioned evaluation)",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2505.11405": {
@@ -995,6 +1323,14 @@
       "added": {
         "date": "2026-02-09",
         "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Dedicated emotion hallucination study spanning multiple modalities, including video; its psychology-knowledge subset is not video-specific.",
+        "source_url": "https://arxiv.org/html/2505.11405v1",
+        "evidence": "Abstract; Introduction (multimodal emotion scope)",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2512.04643": {
@@ -1018,6 +1354,14 @@
       "added": {
         "date": "2026-02-09",
         "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Directly targets video temporal hallucinations with adaptive contrastive decoding and dedicated evaluations.",
+        "source_url": "https://arxiv.org/html/2512.04643v1",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2512.18671": {
@@ -1040,6 +1384,14 @@
       "added": {
         "date": "2026-02-09",
         "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Directly reduces video hallucination through response reliability scoring and generation termination.",
+        "source_url": "https://arxiv.org/html/2512.18671v1",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2602.07801": {
@@ -1075,6 +1427,14 @@
       "added": {
         "date": "2026-05-01",
         "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      },
+      "scope_review": {
+        "scope": "related",
+        "reason": "The primary evaluation concerns grounded QA and temporal localization. Hallucination motivates the work, but a separate hallucination measurement was not established in the reviewed sections.",
+        "source_url": "https://arxiv.org/html/2602.07801v4",
+        "evidence": "Abstract; Introduction; Section 5.1 (evaluation benchmarks)",
+        "reviewed_on": "2026-10-01",
+        "decision": "pending-manual-review"
       }
     },
     "2601.04778": {
@@ -1102,6 +1462,14 @@
       "added": {
         "date": "2026-05-01",
         "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Counterfactual action videos and preference learning explicitly target action and temporal hallucinations.",
+        "source_url": "https://arxiv.org/html/2601.04778v2",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2401.09861": {
@@ -1122,6 +1490,14 @@
       "added": {
         "date": "2026-02-09",
         "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Explicitly studies event-level temporal hallucination, operationalized through event timestamp localization.",
+        "source_url": "https://arxiv.org/html/2401.09861v1",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2505.12826": {
@@ -1145,6 +1521,14 @@
       "added": {
         "date": "2026-02-09",
         "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Dedicated study of activation interventions for video hallucinations; auxiliary classifier learning still counts as training.",
+        "source_url": "https://arxiv.org/html/2505.12826v1",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2603.25021": {
@@ -1172,6 +1556,14 @@
       "added": {
         "date": "2026-05-01",
         "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      },
+      "scope_review": {
+        "scope": "related",
+        "reason": "The work optimizes tool use and long-video QA accuracy and efficiency; hallucination is motivation rather than a separately measured outcome in the reviewed evaluation.",
+        "source_url": "https://arxiv.org/html/2603.25021v3",
+        "evidence": "Abstract; Introduction; Section 4.1 (evaluation benchmarks)",
+        "reviewed_on": "2026-10-01",
+        "decision": "pending-manual-review"
       }
     },
     "2603.16256": {
@@ -1193,6 +1585,14 @@
       "added": {
         "date": "2026-05-01",
         "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      },
+      "scope_review": {
+        "scope": "related",
+        "reason": "Addresses visual forgetting during reasoning, but reports general video QA and reasoning benchmarks rather than a dedicated hallucination measure in the reviewed evaluation.",
+        "source_url": "https://arxiv.org/html/2603.16256v1",
+        "evidence": "Abstract; Introduction; Section 5 benchmark and result overview",
+        "reviewed_on": "2026-10-01",
+        "decision": "pending-manual-review"
       }
     },
     "2602.18702": {
@@ -1218,6 +1618,14 @@
       "added": {
         "date": "2026-05-01",
         "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      },
+      "scope_review": {
+        "scope": "related",
+        "reason": "Grounding and QA results plus a qualitative hallucination example support indirect relevance; they should not be presented as a dedicated hallucination evaluation.",
+        "source_url": "https://arxiv.org/html/2602.18702v1",
+        "evidence": "Abstract; Introduction; Section 4.6 qualitative case study",
+        "reviewed_on": "2026-10-01",
+        "decision": "pending-manual-review"
       }
     },
     "2601.07761": {
@@ -1238,6 +1646,14 @@
       "added": {
         "date": "2026-05-01",
         "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      },
+      "scope_review": {
+        "scope": "broader",
+        "reason": "General evidence-grounded reasoning framework explicitly evaluates mitigation on VidHal and EventHall, beyond its general QA results.",
+        "source_url": "https://arxiv.org/html/2601.07761v2",
+        "evidence": "Abstract; Introduction; Sections 4.1-4.2 (VidHal and EventHall evaluation)",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2604.12582": {
@@ -1262,6 +1678,14 @@
       "added": {
         "date": "2026-05-01",
         "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Directly links unbalanced frame attention to hallucination and evaluates a decoder-side intervention.",
+        "source_url": "https://arxiv.org/html/2604.12582v1",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2606.27922": {
@@ -1289,6 +1713,14 @@
       "added": {
         "date": "2026-08-05",
         "commit": "06621b639d0669c9b71366ca6f6c7d0edea4b3f4"
+      },
+      "scope_review": {
+        "scope": "related",
+        "reason": "Directly addresses hallucination loops in reflection, but validates correction rates on general QA tasks. Review whether this operational definition belongs in the core list.",
+        "source_url": "https://arxiv.org/html/2606.27922v3",
+        "evidence": "Abstract; Introduction; Sections 2 and 4.2-4.3 (reflection reliability)",
+        "reviewed_on": "2026-10-01",
+        "decision": "pending-manual-review"
       }
     },
     "2405.13382": {
@@ -1314,6 +1746,14 @@
       "added": {
         "date": "2026-02-09",
         "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      },
+      "scope_review": {
+        "scope": "related",
+        "reason": "Timestamp localization and token compression are the primary contributions; the reviewed introduction and evaluation setup do not establish a dedicated hallucination assessment.",
+        "source_url": "https://arxiv.org/html/2405.13382v3",
+        "evidence": "Abstract; Introduction; Experiment Settings (datasets and metrics)",
+        "reviewed_on": "2026-10-01",
+        "decision": "pending-manual-review"
       }
     },
     "2312.08870": {
@@ -1337,6 +1777,14 @@
       "added": {
         "date": "2026-02-09",
         "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Explicitly targets video-conditioned generation drifting into unsupported text through visual-text attention changes.",
+        "source_url": "https://arxiv.org/html/2312.08870v2",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2511.18463": {
@@ -1367,7 +1815,15 @@
         "VideoPLR",
         "DPL"
       ],
-      "note": "The v3 paper uses Video-DPL; the earlier VideoPLR name remains searchable and appears in the official repository URL."
+      "note": "The v3 paper uses Video-DPL; the earlier VideoPLR name remains searchable and appears in the official repository URL.",
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Separates video perception from reasoning and explicitly rewards hallucination-resistant evidence.",
+        "source_url": "https://arxiv.org/html/2511.18463v3",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
+      }
     },
     "2512.04356": {
       "summary": "Combines hallucination-based negative captions with tracklet-phrase contrastive alignment to improve object and action faithfulness in video descriptions.",
@@ -1389,6 +1845,14 @@
       "added": {
         "date": "2026-02-09",
         "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Directly targets object and action hallucinations in video captions through contrastive alignment.",
+        "source_url": "https://arxiv.org/html/2512.04356v1",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2602.11730": {
@@ -1411,6 +1875,14 @@
       "added": {
         "date": "2026-06-13",
         "commit": "80616d38f49fc37fd46d9efc0f44f26a79c0209a"
+      },
+      "scope_review": {
+        "scope": "related",
+        "reason": "Hallucination refers mainly to invalid coordinates and timestamps in dense grounding. This is a boundary case for a collection centered on fabricated video descriptions and answers.",
+        "source_url": "https://arxiv.org/html/2602.11730v1",
+        "evidence": "Abstract; Introduction (coordinate/timestamp hallucination definition)",
+        "reviewed_on": "2026-10-01",
+        "decision": "pending-manual-review"
       }
     },
     "2607.21022": {
@@ -1430,6 +1902,14 @@
       "added": {
         "date": "2026-08-05",
         "commit": "06621b639d0669c9b71366ca6f6c7d0edea4b3f4"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Explicitly rectifies video-caption hallucinations and omissions, including human evaluation.",
+        "source_url": "https://arxiv.org/html/2607.21022v1",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2503.15871": {
@@ -1453,6 +1933,14 @@
       "added": {
         "date": "2026-02-09",
         "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Dedicated mitigation of action-scene hallucination with a corresponding diagnostic benchmark.",
+        "source_url": "https://arxiv.org/html/2503.15871v1",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2504.05810": {
@@ -1475,6 +1963,14 @@
       "added": {
         "date": "2026-02-09",
         "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Explicit video hallucination mitigation using prompt-aware preference training and VideoHallucer evaluation.",
+        "source_url": "https://arxiv.org/html/2504.05810v2",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "https://www.ijcai.org/proceedings/2025/1019": {
@@ -1490,6 +1986,14 @@
       "added": {
         "date": "2026-02-09",
         "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Publisher abstract explicitly targets video-language hallucination through hierarchical semantic alignment.",
+        "source_url": "https://www.ijcai.org/proceedings/2025/1019",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2603.15008": {
@@ -1514,6 +2018,14 @@
       "added": {
         "date": "2026-05-01",
         "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      },
+      "scope_review": {
+        "scope": "related",
+        "reason": "Claims hallucination mitigation, but the reviewed results use QA accuracy and WUPS as evidence; direct hallucination-specific validation remains unclear.",
+        "source_url": "https://arxiv.org/html/2603.15008v1",
+        "evidence": "Abstract; Introduction; Sections 5.2-5.3 (QA/WUPS results and ablations)",
+        "reviewed_on": "2026-10-01",
+        "decision": "pending-manual-review"
       }
     },
     "2602.17555": {
@@ -1538,6 +2050,14 @@
       "added": {
         "date": "2026-05-01",
         "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Directly targets temporal reasoning hallucinations and reports VidHalluc action and sequence evaluations.",
+        "source_url": "https://arxiv.org/html/2602.17555v3",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2602.01740": {
@@ -1556,6 +2076,14 @@
       "added": {
         "date": "2026-05-01",
         "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Explicit video hallucination mitigation using model-aware counterfactual inputs and contrastive decoding.",
+        "source_url": "https://arxiv.org/html/2602.01740v3",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2601.22574": {
@@ -1585,7 +2113,15 @@
       "aliases": [
         "STSCD"
       ],
-      "note": "The v2 method is ViSSRes and trains an auxiliary aligner. The earlier STSCD label is retained as a search alias; a frozen backbone does not make this method training-free."
+      "note": "The v2 method is ViSSRes and trains an auxiliary aligner. The earlier STSCD label is retained as a search alias; a frozen backbone does not make this method training-free.",
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Explicitly learns video representation residuals for hallucination mitigation and evaluates EventHallusion.",
+        "source_url": "https://arxiv.org/html/2601.22574v2",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
+      }
     },
     "2604.20473": {
       "summary": "Localizes visual evidence through a tree of cues and trains reasoning with rewards adjusted to the video's reasoning demands.",
@@ -1607,6 +2143,14 @@
       "added": {
         "date": "2026-05-01",
         "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      },
+      "scope_review": {
+        "scope": "broader",
+        "reason": "General tree-of-cue reasoning method includes direct VideoHallucer evaluation, supporting retention with a broader-scope label.",
+        "source_url": "https://arxiv.org/html/2604.20473v1",
+        "evidence": "Abstract; Introduction (VideoHallucer evaluation)",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2608.08622": {
@@ -1630,6 +2174,14 @@
       "added": {
         "date": "2026-09-01",
         "commit": "74d4ab1e0acc84846e3dd16c7d09ffb58e44f336"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Explicit video hallucination mitigation through attention intervention and contrastive evidence erasure.",
+        "source_url": "https://arxiv.org/html/2608.08622v1",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2608.15574": {
@@ -1648,6 +2200,14 @@
       "added": {
         "date": "2026-09-01",
         "commit": "74d4ab1e0acc84846e3dd16c7d09ffb58e44f336"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Directly checks fabricated timestamped video claims with independent frame perception and entailment verification.",
+        "source_url": "https://arxiv.org/html/2608.15574v1",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2504.13122": {
@@ -1673,6 +2233,14 @@
       "added": {
         "date": "2026-02-09",
         "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Hierarchical video preference optimization explicitly targets and evaluates video hallucination.",
+        "source_url": "https://arxiv.org/html/2504.13122v1",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2604.20937": {
@@ -1696,6 +2264,14 @@
       "added": {
         "date": "2026-05-01",
         "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      },
+      "scope_review": {
+        "scope": "broader",
+        "reason": "Token-pruning study explicitly diagnoses and evaluates hallucinations on EventHallusion. Retain as broader evaluation; it is not equivalent to excluded EchoPrune.",
+        "source_url": "https://arxiv.org/html/2604.20937v2",
+        "evidence": "Abstract; Introduction (EventHallusion comparison and pruning analysis)",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2604.03045": {
@@ -1717,6 +2293,14 @@
       "added": {
         "date": "2026-05-01",
         "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Dedicated spatial and temporal hallucination mitigation through layer-specific evidence interventions.",
+        "source_url": "https://arxiv.org/html/2604.03045v1",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2604.01460": {
@@ -1739,6 +2323,14 @@
       "added": {
         "date": "2026-05-01",
         "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Explicitly audits fabricated objects and temporal claims and trains using grounded factuality rewards.",
+        "source_url": "https://arxiv.org/html/2604.01460v2",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2606.11792": {
@@ -1762,6 +2354,14 @@
       "added": {
         "date": "2026-08-05",
         "commit": "06621b639d0669c9b71366ca6f6c7d0edea4b3f4"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Explicit video hallucination mitigation through learned visual token patching, evaluated on Vript-HAL.",
+        "source_url": "https://arxiv.org/html/2606.11792v2",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2505.20862": {
@@ -1781,6 +2381,14 @@
       "added": {
         "date": "2026-02-09",
         "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Dedicated audio-visual hallucination mitigation through modality-aware contrastive decoding.",
+        "source_url": "https://arxiv.org/html/2505.20862v2",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2410.06682": {
@@ -1806,6 +2414,14 @@
       "added": {
         "date": "2026-05-01",
         "commit": "cd32dd77ae032ce09194b7fb6126fe8e88f6bb2a"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Captioning training explicitly optimizes hallucination and omission rates for audio-visual events.",
+        "source_url": "https://arxiv.org/html/2410.06682v2",
+        "evidence": "Abstract; Introduction (caption hallucination-rate evaluation)",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     },
     "2609.28991": {
@@ -1827,6 +2443,14 @@
       "added": {
         "date": "2026-10-01",
         "commit": "96e8786c440cb21d01c66c53fa86abe53e07191f"
+      },
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Directly investigates whether video benchmarks predict downstream hallucination and the effects of stage interventions.",
+        "source_url": "https://arxiv.org/html/2609.28991v1",
+        "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
       }
     }
   }
