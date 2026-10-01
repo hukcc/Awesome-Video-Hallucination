@@ -1,0 +1,21 @@
+name: Check paper collection
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Validate collection and browser
+        run: |
+          node --test tests/catalog.test.mjs
+          python3 -m unittest discover -s tests -p 'test_*.py'
+          python3 scripts/generate_readme.py --check
+          python3 scripts/check_catalog.py
+          python3 scripts/generate_taxonomy_tree.py --check

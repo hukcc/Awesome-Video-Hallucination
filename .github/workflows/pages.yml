@@ -27,6 +27,14 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v6
 
+      - name: Validate collection and browser
+        run: |
+          node --test tests/catalog.test.mjs
+          python3 -m unittest discover -s tests -p 'test_*.py'
+          python3 scripts/generate_readme.py --check
+          python3 scripts/check_catalog.py
+          python3 scripts/generate_taxonomy_tree.py --check
+
       - name: Prepare static site
         run: |
           mkdir -p _site

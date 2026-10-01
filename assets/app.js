@@ -1,268 +1,359 @@
-const state = {
-  entries: [],
-  filters: {
-    search: "",
-    type: "",
-    mechanism: "",
-    category: "",
-    year: "",
-    resource: "",
-  },
-};
+import {
+  DEFAULTS, TYPE_LABELS, RESOURCE_LABELS, groupPapers, filterPapers, sortPapers,
+  readState, stateQuery, trainingValue, resourcesFor, markdownFor, bibtexFor,
+} from './catalog.mjs';
 
-const elements = {
-  total: document.querySelector("#total-count"),
-  benchmarks: document.querySelector("#benchmark-count"),
-  mitigations: document.querySelector("#mitigation-count"),
-  analyses: document.querySelector("#analysis-count"),
-  resources: document.querySelector("#resource-count"),
-  visible: document.querySelector("#visible-count"),
-  grid: document.querySelector("#paper-grid"),
-  template: document.querySelector("#paper-card-template"),
-  search: document.querySelector("#search-input"),
-  type: document.querySelector("#type-filter"),
-  mechanism: document.querySelector("#mechanism-filter"),
-  category: document.querySelector("#category-filter"),
-  year: document.querySelector("#year-filter"),
-  resource: document.querySelector("#resource-filter"),
-  reset: document.querySelector("#reset-button"),
-  quickFilters: document.querySelector(".quick-links"),
-};
+const $ = selector => document.querySelector(selector);
+const state = { filters: readState(location.search), papers: [], loaded: false };
+const mobile = matchMedia('(max-width: 899px)');
+let searchEditing = false;
+let notificationTimer;
 
-const resourceLabels = {
-  project: "Project",
-  code: "Code",
-  dataset: "Dataset",
-  leaderboard: "Leaderboard",
-};
-
-const typeLabels = {
-  benchmark: "Benchmark",
-  mitigation: "Mitigation",
-  analysis: "Analysis",
-};
-
-function hasAnyResource(entry) {
-  return Object.values(entry.resources).some(Boolean);
+function node(tag, className, text) {
+  const element = document.createElement(tag);
+  if (className) element.className = className;
+  if (text !== undefined) element.textContent = text;
+  return element;
 }
 
-function fillOptions(select, values) {
-  values.forEach((value) => {
-    const option = document.createElement("option");
-    option.value = value;
-    option.textContent = value;
-    select.append(option);
-  });
+function link(text, url, className = '') {
+  const element = node('a', className, text);
+  element.href = url;
+  return element;
 }
 
-function searchableText(entry) {
-  return [
-    entry.title,
-    entry.name,
-    entry.venue,
-    entry.date,
-    entry.arxiv_id,
-    entry.type,
-    entry.category,
-    entry.mechanism,
-    entry.subtype,
-  ]
-    .filter(Boolean)
-    .join(" ")
-    .toLowerCase();
+function iconButton(icon, label, action) {
+  const button = node('button', 'icon-button');
+  button.type = 'button';
+  button.title = label;
+  button.setAttribute('aria-label', label);
+  const image = node('img');
+  image.src = `assets/icons/${icon}.svg`;
+  image.alt = '';
+  button.append(image);
+  button.addEventListener('click', action);
+  return button;
 }
 
-function matchesResource(entry, resource) {
-  if (!resource) return true;
-  if (resource === "missing-code") return !entry.resources.code;
-  if (resource === "missing-project") return !entry.resources.project;
-  return Boolean(entry.resources[resource]);
+function notify(message) {
+  clearTimeout(notificationTimer);
+  $('#notification').textContent = message;
+  notificationTimer = setTimeout(() => { $('#notification').textContent = ''; }, 3000);
 }
 
-function citationKey(entry) {
-  const firstWord = entry.title.split(/\s+/)[0].replace(/[^a-z0-9]/gi, "").toLowerCase();
-  return `${firstWord || "paper"}${entry.year || ""}${entry.name.replace(/[^a-z0-9]/gi, "")}`;
-}
-
-function markdownFor(entry) {
-  return `- [**${entry.title}**](${entry.paper_url}) (${entry.venue}, ${entry.date})`;
-}
-
-function bibtexFor(entry) {
-  const idLine = entry.arxiv_id ? `\n  eprint={${entry.arxiv_id}},\n  archivePrefix={arXiv},` : "";
-  return `@article{${citationKey(entry)},\n  title={${entry.title}},\n  journal={${entry.venue}},${idLine}\n  year={${entry.year || ""}}\n}`;
-}
-
-async function copyText(text, button) {
+async function copy(text, label) {
   try {
     await navigator.clipboard.writeText(text);
-    const previous = button.textContent;
-    button.textContent = "Copied";
-    window.setTimeout(() => {
-      button.textContent = previous;
-    }, 1400);
+    notify(`${label} copied`);
   } catch {
-    window.prompt("Copy this text:", text);
+    window.prompt(`Copy ${label.toLowerCase()}`, text);
   }
 }
 
-function filteredEntries() {
-  const query = state.filters.search.trim().toLowerCase();
-  return state.entries.filter((entry) => {
-    if (query && !searchableText(entry).includes(query)) return false;
-    if (state.filters.type && entry.type !== state.filters.type) return false;
-    if (state.filters.mechanism && entry.mechanism !== state.filters.mechanism) return false;
-    if (state.filters.category && entry.category !== state.filters.category) return false;
-    if (state.filters.year && String(entry.year) !== state.filters.year) return false;
-    if (!matchesResource(entry, state.filters.resource)) return false;
-    return true;
+function roles(paper) {
+  const list = node('div', 'role-list');
+  [...new Set(paper.matches.map(e => e.type))].forEach(type => {
+    list.append(node('span', `type-tag ${type}`, TYPE_LABELS[type]));
   });
+  return list;
 }
 
-function renderStats(data) {
-  elements.total.textContent = data.entry_count;
-  elements.benchmarks.textContent = data.benchmark_count;
-  elements.mitigations.textContent = data.mitigation_count;
-  elements.analyses.textContent = data.analysis_count;
-  elements.resources.textContent = data.entries.filter(hasAnyResource).length;
-}
-
-function renderCard(entry) {
-  const fragment = elements.template.content.cloneNode(true);
-  const card = fragment.querySelector(".paper-card");
-  const typePill = fragment.querySelector(".type-pill");
-  const title = fragment.querySelector(".paper-title");
-  const trainingRow = fragment.querySelector(".training-row");
-  const resources = fragment.querySelector(".resource-links");
-  const copyMarkdown = fragment.querySelector(".copy-markdown");
-  const copyBibtex = fragment.querySelector(".copy-bibtex");
-
-  card.dataset.type = entry.type;
-  typePill.textContent = typeLabels[entry.type] || entry.type;
-  typePill.classList.add(entry.type);
-  fragment.querySelector(".date-pill").textContent = entry.date;
-  title.href = entry.paper_url;
-  title.textContent = entry.title;
-  fragment.querySelector(".paper-name").textContent = entry.name;
-  fragment.querySelector(".paper-venue").textContent = entry.venue;
-  fragment.querySelector(".paper-category").textContent = `${entry.category} / ${entry.subtype}`;
-
-  if (entry.type === "mitigation") {
-    fragment.querySelector(".paper-training").textContent = entry.training_free || "-";
-  } else {
-    trainingRow.remove();
-  }
-
-  Object.entries(entry.resources).forEach(([kind, url]) => {
-    if (!url) return;
-    const link = document.createElement("a");
-    link.href = url;
-    link.textContent = resourceLabels[kind] || kind;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-    resources.append(link);
+function resourceLinks(paper) {
+  const container = node('div', 'resource-links');
+  const links = resourcesFor(paper);
+  const totals = {};
+  links.forEach(({ kind }) => { totals[kind] = (totals[kind] || 0) + 1; });
+  const counts = {};
+  links.forEach(({ kind, url }) => {
+    counts[kind] = (counts[kind] || 0) + 1;
+    const label = RESOURCE_LABELS[kind] + (totals[kind] > 1 ? ` ${counts[kind]}` : '');
+    container.append(link(label, url));
   });
+  if (!links.length) container.append(node('span', 'no-resources', 'No linked resources'));
+  return container;
+}
 
-  if (!resources.children.length) {
-    const missing = document.createElement("span");
-    missing.textContent = "No resources yet";
-    resources.append(missing);
+function copyActions(paper) {
+  const actions = node('div', 'copy-actions');
+  actions.append(
+    iconButton('copy', 'Copy Markdown', () => copy(markdownFor(paper), 'Markdown')),
+    iconButton('quote', 'Copy BibTeX', () => copy(bibtexFor(paper), 'BibTeX')),
+  );
+  return actions;
+}
+
+function details(paper) {
+  const container = node('details', 'paper-details');
+  const total = paper.entries.length;
+  container.append(node('summary', '', `${total > 1 ? total + ' contributions' : 'Details'} & sources`));
+  const list = node('ul', 'contribution-list');
+  const matching = new Set(paper.matches.map(e => e.id));
+  for (const entry of paper.entries) {
+    const item = node('li', matching.has(entry.id) ? '' : 'not-matched');
+    item.append(node('strong', '', `${entry.name} / ${TYPE_LABELS[entry.type]}`));
+    if (!matching.has(entry.id)) item.append(node('span', '', ' (outside current filters)'));
+    item.append(node('p', '', entry.description));
+    item.append(node('p', '', `${entry.mechanism} > ${entry.category} > ${entry.subtype}`));
+    if (entry.type === 'mitigation') item.append(node('p', '', `Training-free: ${trainingValue(entry) === 'yes' ? 'Yes' : 'No'}`));
+    const resources = resourceLinks({ entries: [entry] });
+    if (resourcesFor({ entries: [entry] }).length) item.append(resources);
+    list.append(item);
   }
+  container.append(list);
+  if (paper.detail.authors?.length) container.append(node('p', 'source-note', paper.detail.authors.join(', ')));
+  if (paper.detail.source_url) {
+    const provenance = node('p', 'source-note');
+    provenance.append(link('Descriptions and task-tag source', paper.detail.source_url),
+      document.createTextNode(` / ${paper.detail.evidence}; reviewed ${paper.detail.reviewed_on}.`));
+    container.append(provenance);
+  }
+  if (paper.detail.note) container.append(node('p', 'source-note', paper.detail.note));
+  if (paper.detail.added) {
+    const added = node('p', 'source-note');
+    added.append(link(`First listed ${paper.detail.added.date}`,
+      `https://github.com/hukcc/Awesome-Video-Hallucination/commit/${paper.detail.added.commit}`));
+    container.append(added);
+  }
+  return container;
+}
 
-  copyMarkdown.addEventListener("click", () => copyText(markdownFor(entry), copyMarkdown));
-  copyBibtex.addEventListener("click", () => copyText(bibtexFor(entry), copyBibtex));
+function paperContent(paper, parent) {
+  parent.append(node('p', 'paper-names', [...new Set(paper.entries.map(e => e.name))].join(' / ')));
+  const heading = node('h2');
+  heading.append(link(paper.title, paper.paper_url, 'paper-title'));
+  parent.append(heading, node('p', 'paper-summary', paper.detail.summary || 'Summary pending source review.'));
+  const tags = node('div', 'tags');
+  (paper.detail.tasks || []).forEach(task => {
+    const tag = link(task, stateQuery({ ...state.filters, task, tab: 'papers' }), 'task-tag');
+    tag.addEventListener('click', event => {
+      if (modifiedClick(event)) return;
+      event.preventDefault();
+      change({ task });
+    });
+    tags.append(tag);
+  });
+  parent.append(tags, details(paper));
+}
 
-  return fragment;
+function scope(paper) {
+  const section = node('div');
+  section.append(roles(paper), node('p', 'venue', [...new Set(paper.matches.map(e => e.venue))].join(' / ')));
+  section.append(node('p', 'scope-text', [...new Set(paper.matches.map(e => e.category))].join('; ')));
+  const requirements = [...new Set(paper.matches.filter(e => e.type === 'mitigation').map(trainingValue))];
+  if (requirements.length) section.append(node('p', 'scope-text', `Training-free: ${requirements.map(v => v === 'yes' ? 'Yes' : 'No').join(' / ')}`));
+  return section;
+}
+
+function dateInfo(paper) {
+  const section = node('div');
+  const time = node('time', 'date-value', paper.date);
+  time.dateTime = paper.detail.published_on || paper.date.split('/').reverse().join('-');
+  section.append(time);
+  if (state.filters.sort === 'added' && paper.detail.added) {
+    section.append(node('p', 'date-caption added-date', 'First listed'));
+    section.append(node('p', 'date-value', paper.detail.added.date));
+  }
+  return section;
+}
+
+function renderTable(papers) {
+  const table = node('table', 'paper-table');
+  const caption = node('caption', 'sr-only', 'Papers matching the selected filters');
+  const head = node('thead');
+  const header = node('tr');
+  ['Paper', 'Contribution & venue', 'First published', 'Resources'].forEach(label => {
+    const th = node('th', '', label);
+    th.scope = 'col';
+    header.append(th);
+  });
+  head.append(header);
+  const body = node('tbody');
+  for (const paper of papers) {
+    const row = node('tr');
+    row.dataset.paper = paper.key;
+    const content = node('td');
+    paperContent(paper, content);
+    const scopeCell = node('td');
+    scopeCell.append(scope(paper));
+    const date = node('td');
+    date.append(dateInfo(paper));
+    const resources = node('td');
+    resources.append(resourceLinks(paper), copyActions(paper));
+    row.append(content, scopeCell, date, resources);
+    body.append(row);
+  }
+  table.append(caption, head, body);
+  return table;
+}
+
+function renderCards(papers) {
+  const grid = node('div', 'card-grid');
+  for (const paper of papers) {
+    const card = node('article', 'paper-card');
+    card.dataset.paper = paper.key;
+    const top = node('div', 'card-topline');
+    top.append(roles(paper), dateInfo(paper));
+    card.append(top);
+    paperContent(paper, card);
+    const venue = [...new Set(paper.matches.map(e => e.venue))].join(' / ');
+    const categories = [...new Set(paper.matches.map(e => e.category))].join('; ');
+    card.append(node('p', 'scope-text', `${venue} / ${categories}`), resourceLinks(paper));
+    const bottom = node('div', 'card-bottom');
+    const requirements = [...new Set(paper.matches.filter(e => e.type === 'mitigation').map(trainingValue))];
+    bottom.append(node('span', 'date-caption', requirements.length ? `Training-free: ${requirements.map(v => v === 'yes' ? 'Yes' : 'No').join(' / ')}` : ''));
+    bottom.append(copyActions(paper));
+    card.append(bottom);
+    grid.append(card);
+  }
+  return grid;
 }
 
 function render() {
-  const entries = filteredEntries();
-  elements.visible.textContent = entries.length;
-  elements.grid.replaceChildren();
-
-  if (!entries.length) {
-    const empty = document.createElement("div");
-    empty.className = "empty-state";
-    empty.textContent = "No entries match the current filters.";
-    elements.grid.append(empty);
-    return;
+  const f = state.filters;
+  $('#catalog').hidden = f.tab !== 'papers';
+  $('#reading-guide').hidden = f.tab !== 'guide';
+  document.querySelectorAll('[data-tab]').forEach(tab => {
+    tab.href = stateQuery({ ...f, tab: tab.dataset.tab }) || '?';
+    if (tab.dataset.tab === f.tab) tab.setAttribute('aria-current', 'page');
+    else tab.removeAttribute('aria-current');
+  });
+  $('#search-input').value = f.search;
+  $('#search-input').placeholder = mobile.matches ? 'Search papers, methods, tasks...' : 'Search titles, methods, tasks, arXiv IDs...';
+  $('#sort-select').value = f.sort;
+  const active = $('#active-filters');
+  active.replaceChildren();
+  for (const key of Object.keys(DEFAULTS).filter(k => !['sort', 'view', 'tab'].includes(k))) {
+    const select = document.querySelector(`[data-filter="${key}"]`);
+    if (select) {
+      select.querySelectorAll('[data-unknown]').forEach(option => option.remove());
+      if (f[key] && ![...select.options].some(o => o.value === f[key])) {
+        const unknown = new Option(`Unknown: ${f[key]}`, f[key]);
+        unknown.dataset.unknown = 'true';
+        select.append(unknown);
+      }
+      select.value = f[key];
+    }
+    if (f[key]) {
+      const value = select ? select.selectedOptions[0].textContent : f[key];
+      const label = select ? select.parentElement.firstChild.textContent.trim() : 'Search';
+      const button = node('button', 'filter-token', `${label}: ${value}`);
+      button.type = 'button';
+      button.setAttribute('aria-label', `Remove ${label.toLowerCase()} filter: ${value}`);
+      const close = node('span', '', '\u00d7');
+      close.setAttribute('aria-hidden', 'true');
+      button.append(close);
+      button.addEventListener('click', () => change({ [key]: '' }));
+      active.append(button);
+    }
   }
-
-  entries.forEach((entry) => elements.grid.append(renderCard(entry)));
+  $('#filter-count').textContent = active.childElementCount ? `(${active.childElementCount})` : '';
+  const cardView = mobile.matches || f.view === 'cards';
+  $('#table-view').setAttribute('aria-pressed', String(!cardView));
+  $('#cards-view').setAttribute('aria-pressed', String(cardView));
+  if (!state.loaded) return;
+  const results = sortPapers(filterPapers(state.papers, f), f.sort);
+  const contributions = results.reduce((sum, paper) => sum + paper.matches.length, 0);
+  const count = $('#visible-count');
+  count.replaceChildren(node('strong', '', `${results.length} ${results.length === 1 ? 'paper' : 'papers'}`),
+    document.createTextNode(` / ${contributions} ${contributions === 1 ? 'contribution' : 'contributions'}`));
+  $('#paper-results').replaceChildren(results.length ? (cardView ? renderCards(results) : renderTable(results)) : document.createDocumentFragment());
+  $('#empty-state').hidden = results.length > 0;
 }
 
-function setFilter(key, value) {
-  state.filters[key] = value;
-  const input = key === "search" ? elements.search : elements[key];
-  if (input) input.value = value;
+function change(patch, { replace = false } = {}) {
+  state.filters = { ...state.filters, ...patch };
+  const next = location.pathname + stateQuery(state.filters) + location.hash;
+  if (next !== location.pathname + location.search + location.hash) history[replace ? 'replaceState' : 'pushState'](null, '', next);
   render();
 }
 
-function initializeFilters(entries) {
-  fillOptions(elements.type, [...new Set(entries.map((entry) => entry.type))].sort());
-  fillOptions(elements.mechanism, [...new Set(entries.map((entry) => entry.mechanism))].sort());
-  fillOptions(elements.category, [...new Set(entries.map((entry) => entry.category))].sort());
-  fillOptions(
-    elements.year,
-    [...new Set(entries.map((entry) => entry.year).filter(Boolean))]
-      .sort((a, b) => b - a)
-      .map(String),
-  );
-
-  elements.search.addEventListener("input", (event) => setFilter("search", event.target.value));
-  elements.type.addEventListener("change", (event) => setFilter("type", event.target.value));
-  elements.mechanism.addEventListener("change", (event) => setFilter("mechanism", event.target.value));
-  elements.category.addEventListener("change", (event) => setFilter("category", event.target.value));
-  elements.year.addEventListener("change", (event) => setFilter("year", event.target.value));
-  elements.resource.addEventListener("change", (event) => setFilter("resource", event.target.value));
-  elements.reset.addEventListener("click", () => {
-    Object.keys(state.filters).forEach((key) => {
-      state.filters[key] = "";
-    });
-    elements.search.value = "";
-    elements.type.value = "";
-    elements.mechanism.value = "";
-    elements.category.value = "";
-    elements.year.value = "";
-    elements.resource.value = "";
-    render();
-  });
-  elements.quickFilters.addEventListener("click", (event) => {
-    const button = event.target.closest("button");
-    if (!button) return;
-
-    if (button.dataset.filterType) {
-      setFilter("type", button.dataset.filterType);
-      return;
-    }
-
-    if (button.dataset.filterResource) {
-      setFilter("resource", button.dataset.filterResource);
-    }
-  });
-
-  const params = new URLSearchParams(window.location.search);
-  ["search", "type", "mechanism", "category", "year", "resource"].forEach((key) => {
-    const value = params.get(key);
-    if (!value) return;
-    state.filters[key] = value;
-    const input = key === "search" ? elements.search : elements[key];
-    if (input) input.value = value;
-  });
+function reset() {
+  searchEditing = false;
+  change({ ...DEFAULTS, view: state.filters.view, tab: 'papers', sort: state.filters.sort });
 }
 
-async function loadPapers() {
-  const response = await fetch("data/papers.json");
-  if (!response.ok) {
-    throw new Error(`Unable to load papers.json: ${response.status}`);
-  }
-  const data = await response.json();
-  state.entries = data.entries;
-  renderStats(data);
-  initializeFilters(data.entries);
+function modifiedClick(event) {
+  return event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey;
+}
+
+function options(select, values, labels = {}) {
+  values.forEach(value => select.add(new Option(labels[value] || value, value)));
+}
+
+$('#filter-panel').open = !mobile.matches;
+mobile.addEventListener('change', () => {
+  $('#filter-panel').open = !mobile.matches;
   render();
-}
-
-loadPapers().catch((error) => {
-  elements.grid.innerHTML = `<div class="empty-state">${error.message}</div>`;
 });
+$('#search-input').addEventListener('input', event => {
+  change({ search: event.target.value }, { replace: searchEditing });
+  searchEditing = true;
+});
+$('#search-input').addEventListener('blur', () => { searchEditing = false; });
+document.querySelectorAll('[data-filter]').forEach(select => {
+  select.addEventListener('change', () => change({ [select.dataset.filter]: select.value }));
+});
+$('#sort-select').addEventListener('change', event => change({ sort: event.target.value }));
+$('#table-view').addEventListener('click', () => change({ view: 'table' }));
+$('#cards-view').addEventListener('click', () => change({ view: 'cards' }));
+$('#reset-button').addEventListener('click', reset);
+$('#empty-reset').addEventListener('click', reset);
+$('#share-button').addEventListener('click', () => copy(location.href, 'View link'));
+document.querySelectorAll('[data-tab]').forEach(tab => {
+  tab.addEventListener('click', event => {
+    if (modifiedClick(event)) return;
+    event.preventDefault();
+    change({ tab: tab.dataset.tab });
+  });
+});
+document.querySelectorAll('[data-preset]').forEach(preset => {
+  preset.addEventListener('click', event => {
+    if (modifiedClick(event)) return;
+    event.preventDefault();
+    change({ ...readState(new URL(preset.href).search), view: state.filters.view });
+  });
+});
+window.addEventListener('popstate', () => {
+  searchEditing = false;
+  state.filters = readState(location.search);
+  render();
+});
+
+async function init() {
+  render();
+  try {
+    const responses = await Promise.all(['data/papers.json', 'data/paper_details.json'].map(url => fetch(url)));
+    if (responses.some(response => !response.ok)) throw new Error('Collection request failed');
+    const [data, metadata] = await Promise.all(responses.map(response => response.json()));
+    state.papers = groupPapers(data.entries, metadata.papers);
+    options($('#type-filter'), Object.keys(TYPE_LABELS), TYPE_LABELS);
+    options($('#task-filter'), metadata.task_vocabulary);
+    for (const key of ['mechanism', 'category', 'subtype', 'venue', 'year']) {
+      const values = [...new Set(data.entries.map(e => String(e[key])))].sort((a, b) => a.localeCompare(b));
+      options($(`#${key}-filter`), key === 'year' ? values.reverse() : values);
+    }
+    const counts = $('#collection-counts');
+    counts.replaceChildren();
+    [[state.papers.length, 'papers'], [data.benchmark_count, 'benchmarks'], [data.mitigation_count, 'methods'], [data.analysis_count, 'analysis']].forEach(([number, label]) => {
+      const item = node('span');
+      item.append(node('strong', '', number), document.createTextNode(' ' + label));
+      counts.append(item);
+    });
+    state.loaded = true;
+    $('#paper-results').setAttribute('aria-busy', 'false');
+    render();
+  } catch (error) {
+    $('#collection-counts').textContent = 'Collection unavailable';
+    $('#visible-count').textContent = 'The paper collection could not be loaded.';
+    const message = node('p');
+    message.append(link('Open the full list on GitHub', 'https://github.com/hukcc/Awesome-Video-Hallucination#evaluation-benchmarks'));
+    const retry = node('button', '', 'Retry');
+    retry.type = 'button';
+    retry.addEventListener('click', () => location.reload());
+    $('#paper-results').replaceChildren(message, retry);
+    $('#paper-results').setAttribute('aria-busy', 'false');
+    console.error(error);
+  }
+}
+
+init();

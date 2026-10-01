@@ -1,0 +1,1833 @@
+{
+  "schema_version": 1,
+  "description": "Curator-written summaries and task tags based on the linked primary sources. Tags describe task coverage, not exclusive categories or a relevance ranking. Publication dates are first arXiv submissions or publisher issue dates; added dates are the earliest recorded README appearances in Git history.",
+  "task_vocabulary": [
+    "Audio-Visual Understanding",
+    "Hallucination Detection",
+    "Long-Video Understanding",
+    "Motion Understanding",
+    "Temporal Grounding",
+    "Video Captioning",
+    "Video QA",
+    "Video Reasoning",
+    "Video Understanding"
+  ],
+  "papers": {
+    "2412.03735": {
+      "summary": "Evaluates action, event-order, and scene-transition hallucinations; DINO-HEAL reweights visual features using DINOv2 saliency without additional training.",
+      "tasks": [
+        "Video QA",
+        "Motion Understanding",
+        "Video Reasoning"
+      ],
+      "source_url": "https://arxiv.org/abs/2412.03735v2",
+      "evidence": "Abstract; Table 1; action hallucination evaluation",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2024-12-04",
+      "authors": [
+        "Chaoyu Li",
+        "Eun Woo Im",
+        "Pooyan Fazli"
+      ],
+      "added": {
+        "date": "2026-02-09",
+        "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      }
+    },
+    "2503.19622": {
+      "summary": "Introduces HAVEN for diagnosing video hallucinations and a Video-thinking framework combining supervised reasoning with thinking-based preference optimization.",
+      "tasks": [
+        "Video QA",
+        "Hallucination Detection",
+        "Video Reasoning"
+      ],
+      "source_url": "https://arxiv.org/abs/2503.19622v1",
+      "evidence": "Abstract and Introduction (thinking-based DPO definition)",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2025-03-25",
+      "authors": [
+        "Hongcheng Gao",
+        "Jiashu Qu",
+        "Jingyi Tang",
+        "Baolong Bi",
+        "Yue Liu",
+        "Hongyu Chen",
+        "Li Liang",
+        "Li Su",
+        "Qingming Huang"
+      ],
+      "added": {
+        "date": "2026-02-09",
+        "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      }
+    },
+    "https://ojs.aaai.org/index.php/AAAI/article/view/32463": {
+      "summary": "Tests motion hallucinations using original, reversed-meaning, and incomplete actions, and proposes reverse-playback contrastive decoding.",
+      "tasks": [
+        "Video QA",
+        "Motion Understanding"
+      ],
+      "source_url": "https://ojs.aaai.org/index.php/AAAI/article/view/32463",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2025-04",
+      "authors": [],
+      "added": {
+        "date": "2026-02-09",
+        "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      }
+    },
+    "2602.17768": {
+      "summary": "Benchmarks fine-grained limb motion in captions and questions, with a kinematic parsing metric also used for reinforcement learning.",
+      "tasks": [
+        "Video Captioning",
+        "Video QA",
+        "Motion Understanding"
+      ],
+      "source_url": "https://arxiv.org/abs/2602.17768v1",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2026-02-19",
+      "authors": [
+        "Boda Lin",
+        "Yongjie Zhu",
+        "Xiaocheng Gong",
+        "Wenyu Qin",
+        "Meng Wang"
+      ],
+      "added": {
+        "date": "2026-05-01",
+        "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      }
+    },
+    "2506.07371": {
+      "summary": "Measures both fabricated content and missing information in free-form video captions against human-written reference descriptions.",
+      "tasks": [
+        "Video Captioning",
+        "Hallucination Detection"
+      ],
+      "source_url": "https://arxiv.org/abs/2506.07371v2",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2025-06-09",
+      "authors": [
+        "Ruchit Rawal",
+        "Reza Shirkavand",
+        "Heng Huang",
+        "Gowthami Somepalli",
+        "Tom Goldstein"
+      ],
+      "added": {
+        "date": "2026-02-09",
+        "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      }
+    },
+    "2606.23061": {
+      "summary": "Diagnoses motion direction, attribution, and timing errors; Plug-in Physical Verification supplies measured motion evidence without model training.",
+      "tasks": [
+        "Video QA",
+        "Motion Understanding"
+      ],
+      "source_url": "https://arxiv.org/abs/2606.23061v1",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2026-06-22",
+      "authors": [
+        "Weile Guo",
+        "Shenghong He",
+        "Danying Mo",
+        "Chengdong Xu",
+        "Xuexun Liu",
+        "Chao Yu"
+      ],
+      "added": {
+        "date": "2026-08-05",
+        "commit": "06621b639d0669c9b71366ca6f6c7d0edea4b3f4"
+      }
+    },
+    "2607.01117": {
+      "summary": "Probes motion hallucinations caused by prior knowledge, sequential inference, and visual similarity through several question formats.",
+      "tasks": [
+        "Video QA",
+        "Motion Understanding",
+        "Hallucination Detection"
+      ],
+      "source_url": "https://arxiv.org/abs/2607.01117v2",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2026-07-01",
+      "authors": [
+        "Sihan Chen",
+        "Jiale Li",
+        "Jianghang Lin",
+        "Mengyuan Liu"
+      ],
+      "added": {
+        "date": "2026-08-05",
+        "commit": "06621b639d0669c9b71366ca6f6c7d0edea4b3f4"
+      }
+    },
+    "2406.16338": {
+      "summary": "Uses adversarial question pairs to distinguish hallucinations about visible objects and temporal relations from unsupported external information.",
+      "tasks": [
+        "Video QA",
+        "Hallucination Detection"
+      ],
+      "source_url": "https://arxiv.org/abs/2406.16338v1",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2024-06-24",
+      "authors": [
+        "Yuxuan Wang",
+        "Yueqian Wang",
+        "Dongyan Zhao",
+        "Cihang Xie",
+        "Zilong Zheng"
+      ],
+      "added": {
+        "date": "2026-02-09",
+        "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      }
+    },
+    "2501.00584": {
+      "summary": "Introduces a streaming-video question-answering benchmark and a model with pyramid memory for online perception, memory, and reasoning.",
+      "tasks": [
+        "Video QA",
+        "Video Understanding"
+      ],
+      "source_url": "https://arxiv.org/abs/2501.00584v2",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2024-12-31",
+      "authors": [
+        "Zhenpeng Huang",
+        "Xinhao Li",
+        "Jiaqi Li",
+        "Jing Wang",
+        "Xiangyu Zeng",
+        "Cheng Liang",
+        "Tao Wu",
+        "Xi Chen",
+        "Liang Li",
+        "Limin Wang"
+      ],
+      "added": {
+        "date": "2026-02-09",
+        "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      }
+    },
+    "2411.16771": {
+      "summary": "Evaluates temporal hallucinations by asking models to distinguish and rank video captions with different degrees of factual distortion.",
+      "tasks": [
+        "Video Captioning",
+        "Hallucination Detection",
+        "Video Reasoning"
+      ],
+      "source_url": "https://arxiv.org/abs/2411.16771v3",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2024-11-25",
+      "authors": [
+        "Wey Yeh Choong",
+        "Yangyang Guo",
+        "Mohan Kankanhalli"
+      ],
+      "added": {
+        "date": "2026-02-09",
+        "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      }
+    },
+    "2406.06040": {
+      "summary": "Provides dense video descriptions and a captioning model, with Vript-Hard tests for hallucinations, retrieval, and event ordering.",
+      "tasks": [
+        "Video Captioning",
+        "Long-Video Understanding",
+        "Hallucination Detection"
+      ],
+      "source_url": "https://arxiv.org/abs/2406.06040v2",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2024-06-10",
+      "authors": [
+        "Dongjie Yang",
+        "Suyuan Huang",
+        "Chengqiang Lu",
+        "Xiaodong Han",
+        "Haoxin Zhang",
+        "Yan Gao",
+        "Yao Hu",
+        "Hai Zhao"
+      ],
+      "added": {
+        "date": "2026-02-09",
+        "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      }
+    },
+    "https://aclanthology.org/2025.emnlp-main.1446/": {
+      "summary": "Tests hallucinations in first-person videos through human-annotated open and closed questions about visual and auditory evidence.",
+      "tasks": [
+        "Video QA",
+        "Audio-Visual Understanding",
+        "Hallucination Detection"
+      ],
+      "source_url": "https://aclanthology.org/2025.emnlp-main.1446/",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2025-11",
+      "authors": [],
+      "added": {
+        "date": "2026-02-09",
+        "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      }
+    },
+    "2509.08538": {
+      "summary": "Uses hierarchical questions and plausible distractors to expose hallucinations about objects, attributes, and subject-action relations across video segments.",
+      "tasks": [
+        "Video QA",
+        "Hallucination Detection"
+      ],
+      "source_url": "https://arxiv.org/abs/2509.08538v2",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2025-09-10",
+      "authors": [
+        "Garry Yang",
+        "Zizhe Chen",
+        "Man Hon Wong",
+        "Haoyu Lei",
+        "Yongqiang Chen",
+        "Zhenguo Li",
+        "Kaiwen Zhou",
+        "James Cheng"
+      ],
+      "added": {
+        "date": "2026-02-09",
+        "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      }
+    },
+    "2605.09904": {
+      "summary": "Tests object identity, state, and continuity with trajectory-grounded questions designed to require temporally ordered visual evidence.",
+      "tasks": [
+        "Video QA",
+        "Video Reasoning"
+      ],
+      "source_url": "https://arxiv.org/abs/2605.09904v2",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2026-05-11",
+      "authors": [
+        "Junzhe Chen",
+        "Siyuan Meng",
+        "Yuxi Chen",
+        "Man Zhao",
+        "Wenyao Gui",
+        "Xiaojie Guo"
+      ],
+      "added": {
+        "date": "2026-06-13",
+        "commit": "80616d38f49fc37fd46d9efc0f44f26a79c0209a"
+      }
+    },
+    "2609.29607": {
+      "summary": "Evaluates object-state, identity, and relation reasoning, and combines structured visual trajectories with symbolic aggregation for grounded answers.",
+      "tasks": [
+        "Video QA",
+        "Video Reasoning"
+      ],
+      "source_url": "https://arxiv.org/abs/2609.29607v1",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2026-08-28",
+      "authors": [
+        "Thong Nguyen",
+        "Tri Cao",
+        "Khoi Le",
+        "Cong-Duy Nguyen",
+        "Quynh Vo",
+        "See-Kiong Ng",
+        "Bryan Hooi Kuen-Yew"
+      ],
+      "added": {
+        "date": "2026-10-01",
+        "commit": "96e8786c440cb21d01c66c53fa86abe53e07191f"
+      }
+    },
+    "2508.21496": {
+      "summary": "Benchmarks hallucinations arising from semantic aggregation in long videos and trains models with adversarial preference pairs.",
+      "tasks": [
+        "Long-Video Understanding",
+        "Hallucination Detection"
+      ],
+      "source_url": "https://arxiv.org/abs/2508.21496v2",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2025-08-29",
+      "authors": [
+        "Hao Lu",
+        "Jiahao Wang",
+        "Yaolun Zhang",
+        "Ruohui Wang",
+        "Xuanyu Zheng",
+        "Yepeng Tang",
+        "Dahua Lin",
+        "Lewei Lu"
+      ],
+      "added": {
+        "date": "2026-02-09",
+        "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      }
+    },
+    "2605.27101": {
+      "summary": "Inserts advertising distractors into long videos to test whether models conflate subjects and events from unrelated segments.",
+      "tasks": [
+        "Video QA",
+        "Long-Video Understanding"
+      ],
+      "source_url": "https://arxiv.org/abs/2605.27101v2",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2026-05-26",
+      "authors": [
+        "Oscar Chew",
+        "Serhii Honcharenko",
+        "Qian-Hui Chen",
+        "Patricia Lu",
+        "Dishant Zaveri",
+        "Khoa D. Doan",
+        "Kuan-Hao Huang"
+      ],
+      "added": {
+        "date": "2026-06-13",
+        "commit": "80616d38f49fc37fd46d9efc0f44f26a79c0209a"
+      }
+    },
+    "2603.24329": {
+      "summary": "Uses synchronized multiplayer gameplay views and structured distractors to test agent identity, role attribution, and grounded reasoning.",
+      "tasks": [
+        "Video QA",
+        "Video Reasoning"
+      ],
+      "source_url": "https://arxiv.org/abs/2603.24329v2",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2026-03-25",
+      "authors": [
+        "Yunzhe Wang",
+        "Runhui Xu",
+        "Kexin Zheng",
+        "Tianyi Zhang",
+        "Jayavibhav Niranjan Kogundi",
+        "Soham Hans",
+        "Volkan Ustun"
+      ],
+      "added": {
+        "date": "2026-06-11",
+        "commit": "fbdebdb81950d395bdb46cc2c843394ecb593bd5"
+      }
+    },
+    "2505.01481": {
+      "summary": "Uses physically and logically implausible synthetic videos to expose prior-driven errors, with reinforcement learning for recognizing those violations.",
+      "tasks": [
+        "Video QA",
+        "Video Reasoning"
+      ],
+      "source_url": "https://arxiv.org/abs/2505.01481v4",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2025-05-02",
+      "authors": [
+        "Zongxia Li",
+        "Xiyang Wu",
+        "Guangyao Shi",
+        "Yubin Qin",
+        "Hongyang Du",
+        "Fuxiao Liu",
+        "Tianyi Zhou",
+        "Dinesh Manocha",
+        "Jordan Lee Boyd-Graber"
+      ],
+      "added": {
+        "date": "2026-02-09",
+        "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      }
+    },
+    "2303.02961": {
+      "summary": "Studies factual errors in video captions and introduces a weakly supervised factuality metric with human-annotated evaluation data.",
+      "tasks": [
+        "Video Captioning",
+        "Hallucination Detection"
+      ],
+      "source_url": "https://arxiv.org/abs/2303.02961v1",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2023-03-06",
+      "authors": [
+        "Hui Liu",
+        "Xiaojun Wan"
+      ],
+      "added": {
+        "date": "2026-02-09",
+        "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      }
+    },
+    "2609.36628": {
+      "summary": "Checks person-specific limb actions in video captions; GM-DPO weights preference training by the severity of fabricated or incorrect actions.",
+      "tasks": [
+        "Video Captioning",
+        "Motion Understanding"
+      ],
+      "source_url": "https://arxiv.org/abs/2609.36628v1",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2026-09-29",
+      "authors": [
+        "Yanan Wang",
+        "Tingsong Li",
+        "Kaixun Jiang",
+        "Chongyang Zhong",
+        "Chenwei Xoe",
+        "Zhaohe Liao"
+      ],
+      "added": {
+        "date": "2026-10-01",
+        "commit": "96e8786c440cb21d01c66c53fa86abe53e07191f"
+      }
+    },
+    "2409.16597": {
+      "summary": "Benchmarks event hallucinations driven by language priors and visual biases, with temporal contrastive decoding using disrupted video sequences.",
+      "tasks": [
+        "Video Understanding",
+        "Video Reasoning"
+      ],
+      "source_url": "https://arxiv.org/abs/2409.16597v6",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2024-09-25",
+      "authors": [
+        "Jiacheng Zhang",
+        "Yang Jiao",
+        "Shaoxiang Chen",
+        "Na Zhao",
+        "Zhiyu Tan",
+        "Hao Li",
+        "Xingjun Ma",
+        "Jingjing Chen"
+      ],
+      "added": {
+        "date": "2026-02-09",
+        "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      }
+    },
+    "2511.06475": {
+      "summary": "Inserts unrelated clips into videos to measure narrative-prior hallucinations and omissions through captioning and question-answering tasks.",
+      "tasks": [
+        "Video Captioning",
+        "Video QA",
+        "Video Reasoning"
+      ],
+      "source_url": "https://arxiv.org/abs/2511.06475v1",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2025-11-09",
+      "authors": [
+        "Kyuho Lee",
+        "Euntae Kim",
+        "Jinwoo Choi",
+        "Buru Chang"
+      ],
+      "added": {
+        "date": "2026-02-09",
+        "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      }
+    },
+    "2503.21459": {
+      "summary": "Provides diverse social-media road videos and question-answer pairs for evaluating road-event understanding across viewpoints and geographic settings.",
+      "tasks": [
+        "Video QA",
+        "Video Understanding"
+      ],
+      "source_url": "https://arxiv.org/abs/2503.21459v1",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2025-03-27",
+      "authors": [
+        "Chirag Parikh",
+        "Deepti Rawat",
+        "Rakshitha R. T.",
+        "Tathagata Ghosh",
+        "Ravi Kiran Sarvadevabhatla"
+      ],
+      "added": {
+        "date": "2026-08-05",
+        "commit": "f34e55bf3b810621b712e9f0daa85df63baea1fd"
+      }
+    },
+    "2604.20460": {
+      "summary": "Pairs traffic accidents with counterfactual videos to test consistent hazard judgments, and introduces counterpart-based contrastive decoding.",
+      "tasks": [
+        "Video QA",
+        "Video Reasoning"
+      ],
+      "source_url": "https://arxiv.org/abs/2604.20460v1",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2026-04-22",
+      "authors": [
+        "Xingcheng Zhou",
+        "Hao Guo",
+        "Rui Song",
+        "Walter Zimmer",
+        "Mingyu Liu",
+        "Andr\u00e9 Schamschurko",
+        "Hu Cao",
+        "Alois Knoll"
+      ],
+      "added": {
+        "date": "2026-05-01",
+        "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      }
+    },
+    "2609.21521": {
+      "summary": "Tests whether models can verify individual events in dense video captions, using human-checked incorrect descriptions as hard negatives.",
+      "tasks": [
+        "Video Captioning",
+        "Hallucination Detection",
+        "Long-Video Understanding"
+      ],
+      "source_url": "https://arxiv.org/abs/2609.21521v1",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2026-09-18",
+      "authors": [
+        "Changbeen Kim",
+        "Junwon Chang",
+        "Kipyo Kim",
+        "Risa Shinoda",
+        "Kuniaki Saito",
+        "Donghyun Kim"
+      ],
+      "added": {
+        "date": "2026-10-01",
+        "commit": "96e8786c440cb21d01c66c53fa86abe53e07191f"
+      }
+    },
+    "2603.11481": {
+      "summary": "Separates faithfulness from factuality errors in video answers and probes robustness to degraded visuals, corrupted evidence, and temporal interventions.",
+      "tasks": [
+        "Video QA",
+        "Hallucination Detection",
+        "Video Reasoning"
+      ],
+      "source_url": "https://arxiv.org/abs/2603.11481v1",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2026-03-12",
+      "authors": [
+        "Junqi Yang",
+        "Yuecong Min",
+        "Jie Zhang",
+        "Shiguang Shan",
+        "Xilin Chen"
+      ],
+      "added": {
+        "date": "2026-05-01",
+        "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      }
+    },
+    "2602.00559": {
+      "summary": "Benchmarks isolated and compositional video hallucinations, and trains a triple-path contrastive decoder with adaptive perturbation and visual enhancement.",
+      "tasks": [
+        "Video Understanding",
+        "Video Reasoning"
+      ],
+      "source_url": "https://arxiv.org/abs/2602.00559v1",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2026-01-31",
+      "authors": [
+        "Wenbin Xing",
+        "Quanxing Zha",
+        "Lizheng Zu",
+        "Mengran Li",
+        "Ming Li",
+        "Junchi Yan"
+      ],
+      "added": {
+        "date": "2026-05-01",
+        "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      }
+    },
+    "2601.08557": {
+      "summary": "Estimates answer reliability by clustering responses to clean and perturbed videos and measuring semantic uncertainty across those responses.",
+      "tasks": [
+        "Video QA",
+        "Hallucination Detection"
+      ],
+      "source_url": "https://arxiv.org/abs/2601.08557v1",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2026-01-13",
+      "authors": [
+        "Sushant Gautam",
+        "Cise Midoglu",
+        "Vajira Thambawita",
+        "Michael A. Riegler",
+        "P\u00e5l Halvorsen"
+      ],
+      "added": {
+        "date": "2026-05-01",
+        "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      }
+    },
+    "2604.25584": {
+      "summary": "Evaluates procedural-caption factuality at conceptual and grounded argument levels, using either textual references or direct video evidence.",
+      "tasks": [
+        "Video Captioning",
+        "Hallucination Detection"
+      ],
+      "source_url": "https://arxiv.org/abs/2604.25584v1",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2026-04-28",
+      "authors": [
+        "Cennet Oguz",
+        "Yasser Hamidullah",
+        "Josef van Genabith",
+        "Simon Ostermann"
+      ],
+      "added": {
+        "date": "2026-05-01",
+        "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      }
+    },
+    "2604.17873": {
+      "summary": "Tests whether misleading conversational feedback causes video models to abandon correct judgments and invent unsupported spatiotemporal explanations.",
+      "tasks": [
+        "Video Understanding",
+        "Video Reasoning"
+      ],
+      "source_url": "https://arxiv.org/abs/2604.17873v1",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2026-04-20",
+      "authors": [
+        "Ziyao Tang",
+        "Pengkun Jiao",
+        "Bin Zhu",
+        "Huiyan Qi",
+        "Jingjing Chen",
+        "Yu-Gang Jiang"
+      ],
+      "added": {
+        "date": "2026-05-01",
+        "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      }
+    },
+    "2604.17375": {
+      "summary": "Benchmarks hallucinations caused by misleading on-screen text and introduces specialized experts to disentangle textual overlays from visual evidence.",
+      "tasks": [
+        "Video QA",
+        "Video Understanding"
+      ],
+      "source_url": "https://arxiv.org/abs/2604.17375v1",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2026-04-19",
+      "authors": [
+        "Cui Yakun",
+        "Xingqun Qi",
+        "TianTian Geng",
+        "Yuyao Zhang",
+        "Sirui Han",
+        "Yike Guo"
+      ],
+      "added": {
+        "date": "2026-05-01",
+        "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      }
+    },
+    "2606.31933": {
+      "summary": "Uses adversarial video pairs with similar backgrounds but different foreground events to isolate spatial and temporal hallucinations.",
+      "tasks": [
+        "Video QA",
+        "Video Reasoning"
+      ],
+      "source_url": "https://arxiv.org/abs/2606.31933v1",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2026-06-30",
+      "authors": [
+        "Haojian Huang",
+        "Harold Haodong Chen",
+        "Meng Luo",
+        "Junjia Du",
+        "Shanqing Xu",
+        "Ziheng Chen",
+        "Yanxiang Huang",
+        "Yinchuan Li",
+        "Ying-Cong Chen"
+      ],
+      "added": {
+        "date": "2026-08-05",
+        "commit": "06621b639d0669c9b71366ca6f6c7d0edea4b3f4"
+      }
+    },
+    "2609.13288": {
+      "summary": "Introduces a diagnostic dataset for confident errors and checks learned reliability scores across video samplings without changing model answers.",
+      "tasks": [
+        "Video QA",
+        "Hallucination Detection"
+      ],
+      "source_url": "https://arxiv.org/abs/2609.13288v1",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2026-09-09",
+      "authors": [
+        "Guoxiang Ren",
+        "Rohitash Chandra"
+      ],
+      "added": {
+        "date": "2026-10-01",
+        "commit": "96e8786c440cb21d01c66c53fa86abe53e07191f"
+      }
+    },
+    "2609.09895": {
+      "summary": "Compares hallucination detectors on adversarial video questions and captions, with a shared protocol spanning ontology and dynamic errors.",
+      "tasks": [
+        "Video QA",
+        "Video Captioning",
+        "Hallucination Detection"
+      ],
+      "source_url": "https://arxiv.org/abs/2609.09895v1",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2026-09-09",
+      "authors": [
+        "Xinyu Chen",
+        "Adnan Mahmood",
+        "Mark Dras"
+      ],
+      "added": {
+        "date": "2026-10-01",
+        "commit": "96e8786c440cb21d01c66c53fa86abe53e07191f"
+      }
+    },
+    "2410.18325": {
+      "summary": "Evaluates audio-visual hallucinations, cross-modal matching, and reasoning, and tests whether benchmark-based training improves robustness.",
+      "tasks": [
+        "Audio-Visual Understanding",
+        "Hallucination Detection"
+      ],
+      "source_url": "https://arxiv.org/abs/2410.18325v2",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2024-10-23",
+      "authors": [
+        "Kim Sung-Bin",
+        "Oh Hyun-Bin",
+        "JungMok Lee",
+        "Arda Senocak",
+        "Joon Son Chung",
+        "Tae-Hyun Oh"
+      ],
+      "added": {
+        "date": "2026-02-09",
+        "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      }
+    },
+    "2410.12787": {
+      "summary": "Investigates how unimodal priors and misleading correlations between language, vision, and audio cause multimodal hallucinations.",
+      "tasks": [
+        "Audio-Visual Understanding",
+        "Hallucination Detection"
+      ],
+      "source_url": "https://arxiv.org/abs/2410.12787v1",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2024-10-16",
+      "authors": [
+        "Sicong Leng",
+        "Yun Xing",
+        "Zesen Cheng",
+        "Yang Zhou",
+        "Hang Zhang",
+        "Xin Li",
+        "Deli Zhao",
+        "Shijian Lu",
+        "Chunyan Miao",
+        "Lidong Bing"
+      ],
+      "added": {
+        "date": "2026-02-09",
+        "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      }
+    },
+    "2604.23860": {
+      "summary": "Probes imagined foreground and background sounds in egocentric videos through questions targeting visible but inaudible events.",
+      "tasks": [
+        "Audio-Visual Understanding",
+        "Video QA",
+        "Hallucination Detection"
+      ],
+      "source_url": "https://arxiv.org/abs/2604.23860v1",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2026-04-26",
+      "authors": [
+        "Ashish Seth",
+        "Xinhao Mei",
+        "Changsheng Zhao",
+        "Varun Nagaraja",
+        "Ernie Chang",
+        "Gregory P. Meyer",
+        "Gael Le Lan",
+        "Yunyang Xiong",
+        "Vikas Chandra",
+        "Yangyang Shi",
+        "Dinesh Manocha",
+        "Zhipeng Cai"
+      ],
+      "added": {
+        "date": "2026-05-01",
+        "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      }
+    },
+    "2605.07593": {
+      "summary": "Tests multi-hop reasoning and hallucination robustness using explicit evidence trajectories distributed across long audio-visual recordings.",
+      "tasks": [
+        "Audio-Visual Understanding",
+        "Video QA",
+        "Long-Video Understanding"
+      ],
+      "source_url": "https://arxiv.org/abs/2605.07593v2",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2026-05-08",
+      "authors": [
+        "Hengyi Feng",
+        "Hao Liang",
+        "Mingrui Chen",
+        "Bohan Zeng",
+        "Meiyi Qiang",
+        "Zhengyang Zhao",
+        "Zimo Meng",
+        "Zeang Sheng",
+        "Wentao Zhang"
+      ],
+      "added": {
+        "date": "2026-06-13",
+        "commit": "80616d38f49fc37fd46d9efc0f44f26a79c0209a"
+      }
+    },
+    "2405.13684": {
+      "summary": "Ranks hallucination susceptibility using agreement between independent systems and introduces an audio-visual benchmark for human-aligned evaluation.",
+      "tasks": [
+        "Audio-Visual Understanding",
+        "Hallucination Detection"
+      ],
+      "source_url": "https://arxiv.org/abs/2405.13684v1",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2024-05-22",
+      "authors": [
+        "Guangzhi Sun",
+        "Potsawee Manakul",
+        "Adian Liusie",
+        "Kunat Pipatanakul",
+        "Chao Zhang",
+        "Phil Woodland",
+        "Mark Gales"
+      ],
+      "added": {
+        "date": "2026-05-01",
+        "commit": "cd32dd77ae032ce09194b7fb6126fe8e88f6bb2a"
+      }
+    },
+    "2609.17248": {
+      "summary": "Requires long-video answers to cite precise audio-visual evidence, using evidence-aware scoring to penalize guessing and fabricated support.",
+      "tasks": [
+        "Audio-Visual Understanding",
+        "Video QA",
+        "Long-Video Understanding"
+      ],
+      "source_url": "https://arxiv.org/abs/2609.17248v1",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2026-09-15",
+      "authors": [
+        "Zhaoyang Wei",
+        "Zipeng Wang",
+        "Yushe Cao",
+        "Chenhui Qiang",
+        "Shuaibing Cheng",
+        "Xuesong Yang",
+        "Sen Nie",
+        "Bowen Jiang",
+        "Wenchao Ding",
+        "Yanchao Hao",
+        "Zheng Wei",
+        "Xuehui Yu",
+        "Zhenjun Han"
+      ],
+      "added": {
+        "date": "2026-10-01",
+        "commit": "96e8786c440cb21d01c66c53fa86abe53e07191f"
+      }
+    },
+    "2505.11405": {
+      "summary": "Evaluates emotion hallucinations in psychology knowledge and multimodal perception, and proposes perception-enhanced prompting with emotion knowledge.",
+      "tasks": [
+        "Audio-Visual Understanding",
+        "Hallucination Detection"
+      ],
+      "source_url": "https://arxiv.org/abs/2505.11405v1",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2025-05-16",
+      "authors": [
+        "Bohao Xing",
+        "Xin Liu",
+        "Guoying Zhao",
+        "Chengyu Liu",
+        "Xiaolan Fu",
+        "Heikki K\u00e4lvi\u00e4inen"
+      ],
+      "added": {
+        "date": "2026-02-09",
+        "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      }
+    },
+    "2512.04643": {
+      "summary": "Diagnoses hallucination tendencies token by token and adaptively contrasts temporal and spatial negatives without additional training.",
+      "tasks": [
+        "Video Understanding",
+        "Video Reasoning"
+      ],
+      "source_url": "https://arxiv.org/abs/2512.04643v1",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2025-12-04",
+      "authors": [
+        "Chang-Hsun Wu",
+        "Kai-Po Chang",
+        "Yu-Yang Sheng",
+        "Hung-Kai Chung",
+        "Kuei-Chun Wang",
+        "Yu-Chiang Frank Wang"
+      ],
+      "added": {
+        "date": "2026-02-09",
+        "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      }
+    },
+    "2512.18671": {
+      "summary": "Selects among sampled responses using temporal attention collapse and terminates unreliable generations when visual attention vanishes.",
+      "tasks": [
+        "Video Understanding",
+        "Hallucination Detection"
+      ],
+      "source_url": "https://arxiv.org/abs/2512.18671v1",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2025-12-21",
+      "authors": [
+        "Yiming Sun",
+        "Mi Zhang",
+        "Feifei Li",
+        "Geng Hong",
+        "Min Yang"
+      ],
+      "added": {
+        "date": "2026-02-09",
+        "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      }
+    },
+    "2602.07801": {
+      "summary": "Jointly trains temporal localization and video answering so an agent can inspect relevant clips and revise inaccurate grounding.",
+      "tasks": [
+        "Video QA",
+        "Temporal Grounding",
+        "Long-Video Understanding"
+      ],
+      "source_url": "https://arxiv.org/abs/2602.07801v4",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2026-02-08",
+      "authors": [
+        "Wenqi Liu",
+        "Yunxiao Wang",
+        "Shijie Ma",
+        "Meng Liu",
+        "Qile Su",
+        "Tianke Zhang",
+        "Haonan Fan",
+        "Changyi Liu",
+        "Kaiyu Jiang",
+        "Jiankang Chen",
+        "Kaiyu Tang",
+        "Bin Wen",
+        "Fan Yang",
+        "Tingting Gao",
+        "Han Li",
+        "Yinwei Wei",
+        "Xuemeng Song"
+      ],
+      "added": {
+        "date": "2026-05-01",
+        "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      }
+    },
+    "2601.04778": {
+      "summary": "Creates counterfactual action videos and jointly optimizes visual and textual preferences to reduce action and temporal-order hallucinations.",
+      "tasks": [
+        "Motion Understanding",
+        "Video Reasoning"
+      ],
+      "source_url": "https://arxiv.org/abs/2601.04778v2",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2026-01-08",
+      "authors": [
+        "Tobia Poppi",
+        "Burak Uzkent",
+        "Amanmeet Garg",
+        "Lucas Porto",
+        "Garin Kessler",
+        "Yezhou Yang",
+        "Marcella Cornia",
+        "Lorenzo Baraldi",
+        "Rita Cucchiara",
+        "Florian Schiffers"
+      ],
+      "added": {
+        "date": "2026-05-01",
+        "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      }
+    },
+    "2401.09861": {
+      "summary": "Decomposes event queries into characteristic actions and uses visual-language models to estimate timestamps for temporally grounded responses.",
+      "tasks": [
+        "Temporal Grounding"
+      ],
+      "source_url": "https://arxiv.org/abs/2401.09861v1",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2024-01-18",
+      "authors": [
+        "Li Sun",
+        "Liuan Wang",
+        "Jun Sun",
+        "Takayuki Okatani"
+      ],
+      "added": {
+        "date": "2026-02-09",
+        "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      }
+    },
+    "2505.12826": {
+      "summary": "Uses temporal variation to identify and intervene in hallucination-sensitive model activations without further fine-tuning the language model.",
+      "tasks": [
+        "Video Understanding"
+      ],
+      "source_url": "https://arxiv.org/abs/2505.12826v1",
+      "evidence": "Abstract; Introduction; classifier training sections",
+      "note": "The language model is not fine-tuned, but the method trains classifiers for temporal variation and hallucination-sensitive module selection; it is not training-free under this collection's definition.",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2025-05-19",
+      "authors": [
+        "Jianfeng Cai",
+        "Wengang Zhou",
+        "Zongmeng Zhang",
+        "Jiale Hong",
+        "Nianji Zhan",
+        "Houqiang Li"
+      ],
+      "added": {
+        "date": "2026-02-09",
+        "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      }
+    },
+    "2603.25021": {
+      "summary": "Uses reinforcement learning to coordinate retrieval of video clips, images, and regions for efficient, evidence-grounded long-video answers.",
+      "tasks": [
+        "Video QA",
+        "Long-Video Understanding"
+      ],
+      "source_url": "https://arxiv.org/abs/2603.25021v3",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2026-03-26",
+      "authors": [
+        "Zhe Gao",
+        "Shiyu Shen",
+        "Taifeng Chai",
+        "Weinong Wang",
+        "Haotian Xu",
+        "Xing Wu",
+        "Wenbin Li",
+        "Qi Fan",
+        "Yang Gao",
+        "Dacheng Tao"
+      ],
+      "added": {
+        "date": "2026-05-01",
+        "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      }
+    },
+    "2603.16256": {
+      "summary": "Trains a lightweight scoring module to repeat useful frames during reasoning and counter drift away from visual evidence.",
+      "tasks": [
+        "Video QA",
+        "Video Reasoning"
+      ],
+      "source_url": "https://arxiv.org/abs/2603.16256v1",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2026-03-17",
+      "authors": [
+        "Xiaokun Sun",
+        "Yubo Wang",
+        "Haoyu Cao",
+        "Linli Xu"
+      ],
+      "added": {
+        "date": "2026-05-01",
+        "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      }
+    },
+    "2602.18702": {
+      "summary": "Trains long-video models to interleave reasoning with on-demand temporal grounding through a staged reinforcement-learning curriculum.",
+      "tasks": [
+        "Video QA",
+        "Temporal Grounding",
+        "Long-Video Understanding"
+      ],
+      "source_url": "https://arxiv.org/abs/2602.18702v1",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2026-02-21",
+      "authors": [
+        "Houlun Chen",
+        "Xin Wang",
+        "Guangyao Li",
+        "Yuwei Zhou",
+        "Yihan Chen",
+        "Jia Jia",
+        "Wenwu Zhu"
+      ],
+      "added": {
+        "date": "2026-05-01",
+        "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      }
+    },
+    "2601.07761": {
+      "summary": "Extracts compact, question-relevant visual evidence and uses reinforcement learning to anchor reasoning to the selected temporal evidence.",
+      "tasks": [
+        "Video Reasoning",
+        "Temporal Grounding"
+      ],
+      "source_url": "https://arxiv.org/abs/2601.07761v2",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2026-01-12",
+      "authors": [
+        "Yanxiang Huang",
+        "Guohua Gao",
+        "Zhaoyang Wei"
+      ],
+      "added": {
+        "date": "2026-05-01",
+        "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      }
+    },
+    "2604.12582": {
+      "summary": "Rebalances decoder attention toward under-attended frames without training, changing visual encoding, or introducing auxiliary models.",
+      "tasks": [
+        "Video Understanding"
+      ],
+      "source_url": "https://arxiv.org/abs/2604.12582v1",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2026-04-14",
+      "authors": [
+        "Zijian Liu",
+        "Sihan Cao",
+        "Pengcheng Zheng",
+        "Kuien Liu",
+        "Caiyan Qin",
+        "Xiaolin Qin",
+        "Jiwei Wei",
+        "Chaoning Zhang"
+      ],
+      "added": {
+        "date": "2026-05-01",
+        "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      }
+    },
+    "2606.27922": {
+      "summary": "Retrieves visual evidence to verify and arbitrate long-video answers, with separate reinforcement-learning objectives for each reflection stage.",
+      "tasks": [
+        "Video QA",
+        "Long-Video Understanding"
+      ],
+      "source_url": "https://arxiv.org/abs/2606.27922v3",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2026-06-26",
+      "authors": [
+        "Shuimu Chen",
+        "Yuteng Chen",
+        "Yuanshen Guan",
+        "Zebang Cheng",
+        "Zeyu Zhang",
+        "Shengqian Qin",
+        "Bin Xia",
+        "Jiaran Li",
+        "Wenming Yang",
+        "Fei Ma"
+      ],
+      "added": {
+        "date": "2026-08-05",
+        "commit": "06621b639d0669c9b71366ca6f6c7d0edea4b3f4"
+      }
+    },
+    "2405.13382": {
+      "summary": "Improves event timestamp localization by adding explicit time information to video tokens and using slot-based visual compression.",
+      "tasks": [
+        "Temporal Grounding"
+      ],
+      "source_url": "https://arxiv.org/abs/2405.13382v3",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2024-05-22",
+      "authors": [
+        "Yongxin Guo",
+        "Jingyu Liu",
+        "Mingda Li",
+        "Dingxin Cheng",
+        "Xiaoying Tang",
+        "Dianbo Sui",
+        "Qingbin Liu",
+        "Xi Chen",
+        "Kevin Zhao"
+      ],
+      "added": {
+        "date": "2026-02-09",
+        "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      }
+    },
+    "2312.08870": {
+      "summary": "Changes visual-text attention and sequential frame projection to preserve the influence of video evidence during open-ended answer generation.",
+      "tasks": [
+        "Video QA",
+        "Video Understanding"
+      ],
+      "source_url": "https://arxiv.org/abs/2312.08870v2",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2023-12-12",
+      "authors": [
+        "Fan Ma",
+        "Xiaojie Jin",
+        "Heng Wang",
+        "Yuchen Xian",
+        "Jiashi Feng",
+        "Yi Yang"
+      ],
+      "added": {
+        "date": "2026-02-09",
+        "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      }
+    },
+    "2511.18463": {
+      "summary": "Separates timestamped perceptual evidence from reasoning and uses factuality-aware process rewards to train hallucination-resistant video models.",
+      "tasks": [
+        "Video QA",
+        "Video Reasoning"
+      ],
+      "source_url": "https://arxiv.org/abs/2511.18463v3",
+      "evidence": "Abstract; Introduction",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2025-11-23",
+      "authors": [
+        "Bowei Pu",
+        "Chuanbin Liu",
+        "Yifan Ge",
+        "Peicheng Zhou",
+        "Yiwei Sun",
+        "Zhiying Lu",
+        "Zhangchi Hu",
+        "Hongtao Xie"
+      ],
+      "added": {
+        "date": "2026-02-09",
+        "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      },
+      "aliases": [
+        "VideoPLR",
+        "DPL"
+      ],
+      "note": "The v3 paper uses Video-DPL; the earlier VideoPLR name remains searchable and appears in the official repository URL."
+    },
+    "2512.04356": {
+      "summary": "Combines hallucination-based negative captions with tracklet-phrase contrastive alignment to improve object and action faithfulness in video descriptions.",
+      "tasks": [
+        "Video Captioning",
+        "Motion Understanding"
+      ],
+      "source_url": "https://arxiv.org/abs/2512.04356v1",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2025-12-04",
+      "authors": [
+        "Kai-Po Chang",
+        "Wei-Yuan Cheng",
+        "Chi-Pin Huang",
+        "Fu-En Yang",
+        "Yu-Chiang Frank Wang"
+      ],
+      "added": {
+        "date": "2026-02-09",
+        "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      }
+    },
+    "2602.11730": {
+      "summary": "Replaces coordinate prediction with visually prompted object identities and reinforcement learning for spatially and temporally consistent video grounding.",
+      "tasks": [
+        "Temporal Grounding",
+        "Video Understanding"
+      ],
+      "source_url": "https://arxiv.org/abs/2602.11730v1",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2026-02-12",
+      "authors": [
+        "Xiaowen Zhang",
+        "Zhi Gao",
+        "Licheng Jiao",
+        "Lingling Li",
+        "Qing Li"
+      ],
+      "added": {
+        "date": "2026-06-13",
+        "commit": "80616d38f49fc37fd46d9efc0f44f26a79c0209a"
+      }
+    },
+    "2607.21022": {
+      "summary": "Ranks detected objects by prominence and iteratively revises captions to reduce omissions and hallucinations without retraining the captioning model.",
+      "tasks": [
+        "Video Captioning"
+      ],
+      "source_url": "https://arxiv.org/abs/2607.21022v1",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2026-07-23",
+      "authors": [
+        "Debjyoti Das Adhikary",
+        "Aritra Hazra",
+        "Partha Pratim Chakrabarti"
+      ],
+      "added": {
+        "date": "2026-08-05",
+        "commit": "06621b639d0669c9b71366ca6f6c7d0edea4b3f4"
+      }
+    },
+    "2503.15871": {
+      "summary": "Disentangles spatial and temporal attention and revises positional encoding to reduce action-scene confusion, evaluated on the UNSCENE benchmark.",
+      "tasks": [
+        "Video QA",
+        "Motion Understanding"
+      ],
+      "source_url": "https://arxiv.org/abs/2503.15871v1",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2025-03-20",
+      "authors": [
+        "Kyungho Bae",
+        "Jinhyung Kim",
+        "Sihaeng Lee",
+        "Soonyoung Lee",
+        "Gunhee Lee",
+        "Jinwoo Choi"
+      ],
+      "added": {
+        "date": "2026-02-09",
+        "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      }
+    },
+    "2504.05810": {
+      "summary": "Learns video preferences online using prompt-aware augmented clips as rejected inputs, reducing incorrect rejections during hallucination mitigation training.",
+      "tasks": [
+        "Video Understanding"
+      ],
+      "source_url": "https://arxiv.org/abs/2504.05810v2",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2025-04-08",
+      "authors": [
+        "Xinpeng Ding",
+        "Kui Zhang",
+        "Jianhua Han",
+        "Lanqing Hong",
+        "Hang Xu",
+        "Xiaomeng Li"
+      ],
+      "added": {
+        "date": "2026-02-09",
+        "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      }
+    },
+    "https://www.ijcai.org/proceedings/2025/1019": {
+      "summary": "Combines multi-level semantic alignment with progressive training to reduce hallucinations caused by weak discrimination between video and language concepts.",
+      "tasks": [
+        "Video Understanding"
+      ],
+      "source_url": "https://www.ijcai.org/proceedings/2025/1019",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2025-08",
+      "authors": [],
+      "added": {
+        "date": "2026-02-09",
+        "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      }
+    },
+    "2603.15008": {
+      "summary": "Separately supervises visual clue extraction and answer reasoning, then filters clues for faithful and interpretable video question answering.",
+      "tasks": [
+        "Video QA",
+        "Video Reasoning"
+      ],
+      "source_url": "https://arxiv.org/abs/2603.15008v1",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2026-03-16",
+      "authors": [
+        "Kaixin zhang",
+        "Xiaohe Li",
+        "Jiahao Li",
+        "Haohua Wu",
+        "Xinyu Zhao",
+        "Zide Fan",
+        "Lei Wang"
+      ],
+      "added": {
+        "date": "2026-05-01",
+        "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      }
+    },
+    "2602.17555": {
+      "summary": "Builds event-based video scene graphs and applies visual-attention rewards during reinforcement fine-tuning to ground temporal reasoning.",
+      "tasks": [
+        "Video Reasoning",
+        "Temporal Grounding"
+      ],
+      "source_url": "https://arxiv.org/abs/2602.17555v3",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2026-02-19",
+      "authors": [
+        "Zixu Cheng",
+        "Da Li",
+        "Jian Hu",
+        "Yuhang Zang",
+        "Ziquan Liu",
+        "Shaogang Gong",
+        "Wei Li"
+      ],
+      "added": {
+        "date": "2026-05-01",
+        "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      }
+    },
+    "2602.01740": {
+      "summary": "Uses model feedback to construct object-level counterfactual video inputs for evidence-grounded contrastive decoding.",
+      "tasks": [
+        "Video Understanding"
+      ],
+      "source_url": "https://arxiv.org/abs/2602.01740v3",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2026-02-02",
+      "authors": [
+        "Qixin Xiao",
+        "Kun Zhou"
+      ],
+      "added": {
+        "date": "2026-05-01",
+        "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      }
+    },
+    "2601.22574": {
+      "summary": "Trains a lightweight residual aligner on frozen video representations to improve spatiotemporal consistency and alignment with response semantics.",
+      "tasks": [
+        "Video QA",
+        "Video Understanding"
+      ],
+      "source_url": "https://arxiv.org/abs/2601.22574v2",
+      "evidence": "Abstract; Introduction; Section 4.3",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2026-01-30",
+      "authors": [
+        "Yuansheng Gao",
+        "Jinman Zhao",
+        "Tong Zhang",
+        "Xingguo Xu",
+        "Wenbin Xing",
+        "Han Bao",
+        "Zonghui Wang",
+        "Wenzhi Chen"
+      ],
+      "added": {
+        "date": "2026-05-01",
+        "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      },
+      "aliases": [
+        "STSCD"
+      ],
+      "note": "The v2 method is ViSSRes and trains an auxiliary aligner. The earlier STSCD label is retained as a search alias; a frozen backbone does not make this method training-free."
+    },
+    "2604.20473": {
+      "summary": "Localizes visual evidence through a tree of cues and trains reasoning with rewards adjusted to the video's reasoning demands.",
+      "tasks": [
+        "Video Understanding",
+        "Video Reasoning"
+      ],
+      "source_url": "https://arxiv.org/abs/2604.20473v1",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2026-04-22",
+      "authors": [
+        "Qizhong Tan",
+        "Zhuotao Tian",
+        "Guangming Lu",
+        "Jun Yu",
+        "Wenjie Pei"
+      ],
+      "added": {
+        "date": "2026-05-01",
+        "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      }
+    },
+    "2608.08622": {
+      "summary": "Adaptively reweights visual attention and contrasts selectively erased evidence to suppress prior-driven video hallucinations without training.",
+      "tasks": [
+        "Video Understanding",
+        "Video Reasoning"
+      ],
+      "source_url": "https://arxiv.org/abs/2608.08622v1",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2026-08-09",
+      "authors": [
+        "Dong Xing",
+        "Jiaxin Chen",
+        "Hang Yang",
+        "Peixun Liu",
+        "Qiushi Yang",
+        "Yuqing Wang"
+      ],
+      "added": {
+        "date": "2026-09-01",
+        "commit": "74d4ab1e0acc84846e3dd16c7d09ffb58e44f336"
+      }
+    },
+    "2608.15574": {
+      "summary": "Verifies timestamped video-answer claims by independently re-captioning cited frames and checking textual entailment with a separate model.",
+      "tasks": [
+        "Video QA",
+        "Hallucination Detection"
+      ],
+      "source_url": "https://arxiv.org/abs/2608.15574v1",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2026-08-16",
+      "authors": [
+        "Yogesh Kumar"
+      ],
+      "added": {
+        "date": "2026-09-01",
+        "commit": "74d4ab1e0acc84846e3dd16c7d09ffb58e44f336"
+      }
+    },
+    "2504.13122": {
+      "summary": "Optimizes preferences at whole-video, temporal, and object levels using spatially and temporally annotated response pairs.",
+      "tasks": [
+        "Video QA",
+        "Video Captioning"
+      ],
+      "source_url": "https://arxiv.org/abs/2504.13122v1",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2025-04-17",
+      "authors": [
+        "Haojian Huang",
+        "Haodong Chen",
+        "Shengqiong Wu",
+        "Meng Luo",
+        "Jinlan Fu",
+        "Xinya Du",
+        "Hanwang Zhang",
+        "Hao Fei"
+      ],
+      "added": {
+        "date": "2026-02-09",
+        "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      }
+    },
+    "2604.20937": {
+      "summary": "Identifies attention sink tokens and suppresses them during visual token pruning to preserve fine-grained grounding and hallucination robustness.",
+      "tasks": [
+        "Video Understanding"
+      ],
+      "source_url": "https://arxiv.org/abs/2604.20937v2",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2026-04-22",
+      "authors": [
+        "Kibum Kim",
+        "Jiwan Kim",
+        "Kyle Min",
+        "Yueqi Wang",
+        "Jinyoung Moon",
+        "Julian McAuley",
+        "Chanyoung Park"
+      ],
+      "added": {
+        "date": "2026-05-01",
+        "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      }
+    },
+    "2604.03045": {
+      "summary": "Targets risky decoding steps with layer-specific visual evidence, combining grounding restoration with temporal counterfactual checks.",
+      "tasks": [
+        "Video Understanding",
+        "Video Reasoning"
+      ],
+      "source_url": "https://arxiv.org/abs/2604.03045v1",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2026-04-03",
+      "authors": [
+        "Linfeng Fan",
+        "Yuan Tian",
+        "Ziwei Li",
+        "Zhiwu Lu"
+      ],
+      "added": {
+        "date": "2026-05-01",
+        "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      }
+    },
+    "2604.01460": {
+      "summary": "Audits captions as factual and temporal claims, then trains with scene-graph, temporal, and video-grounded self-verification rewards.",
+      "tasks": [
+        "Video Captioning",
+        "Video QA",
+        "Video Reasoning"
+      ],
+      "source_url": "https://arxiv.org/abs/2604.01460v2",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2026-04-01",
+      "authors": [
+        "Yihao Quan",
+        "Zeru Shi",
+        "Jinman Zhao",
+        "Ruixiang Tang"
+      ],
+      "added": {
+        "date": "2026-05-01",
+        "commit": "700bce92324b9fdcea80810a5a3d84bfddbcb608"
+      }
+    },
+    "2606.11792": {
+      "summary": "Trains a lightweight patcher to selectively replace unreliable visual tokens before generation while leaving the original video model unchanged.",
+      "tasks": [
+        "Video Understanding"
+      ],
+      "source_url": "https://arxiv.org/abs/2606.11792v2",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2026-06-10",
+      "authors": [
+        "Yuansheng Gao",
+        "Wenbin Xing",
+        "Jiahao Yuan",
+        "Kaiwen Zhou",
+        "Han Bao",
+        "Zonghui Wang",
+        "Wenzhi Chen"
+      ],
+      "added": {
+        "date": "2026-08-05",
+        "commit": "06621b639d0669c9b71366ca6f6c7d0edea4b3f4"
+      }
+    },
+    "2505.20862": {
+      "summary": "Uses modality-aware masking and confidence-guided contrastive decoding to suppress hallucinations across audio, video, and language without training.",
+      "tasks": [
+        "Audio-Visual Understanding"
+      ],
+      "source_url": "https://arxiv.org/abs/2505.20862v2",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2025-05-27",
+      "authors": [
+        "Chaeyoung Jung",
+        "Youngjoon Jang",
+        "Joon Son Chung"
+      ],
+      "added": {
+        "date": "2026-02-09",
+        "commit": "09897d52b4f468626e59afbbe77bfd39c5f7b086"
+      }
+    },
+    "2410.06682": {
+      "summary": "Improves audio-visual captions through repeated preference optimization and rebirth tuning designed to retain non-captioning abilities.",
+      "tasks": [
+        "Video Captioning",
+        "Audio-Visual Understanding"
+      ],
+      "source_url": "https://arxiv.org/abs/2410.06682v2",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2024-10-09",
+      "authors": [
+        "Changli Tang",
+        "Yixuan Li",
+        "Yudong Yang",
+        "Jimin Zhuang",
+        "Guangzhi Sun",
+        "Wei Li",
+        "Zujun Ma",
+        "Chao Zhang"
+      ],
+      "added": {
+        "date": "2026-05-01",
+        "commit": "cd32dd77ae032ce09194b7fb6126fe8e88f6bb2a"
+      }
+    },
+    "2609.28991": {
+      "summary": "Intervenes separately on video-agent grounding, observation, and reasoning to test whether benchmark scores predict downstream hallucination risk.",
+      "tasks": [
+        "Video QA",
+        "Video Reasoning",
+        "Hallucination Detection"
+      ],
+      "source_url": "https://arxiv.org/abs/2609.28991v1",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2026-09-24",
+      "authors": [
+        "Shuzhi Gong",
+        "Fengze Sun",
+        "Yuansan Liu"
+      ],
+      "added": {
+        "date": "2026-10-01",
+        "commit": "96e8786c440cb21d01c66c53fa86abe53e07191f"
+      }
+    }
+  }
+}
