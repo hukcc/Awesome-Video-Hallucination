@@ -14,6 +14,7 @@ const elements = {
   total: document.querySelector("#total-count"),
   benchmarks: document.querySelector("#benchmark-count"),
   mitigations: document.querySelector("#mitigation-count"),
+  analyses: document.querySelector("#analysis-count"),
   resources: document.querySelector("#resource-count"),
   visible: document.querySelector("#visible-count"),
   grid: document.querySelector("#paper-grid"),
@@ -33,6 +34,12 @@ const resourceLabels = {
   code: "Code",
   dataset: "Dataset",
   leaderboard: "Leaderboard",
+};
+
+const typeLabels = {
+  benchmark: "Benchmark",
+  mitigation: "Mitigation",
+  analysis: "Analysis",
 };
 
 function hasAnyResource(entry) {
@@ -116,6 +123,7 @@ function renderStats(data) {
   elements.total.textContent = data.entry_count;
   elements.benchmarks.textContent = data.benchmark_count;
   elements.mitigations.textContent = data.mitigation_count;
+  elements.analyses.textContent = data.analysis_count;
   elements.resources.textContent = data.entries.filter(hasAnyResource).length;
 }
 
@@ -130,7 +138,7 @@ function renderCard(entry) {
   const copyBibtex = fragment.querySelector(".copy-bibtex");
 
   card.dataset.type = entry.type;
-  typePill.textContent = entry.type === "benchmark" ? "Benchmark" : "Mitigation";
+  typePill.textContent = typeLabels[entry.type] || entry.type;
   typePill.classList.add(entry.type);
   fragment.querySelector(".date-pill").textContent = entry.date;
   title.href = entry.paper_url;

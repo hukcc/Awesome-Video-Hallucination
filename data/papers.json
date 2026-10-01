@@ -1,8 +1,9 @@
 {
   "generated_from": "README.md",
-  "entry_count": 87,
-  "benchmark_count": 37,
-  "mitigation_count": 50,
+  "entry_count": 95,
+  "benchmark_count": 42,
+  "mitigation_count": 52,
+  "analysis_count": 1,
   "entries": [
     {
       "id": "benchmark--spatiotemporal-dynamics--event-misordering--vidhalluc--2412-03735",
@@ -203,7 +204,7 @@
       "mechanism": "Dynamic Distortion",
       "subtype": "Frequency Confusion",
       "name": "VidHal",
-      "venue": "arXiv 2024",
+      "venue": "TMLR 2026",
       "date": "11/2024",
       "year": 2024,
       "training_free": null,
@@ -299,21 +300,21 @@
       }
     },
     {
-      "id": "benchmark--referential-inconsistency--character-conflation--stemo-bench--2605-08974",
-      "title": "Tracking the Truth: Object-Centric Spatio-Temporal Monitoring for Video Large Language Models",
-      "paper_url": "https://arxiv.org/abs/2605.08974",
-      "arxiv_id": "2605.08974",
+      "id": "benchmark--referential-inconsistency--character-conflation--strand--2609-29607",
+      "title": "STRAND: Benchmarking and Improving Object-Centric Spatio-Temporal Monitoring in Video Large Language Models",
+      "paper_url": "https://arxiv.org/abs/2609.29607",
+      "arxiv_id": "2609.29607",
       "type": "benchmark",
       "category": "Referential Inconsistency",
       "mechanism": "Dynamic Distortion",
       "subtype": "Character Conflation",
-      "name": "STEMO-Bench",
+      "name": "STRAND",
       "venue": "arXiv 2026",
-      "date": "05/2026",
+      "date": "08/2026",
       "year": 2026,
       "training_free": null,
       "resources": {
-        "project": null,
+        "project": "https://nguyentthong.github.io/strand/",
         "code": "https://github.com/nguyentthong/video_hallucination",
         "dataset": null,
         "leaderboard": null
@@ -425,6 +426,27 @@
       }
     },
     {
+      "id": "benchmark--context-driven-fabrication--object-action-hallucination--flexbench--2609-36628",
+      "title": "Beyond Binary Preferences: Graded Preference Optimization for Limb-Motion Captioning",
+      "paper_url": "https://arxiv.org/abs/2609.36628",
+      "arxiv_id": "2609.36628",
+      "type": "benchmark",
+      "category": "Context-Driven Fabrication",
+      "mechanism": "Content Fabrication",
+      "subtype": "Object-Action Hallucination",
+      "name": "FlexBench",
+      "venue": "arXiv 2026",
+      "date": "09/2026",
+      "year": 2026,
+      "training_free": null,
+      "resources": {
+        "project": null,
+        "code": null,
+        "dataset": null,
+        "leaderboard": null
+      }
+    },
+    {
       "id": "benchmark--context-driven-fabrication--scene-event-hallucination--eventhallusion--2409-16597",
       "title": "EventHallusion: Diagnosing Event Hallucinations in Video LLMs",
       "paper_url": "https://arxiv.org/abs/2409.16597",
@@ -499,6 +521,27 @@
       "name": "CCTVBench",
       "venue": "arXiv 2026",
       "date": "04/2026",
+      "year": 2026,
+      "training_free": null,
+      "resources": {
+        "project": null,
+        "code": null,
+        "dataset": null,
+        "leaderboard": null
+      }
+    },
+    {
+      "id": "benchmark--context-driven-fabrication--scene-event-hallucination--vidomni-bench--2609-21521",
+      "title": "VidOmni-Bench: A Benchmark for Fine-Grained Video Understanding via Spatio-Temporal Event Verification across Complexity and Duration",
+      "paper_url": "https://arxiv.org/abs/2609.21521",
+      "arxiv_id": "2609.21521",
+      "type": "benchmark",
+      "category": "Context-Driven Fabrication",
+      "mechanism": "Content Fabrication",
+      "subtype": "Scene-Event Hallucination",
+      "name": "VidOmni-Bench",
+      "venue": "arXiv 2026",
+      "date": "09/2026",
       "year": 2026,
       "training_free": null,
       "resources": {
@@ -656,6 +699,48 @@
       }
     },
     {
+      "id": "benchmark--context-driven-fabrication--compositional-and-factuality-hallucination--vhd--2609-13288",
+      "title": "Target-Checked Reliability Score Refinement for Video Question Answering",
+      "paper_url": "https://arxiv.org/abs/2609.13288",
+      "arxiv_id": "2609.13288",
+      "type": "benchmark",
+      "category": "Context-Driven Fabrication",
+      "mechanism": "Content Fabrication",
+      "subtype": "Compositional and Factuality Hallucination",
+      "name": "VHD",
+      "venue": "arXiv 2026",
+      "date": "09/2026",
+      "year": 2026,
+      "training_free": null,
+      "resources": {
+        "project": null,
+        "code": "https://github.com/sydney-machine-learning/video-hallucination-diagnosis",
+        "dataset": "https://www.kaggle.com/datasets/mlopssss/video-hallucination-diagnosis",
+        "leaderboard": null
+      }
+    },
+    {
+      "id": "benchmark--context-driven-fabrication--compositional-and-factuality-hallucination--vidhalloc--2609-09895",
+      "title": "Can We Trust Video Hallucination Detectors? VidHalLoc for Evaluating the Evaluators",
+      "paper_url": "https://arxiv.org/abs/2609.09895",
+      "arxiv_id": "2609.09895",
+      "type": "benchmark",
+      "category": "Context-Driven Fabrication",
+      "mechanism": "Content Fabrication",
+      "subtype": "Compositional and Factuality Hallucination",
+      "name": "VidHalLoc",
+      "venue": "arXiv 2026",
+      "date": "09/2026",
+      "year": 2026,
+      "training_free": null,
+      "resources": {
+        "project": null,
+        "code": null,
+        "dataset": null,
+        "leaderboard": null
+      }
+    },
+    {
       "id": "benchmark--audio-visual-conflict--action-attribution--avhbench--2410-18325",
       "title": "AVHBench: A Cross-Modal Hallucination Benchmark for Audio-Visual Large Language Models",
       "paper_url": "https://arxiv.org/abs/2410.18325",
@@ -761,6 +846,27 @@
       }
     },
     {
+      "id": "benchmark--audio-visual-conflict--action-attribution--video-holmesv2--2609-17248",
+      "title": "Video-HolmesV2: Can MLLMs Reason with Spatio-Temporal Audio-Visual Evidence in Long Videos?",
+      "paper_url": "https://arxiv.org/abs/2609.17248",
+      "arxiv_id": "2609.17248",
+      "type": "benchmark",
+      "category": "Audio-Visual Conflict",
+      "mechanism": "Content Fabrication",
+      "subtype": "Action Attribution",
+      "name": "Video-HolmesV2",
+      "venue": "ECCV 2026",
+      "date": "09/2026",
+      "year": 2026,
+      "training_free": null,
+      "resources": {
+        "project": null,
+        "code": null,
+        "dataset": null,
+        "leaderboard": null
+      }
+    },
+    {
       "id": "benchmark--audio-visual-conflict--emotion-inference--emotionhallucer--2505-11405",
       "title": "EmotionHallucer: Evaluating Emotion Hallucinations in Multimodal Large Language Models",
       "paper_url": "https://arxiv.org/abs/2505.11405",
@@ -854,7 +960,7 @@
       "mechanism": "Dynamic Distortion",
       "subtype": "Event Misordering",
       "name": "VideoTemp-o3",
-      "venue": "arXiv 2026",
+      "venue": "ICML 2026",
       "date": "02/2026",
       "year": 2026,
       "training_free": "✘",
@@ -875,7 +981,7 @@
       "mechanism": "Dynamic Distortion",
       "subtype": "Event Misordering",
       "name": "MixDPO",
-      "venue": "arXiv 2026",
+      "venue": "EMNLP 2026",
       "date": "01/2026",
       "year": 2026,
       "training_free": "✘",
@@ -1202,21 +1308,21 @@
       }
     },
     {
-      "id": "mitigation--referential-inconsistency--character-conflation--stemo-track--2605-08974",
-      "title": "Tracking the Truth: Object-Centric Spatio-Temporal Monitoring for Video Large Language Models",
-      "paper_url": "https://arxiv.org/abs/2605.08974",
-      "arxiv_id": "2605.08974",
+      "id": "mitigation--referential-inconsistency--character-conflation--strand-trajectory-reasoning--2609-29607",
+      "title": "STRAND: Benchmarking and Improving Object-Centric Spatio-Temporal Monitoring in Video Large Language Models",
+      "paper_url": "https://arxiv.org/abs/2609.29607",
+      "arxiv_id": "2609.29607",
       "type": "mitigation",
       "category": "Referential Inconsistency",
       "mechanism": "Dynamic Distortion",
       "subtype": "Character Conflation",
-      "name": "STEMO-Track",
+      "name": "STRAND (Trajectory Reasoning)",
       "venue": "arXiv 2026",
-      "date": "05/2026",
+      "date": "08/2026",
       "year": 2026,
       "training_free": "✔︎",
       "resources": {
-        "project": null,
+        "project": "https://nguyentthong.github.io/strand/",
         "code": "https://github.com/nguyentthong/video_hallucination",
         "dataset": null,
         "leaderboard": null
@@ -1344,6 +1450,27 @@
       "resources": {
         "project": null,
         "code": "https://github.com/Debjyoti-Adhikary/ProCap",
+        "dataset": null,
+        "leaderboard": null
+      }
+    },
+    {
+      "id": "mitigation--context-driven-fabrication--object-action-hallucination--gm-dpo--2609-36628",
+      "title": "Beyond Binary Preferences: Graded Preference Optimization for Limb-Motion Captioning",
+      "paper_url": "https://arxiv.org/abs/2609.36628",
+      "arxiv_id": "2609.36628",
+      "type": "mitigation",
+      "category": "Context-Driven Fabrication",
+      "mechanism": "Content Fabrication",
+      "subtype": "Object-Action Hallucination",
+      "name": "GM-DPO",
+      "venue": "arXiv 2026",
+      "date": "09/2026",
+      "year": 2026,
+      "training_free": "✘",
+      "resources": {
+        "project": null,
+        "code": null,
         "dataset": null,
         "leaderboard": null
       }
@@ -1580,6 +1707,27 @@
       }
     },
     {
+      "id": "mitigation--context-driven-fabrication--compositional-and-factuality-hallucination--trace-rc--2609-13288",
+      "title": "Target-Checked Reliability Score Refinement for Video Question Answering",
+      "paper_url": "https://arxiv.org/abs/2609.13288",
+      "arxiv_id": "2609.13288",
+      "type": "mitigation",
+      "category": "Context-Driven Fabrication",
+      "mechanism": "Content Fabrication",
+      "subtype": "Compositional and Factuality Hallucination",
+      "name": "TRACE-RC",
+      "venue": "arXiv 2026",
+      "date": "09/2026",
+      "year": 2026,
+      "training_free": "✘",
+      "resources": {
+        "project": null,
+        "code": "https://github.com/sydney-machine-learning/video-hallucination-diagnosis",
+        "dataset": "https://www.kaggle.com/datasets/mlopssss/video-hallucination-diagnosis",
+        "leaderboard": null
+      }
+    },
+    {
       "id": "mitigation--context-driven-fabrication--both-object-action-scene-event--vistadpo--2504-13122",
       "title": "VistaDPO: Video Hierarchical Spatial-Temporal Direct Preference Optimization for Large Video Models",
       "paper_url": "https://arxiv.org/abs/2504.13122",
@@ -1715,7 +1863,7 @@
       "mechanism": "Content Fabrication",
       "subtype": "Both Object-Action & Scene-Event",
       "name": "Structured Rewards",
-      "venue": "arXiv 2026",
+      "venue": "COLM 2026",
       "date": "04/2026",
       "year": 2026,
       "training_free": "✘",
@@ -1827,6 +1975,27 @@
       "resources": {
         "project": null,
         "code": "https://github.com/xxtars/EmotionHallucer",
+        "dataset": null,
+        "leaderboard": null
+      }
+    },
+    {
+      "id": "analysis--context-driven-fabrication--compositional-and-factuality-hallucination--beneath-the-scores--2609-28991",
+      "title": "Beneath the Scores: Rethinking Hallucination Evaluation for Video Understanding Models",
+      "paper_url": "https://arxiv.org/abs/2609.28991",
+      "arxiv_id": "2609.28991",
+      "type": "analysis",
+      "category": "Context-Driven Fabrication",
+      "mechanism": "Content Fabrication",
+      "subtype": "Compositional and Factuality Hallucination",
+      "name": "Beneath the Scores",
+      "venue": "NeurIPS 2026 TAE Workshop",
+      "date": "09/2026",
+      "year": 2026,
+      "training_free": null,
+      "resources": {
+        "project": null,
+        "code": null,
         "dataset": null,
         "leaderboard": null
       }

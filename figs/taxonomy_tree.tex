@@ -57,6 +57,10 @@
   methC/.style={pattern=north east lines, pattern color=coocSE!25, draw=coocSE!30, line width=0.7pt, font=\scriptsize\sffamily, align=left, tier=L3, inner xsep=5pt, inner ysep=3pt},
   methA/.style={pattern=north east lines, pattern color=aggrSA!25, draw=aggrSA!30, line width=0.7pt, font=\scriptsize\sffamily, align=left, tier=L3, inner xsep=5pt, inner ysep=3pt},
   methV/.style={pattern=north east lines, pattern color=audioEI!25, draw=audioEI!30, line width=0.7pt, font=\scriptsize\sffamily, align=left, tier=L3, inner xsep=5pt, inner ysep=3pt},
+  analysisT/.style={benchT, fill=white, dashed},
+  analysisC/.style={benchC, fill=white, dashed},
+  analysisA/.style={benchA, fill=white, dashed},
+  analysisV/.style={benchV, fill=white, dashed},
   [{Vid-LLM Hallucination}, root
     [{\textbf{Dynamic}\\\textbf{Distortion}}, metaD
       [{\textbf{Spatiotemporal}\\\textbf{Dynamics}}, L1T
@@ -75,8 +79,8 @@
       ]
       [{\textbf{Referential}\\\textbf{Inconsistency}}, L1A
         [{Character Conflation ({\footnotesize\textcolor{aggrCA}{Char}})}, L2A
-          [{EGOILLUSION (2025), MESH (2025), TOC-Bench (2026), STEMO-Bench (2026)}, benchA]
-          [{Vista-LLaMA (2023), VideoPLR (2025), STEMO-Track (2026)}, methA]
+          [{EGOILLUSION (2025), MESH (2025), TOC-Bench (2026), STRAND (2026)}, benchA]
+          [{Vista-LLaMA (2023), VideoPLR (2025), STRAND (Trajectory Reasoning) (2026)}, methA]
         ]
         [{Scene Conflation ({\footnotesize\textcolor{aggrSA}{Scn}})}, L2A
           [{ELV-Halluc (2025), DistractionBench (2026)}, benchA]
@@ -87,16 +91,17 @@
     [{\textbf{Content}\\\textbf{Fabrication}}, metaF
       [{\textbf{Context-Driven}\\\textbf{Fabrication}}, L1C
         [{Object--Action ({\footnotesize\textcolor{coocOA}{Obj-Act}})}, L2C
-          [{GameplayQA (2026), VideoHallu (2025), FactVC (2023)}, benchC]
-          [{SANTA (2025), TCD (2024), STVG-R1 (2026), ProCap (2026)}, methC]
+          [{GameplayQA (2026), VideoHallu (2025), FactVC (2023), FlexBench (2026)}, benchC]
+          [{SANTA (2025), TCD (2024), STVG-R1 (2026), ProCap (2026), GM-DPO (2026)}, methC]
         ]
         [{Scene--Event ({\footnotesize\textcolor{coocSE}{Scn-Evt}})}, L2C
-          [{EventHallusion (2024), NOAH (2025), RoadSocial (2025), CCTVBench (2026)}, benchC]
+          [{EventHallusion (2024), NOAH (2025), RoadSocial (2025), CCTVBench (2026),\\VidOmni-Bench (2026)}, benchC]
           [{MASH-VLM (2025), PaMi-VDPO (2025), MMA (2025), ClueNet (2026), GraphThinker (2026),\\MACD (2026), STSCD (2026), Video-ToC (2026), C-TCD (2026), VADER (2026)}, methC]
         ]
         [{Compositional \& Factuality ({\footnotesize\textcolor{coocSE}{Comp-Fact}})}, L2C
-          [{INFACT (2026), OmniVCHall (2026), VideoHEDGE (2026), DualFact (2026), GasVideo-1000 (2026),\\VisualTextTrap (2026), VidPair-Halluc (2026)}, benchC]
-          [{GroundedVQA (2026)}, methC]
+          [{INFACT (2026), OmniVCHall (2026), VideoHEDGE (2026), DualFact (2026), GasVideo-1000 (2026),\\VisualTextTrap (2026), VidPair-Halluc (2026), VHD (2026), VidHalLoc (2026)}, benchC]
+          [{GroundedVQA (2026), TRACE-RC (2026)}, methC]
+          [{Beneath the Scores (2026)}, analysisC]
         ]
         [{Object--Action \& Scene--Event ({\footnotesize\textcolor{coocOA}{Both}})}, L2C
           [{VistaDPO (2025), VideoHallu-GRPO (2025), TriCD (2026), SToP (2026), VTHM-MoE (2026),\\STEAR (2026), Structured Rewards (2026), MultiToP (2026)}, methC]
@@ -104,7 +109,7 @@
       ]
       [{\textbf{Audio-Visual}\\\textbf{Conflict}}, L1V
         [{Action Attribution ({\footnotesize\textcolor{audioAA}{Act}})}, L2V
-          [{AVHBench (2024), CMM (2024), Audio Hallucination QA (2026), TraceAV-Bench (2026),\\AVHalluBench (2024)}, benchV]
+          [{AVHBench (2024), CMM (2024), Audio Hallucination QA (2026), TraceAV-Bench (2026),\\AVHalluBench (2024), Video-HolmesV2 (2026)}, benchV]
           [{AVHModel-Align-FT (2024), AVCD (2025), mrDPO (2024)}, methV]
         ]
         [{Emotion Inference ({\footnotesize\textcolor{audioEI}{Emo}})}, L2V

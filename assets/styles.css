@@ -112,7 +112,7 @@ h1 {
 
 .stats {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 1px;
   max-width: 1180px;
   margin: 0 auto;
@@ -285,6 +285,11 @@ button:hover {
 .type-pill.mitigation {
   background: var(--mitigation);
   color: var(--mitigation-text);
+}
+
+.type-pill.analysis {
+  background: #e5f1f0;
+  color: #155e59;
 }
 
 .date-pill {
