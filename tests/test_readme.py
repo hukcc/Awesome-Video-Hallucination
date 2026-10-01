@@ -46,7 +46,7 @@ class ReadmeTests(unittest.TestCase):
         targets = [href[1:] for href in doc.links if href.startswith('#')]
         self.assertEqual(len(targets), 34)
         self.assertTrue(set(targets) <= set(doc.ids))
-        self.assertTrue(all(len(row) in (3, 4) for row in doc.rows))
+        self.assertTrue(all(len(row) in (4, 5) for row in doc.rows))
 
     def test_task_index_covers_every_contribution(self):
         doc = Document()
@@ -103,7 +103,27 @@ class ReadmeTests(unittest.TestCase):
         for cells in doc.rows:
             entry = entries[cells[0]['ids'][0]]
             if entry['type'] == 'mitigation':
-                self.assertEqual(cells[2]['text'], entry['training_free'])
+                self.assertEqual(cells[3]['text'], entry['training_free'])
+
+    def test_paper_titles_and_contribution_names_have_distinct_columns(self):
+        doc = Document()
+        output = paper_list(self.entries, self.metadata)
+        doc.feed(output)
+        entries = {anchor(e): e for e in self.entries}
+        for cells in doc.rows:
+            entry = entries[cells[0]['ids'][0]]
+            self.assertEqual(cells[1]['text'], entry['name'])
+            self.assertTrue(cells[0]['text'].startswith(entry['title'] + ' '))
+        self.assertEqual(output.count('</a></b><br>'), len(self.entries))
+
+    def test_task_index_is_compact_without_hiding_the_paper_tables(self):
+        output = task_index(self.entries, self.metadata)
+        self.assertIn('<summary><b>Task index</b>', output)
+        self.assertNotIn('<details open>', output)
+        self.assertEqual(output.count('<details>'), len(self.metadata['task_vocabulary']) + 1)
+        text = (ROOT / 'README.md').read_text()
+        self.assertLess(text.index('![Framework overview]'), text.index('## Find Your Papers'))
+        self.assertIn('<details open>\n<summary><b>Event Misordering', text)
 
     def test_repository_badges_and_supporting_content_are_retained(self):
         text = (ROOT / 'README.md').read_text()

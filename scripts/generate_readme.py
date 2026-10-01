@@ -12,9 +12,9 @@ from generate_taxonomy_tree import TAXONOMY
 
 ROOT = Path(__file__).resolve().parent.parent
 SECTIONS = (
-    ('benchmark', 'Evaluation Benchmarks', 'Benchmarks', 'Paper & Focus'),
-    ('mitigation', 'Mitigation Strategies', 'Mitigation', 'Paper & Approach'),
-    ('analysis', 'Evaluation Analyses', 'Analyses', 'Paper & Focus'),
+    ('benchmark', 'Evaluation Benchmarks', 'Benchmarks', 'Benchmark'),
+    ('mitigation', 'Mitigation Strategies', 'Mitigation', 'Method'),
+    ('analysis', 'Evaluation Analyses', 'Analyses', 'Analysis'),
 )
 COLORS = {
     'Spatiotemporal Dynamics': '\U0001f535',
@@ -65,7 +65,11 @@ def resource_legend():
                 ('dataset', 'https://www.kaggle.com/', 'Kaggle Dataset'),
                 ('leaderboard', '', 'Leaderboard')]
     items = [f'{badge_image(kind, url)} = {label}' for kind, url, label in examples]
-    return '> [!NOTE]\n> **Legend:** ' + ' &ensp; '.join(items) + ' &ensp; `-` = No verified resource link'
+    return '\n'.join([
+        '<details>', '<summary><b>Resource badge legend</b></summary>', '',
+        '<p>' + '<br>\n'.join(items) + '<br>\n<code>-</code> = No verified resource link</p>', '',
+        '</details>',
+    ])
 
 
 def newest_first(entries, details):
@@ -82,8 +86,9 @@ def task_index(entries, metadata):
     ordered = newest_first([group[0] for group in groups.values()], details)
     lines = [
         '#### Browse by Task', '',
-        'Expand a task to jump directly to papers below. Tags describe paper-level scope; '
-        'the linked benchmark and method entries explain each contribution. Papers are ordered newest first.', '',
+        '<details>',
+        f'<summary><b>Task index</b> &middot; {len(metadata["task_vocabulary"])} topics &middot; {len(groups)} papers</summary>', '',
+        '<p><sub>Paper-level task tags. Newest first; links lead to individual contributions below.</sub></p>', '',
     ]
     for task in metadata['task_vocabulary']:
         papers = [entry for entry in ordered if task in details[paper_key(entry)]['tasks']]
@@ -92,27 +97,28 @@ def task_index(entries, metadata):
         for entry in papers:
             labels.append(' / '.join(link(e['name'], '#' + anchor(e)) for e in groups[paper_key(entry)]))
         lines += [' &middot;\n'.join(labels), '</p>', '', '</details>', '']
+    lines += ['</details>']
     return '\n'.join(lines).rstrip()
 
 
 def row(entry, related):
     first = (
-        f'<a id="{anchor(entry)}"></a><b>{escape(entry["name"])}</b><br>\n'
-        f'        {link(entry["title"], entry["paper_url"])}<br>\n'
-        f'        {escape(entry["description"])}'
+        f'<a id="{anchor(entry)}"></a><b>{link(entry["title"], entry["paper_url"])}</b><br>\n'
+        f'        <sub>{escape(entry["description"])}</sub>'
     )
     siblings = [other for other in related if other['id'] != entry['id']]
     if siblings:
         labels = {'benchmark': 'Related benchmark', 'mitigation': 'Related method', 'analysis': 'Related analysis'}
         refs = [link(f'{labels[e["type"]]}: {e["name"]}', '#' + anchor(e)) for e in siblings]
         first += '<br>\n        <sub>' + ' &middot; '.join(refs) + '</sub>'
-    cells = [first, escape(entry['venue']) + '<br>' + escape(entry['date'])]
+    cells = [first, f'<b>{escape(entry["name"])}</b>',
+             escape(entry['venue']) + '<br><sub>' + escape(entry['date']) + '</sub>']
     if entry['type'] == 'mitigation':
         label = 'Yes' if entry['training_free'] == '\u2714\ufe0e' else 'No'
         cells.append(f'<span title="Training-free: {label}">{entry["training_free"]}</span>')
     resources = [resource_badge(key, entry['resources'][key]) for key in RESOURCE_LABELS if entry['resources'].get(key)]
     cells.append(' '.join(resources) or '-')
-    aligns = ['left', 'left'] + ['center'] * (len(cells) - 2)
+    aligns = ['left'] + ['center'] * (len(cells) - 1)
     return ['    <tr>'] + [f'      <td align="{align}">{cell}</td>' for align, cell in zip(aligns, cells)] + ['    </tr>']
 
 
@@ -123,21 +129,22 @@ def paper_list(entries, metadata):
         groups[paper_key(entry)].append(entry)
     lines = []
     emitted = []
-    for kind, title, category_label, first_header in SECTIONS:
+    for kind, title, category_label, name_header in SECTIONS:
         lines += [f'## {title}', '']
         if kind == 'benchmark':
             lines += [
-                'Each entry describes the listed contribution. Dates are **first publication** '
-                '(first arXiv submission, or publisher issue when no arXiv record is used), '
-                'not venue year. Entries are newest first within each subtype. '
+                '> [!NOTE]\n'
+                '> Newest first within each subtype. **Date** = first arXiv submission, '
+                'or publisher issue date when no arXiv record is used; venue years may differ. '
                 '[Sources and review notes](data/paper_details.json).', '',
                 resource_legend(), '',
             ]
         elif kind == 'mitigation':
             lines += [
-                '**Training-free:** \u2714\ufe0e = no additional parameter learning for the intervention; '
-                '\u2718 = training is required, including auxiliary modules with a frozen backbone. '
-                'Dates use first publication; entries are newest first within each subtype.', '',
+                '> [!NOTE]\n'
+                '> **Training-free:** \u2714\ufe0e No additional parameter learning; '
+                '\u2718 Training required, including auxiliary modules with a frozen backbone. '
+                'Dates use first publication; newest first within each subtype.', '',
             ]
         else:
             lines += [
@@ -158,18 +165,18 @@ def paper_list(entries, metadata):
                         continue
                     emitted.extend(e['id'] for e in matching)
                     noun = 'entry' if len(matching) == 1 else 'entries'
-                    headers = [first_header, 'Venue / First Published']
-                    widths = [65, 17, 18]
+                    headers = ['Paper', name_header, 'Venue / Date']
+                    widths = [53, 13, 16, 18]
                     if kind == 'mitigation':
                         headers.append('Training-Free')
-                        widths = [57, 16, 10, 17]
+                        widths = [46, 13, 14, 9, 18]
                     headers.append('Resources')
                     lines += [
                         '<details open>', f'<summary><b>{escape(subtype)}</b> ({len(matching)} {noun})</summary>', '',
                         '<table width="100%">', '  <thead>', '    <tr>',
                     ]
                     for label, width in zip(headers, widths):
-                        align = 'center' if label in ('Resources', 'Training-Free') else 'left'
+                        align = 'left' if label == 'Paper' else 'center'
                         lines.append(f'      <th width="{width}%" align="{align}">{escape(label)}</th>')
                     lines += ['    </tr>', '  </thead>', '  <tbody>']
                     for entry in matching:

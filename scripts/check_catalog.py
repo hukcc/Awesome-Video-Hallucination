@@ -85,16 +85,17 @@ def check():
         entry = by_anchor[entry_anchor]
         seen.append(entry_anchor)
         assert 12 <= len(entry['description'].split()) <= 40, entry['name']
-        expected = [entry['name'], entry['title'], entry['description']]
+        expected = [entry['title'], entry['description']]
         related = [e for e in entries if e['paper_url'] == entry['paper_url'] and e['id'] != entry['id']]
         labels = {'benchmark': 'Related benchmark', 'mitigation': 'Related method', 'analysis': 'Related analysis'}
         if related:
             expected.append(' \u00b7 '.join(f'{labels[e["type"]]}: {e["name"]}' for e in related))
         assert cells[0]['text'] == ' '.join(expected), entry['name']
-        assert cells[1]['text'] == entry['venue'] + ' ' + entry['date'], entry['name']
-        assert len(cells) == (4 if entry['type'] == 'mitigation' else 3), entry['name']
+        assert cells[1]['text'] == entry['name'], entry['name']
+        assert cells[2]['text'] == entry['venue'] + ' ' + entry['date'], entry['name']
+        assert len(cells) == (5 if entry['type'] == 'mitigation' else 4), entry['name']
         if entry['type'] == 'mitigation':
-            assert cells[2]['text'] == entry['training_free'], entry['name']
+            assert cells[3]['text'] == entry['training_free'], entry['name']
         assert cells[0]['links'] == [entry['paper_url']] + ['#paper-' + e['id'] for e in related], entry['name']
         assert sorted(cells[-1]['links']) == sorted(url for url in entry['resources'].values() if url), entry['name']
         assert sorted(image['href'] for image in cells[-1]['images']) == sorted(cells[-1]['links']), entry['name']
