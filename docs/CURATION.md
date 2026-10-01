@@ -53,7 +53,7 @@ Filter, sort, layout, and reading-guide state are encoded in the URL. Desktop de
 
 The task index links to stable contribution anchors in the same README. Task labels and paper counts are paper-level; benchmark and method links from one paper appear together. Every indexed paper retains its full taxonomy placement below.
 
-Tables remain expanded and use three columns for benchmarks/analyses or four for methods. Each subtype is sorted by verified first-publication date descending, with alphabetical ties. Venue and publication date are separate concepts in one cell. Short names, full titles, contribution descriptions, plain resource links, and related-contribution anchors are generated from the shared data. Missing resources mean no verified link is recorded, not that the resource does not exist. The large taxonomy figure is collapsed by default.
+Tables remain expanded and use three columns for benchmarks/analyses or four for methods. Each subtype is sorted by verified first-publication date descending, with alphabetical ties. Venue and publication date are separate concepts in one cell. Short names, full titles, contribution descriptions, resource badges, and related-contribution anchors are generated from the shared data. Preserve the original Page, Code, Dataset, and Leaderboard badge styles and the training-free check/cross symbols. Dataset badges must match their hosting platform; do not label Kaggle or other hosts as Hugging Face. Keep the top-level repository badges, figures, news, and citation content when improving navigation. Missing resources mean no verified link is recorded, not that the resource does not exist. The large taxonomy figure is collapsed by default.
 
 ## Update Checklist
 

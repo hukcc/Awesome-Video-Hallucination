@@ -6,6 +6,7 @@ import json
 from collections import defaultdict
 from html import escape
 from pathlib import Path
+from urllib.parse import urlsplit
 
 from generate_taxonomy_tree import TAXONOMY
 
@@ -21,7 +22,15 @@ COLORS = {
     'Context-Driven Fabrication': '\U0001f7e0',
     'Audio-Visual Conflict': '\U0001f7e3',
 }
-RESOURCE_LABELS = {'code': 'Code', 'dataset': 'Dataset', 'project': 'Project', 'leaderboard': 'Leaderboard'}
+RESOURCE_LABELS = {'project': 'Project Page', 'code': 'Code', 'dataset': 'Dataset', 'leaderboard': 'Leaderboard'}
+RESOURCE_BADGES = {
+    'project': ('Page%20%F0%9F%94%97-Link-228B22?logo=readthedocs&logoColor=white', 'page'),
+    'code': ('Code-Link-blue?logo=github', 'code'),
+    'dataset': ('Dataset-Link-yellow', 'dataset'),
+    'huggingface': ('Dataset-HuggingFace-yellow?logo=huggingface', 'dataset'),
+    'kaggle': ('Dataset-Kaggle-20BEFF?logo=kaggle&logoColor=white', 'dataset'),
+    'leaderboard': ('Page%20%F0%9F%94%97-Leaderboard-228B22?logo=readthedocs&logoColor=white', 'leaderboard'),
+}
 
 
 def paper_key(entry):
@@ -34,6 +43,29 @@ def anchor(entry):
 
 def link(label, url):
     return f'<a href="{escape(url, quote=True)}">{escape(label)}</a>'
+
+
+def badge_image(kind, url=''):
+    variant = kind
+    if kind == 'dataset':
+        host = (urlsplit(url).hostname or '').removeprefix('www.')
+        variant = {'huggingface.co': 'huggingface', 'kaggle.com': 'kaggle'}.get(host, kind)
+    path, alt = RESOURCE_BADGES[variant]
+    src = 'https://img.shields.io/badge/' + path
+    return f'<img src="{escape(src, quote=True)}" alt="{alt}" title="{RESOURCE_LABELS[kind]}" />'
+
+
+def resource_badge(kind, url):
+    return f'<a href="{escape(url, quote=True)}">{badge_image(kind, url)}</a>'
+
+
+def resource_legend():
+    examples = [('project', '', 'Project Page'), ('code', '', 'GitHub Repository'),
+                ('dataset', 'https://huggingface.co/', 'Hugging Face Dataset'),
+                ('dataset', 'https://www.kaggle.com/', 'Kaggle Dataset'),
+                ('leaderboard', '', 'Leaderboard')]
+    items = [f'{badge_image(kind, url)} = {label}' for kind, url, label in examples]
+    return '> [!NOTE]\n> **Legend:** ' + ' &ensp; '.join(items) + ' &ensp; `-` = No verified resource link'
 
 
 def newest_first(entries, details):
@@ -76,10 +108,12 @@ def row(entry, related):
         first += '<br>\n        <sub>' + ' &middot; '.join(refs) + '</sub>'
     cells = [first, escape(entry['venue']) + '<br>' + escape(entry['date'])]
     if entry['type'] == 'mitigation':
-        cells.append('Yes' if entry['training_free'] == '\u2714\ufe0e' else 'No')
-    resources = [link(label, entry['resources'][key]) for key, label in RESOURCE_LABELS.items() if entry['resources'].get(key)]
-    cells.append(' &middot; '.join(resources) or '-')
-    return ['    <tr>'] + [f'      <td align="left">{cell}</td>' for cell in cells] + ['    </tr>']
+        label = 'Yes' if entry['training_free'] == '\u2714\ufe0e' else 'No'
+        cells.append(f'<span title="Training-free: {label}">{entry["training_free"]}</span>')
+    resources = [resource_badge(key, entry['resources'][key]) for key in RESOURCE_LABELS if entry['resources'].get(key)]
+    cells.append(' '.join(resources) or '-')
+    aligns = ['left', 'left'] + ['center'] * (len(cells) - 2)
+    return ['    <tr>'] + [f'      <td align="{align}">{cell}</td>' for align, cell in zip(aligns, cells)] + ['    </tr>']
 
 
 def paper_list(entries, metadata):
@@ -97,11 +131,12 @@ def paper_list(entries, metadata):
                 '(first arXiv submission, or publisher issue when no arXiv record is used), '
                 'not venue year. Entries are newest first within each subtype. '
                 '[Sources and review notes](data/paper_details.json).', '',
+                resource_legend(), '',
             ]
         elif kind == 'mitigation':
             lines += [
-                '**Training-free:** Yes = no additional parameter learning for the intervention; '
-                'No = training is required, including auxiliary modules with a frozen backbone. '
+                '**Training-free:** \u2714\ufe0e = no additional parameter learning for the intervention; '
+                '\u2718 = training is required, including auxiliary modules with a frozen backbone. '
                 'Dates use first publication; entries are newest first within each subtype.', '',
             ]
         else:
@@ -133,7 +168,9 @@ def paper_list(entries, metadata):
                         '<details open>', f'<summary><b>{escape(subtype)}</b> ({len(matching)} {noun})</summary>', '',
                         '<table width="100%">', '  <thead>', '    <tr>',
                     ]
-                    lines += [f'      <th width="{width}%" align="left">{escape(label)}</th>' for label, width in zip(headers, widths)]
+                    for label, width in zip(headers, widths):
+                        align = 'center' if label in ('Resources', 'Training-Free') else 'left'
+                        lines.append(f'      <th width="{width}%" align="{align}">{escape(label)}</th>')
                     lines += ['    </tr>', '  </thead>', '  <tbody>']
                     for entry in matching:
                         lines += row(entry, groups[paper_key(entry)])

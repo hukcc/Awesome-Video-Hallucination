@@ -9,7 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / 'scripts'))
 from check_catalog import Document
-from generate_readme import anchor, newest_first, paper_list, render, replace_region, task_index
+from generate_readme import anchor, newest_first, paper_list, render, replace_region, resource_badge, task_index
 
 
 class ReadmeTests(unittest.TestCase):
@@ -66,6 +66,51 @@ class ReadmeTests(unittest.TestCase):
         output = paper_list(entries, self.metadata)
         self.assertIn('Visual &lt;evidence&gt; &amp; quoted &quot;claims&quot;.', output)
         self.assertNotIn('<evidence>', output)
+
+    def test_every_resource_remains_a_linked_badge(self):
+        doc = Document()
+        doc.feed(paper_list(self.entries, self.metadata))
+        entries = {anchor(e): e for e in self.entries}
+        for cells in doc.rows:
+            entry = entries[cells[0]['ids'][0]]
+            expected = [url for url in entry['resources'].values() if url]
+            images = cells[-1]['images']
+            self.assertCountEqual([image['href'] for image in images], expected)
+            self.assertTrue(all(image['src'].startswith('https://img.shields.io/badge/') and image['alt'] for image in images))
+            if not expected:
+                self.assertEqual(cells[-1]['text'], '-')
+
+    def test_original_badge_styles_and_dataset_platforms(self):
+        cases = [
+            ('project', 'https://example.org', 'Page%20%F0%9F%94%97-Link-228B22?logo=readthedocs&logoColor=white'),
+            ('code', 'https://github.com/example/repo', 'Code-Link-blue?logo=github'),
+            ('dataset', 'https://huggingface.co/datasets/example/test', 'Dataset-HuggingFace-yellow?logo=huggingface'),
+            ('dataset', 'https://www.kaggle.com/datasets/example/test', 'Dataset-Kaggle-20BEFF?logo=kaggle&logoColor=white'),
+            ('leaderboard', 'https://huggingface.co/spaces/example/test', 'Page%20%F0%9F%94%97-Leaderboard-228B22?logo=readthedocs&logoColor=white'),
+            ('dataset', 'https://example.org/data', 'Dataset-Link-yellow'),
+        ]
+        for kind, url, expected in cases:
+            doc = Document()
+            doc.feed('<table><tr><td>' + resource_badge(kind, url) + '</td></tr></table>')
+            image = doc.rows[0][0]['images'][0]
+            self.assertEqual(image['src'], 'https://img.shields.io/badge/' + expected)
+            self.assertEqual(image['href'], url)
+
+    def test_training_free_symbols_preserve_current_verified_values(self):
+        doc = Document()
+        doc.feed(paper_list(self.entries, self.metadata))
+        entries = {anchor(e): e for e in self.entries}
+        for cells in doc.rows:
+            entry = entries[cells[0]['ids'][0]]
+            if entry['type'] == 'mitigation':
+                self.assertEqual(cells[2]['text'], entry['training_free'])
+
+    def test_repository_badges_and_supporting_content_are_retained(self):
+        text = (ROOT / 'README.md').read_text()
+        for label in ('Awesome', 'arXiv', 'ACL 2026 Findings', 'Entries', 'Auto arXiv Update', 'License: MIT', 'Last Commit'):
+            self.assertIn(f'[![{label}](', text)
+        for content in ('imgs/teaser.png', 'imgs/fig2_taxonomy.png', '## Latest Updates', '## Citation', '@article{huang2026distorted,'):
+            self.assertIn(content, text)
 
 
 if __name__ == '__main__':

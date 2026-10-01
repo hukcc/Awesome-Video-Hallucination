@@ -22,6 +22,7 @@ class Document(HTMLParser):
         self.ids = []
         self.tables = []
         self.table = None
+        self.current_href = None
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
@@ -33,7 +34,9 @@ class Document(HTMLParser):
         if tag == 'tr':
             self.row = []
         if tag == 'td' and self.row is not None:
-            self.cell = {'text': [], 'links': [], 'ids': []}
+            self.cell = {'text': [], 'links': [], 'ids': [], 'images': []}
+        if tag == 'a':
+            self.current_href = attrs.get('href')
         if tag == 'a' and self.cell is not None:
             if 'href' in attrs:
                 self.cell['links'].append(attrs['href'])
@@ -41,12 +44,16 @@ class Document(HTMLParser):
                 self.cell['ids'].append(attrs['id'])
         if tag == 'br' and self.cell is not None:
             self.cell['text'].append(' ')
+        if tag == 'img' and self.cell is not None:
+            self.cell['images'].append({**attrs, 'href': self.current_href})
 
     def handle_data(self, text):
         if self.cell is not None:
             self.cell['text'].append(text)
 
     def handle_endtag(self, tag):
+        if tag == 'a':
+            self.current_href = None
         if tag == 'td' and self.cell is not None:
             self.cell['text'] = ' '.join(''.join(self.cell['text']).split())
             self.row.append(self.cell)
@@ -87,9 +94,11 @@ def check():
         assert cells[1]['text'] == entry['venue'] + ' ' + entry['date'], entry['name']
         assert len(cells) == (4 if entry['type'] == 'mitigation' else 3), entry['name']
         if entry['type'] == 'mitigation':
-            assert cells[2]['text'] == ('Yes' if entry['training_free'] == '\u2714\ufe0e' else 'No'), entry['name']
+            assert cells[2]['text'] == entry['training_free'], entry['name']
         assert cells[0]['links'] == [entry['paper_url']] + ['#paper-' + e['id'] for e in related], entry['name']
         assert sorted(cells[-1]['links']) == sorted(url for url in entry['resources'].values() if url), entry['name']
+        assert sorted(image['href'] for image in cells[-1]['images']) == sorted(cells[-1]['links']), entry['name']
+        assert all(image['src'].startswith('https://img.shields.io/badge/') and image['alt'] for image in cells[-1]['images']), entry['name']
     assert Counter(seen) == Counter(by_anchor.keys()), 'Missing or duplicate README entries'
     for table in readme.tables:
         group = [by_anchor[cells[0]['ids'][0]] for cells in table]
@@ -128,7 +137,7 @@ def check():
                 assert not re.search(r'[\u4e00-\u9fff]', path.read_text()), path
     hashes = {hashlib.sha256((ROOT / 'imgs' / (name + '.png')).read_bytes()).hexdigest() for name in ('taxonomy_tree', 'taxonomy', 'fig2_taxonomy')}
     assert len(hashes) == 1, 'Taxonomy image aliases differ'
-    print(f'PASS: {len(entries)} README/data entries, descriptions, task anchors, cross-links, date order, resources, English metadata, and taxonomy image aliases.')
+    print(f'PASS: {len(entries)} README/data entries, descriptions, task anchors, cross-links, date order, resource badges, English metadata, and taxonomy image aliases.')
 
 
 if __name__ == '__main__':
