@@ -13,6 +13,71 @@
     "Video Understanding"
   ],
   "papers": {
+    "2610.12458": {
+      "summary": "Benchmarks structured audio-visual captioning, separating hallucination-sensitive precision from omissions and diagnosing identity drift, temporal errors, and incorrect sound-to-shot associations.",
+      "tasks": [
+        "Audio-Visual Understanding",
+        "Video Captioning",
+        "Hallucination Detection",
+        "Temporal Grounding"
+      ],
+      "source_url": "https://arxiv.org/abs/2610.12458v1",
+      "evidence": "Abstract; Introduction; Sections 3.2 and 4.1-4.3; Table 4; author project and resource pages",
+      "reviewed_on": "2026-11-01",
+      "published_on": "2026-10-08",
+      "authors": [
+        "Zhongyu Yang",
+        "Jiale Tao",
+        "Ruitao Chen",
+        "Zuhao Yang",
+        "Yingfang Yuan",
+        "Xueliang Zhao",
+        "Auden",
+        "Kai Wang",
+        "Shuai Shao",
+        "Biao Wang",
+        "Steve Yves",
+        "Qinglin Lu"
+      ],
+      "added": null,
+      "scope_review": {
+        "scope": "broader",
+        "reason": "Broader audio-visual captioning benchmark with explicit prediction-to-reference precision penalizing hallucinated descriptions and dedicated sound-to-shot and speaker-attribution diagnostics.",
+        "source_url": "https://arxiv.org/html/2610.12458v1",
+        "evidence": "Abstract; Introduction; Sections 3.2 and 4.1-4.3; Table 4",
+        "reviewed_on": "2026-11-01",
+        "decision": "retain"
+      }
+    },
+    "2610.19728": {
+      "summary": "Uses attention-guided perturbations of visual hidden states to construct contrastive decoding negatives, evaluated on VideoHallucer and EventHallusion without additional parameter training.",
+      "tasks": [
+        "Video QA",
+        "Video Captioning"
+      ],
+      "source_url": "https://arxiv.org/abs/2610.19728v1",
+      "evidence": "Abstract; Introduction; Sections 3.3-3.4 and 4.1; Appendix A.1-A.2",
+      "reviewed_on": "2026-11-01",
+      "published_on": "2026-10-14",
+      "authors": [
+        "Zhixin Cai",
+        "Ruoqi Yuan",
+        "Xinchen Yang",
+        "Zhuofan Chen",
+        "Jun Bai",
+        "Chuantao Yin",
+        "Wenge Rong"
+      ],
+      "added": null,
+      "scope_review": {
+        "scope": "direct",
+        "reason": "Explicitly targets unsupported VideoLLM responses through contrastive decoding and evaluates both VideoHallucer and EventHallusion; optimization changes input representations, not model parameters.",
+        "source_url": "https://arxiv.org/html/2610.19728v1",
+        "evidence": "Abstract; Introduction; Sections 3.3-3.4 and 4.1; Appendix A.1-A.2",
+        "reviewed_on": "2026-11-01",
+        "decision": "retain"
+      }
+    },
     "2412.03735": {
       "summary": "Evaluates action, event-order, and scene-transition hallucinations; DINO-HEAL reweights visual features using DINOv2 saliency without additional training.",
       "tasks": [
@@ -163,14 +228,14 @@
       }
     },
     "2606.23061": {
-      "summary": "Diagnoses motion direction, attribution, and timing errors; Plug-in Physical Verification supplies measured motion evidence without model training.",
+      "summary": "Diagnoses motion direction, attribution, and timing errors; Perceive-Parse-Verify supplies measured motion evidence without model training.",
       "tasks": [
         "Video QA",
         "Motion Understanding"
       ],
-      "source_url": "https://arxiv.org/abs/2606.23061v1",
-      "evidence": "Abstract",
-      "reviewed_on": "2026-10-01",
+      "source_url": "https://arxiv.org/abs/2606.23061v2",
+      "evidence": "Abstract; Introduction; Sections 3.2 and 4; official code repository",
+      "reviewed_on": "2026-11-01",
       "published_on": "2026-06-22",
       "authors": [
         "Weile Guo",
@@ -187,9 +252,9 @@
       "scope_review": {
         "scope": "direct",
         "reason": "Dedicated paired-video motion hallucination diagnosis with measurement-based verification.",
-        "source_url": "https://arxiv.org/html/2606.23061v1",
-        "evidence": "Abstract",
-        "reviewed_on": "2026-10-01",
+        "source_url": "https://arxiv.org/html/2606.23061v2",
+        "evidence": "Abstract; Introduction; Sections 3.2 and 4",
+        "reviewed_on": "2026-11-01",
         "decision": "retain"
       }
     },
@@ -794,9 +859,9 @@
         "Hallucination Detection",
         "Long-Video Understanding"
       ],
-      "source_url": "https://arxiv.org/abs/2609.21521v1",
-      "evidence": "Abstract",
-      "reviewed_on": "2026-10-01",
+      "source_url": "https://arxiv.org/abs/2609.21521v2",
+      "evidence": "Abstract; Introduction; Sections 3.1-3.4",
+      "reviewed_on": "2026-11-01",
       "published_on": "2026-09-18",
       "authors": [
         "Changbeen Kim",
@@ -813,9 +878,9 @@
       "scope_review": {
         "scope": "direct",
         "reason": "Directly tests whether generated caption events are supported by video and measures hallucination detection failures.",
-        "source_url": "https://arxiv.org/html/2609.21521v1",
-        "evidence": "Abstract",
-        "reviewed_on": "2026-10-01",
+        "source_url": "https://arxiv.org/html/2609.21521v2",
+        "evidence": "Abstract; Introduction; Sections 3.1-3.4",
+        "reviewed_on": "2026-11-01",
         "decision": "retain"
       }
     },

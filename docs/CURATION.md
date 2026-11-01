@@ -112,6 +112,12 @@ This pass enriches discovery metadata; it does not claim a new full-text relevan
 
 The README description pass also checked the [HAVEN introduction](https://arxiv.org/html/2503.19622v1): TDPO means **thinking-based**, not temporal, direct preference optimization. The shared summary and method description use the source's terminology.
 
+## Review Note: 2026-11-01
+
+All seven November discoveries received official abstract and introduction review. OmniCapBench and ARP-CD were admitted after additional method/evaluation checks; four video-generation/editing papers were excluded. Causal Chain Generation remains an uncollected manual-review candidate because its reported metrics primarily assess semantic alignment and causal recoverability. See the [November decision log](../new_papers.md#reviewed---2026-11-01) for versioned evidence and resource provenance. The 95 existing contributions and eight existing scope-review candidates were preserved; this update does not claim a new full-text review of older papers.
+
+The remote audit also identified v2 revisions of MotionHalluc and VidOmni-Bench. Their abstracts, introductions, and relevant evaluation/method sections were checked before updating evidence links. MotionHalluc's summary now uses Perceive-Parse-Verify, and its official code links were added to the benchmark and PPV entries. Existing classifications, dataset links, publication dates, and addition records were retained.
+
 ## Icon Attribution
 
 The browser uses unmodified SVG assets from [Lucide 0.468.0](https://github.com/lucide-icons/lucide/tree/0.468.0/icons). Their license is retained in `assets/icons/LICENSE`. No runtime icon CDN is required.

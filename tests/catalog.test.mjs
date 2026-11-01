@@ -9,8 +9,8 @@ const papers = groupPapers(data.entries, metadata.papers);
 const select = filters => filterPapers(papers, filters);
 
 test('all contributions survive paper-level grouping', () => {
-  assert.equal(papers.length, 78);
-  assert.equal(data.entries.length, 95);
+  assert.equal(papers.length, 80);
+  assert.equal(data.entries.length, 97);
   assert.equal(papers.reduce((n, p) => n + p.entries.length, 0), data.entry_count);
   assert.equal(new Set(data.entries.map(e => e.id)).size, data.entry_count);
 });
@@ -56,7 +56,7 @@ test('contribution types retain their original totals', () => {
 test('filters cannot borrow training status from a different contribution', () => {
   assert.equal(select({ type: 'benchmark', training: 'yes' }).length, 0);
   assert.equal(select({ type: 'benchmark', training: 'no' }).length, 0);
-  assert.equal(select({ type: 'benchmark', training: 'na' }).length, 42);
+  assert.equal(select({ type: 'benchmark', training: 'na' }).length, 43);
   const result = select({ search: 'DINO-HEAL', type: 'mitigation', training: 'yes' });
   assert.equal(result.length, 1);
   assert.equal(result[0].matches.length, 1);
@@ -116,7 +116,7 @@ test('sorting is chronological, stable, and does not mutate the input', () => {
   const old = sortPapers(papers, 'oldest');
   const recent = sortPapers(papers, 'newest');
   assert.equal(old[0].key, '2303.02961');
-  assert.equal(recent[0].key, '2609.36628');
+  assert.equal(recent[0].key, '2610.19728');
   assert.deepEqual(papers.map(p => p.key), snapshot);
   const titles = sortPapers(papers, 'title').map(p => p.title);
   assert.deepEqual(titles, [...titles].sort((a, b) => a.localeCompare(b, 'en', { sensitivity: 'base' })));
@@ -124,7 +124,7 @@ test('sorting is chronological, stable, and does not mutate the input', () => {
 
 test('recently added uses repository history, not publication date', () => {
   const results = sortPapers(papers, 'added');
-  assert.ok(results.slice(0, 7).every(p => p.detail.added.date === '2026-10-01'));
+  assert.ok(results.slice(0, 2).every(p => p.detail.added.date === '2026-11-01'));
   const a = { ...papers[0], key: 'old-recent', detail: { published_on: '2020-01', added: { date: '2026-10-01' } } };
   const b = { ...papers[0], key: 'new-earlier', detail: { published_on: '2026-09', added: { date: '2026-09-01' } } };
   const unknown = { ...a, key: 'unknown', detail: { published_on: '2026-10' } };
@@ -204,7 +204,30 @@ test('citations retain identity and do not invent venue metadata', () => {
   assert.ok(bibtexFor(special).includes('A \\& B: 50\\% \\{test\\}\\_\\$'));
 });
 
+test('November additions retain verified scope, training requirements, and resources', () => {
+  const arp = select({ search: 'ARP-CD', type: 'mitigation', training: 'yes', route: 'Decoding' });
+  assert.equal(arp.length, 1);
+  assert.equal(arp[0].key, '2610.19728');
+  assert.equal(arp[0].detail.scope_review.scope, 'direct');
+  assert.equal(arp[0].entries[0].resources.code, null);
+  const omni = select({ search: 'OmniCapBench', type: 'benchmark', scope: 'broader', task: 'Audio-Visual Understanding' });
+  assert.equal(omni.length, 1);
+  assert.equal(omni[0].key, '2610.12458');
+  assert.equal(omni[0].entries[0].venue, 'NeurIPS 2026 E&D');
+  assert.equal(resourcesFor(omni[0]).length, 4);
+  assert.equal(select({ search: 'OmniCapBench', training: 'yes' }).length, 0);
+  for (const id of ['2610.33807', '2610.31466', '2610.28829', '2610.26069', '2610.26275']) {
+    assert.ok(!papers.some(p => p.key === id), id);
+  }
+});
+
 test('previous contributor resources and exclusions are preserved', () => {
+  const motion = papers.find(p => p.key === '2606.23061');
+  assert.ok(motion.detail.source_url.endsWith('v2'));
+  assert.ok(motion.detail.summary.includes('Perceive-Parse-Verify'));
+  assert.ok(motion.entries.every(e => e.resources.code === 'https://github.com/Leocoding0971/MotionHalluc'));
+  assert.ok(motion.entries.every(e => e.resources.dataset === 'https://huggingface.co/datasets/motionhalluc/MotionHalluc'));
+  assert.ok(papers.find(p => p.key === '2609.21521').detail.source_url.endsWith('v2'));
   const distraction = data.entries.find(e => e.name === 'DistractionBench');
   assert.equal(distraction.resources.code, 'https://github.com/lab-flair/video-llm-boe');
   assert.equal(distraction.resources.dataset, 'https://huggingface.co/datasets/lab-flair/VideoLLM-BoE');

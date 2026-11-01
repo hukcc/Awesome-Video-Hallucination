@@ -1,12 +1,12 @@
 # Awesome-Video-Hallucination [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-[![arXiv](https://img.shields.io/badge/arXiv-2604.12944-b31b1b.svg)](https://arxiv.org/abs/2604.12944) [![ACL 2026 Findings](https://img.shields.io/badge/ACL%202026-Findings-2ea44f)](https://arxiv.org/abs/2604.12944) [![Entries](https://img.shields.io/badge/Entries-95-blue.svg)](#evaluation-benchmarks) [![Auto arXiv Update](https://img.shields.io/badge/arXiv%20Update-Monthly-blueviolet.svg)](new_papers.md) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Last Commit](https://img.shields.io/github/last-commit/hukcc/Awesome-Video-Hallucination)](https://github.com/hukcc/Awesome-Video-Hallucination/commits/main)
+[![arXiv](https://img.shields.io/badge/arXiv-2604.12944-b31b1b.svg)](https://arxiv.org/abs/2604.12944) [![ACL 2026 Findings](https://img.shields.io/badge/ACL%202026-Findings-2ea44f)](https://arxiv.org/abs/2604.12944) [![Entries](https://img.shields.io/badge/Entries-97-blue.svg)](#evaluation-benchmarks) [![Auto arXiv Update](https://img.shields.io/badge/arXiv%20Update-Monthly-blueviolet.svg)](new_papers.md) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Last Commit](https://img.shields.io/github/last-commit/hukcc/Awesome-Video-Hallucination)](https://github.com/hukcc/Awesome-Video-Hallucination/commits/main)
 
-A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs)**, covering **42 benchmarks**, **52 mitigation methods**, and **1 evaluation analysis**. The 95 entries represent 78 distinct papers; a paper may contribute both a benchmark and a method. Updated monthly via arXiv search and manual review.
+A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs)**, covering **43 benchmarks**, **53 mitigation methods**, and **1 evaluation analysis**. The 97 entries represent 80 distinct papers; a paper may contribute both a benchmark and a method. Updated monthly via arXiv search and manual review.
 
 > 📄 **Survey Paper**: *[Distorted or Fabricated? A Survey on Hallucination in Video LLMs](https://arxiv.org/abs/2604.12944)*
 
-> 🔎 **Interactive Browser**: [Browse 78 papers](https://hukcc.github.io/Awesome-Video-Hallucination/) with source-backed summaries, task tags, combined filters, and table or card views.
+> 🔎 **Interactive Browser**: [Browse 80 papers](https://hukcc.github.io/Awesome-Video-Hallucination/) with source-backed summaries, task tags, combined filters, and table or card views.
 
 ![Framework overview](imgs/teaser.png)
 
@@ -14,8 +14,8 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 
 - [Find Your Papers](#find-your-papers)
 - [Taxonomy of Video Hallucinations](#taxonomy-of-video-hallucinations)
-- [Evaluation Benchmarks](#evaluation-benchmarks) — 42 benchmarks
-- [Mitigation Strategies](#mitigation-strategies) — 52 methods
+- [Evaluation Benchmarks](#evaluation-benchmarks) — 43 benchmarks
+- [Mitigation Strategies](#mitigation-strategies) — 53 methods
 - [Evaluation Analyses](#evaluation-analyses) — 1 analysis
 - [Citation](#citation)
 - [Contributing](#contributing)
@@ -24,9 +24,9 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 
 ## Latest Updates
 
+- **[2026/11]** Added OmniCapBench and ARP-CD after reviewing 7 candidates. [Review log](new_papers.md#reviewed---2026-11-01).
 - **[2026/10]** Added 7 papers, introduced evaluation analyses, and updated the taxonomy. [Review log](new_papers.md).
 - **[2026/09]** Added 2 hallucination mitigation papers.
-- **[2026/08]** Added 6 papers and updated the taxonomy.
 - **[2026/04]** Our [survey](https://arxiv.org/abs/2604.12944) was accepted to **ACL 2026 Findings**.
 
 <!-- BEGIN RECENT PAPERS -->
@@ -65,14 +65,15 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 #### Browse by Task
 
 <details>
-<summary><b>Task index</b> &middot; 9 topics &middot; 78 papers</summary>
+<summary><b>Task index</b> &middot; 9 topics &middot; 80 papers</summary>
 
 <p><sub>Paper-level task tags. Newest first; links lead to individual contributions below.</sub></p>
 
 <details>
-<summary><b>Audio-Visual Understanding</b> (10 papers)</summary>
+<summary><b>Audio-Visual Understanding</b> (11 papers)</summary>
 
 <p>
+<a href="#paper-benchmark--audio-visual-conflict--action-attribution--omnicapbench--2610-12458">OmniCapBench</a> &middot;
 <a href="#paper-benchmark--audio-visual-conflict--action-attribution--video-holmesv2--2609-17248">Video-HolmesV2</a> &middot;
 <a href="#paper-benchmark--audio-visual-conflict--action-attribution--traceav-bench--2605-07593">TraceAV-Bench</a> &middot;
 <a href="#paper-benchmark--audio-visual-conflict--action-attribution--audio-hallucination-qa--2604-23860">Audio Hallucination QA</a> &middot;
@@ -88,9 +89,10 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 </details>
 
 <details>
-<summary><b>Hallucination Detection</b> (24 papers)</summary>
+<summary><b>Hallucination Detection</b> (25 papers)</summary>
 
 <p>
+<a href="#paper-benchmark--audio-visual-conflict--action-attribution--omnicapbench--2610-12458">OmniCapBench</a> &middot;
 <a href="#paper-analysis--context-driven-fabrication--compositional-and-factuality-hallucination--beneath-the-scores--2609-28991">Beneath the Scores</a> &middot;
 <a href="#paper-benchmark--context-driven-fabrication--scene-event-hallucination--vidomni-bench--2609-21521">VidOmni-Bench</a> &middot;
 <a href="#paper-benchmark--context-driven-fabrication--compositional-and-factuality-hallucination--vhd--2609-13288">VHD</a> / <a href="#paper-mitigation--context-driven-fabrication--compositional-and-factuality-hallucination--trace-rc--2609-13288">TRACE-RC</a> &middot;
@@ -155,9 +157,10 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 </details>
 
 <details>
-<summary><b>Temporal Grounding</b> (7 papers)</summary>
+<summary><b>Temporal Grounding</b> (8 papers)</summary>
 
 <p>
+<a href="#paper-benchmark--audio-visual-conflict--action-attribution--omnicapbench--2610-12458">OmniCapBench</a> &middot;
 <a href="#paper-mitigation--spatiotemporal-dynamics--duration-distortion--video-twg--2602-18702">Video-TwG</a> &middot;
 <a href="#paper-mitigation--context-driven-fabrication--scene-event-hallucination--graphthinker--2602-17555">GraphThinker</a> &middot;
 <a href="#paper-mitigation--context-driven-fabrication--object-action-hallucination--stvg-r1--2602-11730">STVG-R1</a> &middot;
@@ -170,9 +173,11 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 </details>
 
 <details>
-<summary><b>Video Captioning</b> (15 papers)</summary>
+<summary><b>Video Captioning</b> (17 papers)</summary>
 
 <p>
+<a href="#paper-mitigation--context-driven-fabrication--scene-event-hallucination--arp-cd--2610-19728">ARP-CD</a> &middot;
+<a href="#paper-benchmark--audio-visual-conflict--action-attribution--omnicapbench--2610-12458">OmniCapBench</a> &middot;
 <a href="#paper-benchmark--context-driven-fabrication--object-action-hallucination--flexbench--2609-36628">FlexBench</a> / <a href="#paper-mitigation--context-driven-fabrication--object-action-hallucination--gm-dpo--2609-36628">GM-DPO</a> &middot;
 <a href="#paper-benchmark--context-driven-fabrication--scene-event-hallucination--vidomni-bench--2609-21521">VidOmni-Bench</a> &middot;
 <a href="#paper-benchmark--context-driven-fabrication--compositional-and-factuality-hallucination--vidhalloc--2609-09895">VidHalLoc</a> &middot;
@@ -193,9 +198,10 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 </details>
 
 <details>
-<summary><b>Video QA</b> (41 papers)</summary>
+<summary><b>Video QA</b> (42 papers)</summary>
 
 <p>
+<a href="#paper-mitigation--context-driven-fabrication--scene-event-hallucination--arp-cd--2610-19728">ARP-CD</a> &middot;
 <a href="#paper-analysis--context-driven-fabrication--compositional-and-factuality-hallucination--beneath-the-scores--2609-28991">Beneath the Scores</a> &middot;
 <a href="#paper-benchmark--audio-visual-conflict--action-attribution--video-holmesv2--2609-17248">Video-HolmesV2</a> &middot;
 <a href="#paper-benchmark--context-driven-fabrication--compositional-and-factuality-hallucination--vhd--2609-13288">VHD</a> / <a href="#paper-mitigation--context-driven-fabrication--compositional-and-factuality-hallucination--trace-rc--2609-13288">TRACE-RC</a> &middot;
@@ -374,7 +380,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
         <sub><a href="#paper-mitigation--spatiotemporal-dynamics--event-misordering--ppv--2606-23061">Related method: PPV</a></sub></td>
       <td align="center"><b>MotionHalluc</b></td>
       <td align="center">arXiv 2026<br><sub>06/2026</sub></td>
-      <td align="center"><a href="https://huggingface.co/datasets/motionhalluc/MotionHalluc"><img src="https://img.shields.io/badge/Dataset-HuggingFace-yellow?logo=huggingface" alt="dataset" title="Dataset" /></a></td>
+      <td align="center"><a href="https://github.com/Leocoding0971/MotionHalluc"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code" title="Code" /></a> <a href="https://huggingface.co/datasets/motionhalluc/MotionHalluc"><img src="https://img.shields.io/badge/Dataset-HuggingFace-yellow?logo=huggingface" alt="dataset" title="Dataset" /></a></td>
     </tr>
     <tr>
       <td align="left"><a id="paper-benchmark--spatiotemporal-dynamics--event-misordering--kpm-bench--2602-17768"></a><b><a href="https://arxiv.org/abs/2602.17768">KPM-Bench: A Kinematic Parsing Motion Benchmark for Fine-grained Motion-centric Video Understanding</a></b><br>
@@ -759,7 +765,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 ### 🟣 Audio-Visual Conflict Benchmarks (Content Fabrication)
 
 <details open>
-<summary><b>Action Attribution</b> (6 entries)</summary>
+<summary><b>Action Attribution</b> (7 entries)</summary>
 
 <table width="100%">
   <thead>
@@ -771,6 +777,13 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td align="left"><a id="paper-benchmark--audio-visual-conflict--action-attribution--omnicapbench--2610-12458"></a><b><a href="https://arxiv.org/abs/2610.12458">OmniCapBench: A Deep-Structured Evaluation Framework for Fine-Grained Audio-Visual Captioning</a></b><br>
+        <sub>Evaluates structured audio-visual captions using grounded precision, identity consistency, and event-shot association to expose hallucinated descriptions and cross-modal attribution errors.</sub></td>
+      <td align="center"><b>OmniCapBench</b></td>
+      <td align="center">NeurIPS 2026 E&amp;D<br><sub>10/2026</sub></td>
+      <td align="center"><a href="https://01yzzyu.github.io/OmniCapBench/"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?logo=readthedocs&amp;logoColor=white" alt="page" title="Project Page" /></a> <a href="https://github.com/Tencent-Hunyuan/OmniCapBench"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code" title="Code" /></a> <a href="https://huggingface.co/datasets/OmniCapBench/OmniCapBench"><img src="https://img.shields.io/badge/Dataset-HuggingFace-yellow?logo=huggingface" alt="dataset" title="Dataset" /></a> <a href="https://01yzzyu.github.io/OmniCapBench/#leaderboard"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Leaderboard-228B22?logo=readthedocs&amp;logoColor=white" alt="leaderboard" title="Leaderboard" /></a></td>
+    </tr>
     <tr>
       <td align="left"><a id="paper-benchmark--audio-visual-conflict--action-attribution--video-holmesv2--2609-17248"></a><b><a href="https://arxiv.org/abs/2609.17248">Video-HolmesV2: Can MLLMs Reason with Spatio-Temporal Audio-Visual Evidence in Long Videos?</a></b><br>
         <sub>Requires long-video answers to cite precise audio-visual evidence, using evidence-aware scoring to penalize guessing and fabricated support.</sub></td>
@@ -877,7 +890,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
       <td align="center"><b>PPV</b></td>
       <td align="center">arXiv 2026<br><sub>06/2026</sub></td>
       <td align="center"><span title="Training-free: Yes">✔︎</span></td>
-      <td align="center"><a href="https://huggingface.co/datasets/motionhalluc/MotionHalluc"><img src="https://img.shields.io/badge/Dataset-HuggingFace-yellow?logo=huggingface" alt="dataset" title="Dataset" /></a></td>
+      <td align="center"><a href="https://github.com/Leocoding0971/MotionHalluc"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code" title="Code" /></a> <a href="https://huggingface.co/datasets/motionhalluc/MotionHalluc"><img src="https://img.shields.io/badge/Dataset-HuggingFace-yellow?logo=huggingface" alt="dataset" title="Dataset" /></a></td>
     </tr>
     <tr>
       <td align="left"><a id="paper-mitigation--spatiotemporal-dynamics--event-misordering--videotemp-o3--2602-07801"></a><b><a href="https://arxiv.org/abs/2602.07801">VideoTemp-o3: Harmonizing Temporal Grounding and Video Understanding in Agentic Thinking-with-Videos</a></b><br>
@@ -1209,7 +1222,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 </details>
 
 <details open>
-<summary><b>Scene-Event Hallucination</b> (10 entries)</summary>
+<summary><b>Scene-Event Hallucination</b> (11 entries)</summary>
 
 <table width="100%">
   <thead>
@@ -1222,6 +1235,14 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td align="left"><a id="paper-mitigation--context-driven-fabrication--scene-event-hallucination--arp-cd--2610-19728"></a><b><a href="https://arxiv.org/abs/2610.19728">Mitigating Video Hallucinations via Attention-Guided Representation Perturbation</a></b><br>
+        <sub>Constructs attention-suppressed visual representations as contrastive decoding negatives to reduce unsupported video responses without updating model parameters.</sub></td>
+      <td align="center"><b>ARP-CD</b></td>
+      <td align="center">arXiv 2026<br><sub>10/2026</sub></td>
+      <td align="center"><span title="Training-free: Yes">✔︎</span></td>
+      <td align="center">-</td>
+    </tr>
     <tr>
       <td align="left"><a id="paper-mitigation--context-driven-fabrication--scene-event-hallucination--vader--2608-08622"></a><b><a href="https://arxiv.org/abs/2608.08622">VADER: Adaptive Debiasing for Hallucination Mitigation in Video Large Language Models</a></b><br>
         <sub>Adaptively reweights visual attention and contrasts selectively erased evidence to suppress prior-driven video hallucinations without training.</sub></td>
@@ -1572,8 +1593,8 @@ See the [curation guide](docs/CURATION.md) for summary sources, task-tag definit
 
 Resource gaps tracked in [`data/papers.json`](data/papers.json):
 
-- Add official code links for **47** entries. Browse: [missing code](https://hukcc.github.io/Awesome-Video-Hallucination/?resource=missing-code)
-- Add official project pages for **78** entries. Browse: [missing project pages](https://hukcc.github.io/Awesome-Video-Hallucination/?resource=missing-project)
+- Add official code links for **46** entries. Browse: [missing code](https://hukcc.github.io/Awesome-Video-Hallucination/?resource=missing-code)
+- Add official project pages for **79** entries. Browse: [missing project pages](https://hukcc.github.io/Awesome-Video-Hallucination/?resource=missing-project)
 - Add official dataset or leaderboard links when available.
 
 <details>

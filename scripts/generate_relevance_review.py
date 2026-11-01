@@ -52,6 +52,9 @@ def render(data, metadata):
              'and captioning model have broader purposes. Do not transfer a subset-level claim to the whole suite.',
              '- **VHD / TRACE-RC:** the method changes reliability ordering and accepted coverage, not model answers. '
              'Its placement among mitigation strategies means selective risk reduction, not factual correction.',
+             '- **OmniCapBench:** a broader audio-visual captioning benchmark whose localized precision penalizes '
+             'unsupported descriptions. Structural deficits and semantic hallucination measures are not interchangeable; '
+             'the Action Attribution index does not imply exclusive coverage.',
              '- **FactVC and Temporal Insight:** retain their explicit factuality/temporal-hallucination framing, '
              'but note that caption factuality or timestamp localization is not interchangeable with generative '
              'VideoLLM hallucination metrics.', '',

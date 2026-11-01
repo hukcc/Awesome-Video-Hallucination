@@ -34,18 +34,18 @@ class ReadmeTests(unittest.TestCase):
     def test_sorting_does_not_mutate_catalog(self):
         before = copy.deepcopy(self.entries)
         ordered = newest_first(self.entries, self.metadata['papers'])
-        self.assertEqual(ordered[0]['arxiv_id'], '2609.36628')
+        self.assertEqual(ordered[0]['arxiv_id'], '2610.19728')
         self.assertEqual(ordered[-1]['arxiv_id'], '2303.02961')
         self.assertEqual(self.entries, before)
 
     def test_recent_additions_use_history_and_link_all_sibling_contributions(self):
         output = recently_added(self.entries, self.metadata)
-        self.assertIn('2026-10-01 &middot; 7 papers', output)
+        self.assertIn('2026-11-01 &middot; 2 papers', output)
         self.assertNotIn('<details open>', output)
         doc = Document()
         doc.feed(output)
         expected = [anchor(e) for e in self.entries
-                    if self.metadata['papers'][e['arxiv_id'] or e['paper_url']]['added']['date'] == '2026-10-01']
+                    if self.metadata['papers'][e['arxiv_id'] or e['paper_url']]['added']['date'] == '2026-11-01']
         self.assertCountEqual([href[1:] for href in doc.links if href.startswith('#')], expected)
 
     def test_unknown_addition_dates_are_not_invented_and_large_batches_are_bounded(self):

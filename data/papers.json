@@ -1,10 +1,57 @@
 {
   "description": "Curated contribution records shared by the README, paper browser, and taxonomy tree. Description sources are recorded in data/paper_details.json.",
-  "entry_count": 95,
-  "benchmark_count": 42,
-  "mitigation_count": 52,
+  "entry_count": 97,
+  "benchmark_count": 43,
+  "mitigation_count": 53,
   "analysis_count": 1,
   "entries": [
+    {
+      "id": "benchmark--audio-visual-conflict--action-attribution--omnicapbench--2610-12458",
+      "title": "OmniCapBench: A Deep-Structured Evaluation Framework for Fine-Grained Audio-Visual Captioning",
+      "paper_url": "https://arxiv.org/abs/2610.12458",
+      "arxiv_id": "2610.12458",
+      "type": "benchmark",
+      "category": "Audio-Visual Conflict",
+      "mechanism": "Content Fabrication",
+      "subtype": "Action Attribution",
+      "name": "OmniCapBench",
+      "description": "Evaluates structured audio-visual captions using grounded precision, identity consistency, and event-shot association to expose hallucinated descriptions and cross-modal attribution errors.",
+      "venue": "NeurIPS 2026 E&D",
+      "date": "10/2026",
+      "year": 2026,
+      "training_free": null,
+      "resources": {
+        "project": "https://01yzzyu.github.io/OmniCapBench/",
+        "code": "https://github.com/Tencent-Hunyuan/OmniCapBench",
+        "dataset": "https://huggingface.co/datasets/OmniCapBench/OmniCapBench",
+        "leaderboard": "https://01yzzyu.github.io/OmniCapBench/#leaderboard"
+      }
+    },
+    {
+      "id": "mitigation--context-driven-fabrication--scene-event-hallucination--arp-cd--2610-19728",
+      "title": "Mitigating Video Hallucinations via Attention-Guided Representation Perturbation",
+      "paper_url": "https://arxiv.org/abs/2610.19728",
+      "arxiv_id": "2610.19728",
+      "type": "mitigation",
+      "category": "Context-Driven Fabrication",
+      "mechanism": "Content Fabrication",
+      "subtype": "Scene-Event Hallucination",
+      "name": "ARP-CD",
+      "description": "Constructs attention-suppressed visual representations as contrastive decoding negatives to reduce unsupported video responses without updating model parameters.",
+      "venue": "arXiv 2026",
+      "date": "10/2026",
+      "year": 2026,
+      "training_free": "\u2714\ufe0e",
+      "resources": {
+        "project": null,
+        "code": null,
+        "dataset": null,
+        "leaderboard": null
+      },
+      "routes": [
+        "Decoding"
+      ]
+    },
     {
       "id": "benchmark--spatiotemporal-dynamics--event-misordering--vidhalluc--2412-03735",
       "title": "VidHalluc: Evaluating Temporal Hallucinations in Multimodal Large Language Models for Video Understanding",
@@ -132,7 +179,7 @@
       "training_free": null,
       "resources": {
         "project": null,
-        "code": null,
+        "code": "https://github.com/Leocoding0971/MotionHalluc",
         "dataset": "https://huggingface.co/datasets/motionhalluc/MotionHalluc",
         "leaderboard": null
       }
@@ -1073,7 +1120,7 @@
       "training_free": "✔︎",
       "resources": {
         "project": null,
-        "code": null,
+        "code": "https://github.com/Leocoding0971/MotionHalluc",
         "dataset": "https://huggingface.co/datasets/motionhalluc/MotionHalluc",
         "leaderboard": null
       },
