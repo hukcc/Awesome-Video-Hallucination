@@ -84,12 +84,20 @@ class MethodReviewTests(unittest.TestCase):
         for record in self.records:
             self.assertIn(f'{record["listed_name"]}: method evidence', urls[record['source_url']])
 
-    def test_cross_surface_method_audit_links(self):
-        self.assertIn('docs/METHOD_REVIEW.md', (ROOT / 'README.md').read_text())
-        self.assertIn('docs/METHOD_REVIEW.md', (ROOT / 'index.html').read_text())
+    def test_review_records_are_not_exposed_in_reader_surfaces(self):
+        for filename in ('README.md', 'index.html'):
+            content = (ROOT / filename).read_text()
+            for marker in ('docs/METHOD_REVIEW.md', 'docs/BENCHMARK_REVIEW.md',
+                           'docs/RELEVANCE_REVIEW.md', 'docs/CURATION.md', 'new_papers.md',
+                           'Review log', 'Review notes', 'Update log', 'pending approval'):
+                self.assertNotIn(marker, content, filename)
         app = (ROOT / 'assets/app.js').read_text()
-        self.assertIn('data/method_review.json', app)
-        self.assertIn('#method-${entry.id}', app)
+        for marker in ('data/method_review.json', 'methodReviews', 'Method audit',
+                       'Review evidence', 'reviewed_on', 'scope_review.reason'):
+            self.assertNotIn(marker, app)
+        deployment = (ROOT / '.github/workflows/pages.yml').read_text()
+        self.assertNotIn('new_papers.md', deployment)
+        self.assertIn('cp data/papers.json data/paper_details.json _site/data/', deployment)
 
 
 if __name__ == '__main__':

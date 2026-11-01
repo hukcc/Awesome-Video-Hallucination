@@ -1,7 +1,7 @@
 export const TYPE_LABELS = { benchmark: 'Benchmark', mitigation: 'Mitigation', analysis: 'Analysis' };
 export const RESOURCE_LABELS = { code: 'Code', dataset: 'Dataset', project: 'Project', leaderboard: 'Leaderboard' };
 export const ROUTES = ['Decoding', 'Training', 'Grounding', 'Verification'];
-export const SCOPE_LABELS = { direct: 'Direct focus', broader: 'Broader evaluation', related: 'Related work (review)', unreviewed: 'Not reviewed' };
+export const SCOPE_LABELS = { direct: 'Direct focus', broader: 'Broader evaluation', related: 'Related work', unreviewed: 'Unclassified' };
 export const DEFAULTS = Object.freeze({
   search: '', type: '', task: '', route: '', scope: '', mechanism: '', category: '', subtype: '',
   training: '', venue: '', year: '', resource: '', sort: 'newest', view: 'auto', tab: 'papers',

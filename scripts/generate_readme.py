@@ -155,8 +155,7 @@ def paper_list(entries, metadata):
             lines += [
                 '> [!NOTE]\n'
                 '> Newest first within each subtype. **Date** = first arXiv submission, '
-                'or publisher issue date when no arXiv record is used; venue years may differ. '
-                '[Sources and review notes](data/paper_details.json).', '',
+                'or publisher issue date when no arXiv record is used; venue years may differ.', '',
                 resource_legend(), '',
             ]
         elif kind == 'mitigation':
@@ -164,9 +163,7 @@ def paper_list(entries, metadata):
                 '> [!NOTE]\n'
                 '> **Training-free:** \u2714\ufe0e No additional parameter learning; '
                 '\u2718 Training required, including auxiliary modules with a frozen backbone. '
-                'Dates use first publication; newest first within each subtype. '
-                '[Method scope audit](docs/METHOD_REVIEW.md): all methods reviewed; '
-                'proposed moves to related work remain pending approval.', '',
+                'Dates use first publication; newest first within each subtype.', '',
             ]
         else:
             lines += [

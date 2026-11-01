@@ -1,8 +1,8 @@
 # Awesome-Video-Hallucination [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-[![arXiv](https://img.shields.io/badge/arXiv-2604.12944-b31b1b.svg)](https://arxiv.org/abs/2604.12944) [![ACL 2026 Findings](https://img.shields.io/badge/ACL%202026-Findings-2ea44f)](https://arxiv.org/abs/2604.12944) [![Entries](https://img.shields.io/badge/Entries-88-blue.svg)](#evaluation-benchmarks) [![Auto arXiv Update](https://img.shields.io/badge/arXiv%20Update-Monthly-blueviolet.svg)](new_papers.md) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Last Commit](https://img.shields.io/github/last-commit/hukcc/Awesome-Video-Hallucination)](https://github.com/hukcc/Awesome-Video-Hallucination/commits/main)
+[![arXiv](https://img.shields.io/badge/arXiv-2604.12944-b31b1b.svg)](https://arxiv.org/abs/2604.12944) [![ACL 2026 Findings](https://img.shields.io/badge/ACL%202026-Findings-2ea44f)](https://arxiv.org/abs/2604.12944) [![Entries](https://img.shields.io/badge/Entries-88-blue.svg)](#evaluation-benchmarks) [![Auto arXiv Update](https://img.shields.io/badge/arXiv%20Update-Monthly-blueviolet.svg)](#latest-updates) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Last Commit](https://img.shields.io/github/last-commit/hukcc/Awesome-Video-Hallucination)](https://github.com/hukcc/Awesome-Video-Hallucination/commits/main)
 
-A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs)**, covering **33 benchmarks**, **53 mitigation methods**, and **2 evaluation analyses**. The 88 entries represent 75 distinct papers; a paper may contribute both a benchmark and a method. Updated monthly via arXiv search and manual review.
+A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs)**, covering **33 benchmarks**, **53 mitigation methods**, and **2 evaluation analyses**. The 88 entries represent 75 distinct papers; a paper may contribute both a benchmark and a method. Updated monthly.
 
 > 📄 **Survey Paper**: *[Distorted or Fabricated? A Survey on Hallucination in Video LLMs](https://arxiv.org/abs/2604.12944)*
 
@@ -24,8 +24,8 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 
 ## Latest Updates
 
-- **[2026/11]** Added ARP-CD; audited all benchmarks and methods. [Benchmarks](docs/BENCHMARK_REVIEW.md) · [Methods](docs/METHOD_REVIEW.md) · [Update log](new_papers.md#reviewed---2026-11-01).
-- **[2026/10]** Added 7 papers, introduced evaluation analyses, and updated the taxonomy. [Review log](new_papers.md).
+- **[2026/11]** Added ARP-CD.
+- **[2026/10]** Added 7 papers, introduced evaluation analyses, and updated the taxonomy.
 - **[2026/09]** Added 2 hallucination mitigation papers.
 - **[2026/04]** Our [survey](https://arxiv.org/abs/2604.12944) was accepted to **ACL 2026 Findings**.
 
@@ -51,8 +51,6 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 [Find Benchmarks](https://hukcc.github.io/Awesome-Video-Hallucination/?type=benchmark) · [Training-Free Methods](https://hukcc.github.io/Awesome-Video-Hallucination/?type=mitigation&training=yes) · [With Code](https://hukcc.github.io/Awesome-Video-Hallucination/?resource=code) · [Latest Papers](https://hukcc.github.io/Awesome-Video-Hallucination/?sort=newest) · [Recently Added](https://hukcc.github.io/Awesome-Video-Hallucination/?sort=added)
 
 **Start here:** [Reading guide](https://hukcc.github.io/Awesome-Video-Hallucination/?tab=guide), from the survey to benchmarks, mitigation, and evaluation limits.
-
-**Review notes:** [Benchmarks](docs/BENCHMARK_REVIEW.md) · [Methods](docs/METHOD_REVIEW.md) · [Paper relevance](docs/RELEVANCE_REVIEW.md).
 
 <!-- BEGIN TASK INDEX -->
 
@@ -318,7 +316,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 ## Evaluation Benchmarks
 
 > [!NOTE]
-> Newest first within each subtype. **Date** = first arXiv submission, or publisher issue date when no arXiv record is used; venue years may differ. [Sources and review notes](data/paper_details.json).
+> Newest first within each subtype. **Date** = first arXiv submission, or publisher issue date when no arXiv record is used; venue years may differ.
 
 <details>
 <summary><b>Resource badge legend</b></summary>
@@ -771,7 +769,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 ## Mitigation Strategies
 
 > [!NOTE]
-> **Training-free:** ✔︎ No additional parameter learning; ✘ Training required, including auxiliary modules with a frozen backbone. Dates use first publication; newest first within each subtype. [Method scope audit](docs/METHOD_REVIEW.md): all methods reviewed; proposed moves to related work remain pending approval.
+> **Training-free:** ✔︎ No additional parameter learning; ✘ Training required, including auxiliary modules with a frozen backbone. Dates use first publication; newest first within each subtype.
 
 ### 🔵 Spatiotemporal Dynamics Mitigation (Dynamic Distortion)
 
@@ -1498,8 +1496,6 @@ If this repository or survey helps your work, please cite:
 > **🔀 Pull Request** — Add new papers, update resource links, or correct errors
 > <br>**🐛 Open an Issue** — Report mistakes, suggest missing papers, or request features
 
-See the [curation guide](docs/CURATION.md) for summary sources, task-tag definitions, publication versus addition dates, and consistency checks. The browser groups contributions by paper; the taxonomy tables retain each benchmark, method, and analysis separately.
-
 Resource gaps tracked in [`data/papers.json`](data/papers.json):
 
 - Add official code links for **43** entries. Browse: [missing code](https://hukcc.github.io/Awesome-Video-Hallucination/?resource=missing-code)
@@ -1513,7 +1509,7 @@ Resource gaps tracked in [`data/papers.json`](data/papers.json):
 
 Edit the shared records in [`data/papers.json`](data/papers.json) and [`data/paper_details.json`](data/paper_details.json), then regenerate the task index and paper tables with `python3 scripts/generate_readme.py`. Do not edit generated table rows directly.
 
-Include a contribution-specific English description, a reviewed primary source, verified dates, and official resource links. Preserve stable entry IDs and existing contributions. See the [update checklist](docs/CURATION.md#update-checklist) for all validation steps.
+Include a contribution-specific English description, a primary-source paper link, publication dates, and official resource links. Preserve stable entry IDs and existing contributions.
 
 </details>
 

@@ -8,7 +8,6 @@ const state = { filters: readState(location.search), papers: [], loaded: false }
 const mobile = matchMedia('(max-width: 899px)');
 let searchEditing = false;
 let notificationTimer;
-let methodReviews = new Map();
 
 function node(tag, className, text) {
   const element = document.createElement(tag);
@@ -97,36 +96,12 @@ function details(paper) {
     item.append(node('p', '', `${entry.mechanism} > ${entry.category} > ${entry.subtype}`));
     if (entry.type === 'mitigation') item.append(node('p', '', `Training-free: ${trainingValue(entry) === 'yes' ? 'Yes' : 'No'}`));
     if (entry.routes?.length) item.append(node('p', '', `Technical route: ${entry.routes.join(' / ')}`));
-    const review = methodReviews.get(entry.id);
-    if (review) {
-      const label = review.recommendation === 'move_to_related'
-        ? 'Related-work move proposed; awaiting approval. '
-        : 'Retention recommended; evaluation limits recorded. ';
-      const audit = node('p', 'source-note', label);
-      audit.append(link('Method audit', `https://github.com/hukcc/Awesome-Video-Hallucination/blob/main/docs/METHOD_REVIEW.md#method-${entry.id}`));
-      item.append(audit);
-    }
     const resources = resourceLinks({ entries: [entry] });
     if (resourcesFor({ entries: [entry] }).length) item.append(resources);
     list.append(item);
   }
   container.append(list);
   if (paper.detail.authors?.length) container.append(node('p', 'source-note', paper.detail.authors.join(', ')));
-  if (paper.detail.source_url) {
-    const provenance = node('p', 'source-note');
-    provenance.append(link('Descriptions and task-tag source', paper.detail.source_url),
-      document.createTextNode(` / ${paper.detail.evidence}; reviewed ${paper.detail.reviewed_on}.`));
-    container.append(provenance);
-  }
-  if (paper.detail.note) container.append(node('p', 'source-note', paper.detail.note));
-  if (paper.detail.scope_review) {
-    const review = paper.detail.scope_review;
-    const isCommunityEntry = paper.entries.some(entry => entry.scope_exception === 'community');
-    const note = node('p', 'source-note', isCommunityEntry ? '' : `Scope: ${SCOPE_LABELS[review.scope]}. ${review.reason} `);
-    note.append(link('Review evidence', review.source_url),
-      document.createTextNode(` / ${review.evidence}; reviewed ${review.reviewed_on}.`));
-    container.append(note);
-  }
   if (paper.detail.added) {
     const added = node('p', 'source-note');
     added.append(link(`First listed ${paper.detail.added.date}`,
@@ -140,7 +115,7 @@ function paperContent(paper, parent) {
   parent.append(node('p', 'paper-names', [...new Set(paper.entries.map(e => e.name))].join(' / ')));
   const heading = node('h2');
   heading.append(link(paper.title, paper.paper_url, 'paper-title'));
-  parent.append(heading, node('p', 'paper-summary', paper.detail.summary || 'Summary pending source review.'));
+  parent.append(heading, node('p', 'paper-summary', paper.detail.summary || 'Summary unavailable.'));
   const tags = node('div', 'tags');
   (paper.detail.tasks || []).forEach(task => {
     const tag = link(task, stateQuery({ ...state.filters, task, tab: 'papers' }), 'task-tag');
@@ -342,10 +317,9 @@ window.addEventListener('popstate', () => {
 async function init() {
   render();
   try {
-    const responses = await Promise.all(['data/papers.json', 'data/paper_details.json', 'data/method_review.json'].map(url => fetch(url)));
+    const responses = await Promise.all(['data/papers.json', 'data/paper_details.json'].map(url => fetch(url)));
     if (responses.some(response => !response.ok)) throw new Error('Collection request failed');
-    const [data, metadata, methodAudit] = await Promise.all(responses.map(response => response.json()));
-    methodReviews = new Map(methodAudit.records.map(record => [record.entry_id, record]));
+    const [data, metadata] = await Promise.all(responses.map(response => response.json()));
     state.papers = groupPapers(data.entries, metadata.papers);
     options($('#type-filter'), Object.keys(TYPE_LABELS), TYPE_LABELS);
     options($('#task-filter'), metadata.task_vocabulary);
