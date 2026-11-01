@@ -20,7 +20,9 @@ def render(data, metadata):
     lines = ['# Relevance Review', '',
              'Paper-level editorial scope assessment, not a quality ranking. '
              'The separate [benchmark audit](BENCHMARK_REVIEW.md) applies the stricter contribution-level '
-             'inclusion rule and records removed, narrowed, and reclassified entries.', '',
+             'inclusion rule and records removed, narrowed, and reclassified entries. '
+             'The [53-method audit](METHOD_REVIEW.md) independently records interventions, evaluation limits, '
+             'training requirements, and 14 proposed moves awaiting approval.', '',
              f'Coverage: **{len(groups)} papers / {len(data["entries"])} contributions**. '
              f'All abstracts were reviewed; **{introductions} papers** additionally received '
              'introduction review, with evaluation sections inspected where indicated. '
@@ -38,7 +40,9 @@ def render(data, metadata):
              'different definition. These are proposals for manual review, not assertions that a paper is irrelevant.', '',
              'The labels apply at paper level. A benchmark and method in the same paper can have different '
              'degrees of relevance. A paper-level label does not override benchmark eligibility. '
-             'The benchmark audit does not newly approve or remove sibling mitigation contributions.', '',
+             'The benchmark audit does not newly approve or remove sibling mitigation contributions. '
+             'The method audit is contribution-specific: a direct-focus paper can still contain a broader method. '
+             'Its 14 pending method recommendations are distinct from the paper-level queue below.', '',
              '## Manual Decision Queue', '',
              f'Review the {counts["related"]} candidates below before moving any entry. Decide whether '
              'coordinate/timestamp errors and general QA/correction metrics meet the intended collection scope. '
@@ -54,7 +58,8 @@ def render(data, metadata):
              '- **Vript-HAL / Vriptor:** only Vript-HAL is listed as the benchmark, while the corpus, other benchmark tasks, '
              'and captioning model have broader purposes. Do not transfer a subset-level claim to the whole suite.',
              '- **VHD / TRACE-RC:** the method changes reliability ordering and accepted coverage, not model answers. '
-             'Its placement among mitigation strategies means selective risk reduction, not factual correction.',
+             'Its current placement means selective risk reduction, not factual correction; '
+             'the method audit proposes moving it to related work pending approval.',
              '- **FactVC / DualFact:** the benchmark entries now name their actual factuality datasets. '
              'The metric/framework names remain searchable aliases; caption factuality is not identical to general QA accuracy.',
              '- **VideoHEDGE:** retained as a hallucination-detection evaluation study on SoccerChat, not a new benchmark '

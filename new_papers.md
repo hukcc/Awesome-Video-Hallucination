@@ -4,7 +4,15 @@
 
 ## Reviewed - 2026-11-01
 
-### Current outcome after strict benchmark audit
+### Current outcome after method audit
+
+All **53 method contributions** received official abstract, introduction, and relevant method/evaluation review: **39 recommended for retention and 14 proposed moves to related work, awaiting approval**. No method was removed, so counts remain **74 papers / 87 contributions**. The [method audit](docs/METHOD_REVIEW.md) lists all candidates with exact source versions, inspected sections, intervention and evaluation boundaries. Its contribution-level queue is independent of the older paper-level scope labels.
+
+Corrected the method name **MoPE** to **GRPO with MoPE** (keeping the old alias), and corrected **PEP-MEK** to **Predict-Explain-Predict with Modality and Emotion Knowledge**. Clarified six method descriptions. All training-free flags were verified and remain unchanged; frozen-backbone methods with learned auxiliary components are not training-free. Existing resource badges, paper URLs, stable IDs, and sibling benchmarks are preserved. The README, browser and taxonomy share the corrected catalog.
+
+Second-pass verification: **63 tests passed** (41 Python and 22 JavaScript). README, all three review reports, catalog integrity, and LaTeX source checks passed. The rebuilt tree was visually inspected and all three 3000-pixel PNG aliases match. Desktop, 390-pixel and 320-pixel browser checks confirmed old-name search, corrected descriptions, contribution-specific audit links, retained pending candidates, and no horizontal overflow or console errors. All **252 unique audited URLs** were reachable, including archived benchmark resources and badge images; all **71 active arXiv records** matched reviewed versions without withdrawal signals. All 53 method evidence hashes match the inspected source copies, and original method snapshots match the preceding commit. Reachability and version checks do not establish scientific validity or reproduce reported experiments.
+
+### Strict benchmark audit (preceding stage)
 
 ARP-CD is the retained November addition. OmniCapBench's initial admission below is **superseded** by the user-approved rule: only benchmarks whose core target is video hallucination belong in the main benchmark list. Its real hallucination-sensitive metrics are acknowledged, but the overall benchmark evaluates general audio-visual captioning.
 

@@ -23,7 +23,8 @@ def render(audit):
              f'Outcome: **{counts["retain"]} retained**, **{counts["narrow"]} narrowed or corrected**, '
              f'**{counts["remove"]} removed from the benchmark list**, and **{counts["reclassify"]} reclassified as evaluation analysis**. '
              f'The main list now has **{counts["retain"] + counts["narrow"]} benchmark contributions**. '
-             'All 53 existing mitigation contributions and the existing analysis are unchanged.', '',
+             'The benchmark-only pass preserved all 53 mitigation contributions and the existing analysis. '
+             'The subsequent [method audit](METHOD_REVIEW.md) records method-specific corrections and pending scope recommendations.', '',
              '## Inclusion Rule', '',
              '- The benchmark must centrally evaluate unsupported or contradicted language-model claims about input video, '
              'including video-caption factuality, targeted adversarial QA, hallucination detection, and audio-visual conflicts in videos.',
@@ -75,7 +76,8 @@ def render(audit):
               f'(https://github.com/hukcc/Awesome-Video-Hallucination/commit/{audit["baseline_commit"]}). '
               'Update the register after primary-source review and regenerate this report with '
               '`python3 scripts/generate_benchmark_review.py`. Tests enforce active-benchmark review coverage, '
-              'excluded-entry absence, preserved resources, and unchanged non-benchmark contributions.', '']
+              'excluded-entry absence, preserved resources, and the original non-benchmark snapshots '
+              'retained by the subsequent method audit.', '']
     return '\n'.join(lines)
 
 

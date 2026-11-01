@@ -2,7 +2,7 @@
 
 Reviewed **2026-11-01**. All **43 pre-audit benchmark entries** received abstract, introduction, and task/metric review against the versioned arXiv text or official publisher PDF. This is a scope and contribution-type audit, not a replication of experiments or a full-paper methodological endorsement.
 
-Outcome: **26 retained**, **6 narrowed or corrected**, **10 removed from the benchmark list**, and **1 reclassified as evaluation analysis**. The main list now has **32 benchmark contributions**. All 53 existing mitigation contributions and the existing analysis are unchanged.
+Outcome: **26 retained**, **6 narrowed or corrected**, **10 removed from the benchmark list**, and **1 reclassified as evaluation analysis**. The main list now has **32 benchmark contributions**. The benchmark-only pass preserved all 53 mitigation contributions and the existing analysis. The subsequent [method audit](METHOD_REVIEW.md) records method-specific corrections and pending scope recommendations.
 
 ## Inclusion Rule
 
@@ -147,4 +147,4 @@ No verified resource link was recorded.
 
 ## Maintenance
 
-Evidence and original records: [`data/benchmark_review.json`](../data/benchmark_review.json). Baseline: [`1ed4dcf`](https://github.com/hukcc/Awesome-Video-Hallucination/commit/1ed4dcfd3dde024ec9f37be0022795cc0f8c12ef). Update the register after primary-source review and regenerate this report with `python3 scripts/generate_benchmark_review.py`. Tests enforce active-benchmark review coverage, excluded-entry absence, preserved resources, and unchanged non-benchmark contributions.
+Evidence and original records: [`data/benchmark_review.json`](../data/benchmark_review.json). Baseline: [`1ed4dcf`](https://github.com/hukcc/Awesome-Video-Hallucination/commit/1ed4dcfd3dde024ec9f37be0022795cc0f8c12ef). Update the register after primary-source review and regenerate this report with `python3 scripts/generate_benchmark_review.py`. Tests enforce active-benchmark review coverage, excluded-entry absence, preserved resources, and the original non-benchmark snapshots retained by the subsequent method audit.

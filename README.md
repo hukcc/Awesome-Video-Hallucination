@@ -24,7 +24,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 
 ## Latest Updates
 
-- **[2026/11]** Added ARP-CD and audited all 43 benchmark entries under a stricter scope. [Audit](docs/BENCHMARK_REVIEW.md) · [Update log](new_papers.md#reviewed---2026-11-01).
+- **[2026/11]** Added ARP-CD; audited all benchmarks and methods. [Benchmarks](docs/BENCHMARK_REVIEW.md) · [Methods](docs/METHOD_REVIEW.md) · [Update log](new_papers.md#reviewed---2026-11-01).
 - **[2026/10]** Added 7 papers, introduced evaluation analyses, and updated the taxonomy. [Review log](new_papers.md).
 - **[2026/09]** Added 2 hallucination mitigation papers.
 - **[2026/04]** Our [survey](https://arxiv.org/abs/2604.12944) was accepted to **ACL 2026 Findings**.
@@ -52,7 +52,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 
 **Start here:** [Reading guide](https://hukcc.github.io/Awesome-Video-Hallucination/?tab=guide), from the survey to benchmarks, mitigation, and evaluation limits.
 
-**Scope:** Benchmarks must primarily evaluate video hallucination. The [benchmark audit](docs/BENCHMARK_REVIEW.md) records decisions and source evidence; the [paper-level review](docs/RELEVANCE_REVIEW.md) separately tracks broader methods and pending related-work candidates.
+**Scope:** Benchmarks must primarily evaluate video hallucination. [Benchmark decisions](docs/BENCHMARK_REVIEW.md) and the [53-method audit](docs/METHOD_REVIEW.md) record source evidence. Fourteen proposed method moves await approval; the [paper-level review](docs/RELEVANCE_REVIEW.md) is a separate assessment.
 
 <!-- BEGIN TASK INDEX -->
 
@@ -134,7 +134,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 <a href="#paper-mitigation--context-driven-fabrication--object-action-hallucination--gm-dpo--2609-36628">GM-DPO</a> &middot;
 <a href="#paper-benchmark--spatiotemporal-dynamics--event-misordering--mohallbench--2607-01117">MoHallBench</a> &middot;
 <a href="#paper-benchmark--spatiotemporal-dynamics--event-misordering--motionhalluc--2606-23061">MotionHalluc</a> / <a href="#paper-mitigation--spatiotemporal-dynamics--event-misordering--ppv--2606-23061">PPV</a> &middot;
-<a href="#paper-benchmark--spatiotemporal-dynamics--event-misordering--kpm-bench--2602-17768">KPM-HA</a> / <a href="#paper-mitigation--spatiotemporal-dynamics--frequency-confusion--mope--2602-17768">MoPE</a> &middot;
+<a href="#paper-benchmark--spatiotemporal-dynamics--event-misordering--kpm-bench--2602-17768">KPM-HA</a> / <a href="#paper-mitigation--spatiotemporal-dynamics--frequency-confusion--mope--2602-17768">GRPO with MoPE</a> &middot;
 <a href="#paper-mitigation--spatiotemporal-dynamics--event-misordering--mixdpo--2601-04778">MixDPO</a> &middot;
 <a href="#paper-mitigation--context-driven-fabrication--object-action-hallucination--santa--2512-04356">SANTA</a> &middot;
 <a href="#paper-benchmark--spatiotemporal-dynamics--event-misordering--mhbench--mhbench-demystifying-motion-hallucination-in-videollms">MHBench</a> &middot;
@@ -170,7 +170,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 <a href="#paper-mitigation--context-driven-fabrication--object-action-hallucination--procap--2607-21022">ProCap</a> &middot;
 <a href="#paper-benchmark--context-driven-fabrication--compositional-and-factuality-hallucination--dualfact--2604-25584">YouCook3-Fact / CraftBench-Fact</a> &middot;
 <a href="#paper-mitigation--context-driven-fabrication--both-object-action-scene-event--structured-rewards--2604-01460">Structured Rewards</a> &middot;
-<a href="#paper-benchmark--spatiotemporal-dynamics--event-misordering--kpm-bench--2602-17768">KPM-HA</a> / <a href="#paper-mitigation--spatiotemporal-dynamics--frequency-confusion--mope--2602-17768">MoPE</a> &middot;
+<a href="#paper-benchmark--spatiotemporal-dynamics--event-misordering--kpm-bench--2602-17768">KPM-HA</a> / <a href="#paper-mitigation--spatiotemporal-dynamics--frequency-confusion--mope--2602-17768">GRPO with MoPE</a> &middot;
 <a href="#paper-mitigation--context-driven-fabrication--object-action-hallucination--santa--2512-04356">SANTA</a> &middot;
 <a href="#paper-benchmark--context-driven-fabrication--scene-event-hallucination--noah--2511-06475">NOAH</a> &middot;
 <a href="#paper-benchmark--spatiotemporal-dynamics--event-misordering--argus--2506-07371">ARGUS</a> &middot;
@@ -207,7 +207,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 <a href="#paper-mitigation--context-driven-fabrication--scene-event-hallucination--cluenet--2603-15008">ClueNet</a> &middot;
 <a href="#paper-benchmark--context-driven-fabrication--compositional-and-factuality-hallucination--infact--2603-11481">INFACT</a> &middot;
 <a href="#paper-mitigation--spatiotemporal-dynamics--duration-distortion--video-twg--2602-18702">Video-TwG</a> &middot;
-<a href="#paper-benchmark--spatiotemporal-dynamics--event-misordering--kpm-bench--2602-17768">KPM-HA</a> / <a href="#paper-mitigation--spatiotemporal-dynamics--frequency-confusion--mope--2602-17768">MoPE</a> &middot;
+<a href="#paper-benchmark--spatiotemporal-dynamics--event-misordering--kpm-bench--2602-17768">KPM-HA</a> / <a href="#paper-mitigation--spatiotemporal-dynamics--frequency-confusion--mope--2602-17768">GRPO with MoPE</a> &middot;
 <a href="#paper-mitigation--spatiotemporal-dynamics--event-misordering--videotemp-o3--2602-07801">VideoTemp-o3</a> &middot;
 <a href="#paper-mitigation--context-driven-fabrication--scene-event-hallucination--stscd--2601-22574">ViSSRes</a> &middot;
 <a href="#paper-benchmark--context-driven-fabrication--compositional-and-factuality-hallucination--videohedge--2601-08557">VideoHEDGE</a> &middot;
@@ -363,7 +363,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
     <tr>
       <td align="left"><a id="paper-benchmark--spatiotemporal-dynamics--event-misordering--kpm-bench--2602-17768"></a><b><a href="https://arxiv.org/abs/2602.17768">KPM-Bench: A Kinematic Parsing Motion Benchmark for Fine-grained Motion-centric Video Understanding</a></b><br>
         <sub>Evaluates hallucinated actions, temporal order, and motion direction in video captions using the dedicated KPM-HA subset and GPT-Hall/Mo-Hall metrics.</sub><br>
-        <sub><a href="#paper-mitigation--spatiotemporal-dynamics--frequency-confusion--mope--2602-17768">Related method: MoPE</a></sub></td>
+        <sub><a href="#paper-mitigation--spatiotemporal-dynamics--frequency-confusion--mope--2602-17768">Related method: GRPO with MoPE</a></sub></td>
       <td align="center"><b>KPM-HA</b></td>
       <td align="center">arXiv 2026<br><sub>02/2026</sub></td>
       <td align="center">-</td>
@@ -762,7 +762,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 ## Mitigation Strategies
 
 > [!NOTE]
-> **Training-free:** ✔︎ No additional parameter learning; ✘ Training required, including auxiliary modules with a frozen backbone. Dates use first publication; newest first within each subtype.
+> **Training-free:** ✔︎ No additional parameter learning; ✘ Training required, including auxiliary modules with a frozen backbone. Dates use first publication; newest first within each subtype. [Method scope audit](docs/METHOD_REVIEW.md): all methods reviewed; proposed moves to related work remain pending approval.
 
 ### 🔵 Spatiotemporal Dynamics Mitigation (Dynamic Distortion)
 
@@ -899,7 +899,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
     </tr>
     <tr>
       <td align="left"><a id="paper-mitigation--spatiotemporal-dynamics--duration-distortion--taae--2505-12826"></a><b><a href="https://arxiv.org/abs/2505.12826">Mitigating Hallucination in VideoLLMs via Temporal-Aware Activation Engineering</a></b><br>
-        <sub>Uses temporal variation to identify and intervene in hallucination-sensitive model activations without further fine-tuning the language model.</sub></td>
+        <sub>Trains a temporal-variation classifier and modifies hallucination-sensitive activations while keeping the language-model parameters frozen.</sub></td>
       <td align="center"><b>TAAE</b></td>
       <td align="center">arXiv 2025<br><sub>05/2025</sub></td>
       <td align="center"><span title="Training-free: No">✘</span></td>
@@ -916,7 +916,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
     </tr>
     <tr>
       <td align="left"><a id="paper-mitigation--spatiotemporal-dynamics--duration-distortion--temporal-insight--2401-09861"></a><b><a href="https://arxiv.org/abs/2401.09861">Temporal Insight Enhancement: Mitigating Temporal Hallucination in Multimodal Large Language Models</a></b><br>
-        <sub>Decomposes event queries into characteristic actions and uses visual-language models to estimate timestamps for temporally grounded responses.</sub></td>
+        <sub>Retrieves action timestamps from video evidence and uses them to correct temporal responses through language-model prompting.</sub></td>
       <td align="center"><b>Temporal Insight</b></td>
       <td align="center">ICPR 2024<br><sub>01/2024</sub></td>
       <td align="center"><span title="Training-free: Yes">✔︎</span></td>
@@ -945,7 +945,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
       <td align="left"><a id="paper-mitigation--spatiotemporal-dynamics--frequency-confusion--mope--2602-17768"></a><b><a href="https://arxiv.org/abs/2602.17768">KPM-Bench: A Kinematic Parsing Motion Benchmark for Fine-grained Motion-centric Video Understanding</a></b><br>
         <sub>Uses kinematic parsing of motion descriptions as a reinforcement-learning reward to improve fine-grained video captioning and reduce motion hallucinations.</sub><br>
         <sub><a href="#paper-benchmark--spatiotemporal-dynamics--event-misordering--kpm-bench--2602-17768">Related benchmark: KPM-HA</a></sub></td>
-      <td align="center"><b>MoPE</b></td>
+      <td align="center"><b>GRPO with MoPE</b></td>
       <td align="center">arXiv 2026<br><sub>02/2026</sub></td>
       <td align="center"><span title="Training-free: No">✘</span></td>
       <td align="center">-</td>
@@ -1196,7 +1196,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
     </tr>
     <tr>
       <td align="left"><a id="paper-mitigation--context-driven-fabrication--scene-event-hallucination--mma--hallucination-reduction-in-video-language-models-via-hierarchical-multimodal-consistency"></a><b><a href="https://www.ijcai.org/proceedings/2025/1019">Hallucination Reduction in Video-Language Models via Hierarchical Multimodal Consistency</a></b><br>
-        <sub>Combines multi-level semantic alignment with progressive training to reduce hallucinations caused by weak discrimination between video and language concepts.</sub></td>
+        <sub>Trains multi-level semantic alignment to target video hallucinations, evaluated through general classification and question answering rather than dedicated hallucination rates.</sub></td>
       <td align="center"><b>MMA</b></td>
       <td align="center">IJCAI 2025<br><sub>08/2025</sub></td>
       <td align="center"><span title="Training-free: No">✘</span></td>
@@ -1248,7 +1248,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
     </tr>
     <tr>
       <td align="left"><a id="paper-mitigation--context-driven-fabrication--compositional-and-factuality-hallucination--groundedvqa--2608-15574"></a><b><a href="https://arxiv.org/abs/2608.15574">Catching Hallucinated Citations in Video-LLM Question Answering: A Self-Verification Pipeline and Verifier Ablation Study</a></b><br>
-        <sub>Verifies timestamped video-answer claims by independently re-captioning cited frames and checking textual entailment with a separate model.</sub></td>
+        <sub>Tags timestamped claims as grounded or unverified using blind frame captions and a pretrained entailment classifier, without rewriting answers.</sub></td>
       <td align="center"><b>GroundedVQA</b></td>
       <td align="center">arXiv 2026<br><sub>08/2026</sub></td>
       <td align="center"><span title="Training-free: Yes">✔︎</span></td>
@@ -1379,7 +1379,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
     </tr>
     <tr>
       <td align="left"><a id="paper-mitigation--audio-visual-conflict--action-attribution--mrdpo--2410-06682"></a><b><a href="https://arxiv.org/abs/2410.06682">Enhancing Multimodal LLM for Detailed and Accurate Video Captioning using Multi-Round Preference Optimization</a></b><br>
-        <sub>Improves audio-visual captions through repeated preference optimization and rebirth tuning designed to retain non-captioning abilities.</sub></td>
+        <sub>Trains audio-visual caption preferences using atomic-event hallucination and omission scores, with repeated reference updates and rebirth tuning.</sub></td>
       <td align="center"><b>mrDPO</b></td>
       <td align="center">arXiv 2024<br><sub>10/2024</sub></td>
       <td align="center"><span title="Training-free: No">✘</span></td>
@@ -1406,7 +1406,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
   <tbody>
     <tr>
       <td align="left"><a id="paper-mitigation--audio-visual-conflict--emotion-inference--pep-mek--2505-11405"></a><b><a href="https://arxiv.org/abs/2505.11405">EmotionHallucer: Evaluating Emotion Hallucinations in Multimodal Large Language Models</a></b><br>
-        <sub>Combines perception-enhanced prompting with memory-based emotion knowledge to reduce emotion hallucinations without additional training of the multimodal model.</sub><br>
+        <sub>Uses Predict-Explain-Predict with Modality and Emotion Knowledge to verify and refine emotion judgments through prompting, including video inputs.</sub><br>
         <sub><a href="#paper-benchmark--audio-visual-conflict--emotion-inference--emotionhallucer--2505-11405">Related benchmark: EmotionHallucer (video)</a></sub></td>
       <td align="center"><b>PEP-MEK</b></td>
       <td align="center">arXiv 2025<br><sub>05/2025</sub></td>

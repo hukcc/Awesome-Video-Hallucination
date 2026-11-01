@@ -1,0 +1,2109 @@
+{
+  "reviewed_on": "2026-11-01",
+  "baseline_commit": "ccbf4692d3dbce955b15feeda0c8776d10153018",
+  "policy": "Core video-hallucination interventions, with explicit task and evaluation boundaries. General video understanding methods are candidates for related work even when they include a hallucination test. Pending moves require human approval.",
+  "records": [
+    {
+      "entry_id": "mitigation--context-driven-fabrication--scene-event-hallucination--arp-cd--2610-19728",
+      "paper_key": "2610.19728",
+      "recommendation": "retain",
+      "status": "reviewed",
+      "source_url": "https://arxiv.org/html/2610.19728v1",
+      "source_sha256": "fe57d9e6729379b4d2df338f6fb06774bf72a0cb84103c76c25ea64436b3d2b2",
+      "inspected_sections": "Abstract; Introduction; Sections 3.3, 4.1 (Benchmarks), and 4.2 (Hallucination mitigation)",
+      "intervention": "Optimizes input visual hidden-state perturbations for a contrastive negative; model weights are not trained.",
+      "evaluation": "VideoHallucer and EventHallusion, alongside separate general-understanding tests. Not every model/benchmark combination improves.",
+      "rationale": "Video-grounded hallucination mitigation is the explicit design target and is directly evaluated.",
+      "training_free": true,
+      "listed_name": "ARP-CD",
+      "original_entry": {
+        "id": "mitigation--context-driven-fabrication--scene-event-hallucination--arp-cd--2610-19728",
+        "title": "Mitigating Video Hallucinations via Attention-Guided Representation Perturbation",
+        "paper_url": "https://arxiv.org/abs/2610.19728",
+        "arxiv_id": "2610.19728",
+        "type": "mitigation",
+        "category": "Context-Driven Fabrication",
+        "mechanism": "Content Fabrication",
+        "subtype": "Scene-Event Hallucination",
+        "name": "ARP-CD",
+        "description": "Constructs attention-suppressed visual representations as contrastive decoding negatives to reduce unsupported video responses without updating model parameters.",
+        "venue": "arXiv 2026",
+        "date": "10/2026",
+        "year": 2026,
+        "training_free": "✔︎",
+        "resources": {
+          "project": null,
+          "code": null,
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Decoding"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--spatiotemporal-dynamics--event-misordering--season--2512-04643",
+      "paper_key": "2512.04643",
+      "recommendation": "retain",
+      "status": "reviewed",
+      "source_url": "https://arxiv.org/html/2512.04643v1",
+      "source_sha256": "188fb1c01a28c01b2fb0820d32fa1eaad4b2df38f87f960f054e47ab69a84a41",
+      "inspected_sections": "Abstract; Introduction; Sections 3.3, 4.1 (Benchmarks and Metrics), and 4.2 (Hallucination Benchmark Evaluation)",
+      "intervention": "Balances spatial and temporally homogenized contrastive negatives using token-level attention divergence, without parameter learning.",
+      "evaluation": "VidHalluc, VideoHallucer, and deterministic EventHallusion subtasks; general video benchmarks are reported separately.",
+      "rationale": "Explicitly targets spatial and temporal video hallucinations, with direct task-specific evidence.",
+      "training_free": true,
+      "listed_name": "SEASON",
+      "original_entry": {
+        "id": "mitigation--spatiotemporal-dynamics--event-misordering--season--2512-04643",
+        "title": "SEASON: Mitigating Temporal Hallucination in Video Large Language Models via Self-Diagnostic Contrastive Decoding",
+        "paper_url": "https://arxiv.org/abs/2512.04643",
+        "arxiv_id": "2512.04643",
+        "type": "mitigation",
+        "category": "Spatiotemporal Dynamics",
+        "mechanism": "Dynamic Distortion",
+        "subtype": "Event Misordering",
+        "name": "SEASON",
+        "description": "Diagnoses hallucination tendencies token by token and adaptively contrasts temporal and spatial negatives without additional training.",
+        "venue": "arXiv 2025",
+        "date": "12/2025",
+        "year": 2025,
+        "training_free": "✔︎",
+        "resources": {
+          "project": null,
+          "code": null,
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Decoding"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--spatiotemporal-dynamics--event-misordering--video-thinking-tdpo--2503-19622",
+      "paper_key": "2503.19622",
+      "recommendation": "retain",
+      "status": "reviewed",
+      "source_url": "https://arxiv.org/html/2503.19622v1",
+      "source_sha256": "4480d340dcaa3b0d1118be73f5f57edc6bb90e0abcfcaea4b79ccbf872c34354",
+      "inspected_sections": "Abstract; Introduction; Sections 5.1-5.3 (Tables 5-6)",
+      "intervention": "LoRA supervised reasoning fine-tuning followed by thinking-based DPO that upweights human-corrected hallucinated reasoning segments.",
+      "evaluation": "HAVEN hallucination accuracy and consistency/bias scores. Training includes replicated-image videos, but evaluation uses video questions.",
+      "rationale": "A dedicated video-hallucination mitigation contribution; TDPO means thinking-based, not temporal, DPO.",
+      "training_free": false,
+      "listed_name": "Video-thinking (TDPO)",
+      "original_entry": {
+        "id": "mitigation--spatiotemporal-dynamics--event-misordering--video-thinking-tdpo--2503-19622",
+        "title": "Exploring Hallucination of Large Multimodal Models in Video Understanding: Benchmark, Analysis and Mitigation",
+        "paper_url": "https://arxiv.org/abs/2503.19622",
+        "arxiv_id": "2503.19622",
+        "type": "mitigation",
+        "category": "Spatiotemporal Dynamics",
+        "mechanism": "Dynamic Distortion",
+        "subtype": "Event Misordering",
+        "name": "Video-thinking (TDPO)",
+        "description": "Combines supervised reasoning fine-tuning with thinking-based direct preference optimization, giving fabricated reasoning stronger feedback to improve factual grounding.",
+        "venue": "arXiv 2025",
+        "date": "03/2025",
+        "year": 2025,
+        "training_free": "✘",
+        "resources": {
+          "project": null,
+          "code": "https://github.com/Hongcheng-Gao/HAVEN",
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Training"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--spatiotemporal-dynamics--event-misordering--smartsight--2512-18671",
+      "paper_key": "2512.18671",
+      "recommendation": "retain",
+      "status": "reviewed",
+      "source_url": "https://arxiv.org/html/2512.18671v1",
+      "source_sha256": "836bb56243ecb9611cccb18cd7aa0b359239a1e7ac5347525dad4f0b7a627bbd",
+      "inspected_sections": "Abstract; Introduction; Sections 3.3 and 4.1",
+      "intervention": "Selects sampled responses using Temporal Attention Collapse scores and stops weaker candidates at Visual Attention Vanishing, without training.",
+      "evaluation": "Vript-HAL captions and EventHallusion QA; Video-MME and Video-MMMU are separate capability-preservation tests.",
+      "rationale": "Explicitly minimizes video-response hallucinations through generation-time response selection.",
+      "training_free": true,
+      "listed_name": "SmartSight",
+      "original_entry": {
+        "id": "mitigation--spatiotemporal-dynamics--event-misordering--smartsight--2512-18671",
+        "title": "SmartSight: Mitigating Hallucination in Video-LLMs Without Compromising Video Understanding via Temporal Attention Collapse",
+        "paper_url": "https://arxiv.org/abs/2512.18671",
+        "arxiv_id": "2512.18671",
+        "type": "mitigation",
+        "category": "Spatiotemporal Dynamics",
+        "mechanism": "Dynamic Distortion",
+        "subtype": "Event Misordering",
+        "name": "SmartSight",
+        "description": "Selects among sampled responses using temporal attention collapse and terminates unreliable generations when visual attention vanishes.",
+        "venue": "AAAI 2026",
+        "date": "12/2025",
+        "year": 2025,
+        "training_free": "✔︎",
+        "resources": {
+          "project": null,
+          "code": null,
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Decoding",
+          "Verification"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--spatiotemporal-dynamics--event-misordering--videotemp-o3--2602-07801",
+      "paper_key": "2602.07801",
+      "recommendation": "move_to_related",
+      "status": "pending-manual-review",
+      "source_url": "https://arxiv.org/html/2602.07801v4",
+      "source_sha256": "66ef9a647b7ea8124e87689826b104f24d66ea059f2b8d6ca13237db3201ac88",
+      "inspected_sections": "Abstract; Introduction; Section 4.2 (Reward Design); Section 5.1; Appendix B.2",
+      "intervention": "SFT and reinforcement learning jointly optimize temporal grounding, answer accuracy, format, and iterative clip refinement.",
+      "evaluation": "Long-video QA, temporal-grounding IoU, and grounded QA on VideoTemp-Bench, NextGQA, ReXTime, Charades-STA, and related general benchmarks.",
+      "rationale": "Hallucination motivates better visual evidence, but the core contribution and reported protocol target general grounding/QA rather than dedicated video-hallucination mitigation.",
+      "training_free": false,
+      "listed_name": "VideoTemp-o3",
+      "original_entry": {
+        "id": "mitigation--spatiotemporal-dynamics--event-misordering--videotemp-o3--2602-07801",
+        "title": "VideoTemp-o3: Harmonizing Temporal Grounding and Video Understanding in Agentic Thinking-with-Videos",
+        "paper_url": "https://arxiv.org/abs/2602.07801",
+        "arxiv_id": "2602.07801",
+        "type": "mitigation",
+        "category": "Spatiotemporal Dynamics",
+        "mechanism": "Dynamic Distortion",
+        "subtype": "Event Misordering",
+        "name": "VideoTemp-o3",
+        "description": "Jointly trains temporal localization and video answering so an agent can inspect relevant clips and revise inaccurate grounding.",
+        "venue": "ICML 2026",
+        "date": "02/2026",
+        "year": 2026,
+        "training_free": "✘",
+        "resources": {
+          "project": "https://liuwq-bit.github.io/VideoTemp-o3/",
+          "code": "https://github.com/Kwai-Keye/VideoTemp-o3",
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Training",
+          "Grounding"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--spatiotemporal-dynamics--event-misordering--mixdpo--2601-04778",
+      "paper_key": "2601.04778",
+      "recommendation": "retain",
+      "status": "reviewed",
+      "source_url": "https://arxiv.org/html/2601.04778v2",
+      "source_sha256": "3adbbb321251443349439fb7db1909d2f2962a0d429ed195d17edb2bd34046ea",
+      "inspected_sections": "Abstract; Introduction; Sections 3.4 and 4.1; Appendix C.1",
+      "intervention": "Trains with textual and visual DPO preferences constructed from same-scene counterfactual action videos.",
+      "evaluation": "VideoHallucer, EventHallusion, and VidHalluc's temporal-sequence subset, alongside CounterVid and broader tests. Synthetic-video generation is a training-data tool.",
+      "rationale": "Directly targets unsupported action and order claims, rather than the quality of generated videos themselves.",
+      "training_free": false,
+      "listed_name": "MixDPO",
+      "original_entry": {
+        "id": "mitigation--spatiotemporal-dynamics--event-misordering--mixdpo--2601-04778",
+        "title": "CounterVid: Counterfactual Video Generation for Mitigating Action and Temporal Hallucinations in Video-Language Models",
+        "paper_url": "https://arxiv.org/abs/2601.04778",
+        "arxiv_id": "2601.04778",
+        "type": "mitigation",
+        "category": "Spatiotemporal Dynamics",
+        "mechanism": "Dynamic Distortion",
+        "subtype": "Event Misordering",
+        "name": "MixDPO",
+        "description": "Creates counterfactual action videos and jointly optimizes visual and textual preferences to reduce action and temporal-order hallucinations.",
+        "venue": "EMNLP 2026",
+        "date": "01/2026",
+        "year": 2026,
+        "training_free": "✘",
+        "resources": {
+          "project": null,
+          "code": null,
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Training"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--spatiotemporal-dynamics--event-misordering--ppv--2606-23061",
+      "paper_key": "2606.23061",
+      "recommendation": "retain",
+      "status": "reviewed",
+      "source_url": "https://arxiv.org/html/2606.23061v2",
+      "source_sha256": "f85e37b9c8fe7fd82922bb365f9ed80141705ef219e22518fcdec5170a623144",
+      "inspected_sections": "Abstract; Introduction; Section 4; Section 5.2; Appendix H.4",
+      "intervention": "Reconstructs and aligns skeletons, parses candidate instructions into measurement queries, and injects quantitative kinematic evidence at inference.",
+      "evaluation": "MotionHalluc directional, attributional, and temporal accuracy; reconstructed and ground-truth motion are compared separately, within Fit3D rather than unconstrained settings.",
+      "rationale": "Explicitly reduces unsupported cross-video motion judgments; pretrained reconstruction components do not make the intervention newly trained.",
+      "training_free": true,
+      "listed_name": "PPV",
+      "original_entry": {
+        "id": "mitigation--spatiotemporal-dynamics--event-misordering--ppv--2606-23061",
+        "title": "MotionHalluc: Diagnosing Kinematic Hallucinations in Fine-Grained Motion Reasoning",
+        "paper_url": "https://arxiv.org/abs/2606.23061",
+        "arxiv_id": "2606.23061",
+        "type": "mitigation",
+        "category": "Spatiotemporal Dynamics",
+        "mechanism": "Dynamic Distortion",
+        "subtype": "Event Misordering",
+        "name": "PPV",
+        "description": "Injects measured physical-motion evidence into video reasoning to check kinematic claims, without training or modifying the underlying video model.",
+        "venue": "arXiv 2026",
+        "date": "06/2026",
+        "year": 2026,
+        "training_free": "✔︎",
+        "resources": {
+          "project": null,
+          "code": "https://github.com/Leocoding0971/MotionHalluc",
+          "dataset": "https://huggingface.co/datasets/motionhalluc/MotionHalluc",
+          "leaderboard": null
+        },
+        "routes": [
+          "Grounding",
+          "Verification"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--spatiotemporal-dynamics--duration-distortion--temporal-insight--2401-09861",
+      "paper_key": "2401.09861",
+      "recommendation": "retain",
+      "status": "reviewed",
+      "source_url": "https://arxiv.org/html/2401.09861v1",
+      "source_sha256": "72ff2c738f5eabe9762ba7c78460be5e23e1846412cc4c23dde09d952fc1608f",
+      "inspected_sections": "Abstract; Introduction; Section 3.3; Sections 4.1-4.2",
+      "intervention": "Decomposes event queries, retrieves timestamp evidence with fixed CLIP/BLIP2, and prompts GPT-3.5 to correct video-model responses.",
+      "evaluation": "Charades-STA-derived timestamp R@1/R@5 and event-order Yes/No accuracy. This operationalizes temporal errors, not free-form object hallucination rates.",
+      "rationale": "Temporal-hallucination correction is the explicit central contribution; retain with the narrower event-time/order definition and metric caveat.",
+      "training_free": true,
+      "listed_name": "Temporal Insight",
+      "original_entry": {
+        "id": "mitigation--spatiotemporal-dynamics--duration-distortion--temporal-insight--2401-09861",
+        "title": "Temporal Insight Enhancement: Mitigating Temporal Hallucination in Multimodal Large Language Models",
+        "paper_url": "https://arxiv.org/abs/2401.09861",
+        "arxiv_id": "2401.09861",
+        "type": "mitigation",
+        "category": "Spatiotemporal Dynamics",
+        "mechanism": "Dynamic Distortion",
+        "subtype": "Duration Distortion",
+        "name": "Temporal Insight",
+        "description": "Decomposes event queries into characteristic actions and uses visual-language models to estimate timestamps for temporally grounded responses.",
+        "venue": "ICPR 2024",
+        "date": "01/2024",
+        "year": 2024,
+        "training_free": "✔︎",
+        "resources": {
+          "project": null,
+          "code": null,
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Grounding"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--spatiotemporal-dynamics--duration-distortion--dino-heal--2412-03735",
+      "paper_key": "2412.03735",
+      "recommendation": "retain",
+      "status": "reviewed",
+      "source_url": "https://arxiv.org/html/2412.03735v2",
+      "source_sha256": "511c9f70e11db6e56efdf42cbcd7d2d3b5e52f8f0dffd2d2de365e2be31aec13",
+      "inspected_sections": "Abstract; Introduction; Section 4.3; Section 5.2 (Table 4)",
+      "intervention": "Reweights video visual features with fixed DINOv2 spatial saliency maps during inference.",
+      "evaluation": "VidHalluc action, temporal-sequence, and scene-transition tasks with baseline/intervention comparisons; some individual scores do not improve.",
+      "rationale": "A dedicated inference-time hallucination intervention with direct video evaluation.",
+      "training_free": true,
+      "listed_name": "DINO-HEAL",
+      "original_entry": {
+        "id": "mitigation--spatiotemporal-dynamics--duration-distortion--dino-heal--2412-03735",
+        "title": "VidHalluc: Evaluating Temporal Hallucinations in Multimodal Large Language Models for Video Understanding",
+        "paper_url": "https://arxiv.org/abs/2412.03735",
+        "arxiv_id": "2412.03735",
+        "type": "mitigation",
+        "category": "Spatiotemporal Dynamics",
+        "mechanism": "Dynamic Distortion",
+        "subtype": "Duration Distortion",
+        "name": "DINO-HEAL",
+        "description": "Uses DINOv2 saliency to reweight visual features during inference, emphasizing informative regions without additional training of the video model.",
+        "venue": "CVPR 2025",
+        "date": "12/2024",
+        "year": 2024,
+        "training_free": "✔︎",
+        "resources": {
+          "project": "https://people-robots.github.io/vidhalluc",
+          "code": "https://github.com/CyL97/VidHalluc",
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Grounding"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--spatiotemporal-dynamics--duration-distortion--taae--2505-12826",
+      "paper_key": "2505.12826",
+      "recommendation": "retain",
+      "status": "reviewed",
+      "source_url": "https://arxiv.org/html/2505.12826v1",
+      "source_sha256": "f58ef2e8b4f9888a23ad17752244329d73dc5b754860025db70663b70173bec7",
+      "inspected_sections": "Abstract; Introduction; Sections 4.1-4.2",
+      "intervention": "Trains a temporal-variation classifier and computes activation offsets to select and intervene in hallucination-sensitive modules.",
+      "evaluation": "VidHalluc action/order/scene scores and EventHallusion binary accuracy.",
+      "rationale": "Direct video-hallucination mitigation. No LLM fine-tuning does not mean training-free: the auxiliary classifier is learned.",
+      "training_free": false,
+      "listed_name": "TAAE",
+      "original_entry": {
+        "id": "mitigation--spatiotemporal-dynamics--duration-distortion--taae--2505-12826",
+        "title": "Mitigating Hallucination in VideoLLMs via Temporal-Aware Activation Engineering",
+        "paper_url": "https://arxiv.org/abs/2505.12826",
+        "arxiv_id": "2505.12826",
+        "type": "mitigation",
+        "category": "Spatiotemporal Dynamics",
+        "mechanism": "Dynamic Distortion",
+        "subtype": "Duration Distortion",
+        "name": "TAAE",
+        "description": "Uses temporal variation to identify and intervene in hallucination-sensitive model activations without further fine-tuning the language model.",
+        "venue": "arXiv 2025",
+        "date": "05/2025",
+        "year": 2025,
+        "training_free": "✘",
+        "resources": {
+          "project": null,
+          "code": null,
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Decoding",
+          "Training"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--spatiotemporal-dynamics--duration-distortion--videotir--2603-25021",
+      "paper_key": "2603.25021",
+      "recommendation": "move_to_related",
+      "status": "pending-manual-review",
+      "source_url": "https://arxiv.org/html/2603.25021v3",
+      "source_sha256": "4d75e82a0082caf849cfd4881263d400ad4c6719c3de1c32eb334fc5b202d052",
+      "inspected_sections": "Abstract; Introduction; Section 3.1; Section 4.1",
+      "intervention": "Trains a multi-tool video reasoning policy with TAGPO, with optional SFT cold start and multi-granularity retrieval.",
+      "evaluation": "MVBench, Video-MME, and LongVideoBench QA plus tool-call efficiency, not a dedicated hallucination protocol.",
+      "rationale": "Hallucination is a motivation, but the core method and evidence address efficient long-video QA and tool use.",
+      "training_free": false,
+      "listed_name": "VideoTIR",
+      "original_entry": {
+        "id": "mitigation--spatiotemporal-dynamics--duration-distortion--videotir--2603-25021",
+        "title": "VideoTIR: Accurate Understanding for Long Videos with Efficient Tool-Integrated Reasoning",
+        "paper_url": "https://arxiv.org/abs/2603.25021",
+        "arxiv_id": "2603.25021",
+        "type": "mitigation",
+        "category": "Spatiotemporal Dynamics",
+        "mechanism": "Dynamic Distortion",
+        "subtype": "Duration Distortion",
+        "name": "VideoTIR",
+        "description": "Uses reinforcement learning to coordinate retrieval of video clips, images, and regions for efficient, evidence-grounded long-video answers.",
+        "venue": "arXiv 2026",
+        "date": "03/2026",
+        "year": 2026,
+        "training_free": "✘",
+        "resources": {
+          "project": null,
+          "code": null,
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Training",
+          "Grounding"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--spatiotemporal-dynamics--duration-distortion--framerepeat--2603-16256",
+      "paper_key": "2603.16256",
+      "recommendation": "move_to_related",
+      "status": "pending-manual-review",
+      "source_url": "https://arxiv.org/html/2603.16256v1",
+      "source_sha256": "13267d2893c064adf3ea6f9a01b87116d7cfbeaa4a7b580004b687c8b80936f4",
+      "inspected_sections": "Abstract; Introduction; Section 4.2; Section 5.1",
+      "intervention": "Learns a frame-repeat scoring module from Add-One-In correct-answer log-probability gains, then repeats selected frames.",
+      "evaluation": "VideoMME, MLVU, LongVideoBench, LVBench, and Video-Holmes reasoning/QA accuracy.",
+      "rationale": "Targets visual forgetting and reasoning performance; reported general QA gains do not establish dedicated hallucination mitigation. The learned scorer is not training-free.",
+      "training_free": false,
+      "listed_name": "FrameRepeat",
+      "original_entry": {
+        "id": "mitigation--spatiotemporal-dynamics--duration-distortion--framerepeat--2603-16256",
+        "title": "When Thinking Hurts: Mitigating Visual Forgetting in Video Reasoning via Frame Repetition",
+        "paper_url": "https://arxiv.org/abs/2603.16256",
+        "arxiv_id": "2603.16256",
+        "type": "mitigation",
+        "category": "Spatiotemporal Dynamics",
+        "mechanism": "Dynamic Distortion",
+        "subtype": "Duration Distortion",
+        "name": "FrameRepeat",
+        "description": "Trains a lightweight scoring module to repeat useful frames during reasoning and counter drift away from visual evidence.",
+        "venue": "arXiv 2026",
+        "date": "03/2026",
+        "year": 2026,
+        "training_free": "✘",
+        "resources": {
+          "project": null,
+          "code": null,
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Training",
+          "Grounding"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--spatiotemporal-dynamics--duration-distortion--video-twg--2602-18702",
+      "paper_key": "2602.18702",
+      "recommendation": "move_to_related",
+      "status": "pending-manual-review",
+      "source_url": "https://arxiv.org/html/2602.18702v1",
+      "source_sha256": "3d5ed333e462a43687b0ecda250eb690ac2fe9bd802fc48fa5e2df2ec84d2ad7",
+      "inspected_sections": "Abstract; Introduction; Section 3.4; Section 4.3",
+      "intervention": "Uses two-stage reinforcement learning for on-demand grounding and video QA, with grounding and pseudo-rewards.",
+      "evaluation": "Multiple-choice Video-MME, LongVideoBench, and MLVU accuracy, with grounding quality/efficiency ablations.",
+      "rationale": "A general long-video reasoning and grounding method; hallucination language is not accompanied by a dedicated reduction test in the inspected protocol.",
+      "training_free": false,
+      "listed_name": "Video-TwG",
+      "original_entry": {
+        "id": "mitigation--spatiotemporal-dynamics--duration-distortion--video-twg--2602-18702",
+        "title": "Think with Grounding: Curriculum Reinforced Reasoning with Video Grounding for Long Video Understanding",
+        "paper_url": "https://arxiv.org/abs/2602.18702",
+        "arxiv_id": "2602.18702",
+        "type": "mitigation",
+        "category": "Spatiotemporal Dynamics",
+        "mechanism": "Dynamic Distortion",
+        "subtype": "Duration Distortion",
+        "name": "Video-TwG",
+        "description": "Trains long-video models to interleave reasoning with on-demand temporal grounding through a staged reinforcement-learning curriculum.",
+        "venue": "arXiv 2026",
+        "date": "02/2026",
+        "year": 2026,
+        "training_free": "✘",
+        "resources": {
+          "project": null,
+          "code": null,
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Training",
+          "Grounding"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--spatiotemporal-dynamics--duration-distortion--coe--2601-07761",
+      "paper_key": "2601.07761",
+      "recommendation": "move_to_related",
+      "status": "pending-manual-review",
+      "source_url": "https://arxiv.org/html/2601.07761v2",
+      "source_sha256": "51578961773183bf824fdd5301402e38e2649a5dd16e416979c5e5053f819b4e",
+      "inspected_sections": "Abstract; Introduction; Section II-C; Section IV-A; Section IV-D (Quantifying the CoE Advantage)",
+      "intervention": "Jointly trains evidence grounding and concise reasoning, with evidence-alignment and answer-accuracy rewards.",
+      "evaluation": "Includes genuine VidHal and EventHallusion evaluation alongside Video-MME, MVBench, and VSI-Bench.",
+      "rationale": "A conservative strict-scope exclusion: the primary contribution co-optimizes general perceptual grounding and reasoning efficiency. Its explicit hallucination reward and tests remain relevant, so exclusion is not a claim that such evidence is absent.",
+      "training_free": false,
+      "listed_name": "CoE",
+      "original_entry": {
+        "id": "mitigation--spatiotemporal-dynamics--duration-distortion--coe--2601-07761",
+        "title": "Video Evidence to Reasoning Efficient Video Understanding via Explicit Evidence Grounding",
+        "paper_url": "https://arxiv.org/abs/2601.07761",
+        "arxiv_id": "2601.07761",
+        "type": "mitigation",
+        "category": "Spatiotemporal Dynamics",
+        "mechanism": "Dynamic Distortion",
+        "subtype": "Duration Distortion",
+        "name": "CoE",
+        "description": "Extracts compact, question-relevant visual evidence and uses reinforcement learning to anchor reasoning to the selected temporal evidence.",
+        "venue": "ICME 2026",
+        "date": "01/2026",
+        "year": 2026,
+        "training_free": "✘",
+        "resources": {
+          "project": null,
+          "code": null,
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Training",
+          "Grounding"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--spatiotemporal-dynamics--duration-distortion--dtr--2604-12582",
+      "paper_key": "2604.12582",
+      "recommendation": "retain",
+      "status": "reviewed",
+      "source_url": "https://arxiv.org/html/2604.12582v1",
+      "source_sha256": "9741a27eb728fa39bdef383da9798ef5ddfee836b8b6e03e80e0b5683c579700",
+      "inspected_sections": "Abstract; Introduction; Section 3.2; Section 4.1.1",
+      "intervention": "Rebalances decoder visual-attention logits toward under-attended frames in selected middle-to-late layers, without training or extra decoding branches.",
+      "evaluation": "EventHallusion and VideoHallucer. LLaVA uses paired accuracy; Qwen uses hallucinated-question accuracy, so those protocol values are not interchangeable.",
+      "rationale": "Anchor-frame-driven hallucination is the central target, tested with dedicated video-hallucination tasks.",
+      "training_free": true,
+      "listed_name": "DTR",
+      "original_entry": {
+        "id": "mitigation--spatiotemporal-dynamics--duration-distortion--dtr--2604-12582",
+        "title": "Relaxing Anchor-Frame Dominance for Mitigating Hallucinations in Video Large Language Models",
+        "paper_url": "https://arxiv.org/abs/2604.12582",
+        "arxiv_id": "2604.12582",
+        "type": "mitigation",
+        "category": "Spatiotemporal Dynamics",
+        "mechanism": "Dynamic Distortion",
+        "subtype": "Duration Distortion",
+        "name": "DTR",
+        "description": "Rebalances decoder attention toward under-attended frames without training, changing visual encoding, or introducing auxiliary models.",
+        "venue": "arXiv 2026",
+        "date": "04/2026",
+        "year": 2026,
+        "training_free": "✔︎",
+        "resources": {
+          "project": null,
+          "code": null,
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Decoding",
+          "Grounding"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--spatiotemporal-dynamics--duration-distortion--reflect-r1--2606-27922",
+      "paper_key": "2606.27922",
+      "recommendation": "move_to_related",
+      "status": "pending-manual-review",
+      "source_url": "https://arxiv.org/html/2606.27922v3",
+      "source_sha256": "70d5a6968131184f7b814ba0621e7af9173bff1f3697fe26e80f626953d5fbf7",
+      "inspected_sections": "Abstract; Introduction; Section 2; Section 3.4 (Model training); Section 4.1",
+      "intervention": "SFT and stage-decoupled reinforcement learning train intuition, evidence retrieval, verification, and arbitration.",
+      "evaluation": "VideoMME, LongVideoBench, MLVU answer accuracy and correction behavior, plus Haystack-LVBench retrieval metrics.",
+      "rationale": "Targets general long-video answer correction; the inspected evidence uses correctness and rectification, not a dedicated unsupported-claim/hallucination protocol. The paper's hallucination-loop claim is not itself a measured hallucination rate.",
+      "training_free": false,
+      "listed_name": "Reflect-R1",
+      "original_entry": {
+        "id": "mitigation--spatiotemporal-dynamics--duration-distortion--reflect-r1--2606-27922",
+        "title": "Reflect-R1: Evidence-Driven Reflection for Self-Correction in Long Video Understanding",
+        "paper_url": "https://arxiv.org/abs/2606.27922",
+        "arxiv_id": "2606.27922",
+        "type": "mitigation",
+        "category": "Spatiotemporal Dynamics",
+        "mechanism": "Dynamic Distortion",
+        "subtype": "Duration Distortion",
+        "name": "Reflect-R1",
+        "description": "Retrieves visual evidence to verify and arbitrate long-video answers, with separate reinforcement-learning objectives for each reflection stage.",
+        "venue": "ECCV 2026",
+        "date": "06/2026",
+        "year": 2026,
+        "training_free": "✘",
+        "resources": {
+          "project": null,
+          "code": "https://github.com/ShuimuChen-hyq/Reflect-R1",
+          "dataset": "https://huggingface.co/datasets/CSDDSFSFSAFSAF/Reflect-R1-data",
+          "leaderboard": null
+        },
+        "routes": [
+          "Training",
+          "Grounding",
+          "Verification"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--spatiotemporal-dynamics--frequency-confusion--vtg-llm--2405-13382",
+      "paper_key": "2405.13382",
+      "recommendation": "move_to_related",
+      "status": "pending-manual-review",
+      "source_url": "https://arxiv.org/html/2405.13382v3",
+      "source_sha256": "a0c1e4af3dd523fdaac2c4348afb8bfb2225136b5a07e61975867407fa6faadc",
+      "inspected_sections": "Abstract; Introduction; Method: Overview of VTG-LLM; Experiments: Experiment Settings",
+      "intervention": "Trains timestamp-aware embeddings, absolute-time tokens, and slot-based compression for temporal grounding.",
+      "evaluation": "YouCook2 CIDEr/SODA/F1, Charades-STA temporal IoU recall, and QVHighlights mAP/HIT@1.",
+      "rationale": "A temporal-grounding model, not a method whose central objective is video-hallucination mitigation. Timestamp localization accuracy alone is insufficient.",
+      "training_free": false,
+      "listed_name": "VTG-LLM",
+      "original_entry": {
+        "id": "mitigation--spatiotemporal-dynamics--frequency-confusion--vtg-llm--2405-13382",
+        "title": "VTG-LLM: Integrating Timestamp Knowledge into Video LLMs for Enhanced Video Temporal Grounding",
+        "paper_url": "https://arxiv.org/abs/2405.13382",
+        "arxiv_id": "2405.13382",
+        "type": "mitigation",
+        "category": "Spatiotemporal Dynamics",
+        "mechanism": "Dynamic Distortion",
+        "subtype": "Frequency Confusion",
+        "name": "VTG-LLM",
+        "description": "Improves event timestamp localization by adding explicit time information to video tokens and using slot-based visual compression.",
+        "venue": "AAAI 2025",
+        "date": "05/2024",
+        "year": 2024,
+        "training_free": "✘",
+        "resources": {
+          "project": null,
+          "code": "https://github.com/gyxxyg/VTG-LLM",
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Training",
+          "Grounding"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--spatiotemporal-dynamics--frequency-confusion--vriptor--2406-06040",
+      "paper_key": "2406.06040",
+      "recommendation": "move_to_related",
+      "status": "pending-manual-review",
+      "source_url": "https://arxiv.org/html/2406.06040v2",
+      "source_sha256": "b5a74ee223dc429870772d5e9782ff0f7c5597bf5b185b6c69a1cb850867dbaa",
+      "inspected_sections": "Abstract; Introduction; Section 4.1; Section 5.1 (Hallucination Evaluation Metrics; Evaluation)",
+      "intervention": "Trains dense video-script captioning with aligned multi-scene captions, voice-over transcripts, and timestamps.",
+      "evaluation": "Genuine Vript-HAL object/action precision, recall, and F1, alongside captioning and long-video tasks.",
+      "rationale": "Vriptor is a general detailed-captioning model rather than a dedicated hallucination intervention. The separately introduced Vript-HAL benchmark remains eligible and must not be removed with the model.",
+      "training_free": false,
+      "listed_name": "Vriptor",
+      "original_entry": {
+        "id": "mitigation--spatiotemporal-dynamics--frequency-confusion--vriptor--2406-06040",
+        "title": "Vript: A Video Is Worth Thousands of Words",
+        "paper_url": "https://arxiv.org/abs/2406.06040",
+        "arxiv_id": "2406.06040",
+        "type": "mitigation",
+        "category": "Spatiotemporal Dynamics",
+        "mechanism": "Dynamic Distortion",
+        "subtype": "Frequency Confusion",
+        "name": "Vriptor",
+        "description": "Trains a video captioning model on densely annotated videos to generate detailed descriptions of visual content and unfolding events.",
+        "venue": "NeurIPS 2024",
+        "date": "06/2024",
+        "year": 2024,
+        "training_free": "✘",
+        "resources": {
+          "project": null,
+          "code": "https://github.com/mutonix/Vript",
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Training"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--spatiotemporal-dynamics--frequency-confusion--mope--2602-17768",
+      "paper_key": "2602.17768",
+      "recommendation": "correct",
+      "status": "reviewed",
+      "source_url": "https://arxiv.org/html/2602.17768v1",
+      "source_sha256": "40f572bec2980139caca52a8e8017865c3339464c71837d951165567dc1a8738",
+      "inspected_sections": "Abstract; Introduction; Sections 4.3, 5.1, and 5.2",
+      "intervention": "Uses MoPE-extracted action, order, and direction matches as a composite GRPO reward following supervised fine-tuning.",
+      "evaluation": "KPM-HA GPT-Hall and Mo-Hall, separated from generic caption metrics and QA accuracy.",
+      "rationale": "Retain the targeted motion-hallucination post-training contribution, named GRPO with MoPE as in Section 4.3. MoPE alone is a parsing/evaluation algorithm, not the trained mitigation policy.",
+      "training_free": false,
+      "listed_name": "GRPO with MoPE",
+      "original_entry": {
+        "id": "mitigation--spatiotemporal-dynamics--frequency-confusion--mope--2602-17768",
+        "title": "KPM-Bench: A Kinematic Parsing Motion Benchmark for Fine-grained Motion-centric Video Understanding",
+        "paper_url": "https://arxiv.org/abs/2602.17768",
+        "arxiv_id": "2602.17768",
+        "type": "mitigation",
+        "category": "Spatiotemporal Dynamics",
+        "mechanism": "Dynamic Distortion",
+        "subtype": "Frequency Confusion",
+        "name": "MoPE",
+        "description": "Uses kinematic parsing of motion descriptions as a reinforcement-learning reward to improve fine-grained video captioning and reduce motion hallucinations.",
+        "venue": "arXiv 2026",
+        "date": "02/2026",
+        "year": 2026,
+        "training_free": "✘",
+        "resources": {
+          "project": null,
+          "code": null,
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Training",
+          "Verification"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--referential-inconsistency--character-conflation--vista-llama--2312-08870",
+      "paper_key": "2312.08870",
+      "recommendation": "retain",
+      "status": "reviewed",
+      "source_url": "https://arxiv.org/html/2312.08870v2",
+      "source_sha256": "4ced389a613f5c808bcaad69f84436c1e761db9ffc2aa64f3bade094e5da07b0",
+      "inspected_sections": "Abstract; Introduction; Sections 3.4 and 4.1; Section 8 Discussion",
+      "intervention": "Changes visual-text relative-position attention and trains a sequential visual projector while freezing vision/language backbones.",
+      "evaluation": "General VideoQA accuracy and GPT-assisted generation quality/consistency, with qualitative hallucination cases; no dedicated hallucination-rate benchmark in the inspected evaluation.",
+      "rationale": "The design explicitly targets hallucinated video descriptions, so retain as early direct-focus work with an evidence-strength caveat. Do not present general QA scores as a measured hallucination reduction.",
+      "training_free": false,
+      "listed_name": "Vista-LLaMA",
+      "original_entry": {
+        "id": "mitigation--referential-inconsistency--character-conflation--vista-llama--2312-08870",
+        "title": "Vista-LLaMA: Reducing Hallucination in Video Language Models via Equal Distance to Visual Tokens",
+        "paper_url": "https://arxiv.org/abs/2312.08870",
+        "arxiv_id": "2312.08870",
+        "type": "mitigation",
+        "category": "Referential Inconsistency",
+        "mechanism": "Dynamic Distortion",
+        "subtype": "Character Conflation",
+        "name": "Vista-LLaMA",
+        "description": "Changes visual-text attention and sequential frame projection to preserve the influence of video evidence during open-ended answer generation.",
+        "venue": "CVPR 2024",
+        "date": "12/2023",
+        "year": 2023,
+        "training_free": "✘",
+        "resources": {
+          "project": "https://jinxxian.github.io/Vista-LLaMA/",
+          "code": "https://github.com/Flowerfan/VistaLLaMA",
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Training",
+          "Grounding"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--referential-inconsistency--character-conflation--videoplr--2511-18463",
+      "paper_key": "2511.18463",
+      "recommendation": "retain",
+      "status": "reviewed",
+      "source_url": "https://arxiv.org/html/2511.18463v3",
+      "source_sha256": "ee935e3eb196cba979ad044c25a18afcb355e783e766a348fc3a14339f1c2c87",
+      "inspected_sections": "Abstract; Introduction; Section 4.2; Sections 5.2 and 5.5",
+      "intervention": "Learns a Factual-Aware Evaluator and uses segment-level anti-hallucination plus answer-evidence consistency rewards for video reasoning post-training.",
+      "evaluation": "Section 5.2 evaluates the FAE detector on VideoHallucer, reformatted HAVEN, and VidHalluc MCQ; downstream policy evaluation and reward analysis are distinct.",
+      "rationale": "Unsupported perceptual evidence is directly penalized in the central training design. Detector accuracy is not a downstream generation hallucination rate.",
+      "training_free": false,
+      "listed_name": "Video-DPL",
+      "original_entry": {
+        "id": "mitigation--referential-inconsistency--character-conflation--videoplr--2511-18463",
+        "title": "Decoupling Perception from Reasoning for Hallucination-Resistant Video Understanding",
+        "paper_url": "https://arxiv.org/abs/2511.18463",
+        "arxiv_id": "2511.18463",
+        "type": "mitigation",
+        "category": "Referential Inconsistency",
+        "mechanism": "Dynamic Distortion",
+        "subtype": "Character Conflation",
+        "name": "Video-DPL",
+        "description": "Separates timestamped perceptual evidence from reasoning and uses factuality-aware process rewards to train hallucination-resistant video models.",
+        "venue": "arXiv 2025",
+        "date": "11/2025",
+        "year": 2025,
+        "training_free": "✘",
+        "resources": {
+          "project": null,
+          "code": "https://github.com/BoweiPu/VideoPLR",
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Training",
+          "Grounding",
+          "Verification"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--referential-inconsistency--character-conflation--strand-trajectory-reasoning--2609-29607",
+      "paper_key": "2609.29607",
+      "recommendation": "retain",
+      "status": "reviewed",
+      "source_url": "https://arxiv.org/html/2609.29607v1",
+      "source_sha256": "e4b53ba2c6bf5037aa5d84b8553b38fb30f444de031db2a61cc4ff1815498f3f",
+      "inspected_sections": "Abstract; Introduction; Section 5 overview; Sections 6.1 and 6.2",
+      "intervention": "Builds object trajectories through prompted state extraction and aggregation, then retrieves trajectories to answer each query without parameter updates.",
+      "evaluation": "STRAND unconditional joint Faithful Accuracy and VideoHallucer, separated from general Video-MME and EgoSchema accuracy.",
+      "rationale": "Directly targets hallucinated object states, relations, and temporal reasoning. Conditional consistency alone is not the primary faithfulness measure.",
+      "training_free": true,
+      "listed_name": "STRAND (Trajectory Reasoning)",
+      "original_entry": {
+        "id": "mitigation--referential-inconsistency--character-conflation--strand-trajectory-reasoning--2609-29607",
+        "title": "STRAND: Benchmarking and Improving Object-Centric Spatio-Temporal Monitoring in Video Large Language Models",
+        "paper_url": "https://arxiv.org/abs/2609.29607",
+        "arxiv_id": "2609.29607",
+        "type": "mitigation",
+        "category": "Referential Inconsistency",
+        "mechanism": "Dynamic Distortion",
+        "subtype": "Character Conflation",
+        "name": "STRAND (Trajectory Reasoning)",
+        "description": "Combines structured visual trajectories with symbolic aggregation to answer object-centric spatiotemporal questions using a fixed video-language model.",
+        "venue": "arXiv 2026",
+        "date": "08/2026",
+        "year": 2026,
+        "training_free": "✔︎",
+        "resources": {
+          "project": "https://nguyentthong.github.io/strand/",
+          "code": "https://github.com/nguyentthong/video_hallucination",
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Grounding"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--referential-inconsistency--scene-conflation--elv-halluc-dpo--2508-21496",
+      "paper_key": "2508.21496",
+      "recommendation": "retain",
+      "status": "reviewed",
+      "source_url": "https://arxiv.org/html/2508.21496v2",
+      "source_sha256": "21e5f9cb11b8999a6f707b56b576e6f63605d6b3e32101d8100c42ad8c6c5a06",
+      "inspected_sections": "Abstract; Introduction; Strategies for Mitigating SAH (position encoding and DPO)",
+      "intervention": "DPO trains caption preferences using within-video or out-of-video hallucinated negatives.",
+      "evaluation": "ELV-Halluc average accuracy and SAH ratio, with Video-MME as a separate general-capability check.",
+      "rationale": "Direct long-video semantic-aggregation mitigation. The best SAH reduction uses 4k in-video pairs, not the combined 8k setting; SAH ratio and overall hallucination are distinct.",
+      "training_free": false,
+      "listed_name": "ELV-Halluc-DPO",
+      "original_entry": {
+        "id": "mitigation--referential-inconsistency--scene-conflation--elv-halluc-dpo--2508-21496",
+        "title": "ELV-Halluc: Benchmarking Semantic Aggregation Hallucinations in Long Video Understanding",
+        "paper_url": "https://arxiv.org/abs/2508.21496",
+        "arxiv_id": "2508.21496",
+        "type": "mitigation",
+        "category": "Referential Inconsistency",
+        "mechanism": "Dynamic Distortion",
+        "subtype": "Scene Conflation",
+        "name": "ELV-Halluc-DPO",
+        "description": "Trains on adversarial preference pairs to reduce long-video hallucinations caused by incorrectly combining semantic information across video segments.",
+        "venue": "arXiv 2025",
+        "date": "08/2025",
+        "year": 2025,
+        "training_free": "✘",
+        "resources": {
+          "project": null,
+          "code": "https://github.com/hlsv02/ELV-Halluc",
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Training"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--referential-inconsistency--scene-conflation--videochat-online--2501-00584",
+      "paper_key": "2501.00584",
+      "recommendation": "move_to_related",
+      "status": "pending-manual-review",
+      "source_url": "https://arxiv.org/html/2501.00584v2",
+      "source_sha256": "0bc1658baf96e40f5d0e9d49904b4cb87a2ccdbb37d0fd71002ab2bff5615c72",
+      "inspected_sections": "Abstract; Introduction; Sections 4.2, 5.2, and 5.3",
+      "intervention": "Trains offline-to-online video understanding with a pyramid memory bank and interleaved streaming instruction data.",
+      "evaluation": "OVBench and generic offline VideoQA accuracy; OVBench includes temporal-hallucination subtasks within a broader streaming suite.",
+      "rationale": "Core contribution is general streaming perception, memory, and reasoning rather than a dedicated video-hallucination intervention.",
+      "training_free": false,
+      "listed_name": "VideoChat-Online",
+      "original_entry": {
+        "id": "mitigation--referential-inconsistency--scene-conflation--videochat-online--2501-00584",
+        "title": "Online Video Understanding: OVBench and VideoChat-Online",
+        "paper_url": "https://arxiv.org/abs/2501.00584",
+        "arxiv_id": "2501.00584",
+        "type": "mitigation",
+        "category": "Referential Inconsistency",
+        "mechanism": "Dynamic Distortion",
+        "subtype": "Scene Conflation",
+        "name": "VideoChat-Online",
+        "description": "Combines pyramid memory with offline-to-online instruction training to support streaming-video perception, memory, and reasoning over continuously arriving frames.",
+        "venue": "CVPR 2025",
+        "date": "12/2024",
+        "year": 2024,
+        "training_free": "✘",
+        "resources": {
+          "project": "https://videochat-online.github.io/",
+          "code": "https://github.com/mcg-nju/videochat-online",
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Training"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--context-driven-fabrication--object-action-hallucination--santa--2512-04356",
+      "paper_key": "2512.04356",
+      "recommendation": "retain",
+      "status": "reviewed",
+      "source_url": "https://arxiv.org/html/2512.04356v1",
+      "source_sha256": "a649b29e539d80b0698a142c0d53c6798caa6930f2695daed130cfaf34dce18c",
+      "inspected_sections": "Abstract; Introduction; Section 3.4; Section 4.1 (benchmarks, metrics, implementation)",
+      "intervention": "Learns tracklet-phrase contrastive alignment using self-generated hallucinative negatives and an action-squeezer.",
+      "evaluation": "FactVC and weighted-HalFscore on video captions plus VidHal QA; Dream1k description quality is separate.",
+      "rationale": "Joint object/action hallucination mitigation is the central method objective, with explicit caption-level faithfulness evaluation.",
+      "training_free": false,
+      "listed_name": "SANTA",
+      "original_entry": {
+        "id": "mitigation--context-driven-fabrication--object-action-hallucination--santa--2512-04356",
+        "title": "Mitigating Object and Action Hallucinations in Multimodal LLMs via Self-Augmented Contrastive Alignment",
+        "paper_url": "https://arxiv.org/abs/2512.04356",
+        "arxiv_id": "2512.04356",
+        "type": "mitigation",
+        "category": "Context-Driven Fabrication",
+        "mechanism": "Content Fabrication",
+        "subtype": "Object-Action Hallucination",
+        "name": "SANTA",
+        "description": "Combines hallucination-based negative captions with tracklet-phrase contrastive alignment to improve object and action faithfulness in video descriptions.",
+        "venue": "WACV 2026",
+        "date": "12/2025",
+        "year": 2025,
+        "training_free": "✘",
+        "resources": {
+          "project": "https://kpc0810.github.io/santa/",
+          "code": null,
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Training",
+          "Grounding"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--context-driven-fabrication--object-action-hallucination--tcd--2409-16597",
+      "paper_key": "2409.16597",
+      "recommendation": "retain",
+      "status": "reviewed",
+      "source_url": "https://arxiv.org/html/2409.16597v6",
+      "source_sha256": "d194804f8c09c265268024ecfc6806ad21ce9a2bf6cd7bccc7e041219d6da094",
+      "inspected_sections": "Abstract; Introduction; Temporal Contrastive Decoding; TCD Evaluation (implementation and effectiveness)",
+      "intervention": "Contrasts original-video logits with temporally downsampled-video logits during decoding.",
+      "evaluation": "EventHallusion binary accuracy on three video-language backbones.",
+      "rationale": "Explicit event-hallucination mitigation without training; improvements are benchmark-specific and not universal per-subset gains.",
+      "training_free": true,
+      "listed_name": "TCD",
+      "original_entry": {
+        "id": "mitigation--context-driven-fabrication--object-action-hallucination--tcd--2409-16597",
+        "title": "EventHallusion: Diagnosing Event Hallucinations in Video LLMs",
+        "paper_url": "https://arxiv.org/abs/2409.16597",
+        "arxiv_id": "2409.16597",
+        "type": "mitigation",
+        "category": "Context-Driven Fabrication",
+        "mechanism": "Content Fabrication",
+        "subtype": "Object-Action Hallucination",
+        "name": "TCD",
+        "description": "Contrasts predictions from original and temporally disrupted video sequences during decoding to reduce event hallucinations without additional model training.",
+        "venue": "arXiv 2024",
+        "date": "09/2024",
+        "year": 2024,
+        "training_free": "✔︎",
+        "resources": {
+          "project": null,
+          "code": "https://github.com/Stevetich/EventHallusion",
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Decoding"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--context-driven-fabrication--object-action-hallucination--stvg-r1--2602-11730",
+      "paper_key": "2602.11730",
+      "recommendation": "move_to_related",
+      "status": "pending-manual-review",
+      "source_url": "https://arxiv.org/html/2602.11730v1",
+      "source_sha256": "6a75c3b039b1230ccdf1c2cba0f0367e9bac38dabe956cec44d29ec36f5feda4",
+      "inspected_sections": "Abstract; Introduction; Sections 3.3 and 4.1",
+      "intervention": "Adds tracked object-ID visual prompts and learns grounding through temporal IoU, spatial consistency, and format rewards.",
+      "evaluation": "HCSTVG, ST-Align, Charades-STA, TVGBench and MeViS localization/segmentation metrics.",
+      "rationale": "Addresses coordinate/timestamp prediction errors in grounding, not unsupported video-language claims under the catalog's strict hallucination scope. IoU and mask accuracy are not hallucination rates.",
+      "training_free": false,
+      "listed_name": "STVG-R1",
+      "original_entry": {
+        "id": "mitigation--context-driven-fabrication--object-action-hallucination--stvg-r1--2602-11730",
+        "title": "STVG-R1: Incentivizing Instance-Level Reasoning and Grounding in Videos via Reinforcement Learning",
+        "paper_url": "https://arxiv.org/abs/2602.11730",
+        "arxiv_id": "2602.11730",
+        "type": "mitigation",
+        "category": "Context-Driven Fabrication",
+        "mechanism": "Content Fabrication",
+        "subtype": "Object-Action Hallucination",
+        "name": "STVG-R1",
+        "description": "Replaces coordinate prediction with visually prompted object identities and reinforcement learning for spatially and temporally consistent video grounding.",
+        "venue": "arXiv 2026",
+        "date": "02/2026",
+        "year": 2026,
+        "training_free": "✘",
+        "resources": {
+          "project": null,
+          "code": null,
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Training",
+          "Grounding"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--context-driven-fabrication--object-action-hallucination--procap--2607-21022",
+      "paper_key": "2607.21022",
+      "recommendation": "retain",
+      "status": "reviewed",
+      "source_url": "https://arxiv.org/html/2607.21022v1",
+      "source_sha256": "4ed4930820b19906cf465559c1e75af522222a953534cf1a33c279ef5954abff",
+      "inspected_sections": "Abstract; Introduction; Sections III-C, IV-A, IV-C1/2, and IV-D2",
+      "intervention": "Uses fixed detectors and captioners for object-grounded rectification and prominence-guided iterative caption refinement.",
+      "evaluation": "MSVD/MSR-VTT object-coverage metrics and a human study rating unsupported/incorrect caption content.",
+      "rationale": "Retain the explicit post-hoc visual-faithfulness intervention with a metric caveat: its automatic Temporal Inconsistency measures omitted salient objects, not fabricated objects. The reported human inconsistency improvement is a rating change, not a hallucination incidence rate.",
+      "training_free": true,
+      "listed_name": "ProCap",
+      "original_entry": {
+        "id": "mitigation--context-driven-fabrication--object-action-hallucination--procap--2607-21022",
+        "title": "ProCap: Prominence-guided Object Rectification for Faithful and Comprehensive Video Captioning",
+        "paper_url": "https://arxiv.org/abs/2607.21022",
+        "arxiv_id": "2607.21022",
+        "type": "mitigation",
+        "category": "Context-Driven Fabrication",
+        "mechanism": "Content Fabrication",
+        "subtype": "Object-Action Hallucination",
+        "name": "ProCap",
+        "description": "Ranks detected objects by prominence and iteratively revises captions to reduce omissions and hallucinations without retraining the captioning model.",
+        "venue": "arXiv 2026",
+        "date": "07/2026",
+        "year": 2026,
+        "training_free": "✔︎",
+        "resources": {
+          "project": null,
+          "code": "https://github.com/Debjyoti-Adhikary/ProCap",
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Grounding",
+          "Verification"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--context-driven-fabrication--object-action-hallucination--gm-dpo--2609-36628",
+      "paper_key": "2609.36628",
+      "recommendation": "retain",
+      "status": "reviewed",
+      "source_url": "https://arxiv.org/html/2609.36628v1",
+      "source_sha256": "655ddb6a2ea8bdcb649bf44d20ef0697e2cd37a950b6647e30bb2d90340988d5",
+      "inspected_sections": "Abstract; Introduction; Sections 4.3, 5.1, and 5.4",
+      "intervention": "Scales DPO margins and loss weights with action-error severity to penalize incorrect or fabricated limb-motion claims.",
+      "evaluation": "FlexBench GPA and Weighted Hallucination Rate, with caption length/shot structure and generic QA reported separately.",
+      "rationale": "Direct motion-hallucination alignment; reported WHR reduction varies by backbone and is distinct from aggregate GPA gain.",
+      "training_free": false,
+      "listed_name": "GM-DPO",
+      "original_entry": {
+        "id": "mitigation--context-driven-fabrication--object-action-hallucination--gm-dpo--2609-36628",
+        "title": "Beyond Binary Preferences: Graded Preference Optimization for Limb-Motion Captioning",
+        "paper_url": "https://arxiv.org/abs/2609.36628",
+        "arxiv_id": "2609.36628",
+        "type": "mitigation",
+        "category": "Context-Driven Fabrication",
+        "mechanism": "Content Fabrication",
+        "subtype": "Object-Action Hallucination",
+        "name": "GM-DPO",
+        "description": "Weights direct preference optimization by the severity of fabricated or incorrect limb actions, promoting physically faithful, person-specific video captions.",
+        "venue": "arXiv 2026",
+        "date": "09/2026",
+        "year": 2026,
+        "training_free": "✘",
+        "resources": {
+          "project": null,
+          "code": null,
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Training"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--context-driven-fabrication--scene-event-hallucination--mash-vlm--2503-15871",
+      "paper_key": "2503.15871",
+      "recommendation": "retain",
+      "status": "reviewed",
+      "source_url": "https://arxiv.org/html/2503.15871v1",
+      "source_sha256": "0f584bf6318e5fca002ac55fc6764853bd82377f4f53593c623a937141b30c81",
+      "inspected_sections": "Abstract; Introduction; Section 3.3; Section 4.2; Section 5.1 instruction tuning",
+      "intervention": "Trains with disentangled spatial-temporal attention and Harmonic-RoPE to suppress spurious action-scene associations.",
+      "evaluation": "UNSCENE dual-question correctness and open-ended action/scene scoring; generic VideoQA metrics are separate.",
+      "rationale": "Action-scene hallucination is the explicit design target and receives dedicated evaluation.",
+      "training_free": false,
+      "listed_name": "MASH-VLM",
+      "original_entry": {
+        "id": "mitigation--context-driven-fabrication--scene-event-hallucination--mash-vlm--2503-15871",
+        "title": "MASH-VLM: Mitigating Action-Scene Hallucination in Video-LLMs through Disentangled Spatial-Temporal Representations",
+        "paper_url": "https://arxiv.org/abs/2503.15871",
+        "arxiv_id": "2503.15871",
+        "type": "mitigation",
+        "category": "Context-Driven Fabrication",
+        "mechanism": "Content Fabrication",
+        "subtype": "Scene-Event Hallucination",
+        "name": "MASH-VLM",
+        "description": "Disentangles spatial and temporal attention and introduces Harmonic RoPE to reduce confusion between depicted actions and surrounding scene context.",
+        "venue": "CVPR 2025",
+        "date": "03/2025",
+        "year": 2025,
+        "training_free": "✘",
+        "resources": {
+          "project": null,
+          "code": null,
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Training",
+          "Grounding"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--context-driven-fabrication--scene-event-hallucination--pami-vdpo--2504-05810",
+      "paper_key": "2504.05810",
+      "recommendation": "retain",
+      "status": "reviewed",
+      "source_url": "https://arxiv.org/html/2504.05810v2",
+      "source_sha256": "ef117b84069d207015655036dbb05d777127f13c919ce173a5626394adebe1d5",
+      "inspected_sections": "Abstract; Introduction; Section 5 prompt-aware MIL formulation; Section 6.1 implementation and benchmarks",
+      "intervention": "Updates the model with prompt-aware multi-instance video preference optimization using augmented rejected clips.",
+      "evaluation": "Official VideoHallucer and EventHallusion protocols, plus separate general video benchmarks.",
+      "rationale": "Direct video-response hallucination mitigation. No additional parameters or preference annotation does not mean training-free.",
+      "training_free": false,
+      "listed_name": "PaMi-VDPO",
+      "original_entry": {
+        "id": "mitigation--context-driven-fabrication--scene-event-hallucination--pami-vdpo--2504-05810",
+        "title": "PaMi-VDPO: Mitigating Video Hallucinations by Prompt-Aware Multi-Instance Video Preference Learning",
+        "paper_url": "https://arxiv.org/abs/2504.05810",
+        "arxiv_id": "2504.05810",
+        "type": "mitigation",
+        "category": "Context-Driven Fabrication",
+        "mechanism": "Content Fabrication",
+        "subtype": "Scene-Event Hallucination",
+        "name": "PaMi-VDPO",
+        "description": "Learns video preferences online using prompt-aware augmented clips as rejected inputs, reducing incorrect rejections during hallucination mitigation training.",
+        "venue": "arXiv 2025",
+        "date": "04/2025",
+        "year": 2025,
+        "training_free": "✘",
+        "resources": {
+          "project": null,
+          "code": null,
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Training"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--context-driven-fabrication--scene-event-hallucination--mma--hallucination-reduction-in-video-language-models-via-hierarchical-multimodal-consistency",
+      "paper_key": "https://www.ijcai.org/proceedings/2025/1019",
+      "recommendation": "retain",
+      "status": "reviewed",
+      "source_url": "https://www.ijcai.org/proceedings/2025/1019.pdf",
+      "source_sha256": "885750c0db4444e199227b91c3d98a75aebcca8567d7a6ec3a8a8b87c82ec154",
+      "inspected_sections": "Official IJCAI PDF: Abstract, Introduction, Sections 3.1-3.4 and 4.1-4.3 (pp. 9167-9172)",
+      "intervention": "Trains Q-Former and a text encoder with multilevel semantic-discriminative alignment and two-stage task learning; the vision encoder and LLM remain frozen.",
+      "evaluation": "LVU content/metadata top-1 accuracy and MSVD VideoQA accuracy, plus qualitative examples; no dedicated hallucination-rate protocol in the inspected experiments.",
+      "rationale": "Retain for its explicit central hallucination-mitigation objective, but mark indirect evaluation evidence. General classification/QA improvements do not quantify hallucination reduction.",
+      "training_free": false,
+      "listed_name": "MMA",
+      "original_entry": {
+        "id": "mitigation--context-driven-fabrication--scene-event-hallucination--mma--hallucination-reduction-in-video-language-models-via-hierarchical-multimodal-consistency",
+        "title": "Hallucination Reduction in Video-Language Models via Hierarchical Multimodal Consistency",
+        "paper_url": "https://www.ijcai.org/proceedings/2025/1019",
+        "arxiv_id": null,
+        "type": "mitigation",
+        "category": "Context-Driven Fabrication",
+        "mechanism": "Content Fabrication",
+        "subtype": "Scene-Event Hallucination",
+        "name": "MMA",
+        "description": "Combines multi-level semantic alignment with progressive training to reduce hallucinations caused by weak discrimination between video and language concepts.",
+        "venue": "IJCAI 2025",
+        "date": "08/2025",
+        "year": 2025,
+        "training_free": "✘",
+        "resources": {
+          "project": null,
+          "code": null,
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Training"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--context-driven-fabrication--scene-event-hallucination--cluenet--2603-15008",
+      "paper_key": "2603.15008",
+      "recommendation": "move_to_related",
+      "status": "pending-manual-review",
+      "source_url": "https://arxiv.org/html/2603.15008v1",
+      "source_sha256": "77ddbdaade9fddb1b3f879b26fd6fb01b72c57f7d11d66947411dff361fd3fc2",
+      "inspected_sections": "Abstract; Introduction; Sections 4.4, 5.1, and 5.2 open-ended generation",
+      "intervention": "Trains clue extraction, differentiable clue gating, and clue-conditioned reasoning with supervised losses.",
+      "evaluation": "NExT-QA, STAR, MVBench accuracy and NExT-OE WUPS semantic similarity.",
+      "rationale": "General clue-guided VideoQA is the core evaluated task. WUPS and answer accuracy do not establish a measured unsupported-claim reduction despite the paper's hallucination wording.",
+      "training_free": false,
+      "listed_name": "ClueNet",
+      "original_entry": {
+        "id": "mitigation--context-driven-fabrication--scene-event-hallucination--cluenet--2603-15008",
+        "title": "Clue Matters: Leveraging Latent Visual Clues to Empower Video Reasoning",
+        "paper_url": "https://arxiv.org/abs/2603.15008",
+        "arxiv_id": "2603.15008",
+        "type": "mitigation",
+        "category": "Context-Driven Fabrication",
+        "mechanism": "Content Fabrication",
+        "subtype": "Scene-Event Hallucination",
+        "name": "ClueNet",
+        "description": "Separately supervises visual clue extraction and answer reasoning, then filters clues for faithful and interpretable video question answering.",
+        "venue": "arXiv 2026",
+        "date": "03/2026",
+        "year": 2026,
+        "training_free": "✘",
+        "resources": {
+          "project": null,
+          "code": null,
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Training",
+          "Grounding"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--context-driven-fabrication--scene-event-hallucination--graphthinker--2602-17555",
+      "paper_key": "2602.17555",
+      "recommendation": "retain",
+      "status": "reviewed",
+      "source_url": "https://arxiv.org/html/2602.17555v3",
+      "source_sha256": "b4b6ecaf4ae0a355b98880d266523aa6eb413a9719e7256d8e02bd98ba563840",
+      "inspected_sections": "Abstract; Introduction; Sections 3.3 and 4.1",
+      "intervention": "GRPO trains event-graph-guided reasoning with visual-attention, accuracy, and format rewards.",
+      "evaluation": "Official VidHalluc ACH/TSH accuracy and STH score; RexTime grounding and QA are separate.",
+      "rationale": "Directly targets weak visual grounding and temporal reasoning hallucinations, with dedicated video-hallucination evaluation.",
+      "training_free": false,
+      "listed_name": "GraphThinker",
+      "original_entry": {
+        "id": "mitigation--context-driven-fabrication--scene-event-hallucination--graphthinker--2602-17555",
+        "title": "GraphThinker: Reinforcing Temporally Grounded Video Reasoning with Event Graph Thinking",
+        "paper_url": "https://arxiv.org/abs/2602.17555",
+        "arxiv_id": "2602.17555",
+        "type": "mitigation",
+        "category": "Context-Driven Fabrication",
+        "mechanism": "Content Fabrication",
+        "subtype": "Scene-Event Hallucination",
+        "name": "GraphThinker",
+        "description": "Builds event-based video scene graphs and applies visual-attention rewards during reinforcement fine-tuning to ground temporal reasoning.",
+        "venue": "arXiv 2026",
+        "date": "02/2026",
+        "year": 2026,
+        "training_free": "✘",
+        "resources": {
+          "project": null,
+          "code": null,
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Training",
+          "Grounding"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--context-driven-fabrication--scene-event-hallucination--macd--2602-01740",
+      "paper_key": "2602.01740",
+      "recommendation": "retain",
+      "status": "reviewed",
+      "source_url": "https://arxiv.org/html/2602.01740v3",
+      "source_sha256": "9b22de74166a61dd244b9271b7094a9aa928a2c41bcbe27eda53c58bde2139b4",
+      "inspected_sections": "Abstract; Introduction; Section 4.2; Section 5.1 benchmarks; Section 5.4",
+      "intervention": "Optimizes input object/frame masks using query-side gradients, then applies contrastive decoding while model parameters stay fixed.",
+      "evaluation": "EventHallusion and a video-adapted POPE absent-object test; general QA benchmarks are separate.",
+      "rationale": "Dedicated hallucination intervention. Input-mask optimization does not constitute model training; the video-POPE test is a custom subset protocol.",
+      "training_free": true,
+      "listed_name": "MACD",
+      "original_entry": {
+        "id": "mitigation--context-driven-fabrication--scene-event-hallucination--macd--2602-01740",
+        "title": "MACD: Model-Aware Contrastive Decoding via Counterfactual Data",
+        "paper_url": "https://arxiv.org/abs/2602.01740",
+        "arxiv_id": "2602.01740",
+        "type": "mitigation",
+        "category": "Context-Driven Fabrication",
+        "mechanism": "Content Fabrication",
+        "subtype": "Scene-Event Hallucination",
+        "name": "MACD",
+        "description": "Uses model feedback to construct object-level counterfactual video inputs for evidence-grounded contrastive decoding.",
+        "venue": "arXiv 2026",
+        "date": "02/2026",
+        "year": 2026,
+        "training_free": "✔︎",
+        "resources": {
+          "project": null,
+          "code": null,
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Decoding"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--context-driven-fabrication--scene-event-hallucination--stscd--2601-22574",
+      "paper_key": "2601.22574",
+      "recommendation": "retain",
+      "status": "reviewed",
+      "source_url": "https://arxiv.org/html/2601.22574v2",
+      "source_sha256": "03b5f425d9c47e2777472caa89a2b3a6e07a91259fc10d04a65964f95102f049",
+      "inspected_sections": "Abstract; Introduction; Section 4.3; Section 5.1 evaluations",
+      "intervention": "Trains a residual MLP aligner for spatiotemporal and semantic consistency with a frozen backbone.",
+      "evaluation": "VideoHallucer, EventHallusion, and VideoHallu; ActivityNet-QA and MMVU assess general ability.",
+      "rationale": "Explicit video-hallucination mitigation. Inference-time insertion and a frozen backbone do not make the learned aligner training-free.",
+      "training_free": false,
+      "listed_name": "ViSSRes",
+      "original_entry": {
+        "id": "mitigation--context-driven-fabrication--scene-event-hallucination--stscd--2601-22574",
+        "title": "Enhancing Video Representations with Spatiotemporal-Semantic Residual to Mitigate Hallucinations in Video Large Multimodal Models",
+        "paper_url": "https://arxiv.org/abs/2601.22574",
+        "arxiv_id": "2601.22574",
+        "type": "mitigation",
+        "category": "Context-Driven Fabrication",
+        "mechanism": "Content Fabrication",
+        "subtype": "Scene-Event Hallucination",
+        "name": "ViSSRes",
+        "description": "Trains a lightweight residual aligner on frozen video representations to improve spatiotemporal consistency and alignment with response semantics.",
+        "venue": "arXiv 2026",
+        "date": "01/2026",
+        "year": 2026,
+        "training_free": "✘",
+        "resources": {
+          "project": null,
+          "code": null,
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Training",
+          "Grounding"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--context-driven-fabrication--scene-event-hallucination--video-toc--2604-20473",
+      "paper_key": "2604.20473",
+      "recommendation": "move_to_related",
+      "status": "pending-manual-review",
+      "source_url": "https://arxiv.org/html/2604.20473v1",
+      "source_sha256": "dc3e1d5a5a7c0b4b6e14007c45f75d4166bf078439002d6dbb5cbcda0c6ccada",
+      "inspected_sections": "Abstract; Introduction; Section III-C reasoning-demand reward; Section IV-B benchmarks and Table II",
+      "intervention": "SFT and GRPO teach tree-guided cue localization with rewards scaled by question reasoning demand.",
+      "evaluation": "Six general reasoning/understanding benchmarks and genuine VideoHallucer evaluation; the latter improves average accuracy but not every category.",
+      "rationale": "Strict-scope boundary recommendation: the central contribution is general perception-aware video reasoning, with hallucination evaluation as an additional benefit. This is not a claim that hallucination evidence is absent.",
+      "training_free": false,
+      "listed_name": "Video-ToC",
+      "original_entry": {
+        "id": "mitigation--context-driven-fabrication--scene-event-hallucination--video-toc--2604-20473",
+        "title": "Video-ToC: Video Tree-of-Cue Reasoning",
+        "paper_url": "https://arxiv.org/abs/2604.20473",
+        "arxiv_id": "2604.20473",
+        "type": "mitigation",
+        "category": "Context-Driven Fabrication",
+        "mechanism": "Content Fabrication",
+        "subtype": "Scene-Event Hallucination",
+        "name": "Video-ToC",
+        "description": "Localizes visual evidence through a tree of cues and trains reasoning with rewards adjusted to the video's reasoning demands.",
+        "venue": "arXiv 2026",
+        "date": "04/2026",
+        "year": 2026,
+        "training_free": "✘",
+        "resources": {
+          "project": null,
+          "code": "https://github.com/qizhongtan/Video-ToC",
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Training",
+          "Grounding"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--context-driven-fabrication--scene-event-hallucination--c-tcd--2604-20460",
+      "paper_key": "2604.20460",
+      "recommendation": "retain",
+      "status": "reviewed",
+      "source_url": "https://arxiv.org/html/2604.20460v1",
+      "source_sha256": "f14407c342baca37828898f356919989efc3e1ef05a4ae36c500818677502b13",
+      "inspected_sections": "Abstract; Introduction; Sections 4.3 and 4.4 contrastive-decoding results",
+      "intervention": "Contrasts logits with a scene-matched, semantically exclusive counterfactual counterpart supplied by CCTVBench.",
+      "evaluation": "CCTVBench instance classification and strict quadruple consistency, with negative hallucination diagnostics.",
+      "rationale": "Targets unsupported traffic-event assertions, but depends on paired counterfactual videos at inference; do not imply an unrestricted single-video deployment method.",
+      "training_free": true,
+      "listed_name": "C-TCD",
+      "original_entry": {
+        "id": "mitigation--context-driven-fabrication--scene-event-hallucination--c-tcd--2604-20460",
+        "title": "CCTVBench: Contrastive Consistency Traffic VideoQA Benchmark for Multimodal LLMs",
+        "paper_url": "https://arxiv.org/abs/2604.20460",
+        "arxiv_id": "2604.20460",
+        "type": "mitigation",
+        "category": "Context-Driven Fabrication",
+        "mechanism": "Content Fabrication",
+        "subtype": "Scene-Event Hallucination",
+        "name": "C-TCD",
+        "description": "Uses counterfactual traffic-video counterparts during contrastive decoding to improve the consistency of accident-related judgments without additional model training.",
+        "venue": "arXiv 2026",
+        "date": "04/2026",
+        "year": 2026,
+        "training_free": "✔︎",
+        "resources": {
+          "project": null,
+          "code": null,
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Decoding"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--context-driven-fabrication--scene-event-hallucination--vader--2608-08622",
+      "paper_key": "2608.08622",
+      "recommendation": "retain",
+      "status": "reviewed",
+      "source_url": "https://arxiv.org/html/2608.08622v1",
+      "source_sha256": "10647c01a98710e081631921abc604514b1e58594a1a8fe93d6fdf4e298a57cf",
+      "inspected_sections": "Abstract; Introduction; Sections 3.4 and 4.1",
+      "intervention": "Combines input-conditioned attention reallocation and per-frame evidence erasure with contrastive decoding; all model parameters remain frozen.",
+      "evaluation": "VidHalluc, VideoHallucer, EventHallusion, with general video benchmarks reported separately.",
+      "rationale": "Direct video-hallucination mitigation. Training-free does not mean hyperparameter-free; the source reports source-setting calibration.",
+      "training_free": true,
+      "listed_name": "VADER",
+      "original_entry": {
+        "id": "mitigation--context-driven-fabrication--scene-event-hallucination--vader--2608-08622",
+        "title": "VADER: Adaptive Debiasing for Hallucination Mitigation in Video Large Language Models",
+        "paper_url": "https://arxiv.org/abs/2608.08622",
+        "arxiv_id": "2608.08622",
+        "type": "mitigation",
+        "category": "Context-Driven Fabrication",
+        "mechanism": "Content Fabrication",
+        "subtype": "Scene-Event Hallucination",
+        "name": "VADER",
+        "description": "Adaptively reweights visual attention and contrasts selectively erased evidence to suppress prior-driven video hallucinations without training.",
+        "venue": "arXiv 2026",
+        "date": "08/2026",
+        "year": 2026,
+        "training_free": "✔︎",
+        "resources": {
+          "project": null,
+          "code": null,
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Decoding",
+          "Grounding"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--context-driven-fabrication--compositional-and-factuality-hallucination--groundedvqa--2608-15574",
+      "paper_key": "2608.15574",
+      "recommendation": "retain",
+      "status": "reviewed",
+      "source_url": "https://arxiv.org/html/2608.15574v1",
+      "source_sha256": "aec2f4423641128a4f6b2aac677b3abb25810722b840cc2954ca90461e41a9b2",
+      "inspected_sections": "Abstract; Introduction; Sections 3.3, 5.3, 6, and 8",
+      "intervention": "Blindly re-captions cited video frames and uses an off-the-shelf pretrained NLI classifier to tag drafted claims as Grounded or Unverified.",
+      "evaluation": "Forty claims from 12 questions on one animated video, including adversarial false premises; no broad held-out benchmark or confidence intervals.",
+      "rationale": "Direct post-hoc video-claim verification, not answer rewriting. Catch rate measures verification on a small controlled sample, not generation improvement or broad generalization. No task-specific NLI training is introduced.",
+      "training_free": true,
+      "listed_name": "GroundedVQA",
+      "original_entry": {
+        "id": "mitigation--context-driven-fabrication--compositional-and-factuality-hallucination--groundedvqa--2608-15574",
+        "title": "Catching Hallucinated Citations in Video-LLM Question Answering: A Self-Verification Pipeline and Verifier Ablation Study",
+        "paper_url": "https://arxiv.org/abs/2608.15574",
+        "arxiv_id": "2608.15574",
+        "type": "mitigation",
+        "category": "Context-Driven Fabrication",
+        "mechanism": "Content Fabrication",
+        "subtype": "Compositional and Factuality Hallucination",
+        "name": "GroundedVQA",
+        "description": "Verifies timestamped video-answer claims by independently re-captioning cited frames and checking textual entailment with a separate model.",
+        "venue": "arXiv 2026",
+        "date": "08/2026",
+        "year": 2026,
+        "training_free": "✔︎",
+        "resources": {
+          "project": null,
+          "code": "https://github.com/yogesh-iitj/grounded-video-qa",
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Grounding",
+          "Verification"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--context-driven-fabrication--compositional-and-factuality-hallucination--trace-rc--2609-13288",
+      "paper_key": "2609.13288",
+      "recommendation": "move_to_related",
+      "status": "pending-manual-review",
+      "source_url": "https://arxiv.org/html/2609.13288v1",
+      "source_sha256": "cd641c725313467202dc1ac059c26b63ef989f297bfd1dcd69fe978def87648b",
+      "inspected_sections": "Abstract; Introduction; Sections 3.3, 4.1, and 4.5",
+      "intervention": "Trains HGB and target-pilot logistic reliability scorers over fixed model/view responses; does not change any generated answer.",
+      "evaluation": "Held-out HERBench and Perception Test AURC, AUROC, calibration and selective risk; VHD is used for development and diagnosis.",
+      "rationale": "Recommend moving out of the core mitigation list into related reliability work. The method targets general answer-risk ranking under shift, not answer correction or video-specific claim verification. Retain the separate VHD benchmark; lower selective risk is not lower full-coverage hallucination incidence.",
+      "training_free": false,
+      "listed_name": "TRACE-RC",
+      "original_entry": {
+        "id": "mitigation--context-driven-fabrication--compositional-and-factuality-hallucination--trace-rc--2609-13288",
+        "title": "Target-Checked Reliability Score Refinement for Video Question Answering",
+        "paper_url": "https://arxiv.org/abs/2609.13288",
+        "arxiv_id": "2609.13288",
+        "type": "mitigation",
+        "category": "Context-Driven Fabrication",
+        "mechanism": "Content Fabrication",
+        "subtype": "Compositional and Factuality Hallucination",
+        "name": "TRACE-RC",
+        "description": "Refines learned reliability scores through target-checked evidence across video samplings, improving answer selection while leaving generated answers unchanged.",
+        "venue": "arXiv 2026",
+        "date": "09/2026",
+        "year": 2026,
+        "training_free": "✘",
+        "resources": {
+          "project": null,
+          "code": "https://github.com/sydney-machine-learning/video-hallucination-diagnosis",
+          "dataset": "https://www.kaggle.com/datasets/mlopssss/video-hallucination-diagnosis",
+          "leaderboard": null
+        },
+        "routes": [
+          "Training",
+          "Verification"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--context-driven-fabrication--both-object-action-scene-event--vistadpo--2504-13122",
+      "paper_key": "2504.13122",
+      "recommendation": "retain",
+      "status": "reviewed",
+      "source_url": "https://arxiv.org/html/2504.13122v1",
+      "source_sha256": "42fad983a3d68125a50f9018c24fdb7334ea72aaeb9a671bee889d206850331c",
+      "inspected_sections": "Abstract; Introduction; Sections 5.2 and 6.1",
+      "intervention": "Trains instance-, temporal-, and perceptive-level DPO with spatially and temporally grounded preferences.",
+      "evaluation": "VideoHallucer and EventHallusion; general QA and caption quality are separate.",
+      "rationale": "Directly targets video-language misalignment and hallucinated responses with dedicated evaluation.",
+      "training_free": false,
+      "listed_name": "VistaDPO",
+      "original_entry": {
+        "id": "mitigation--context-driven-fabrication--both-object-action-scene-event--vistadpo--2504-13122",
+        "title": "VistaDPO: Video Hierarchical Spatial-Temporal Direct Preference Optimization for Large Video Models",
+        "paper_url": "https://arxiv.org/abs/2504.13122",
+        "arxiv_id": "2504.13122",
+        "type": "mitigation",
+        "category": "Context-Driven Fabrication",
+        "mechanism": "Content Fabrication",
+        "subtype": "Both Object-Action & Scene-Event",
+        "name": "VistaDPO",
+        "description": "Optimizes preferences at whole-video, temporal, and object levels using spatially and temporally annotated response pairs.",
+        "venue": "ICML 2025",
+        "date": "04/2025",
+        "year": 2025,
+        "training_free": "✘",
+        "resources": {
+          "project": null,
+          "code": "https://github.com/HaroldChen19/VistaDPO",
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Training",
+          "Grounding"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--context-driven-fabrication--both-object-action-scene-event--videohallu-grpo--2505-01481",
+      "paper_key": "2505.01481",
+      "recommendation": "retain",
+      "status": "reviewed",
+      "source_url": "https://arxiv.org/html/2505.01481v4",
+      "source_sha256": "968d5f2b5eb9f230e39888d0895ccb41d78cbc95429a0dd48f60c4d8c81595e3",
+      "inspected_sections": "Abstract; Introduction; Section 3.2 Method Overview, experimental setup, and Tables 2-3",
+      "intervention": "Reported GRPO post-training mixes counterintuitive synthetic-video QA and real-video QA, with a ROUGE-based answer reward.",
+      "evaluation": "VideoHallu counterintuitive-video answer accuracy, with MMVU and MVBench checking general performance.",
+      "rationale": "The method explicitly counters language/physics priors overriding visible video evidence. This is a video-understanding intervention, not video-generation quality control. Implementation was not replicated: the source's Equation 2 has a pairwise DPO form despite its GRPO label, whereas the training narrative names Open-R1 and a ROUGE reward.",
+      "training_free": false,
+      "listed_name": "VideoHallu-GRPO",
+      "original_entry": {
+        "id": "mitigation--context-driven-fabrication--both-object-action-scene-event--videohallu-grpo--2505-01481",
+        "title": "VideoHallu: Evaluating and Mitigating Multi-modal Hallucinations on Synthetic Video Understanding",
+        "paper_url": "https://arxiv.org/abs/2505.01481",
+        "arxiv_id": "2505.01481",
+        "type": "mitigation",
+        "category": "Context-Driven Fabrication",
+        "mechanism": "Content Fabrication",
+        "subtype": "Both Object-Action & Scene-Event",
+        "name": "VideoHallu-GRPO",
+        "description": "Applies group relative policy optimization to help video models recognize physical and logical violations instead of substituting familiar prior expectations.",
+        "venue": "NeurIPS 2025",
+        "date": "05/2025",
+        "year": 2025,
+        "training_free": "✘",
+        "resources": {
+          "project": null,
+          "code": "https://github.com/zli12321/VideoHallu",
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Training"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--context-driven-fabrication--both-object-action-scene-event--tricd--2602-00559",
+      "paper_key": "2602.00559",
+      "recommendation": "retain",
+      "status": "reviewed",
+      "source_url": "https://arxiv.org/html/2602.00559v1",
+      "source_sha256": "19b3aa4bc4002354192b2b4d4ce1b7a0eadcbcfa1e9406ad5218342a041d7433",
+      "inspected_sections": "Abstract; Introduction; Sections 3.4 and 4.3",
+      "intervention": "Trains perturbation-selection and saliency-fusion controllers with REINFORCE, then combines original, negative, and positive decoding branches.",
+      "evaluation": "OmniVCHall isolated and compositional yes/no and multiple-choice accuracy.",
+      "rationale": "Dedicated compositional video-hallucination mitigation. Frozen VLLM weights do not make the learned controllers training-free.",
+      "training_free": false,
+      "listed_name": "TriCD",
+      "original_entry": {
+        "id": "mitigation--context-driven-fabrication--both-object-action-scene-event--tricd--2602-00559",
+        "title": "Learning to Decode Against Compositional Hallucination in Video Multimodal Large Language Models",
+        "paper_url": "https://arxiv.org/abs/2602.00559",
+        "arxiv_id": "2602.00559",
+        "type": "mitigation",
+        "category": "Context-Driven Fabrication",
+        "mechanism": "Content Fabrication",
+        "subtype": "Both Object-Action & Scene-Event",
+        "name": "TriCD",
+        "description": "Learns an adaptive controller for triple-path contrastive decoding, combining video perturbations and saliency enhancement to address compositional hallucinations.",
+        "venue": "arXiv 2026",
+        "date": "01/2026",
+        "year": 2026,
+        "training_free": "✘",
+        "resources": {
+          "project": null,
+          "code": "https://github.com/BMRETURN/OmniVCHall",
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Decoding",
+          "Training",
+          "Grounding"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--context-driven-fabrication--both-object-action-scene-event--stop--2604-20937",
+      "paper_key": "2604.20937",
+      "recommendation": "move_to_related",
+      "status": "pending-manual-review",
+      "source_url": "https://arxiv.org/html/2604.20937v2",
+      "source_sha256": "af76e158c7482640d2f7787010dcf6fce84ec25c66165d259377fac52bc7b071",
+      "inspected_sections": "Abstract; Introduction; Sections 4.2 and 5.1",
+      "intervention": "Adds sink-token penalties to existing spatial/temporal pruning rules to preserve visual information under small token budgets.",
+      "evaluation": "Genuine EventHallusion binary/description evaluation alongside VideoComp, VCG-Bench, and generic VideoQA under 10-20% token retention.",
+      "rationale": "Strict-scope boundary recommendation: core objective is efficient token pruning while preserving fine-grained understanding. Hallucination is a diagnostic and benefit, not the sole dedicated task; this is not an image-only method or a claim that no hallucination evaluation exists.",
+      "training_free": true,
+      "listed_name": "SToP",
+      "original_entry": {
+        "id": "mitigation--context-driven-fabrication--both-object-action-scene-event--stop--2604-20937",
+        "title": "Sink-Token-Aware Pruning for Fine-Grained Video Understanding in Efficient Video LLMs",
+        "paper_url": "https://arxiv.org/abs/2604.20937",
+        "arxiv_id": "2604.20937",
+        "type": "mitigation",
+        "category": "Context-Driven Fabrication",
+        "mechanism": "Content Fabrication",
+        "subtype": "Both Object-Action & Scene-Event",
+        "name": "SToP",
+        "description": "Identifies attention sink tokens and suppresses them during visual token pruning to preserve fine-grained grounding and hallucination robustness.",
+        "venue": "ECCV 2026",
+        "date": "04/2026",
+        "year": 2026,
+        "training_free": "✔︎",
+        "resources": {
+          "project": null,
+          "code": null,
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Grounding"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--context-driven-fabrication--both-object-action-scene-event--vthm-moe--2604-17375",
+      "paper_key": "2604.17375",
+      "recommendation": "retain",
+      "status": "reviewed",
+      "source_url": "https://arxiv.org/html/2604.17375v1",
+      "source_sha256": "92d0cd474acb955933c219d921219162dc9d79de8c99432fd5867499a8583e62",
+      "inspected_sections": "Abstract; Introduction; Sections 5.5 and 6.3",
+      "intervention": "Trains patch scoring, query conditioning, and routed experts to disentangle misleading overlay text from native video evidence.",
+      "evaluation": "VisualTextTrap resistance, vulnerability, answer-shift and conflict-intensity metrics under positive/negative/neutral overlays.",
+      "rationale": "Directly targets text-overlay-induced hallucinated video claims; learned auxiliary modules mean training is required.",
+      "training_free": false,
+      "listed_name": "VTHM-MoE",
+      "original_entry": {
+        "id": "mitigation--context-driven-fabrication--both-object-action-scene-event--vthm-moe--2604-17375",
+        "title": "When Text Hijacks Vision: Benchmarking and Mitigating Text Overlay-Induced Hallucination in Vision Language Models",
+        "paper_url": "https://arxiv.org/abs/2604.17375",
+        "arxiv_id": "2604.17375",
+        "type": "mitigation",
+        "category": "Context-Driven Fabrication",
+        "mechanism": "Content Fabrication",
+        "subtype": "Both Object-Action & Scene-Event",
+        "name": "VTHM-MoE",
+        "description": "Trains specialized experts with dual encoders and adaptive token routing to disentangle misleading text overlays from underlying visual evidence.",
+        "venue": "arXiv 2026",
+        "date": "04/2026",
+        "year": 2026,
+        "training_free": "✘",
+        "resources": {
+          "project": null,
+          "code": null,
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Training"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--context-driven-fabrication--both-object-action-scene-event--stear--2604-03045",
+      "paper_key": "2604.03045",
+      "recommendation": "retain",
+      "status": "reviewed",
+      "source_url": "https://arxiv.org/html/2604.03045v1",
+      "source_sha256": "3971f44bb6c26d7159e8058f0d546ffc9cdb04b01db5552c0d5730fd585feec4",
+      "inspected_sections": "Abstract; Introduction; Sections 3.3 and 4.1",
+      "intervention": "Selects uncertain tokens, reinjects frozen projected evidence in middle layers, and contrasts temporal counterfactuals in later decoding layers.",
+      "evaluation": "EventHallusion and VidHalluc, with NExT-QA and MVBench general evaluation; complete cross-backbone runs are not reported for every benchmark.",
+      "rationale": "Explicit spatiotemporal hallucination mitigation. The inspected version states reinjection tensors are constructed at inference without learned additions.",
+      "training_free": true,
+      "listed_name": "STEAR",
+      "original_entry": {
+        "id": "mitigation--context-driven-fabrication--both-object-action-scene-event--stear--2604-03045",
+        "title": "STEAR: Layer-Aware Spatiotemporal Evidence Intervention for Hallucination Mitigation in Video Large Language Models",
+        "paper_url": "https://arxiv.org/abs/2604.03045",
+        "arxiv_id": "2604.03045",
+        "type": "mitigation",
+        "category": "Context-Driven Fabrication",
+        "mechanism": "Content Fabrication",
+        "subtype": "Both Object-Action & Scene-Event",
+        "name": "STEAR",
+        "description": "Targets risky decoding steps with layer-specific visual evidence, combining grounding restoration with temporal counterfactual checks.",
+        "venue": "arXiv 2026",
+        "date": "04/2026",
+        "year": 2026,
+        "training_free": "✔︎",
+        "resources": {
+          "project": null,
+          "code": null,
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Decoding",
+          "Grounding",
+          "Verification"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--context-driven-fabrication--both-object-action-scene-event--structured-rewards--2604-01460",
+      "paper_key": "2604.01460",
+      "recommendation": "retain",
+      "status": "reviewed",
+      "source_url": "https://arxiv.org/html/2604.01460v2",
+      "source_sha256": "7260eeae553a1cf81655854175f498077f10318cf80e34688bce2cfc039c90cd",
+      "inspected_sections": "Abstract; Introduction; Section 3.3; Sections 4.1 benchmarks and 4.2 hallucination evaluation",
+      "intervention": "Trains caption policies with structured factual scene-graph, temporal, and video-grounded VQA rewards using sequence-level REINFORCE.",
+      "evaluation": "VideoHallucer and EventHallusion, with temporal/general QA metrics separately reported.",
+      "rationale": "Reducing unsupported factual and temporal caption content is central, rather than an incidental consequence of generic QA optimization.",
+      "training_free": false,
+      "listed_name": "Structured Rewards",
+      "original_entry": {
+        "id": "mitigation--context-driven-fabrication--both-object-action-scene-event--structured-rewards--2604-01460",
+        "title": "Reinforcing Consistency in Video MLLMs with Structured Rewards",
+        "paper_url": "https://arxiv.org/abs/2604.01460",
+        "arxiv_id": "2604.01460",
+        "type": "mitigation",
+        "category": "Context-Driven Fabrication",
+        "mechanism": "Content Fabrication",
+        "subtype": "Both Object-Action & Scene-Event",
+        "name": "Structured Rewards",
+        "description": "Audits captions as factual and temporal claims, then trains with scene-graph, temporal, and video-grounded self-verification rewards.",
+        "venue": "COLM 2026",
+        "date": "04/2026",
+        "year": 2026,
+        "training_free": "✘",
+        "resources": {
+          "project": null,
+          "code": null,
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Training",
+          "Grounding",
+          "Verification"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--context-driven-fabrication--both-object-action-scene-event--multitop--2606-11792",
+      "paper_key": "2606.11792",
+      "recommendation": "retain",
+      "status": "reviewed",
+      "source_url": "https://arxiv.org/html/2606.11792v2",
+      "source_sha256": "a9fe14814ea54860af2d4ccc2cb2fde664cde9c206679b313c94730e86c28981",
+      "inspected_sections": "Abstract; Introduction; Section 3.3.4; Section 4.1 evaluation benchmarks",
+      "intervention": "Trains a visual token patcher using answer supervision, information-guided rank calibration, and sparsity regularization with a frozen backbone.",
+      "evaluation": "VideoHallucer, Vript-HAL, and VidHalluc; Video-MMMU and ActivityNet-QA are general-capability checks.",
+      "rationale": "Direct hallucination mitigation through learned token repair. Ground-truth answers are used during training, not inference.",
+      "training_free": false,
+      "listed_name": "MultiToP",
+      "original_entry": {
+        "id": "mitigation--context-driven-fabrication--both-object-action-scene-event--multitop--2606-11792",
+        "title": "MultiToP: Learning to Patch Visual Tokens to Mitigate Hallucinations in Video Large Multimodal Models",
+        "paper_url": "https://arxiv.org/abs/2606.11792",
+        "arxiv_id": "2606.11792",
+        "type": "mitigation",
+        "category": "Context-Driven Fabrication",
+        "mechanism": "Content Fabrication",
+        "subtype": "Both Object-Action & Scene-Event",
+        "name": "MultiToP",
+        "description": "Trains a lightweight patcher to selectively replace unreliable visual tokens before generation while leaving the original video model unchanged.",
+        "venue": "arXiv 2026",
+        "date": "06/2026",
+        "year": 2026,
+        "training_free": "✘",
+        "resources": {
+          "project": null,
+          "code": null,
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Training",
+          "Grounding"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--audio-visual-conflict--action-attribution--avhmodel-align-ft--2410-18325",
+      "paper_key": "2410.18325",
+      "recommendation": "retain",
+      "status": "reviewed",
+      "source_url": "https://arxiv.org/html/2410.18325v2",
+      "source_sha256": "db80385453c60ced1163bc30388bd3d0124ea57768e8c603822178e0202922ea",
+      "inspected_sections": "Abstract; Introduction; Section 4.2 audio alignment and LoRA FT; Appendix F",
+      "intervention": "Trains audio alignment and LoRA adaptations on audio-visual hallucination-aware questions.",
+      "evaluation": "AVHBench audio-driven video and video-driven audio hallucination tasks; captioning/matching and VAST/AVinstruct are distinct outcomes.",
+      "rationale": "Explicit cross-modal hallucination mitigation with direct audio-induced false visual-claim evaluation; not audio-only research.",
+      "training_free": false,
+      "listed_name": "AVHModel-Align-FT",
+      "original_entry": {
+        "id": "mitigation--audio-visual-conflict--action-attribution--avhmodel-align-ft--2410-18325",
+        "title": "AVHBench: A Cross-Modal Hallucination Benchmark for Audio-Visual Large Language Models",
+        "paper_url": "https://arxiv.org/abs/2410.18325",
+        "arxiv_id": "2410.18325",
+        "type": "mitigation",
+        "category": "Audio-Visual Conflict",
+        "mechanism": "Content Fabrication",
+        "subtype": "Action Attribution",
+        "name": "AVHModel-Align-FT",
+        "description": "Fine-tunes audio-visual models with benchmark-derived training data to improve cross-modal alignment and robustness against auditory and visual hallucinations.",
+        "venue": "ICLR 2025",
+        "date": "10/2024",
+        "year": 2024,
+        "training_free": "✘",
+        "resources": {
+          "project": null,
+          "code": "https://github.com/kaist-ami/AVHBench",
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Training"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--audio-visual-conflict--action-attribution--avcd--2505-20862",
+      "paper_key": "2505.20862",
+      "recommendation": "retain",
+      "status": "reviewed",
+      "source_url": "https://arxiv.org/html/2505.20862v2",
+      "source_sha256": "ac418fb1761755c9a28dd026bac7eaebc8973076f415b44adb1e244365239bb9",
+      "inspected_sections": "Abstract; Introduction; Sections 3.2, 4.1, and 4.2",
+      "intervention": "Uses modality-dominance-aware attentive masking, trimodal contrastive logits, and entropy-gated extra decoding without parameter updates.",
+      "evaluation": "AVHBench cross-modal hallucination evaluation; MUSIC-AVQA, MSVD-QA and ActivityNet-QA are separate general tasks.",
+      "rationale": "Direct audio-visual hallucination intervention. Video-only QA gains alone are not proof of video-only hallucination reduction; the direct evidence comes from the audio-visual conditions.",
+      "training_free": true,
+      "listed_name": "AVCD",
+      "original_entry": {
+        "id": "mitigation--audio-visual-conflict--action-attribution--avcd--2505-20862",
+        "title": "AVCD: Mitigating Hallucinations in Audio-Visual Large Language Models through Contrastive Decoding",
+        "paper_url": "https://arxiv.org/abs/2505.20862",
+        "arxiv_id": "2505.20862",
+        "type": "mitigation",
+        "category": "Audio-Visual Conflict",
+        "mechanism": "Content Fabrication",
+        "subtype": "Action Attribution",
+        "name": "AVCD",
+        "description": "Uses modality-aware masking and confidence-guided contrastive decoding to suppress hallucinations across audio, video, and language without training.",
+        "venue": "NeurIPS 2025",
+        "date": "05/2025",
+        "year": 2025,
+        "training_free": "✔︎",
+        "resources": {
+          "project": null,
+          "code": "https://github.com/kaistmm/AVCD",
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Decoding"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--audio-visual-conflict--action-attribution--mrdpo--2410-06682",
+      "paper_key": "2410.06682",
+      "recommendation": "retain",
+      "status": "reviewed",
+      "source_url": "https://arxiv.org/html/2410.06682v2",
+      "source_sha256": "427c5e787e2faa5017e2850c7b527890befb71086297307a36467163033f3d01",
+      "inspected_sections": "Abstract; Introduction; Sections 3.3 and 5.2; Appendix E",
+      "intervention": "Multi-round DPO ranks captions by atomic-event hallucination/omission and repetition metrics, updating the reference and LoRA modules between rounds.",
+      "evaluation": "Audio-visual caption missing and hallucinated event rates against annotated event lists, with total error and general QA reported separately.",
+      "rationale": "Retain the targeted hallucination-aware preference objective, not an unrestricted endorsement of the whole captioning model. Total error combines omissions and hallucinations and must not be described as hallucination rate alone.",
+      "training_free": false,
+      "listed_name": "mrDPO",
+      "original_entry": {
+        "id": "mitigation--audio-visual-conflict--action-attribution--mrdpo--2410-06682",
+        "title": "Enhancing Multimodal LLM for Detailed and Accurate Video Captioning using Multi-Round Preference Optimization",
+        "paper_url": "https://arxiv.org/abs/2410.06682",
+        "arxiv_id": "2410.06682",
+        "type": "mitigation",
+        "category": "Audio-Visual Conflict",
+        "mechanism": "Content Fabrication",
+        "subtype": "Action Attribution",
+        "name": "mrDPO",
+        "description": "Improves audio-visual captions through repeated preference optimization and rebirth tuning designed to retain non-captioning abilities.",
+        "venue": "arXiv 2024",
+        "date": "10/2024",
+        "year": 2024,
+        "training_free": "✘",
+        "resources": {
+          "project": "https://video-salmonn-2.github.io/",
+          "code": "https://github.com/bytedance/video-SALMONN-2",
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Training"
+        ]
+      }
+    },
+    {
+      "entry_id": "mitigation--audio-visual-conflict--emotion-inference--pep-mek--2505-11405",
+      "paper_key": "2505.11405",
+      "recommendation": "retain",
+      "status": "reviewed",
+      "source_url": "https://arxiv.org/html/2505.11405v1",
+      "source_sha256": "6040146e768f286ae1d510974985a3cf253de0134891279ac8b35c0241d751cf",
+      "inspected_sections": "Abstract; Introduction; Sections 5.1-5.2 and Table 3; Appendix B.2",
+      "intervention": "Prompts modality/emotion knowledge extraction, an initial prediction, explanation and verification, then a revised binary answer.",
+      "evaluation": "EmotionHallucer-P mixed-modality paired QA, including video conditions; Table 3 reports pooled results rather than isolated video-only gains.",
+      "rationale": "Dedicated multimodal emotion-hallucination intervention with a video application. Scope is limited to video/audio-visual inputs; the pooled 9.9-point improvement is not a video-only result.",
+      "training_free": true,
+      "listed_name": "PEP-MEK",
+      "original_entry": {
+        "id": "mitigation--audio-visual-conflict--emotion-inference--pep-mek--2505-11405",
+        "title": "EmotionHallucer: Evaluating Emotion Hallucinations in Multimodal Large Language Models",
+        "paper_url": "https://arxiv.org/abs/2505.11405",
+        "arxiv_id": "2505.11405",
+        "type": "mitigation",
+        "category": "Audio-Visual Conflict",
+        "mechanism": "Content Fabrication",
+        "subtype": "Emotion Inference",
+        "name": "PEP-MEK",
+        "description": "Combines perception-enhanced prompting with memory-based emotion knowledge to reduce emotion hallucinations without additional training of the multimodal model.",
+        "venue": "arXiv 2025",
+        "date": "05/2025",
+        "year": 2025,
+        "training_free": "✔︎",
+        "resources": {
+          "project": null,
+          "code": "https://github.com/xxtars/EmotionHallucer",
+          "dataset": null,
+          "leaderboard": null
+        },
+        "routes": [
+          "Grounding"
+        ]
+      }
+    }
+  ]
+}

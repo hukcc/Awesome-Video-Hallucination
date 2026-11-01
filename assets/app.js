@@ -8,6 +8,7 @@ const state = { filters: readState(location.search), papers: [], loaded: false }
 const mobile = matchMedia('(max-width: 899px)');
 let searchEditing = false;
 let notificationTimer;
+let methodReviews = new Map();
 
 function node(tag, className, text) {
   const element = document.createElement(tag);
@@ -96,6 +97,15 @@ function details(paper) {
     item.append(node('p', '', `${entry.mechanism} > ${entry.category} > ${entry.subtype}`));
     if (entry.type === 'mitigation') item.append(node('p', '', `Training-free: ${trainingValue(entry) === 'yes' ? 'Yes' : 'No'}`));
     if (entry.routes?.length) item.append(node('p', '', `Technical route: ${entry.routes.join(' / ')}`));
+    const review = methodReviews.get(entry.id);
+    if (review) {
+      const label = review.recommendation === 'move_to_related'
+        ? 'Related-work move proposed; awaiting approval. '
+        : 'Retention recommended; evaluation limits recorded. ';
+      const audit = node('p', 'source-note', label);
+      audit.append(link('Method audit', `https://github.com/hukcc/Awesome-Video-Hallucination/blob/main/docs/METHOD_REVIEW.md#method-${entry.id}`));
+      item.append(audit);
+    }
     const resources = resourceLinks({ entries: [entry] });
     if (resourcesFor({ entries: [entry] }).length) item.append(resources);
     list.append(item);
@@ -331,9 +341,10 @@ window.addEventListener('popstate', () => {
 async function init() {
   render();
   try {
-    const responses = await Promise.all(['data/papers.json', 'data/paper_details.json'].map(url => fetch(url)));
+    const responses = await Promise.all(['data/papers.json', 'data/paper_details.json', 'data/method_review.json'].map(url => fetch(url)));
     if (responses.some(response => !response.ok)) throw new Error('Collection request failed');
-    const [data, metadata] = await Promise.all(responses.map(response => response.json()));
+    const [data, metadata, methodAudit] = await Promise.all(responses.map(response => response.json()));
+    methodReviews = new Map(methodAudit.records.map(record => [record.entry_id, record]));
     state.papers = groupPapers(data.entries, metadata.papers);
     options($('#type-filter'), Object.keys(TYPE_LABELS), TYPE_LABELS);
     options($('#task-filter'), metadata.task_vocabulary);

@@ -164,7 +164,9 @@ def paper_list(entries, metadata):
                 '> [!NOTE]\n'
                 '> **Training-free:** \u2714\ufe0e No additional parameter learning; '
                 '\u2718 Training required, including auxiliary modules with a frozen backbone. '
-                'Dates use first publication; newest first within each subtype.', '',
+                'Dates use first publication; newest first within each subtype. '
+                '[Method scope audit](docs/METHOD_REVIEW.md): all methods reviewed; '
+                'proposed moves to related work remain pending approval.', '',
             ]
         else:
             lines += [

@@ -66,7 +66,7 @@ def canonical_url(url):
     return urlunsplit(parsed._replace(fragment=''))
 
 
-def collect_urls(data, metadata, readme, benchmark_review=None):
+def collect_urls(data, metadata, readme, benchmark_review=None, method_review=None):
     owners = defaultdict(set)
     for entry in data['entries']:
         for kind, url in [('paper', entry['paper_url']), *entry['resources'].items()]:
@@ -82,6 +82,8 @@ def collect_urls(data, metadata, readme, benchmark_review=None):
         for kind, url in [('paper', original['paper_url']), *original['resources'].items()]:
             if url:
                 owners[canonical_url(url)].add(f'{original["name"]}: original {kind}')
+    for record in (method_review or {}).get('records', []):
+        owners[canonical_url(record['source_url'])].add(f'{record["listed_name"]}: method evidence')
     doc = Document()
     doc.feed(readme)
     badges = [url for url in doc.links if urlsplit(url).hostname == 'img.shields.io']
@@ -216,7 +218,8 @@ def main():
     data = json.loads((ROOT / 'data/papers.json').read_text())
     metadata = json.loads((ROOT / 'data/paper_details.json').read_text())
     benchmark_review = json.loads((ROOT / 'data/benchmark_review.json').read_text())
-    urls = collect_urls(data, metadata, (ROOT / 'README.md').read_text(), benchmark_review)
+    method_review = json.loads((ROOT / 'data/method_review.json').read_text())
+    urls = collect_urls(data, metadata, (ROOT / 'README.md').read_text(), benchmark_review, method_review)
     report = {'checked_at': datetime.now(timezone.utc).isoformat(), 'links': [], 'arxiv': []}
     responses = {}
     for index, (url, owners) in enumerate(urls.items(), 1):

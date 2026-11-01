@@ -1,6 +1,6 @@
 # Relevance Review
 
-Paper-level editorial scope assessment, not a quality ranking. The separate [benchmark audit](BENCHMARK_REVIEW.md) applies the stricter contribution-level inclusion rule and records removed, narrowed, and reclassified entries.
+Paper-level editorial scope assessment, not a quality ranking. The separate [benchmark audit](BENCHMARK_REVIEW.md) applies the stricter contribution-level inclusion rule and records removed, narrowed, and reclassified entries. The [53-method audit](METHOD_REVIEW.md) independently records interventions, evaluation limits, training requirements, and 14 proposed moves awaiting approval.
 
 Coverage: **74 papers / 87 contributions**. All abstracts were reviewed; **47 papers** additionally received introduction review, with evaluation sections inspected where indicated. This is not a full-text audit of every paper.
 
@@ -12,7 +12,7 @@ Latest review: **2026-11-01**. **60 direct-focus**, **6 broader-evaluation**, an
 - **Broader evaluation:** a general video task includes a concrete hallucination diagnostic, dedicated subset, or evidence-verification evaluation. Only that supported scope should be claimed.
 - **Related work (review):** grounding, QA accuracy, or self-correction is relevant, but the reviewed evidence does not establish a dedicated hallucination evaluation, or uses a substantially different definition. These are proposals for manual review, not assertions that a paper is irrelevant.
 
-The labels apply at paper level. A benchmark and method in the same paper can have different degrees of relevance. A paper-level label does not override benchmark eligibility. The benchmark audit does not newly approve or remove sibling mitigation contributions.
+The labels apply at paper level. A benchmark and method in the same paper can have different degrees of relevance. A paper-level label does not override benchmark eligibility. The benchmark audit does not newly approve or remove sibling mitigation contributions. The method audit is contribution-specific: a direct-focus paper can still contain a broader method. Its 14 pending method recommendations are distinct from the paper-level queue below.
 
 ## Manual Decision Queue
 
@@ -24,7 +24,7 @@ CoE, Video-ToC, and SToP include specific hallucination evaluations despite broa
 
 - **VideoChat-Online:** OVBench is no longer listed as a dedicated hallucination benchmark. The retained model is still a general streaming-video architecture, not a dedicated mitigation design.
 - **Vript-HAL / Vriptor:** only Vript-HAL is listed as the benchmark, while the corpus, other benchmark tasks, and captioning model have broader purposes. Do not transfer a subset-level claim to the whole suite.
-- **VHD / TRACE-RC:** the method changes reliability ordering and accepted coverage, not model answers. Its placement among mitigation strategies means selective risk reduction, not factual correction.
+- **VHD / TRACE-RC:** the method changes reliability ordering and accepted coverage, not model answers. Its current placement means selective risk reduction, not factual correction; the method audit proposes moving it to related work pending approval.
 - **FactVC / DualFact:** the benchmark entries now name their actual factuality datasets. The metric/framework names remain searchable aliases; caption factuality is not identical to general QA accuracy.
 - **VideoHEDGE:** retained as a hallucination-detection evaluation study on SoccerChat, not a new benchmark or a method that corrects answers.
 - **CMM / EmotionHallucer:** the listed benchmark scope is limited to video/audio-visual conditions; standalone audio, image, and text evaluation does not establish video relevance.
@@ -83,7 +83,7 @@ Each row links both the existing README contribution and the exact reviewed sour
 | [GroundedVQA](../README.md#paper-mitigation--context-driven-fabrication--compositional-and-factuality-hallucination--groundedvqa--2608-15574) | Directly checks fabricated timestamped video claims with independent frame perception and entailment verification. | [Abstract](https://arxiv.org/html/2608.15574v1) |
 | [HAVEN](../README.md#paper-benchmark--spatiotemporal-dynamics--event-misordering--haven--2503-19622) / [Video-thinking (TDPO)](../README.md#paper-mitigation--spatiotemporal-dynamics--event-misordering--video-thinking-tdpo--2503-19622) | Video hallucination is the benchmark objective and determines its causes-by-aspects-by-question-format design. | [Abstract; Introduction; Section 3.5](https://arxiv.org/html/2503.19622v1) |
 | [INFACT](../README.md#paper-benchmark--context-driven-fabrication--compositional-and-factuality-hallucination--infact--2603-11481) | Hallucination diagnosis is explicit and central. World-knowledge factuality is distinct from video faithfulness; TSS measures response change, not correctness after perturbation. | [Abstract; Introduction; Section 3.4](https://arxiv.org/html/2603.11481v1) |
-| [KPM-HA](../README.md#paper-benchmark--spatiotemporal-dynamics--event-misordering--kpm-bench--2602-17768) / [MoPE](../README.md#paper-mitigation--spatiotemporal-dynamics--frequency-confusion--mope--2602-17768) | Retain the explicitly named hallucination evaluation set KPM-HA, not the broader KPM-Cap/KPM-QA suite. | [Abstract; Introduction; Sections 3.4, 4.1, and 5.1](https://arxiv.org/html/2602.17768v1) |
+| [KPM-HA](../README.md#paper-benchmark--spatiotemporal-dynamics--event-misordering--kpm-bench--2602-17768) / [GRPO with MoPE](../README.md#paper-mitigation--spatiotemporal-dynamics--frequency-confusion--mope--2602-17768) | Retain the explicitly named hallucination evaluation set KPM-HA, not the broader KPM-Cap/KPM-QA suite. | [Abstract; Introduction; Sections 3.4, 4.1, and 5.1](https://arxiv.org/html/2602.17768v1) |
 | [MACD](../README.md#paper-mitigation--context-driven-fabrication--scene-event-hallucination--macd--2602-01740) | Explicit video hallucination mitigation using model-aware counterfactual inputs and contrastive decoding. | [Abstract](https://arxiv.org/html/2602.01740v3) |
 | [MASH-VLM](../README.md#paper-mitigation--context-driven-fabrication--scene-event-hallucination--mash-vlm--2503-15871) | Dedicated mitigation of action-scene hallucination with a corresponding diagnostic benchmark. | [Abstract](https://arxiv.org/html/2503.15871v1) |
 | [MESH](../README.md#paper-benchmark--referential-inconsistency--character-conflation--mesh--2509-08538) | The primary diagnostic is video hallucination under progressively finer entity and action distinctions. | [Abstract; Introduction; Section 4.1: Evaluation metric](https://arxiv.org/html/2509.08538v2) |

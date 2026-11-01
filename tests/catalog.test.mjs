@@ -25,8 +25,14 @@ test('every paper has a concise, sourced, reviewed summary and controlled task t
     assert.match(d.reviewed_on, /^\d{4}-\d{2}-\d{2}$/);
     assert.ok(d.evidence.includes('Abstract'));
     assert.match(d.source_url, /^https:\/\//);
-    if (paper.arxiv_id) assert.ok(d.source_url.startsWith(paper.paper_url + 'v'));
-    else assert.equal(d.source_url, paper.paper_url);
+    if (paper.arxiv_id) {
+      const source = new URL(d.source_url);
+      assert.equal(source.origin, 'https://arxiv.org');
+      const match = source.pathname.match(/^\/(?:abs|html)\/(\d{4}\.\d{4,5})v\d+$/);
+      assert.equal(match?.[1], paper.arxiv_id);
+    } else {
+      assert.ok([paper.paper_url, paper.paper_url + '.pdf'].includes(d.source_url));
+    }
     assert.equal(d.published_on.slice(0, 7), paper.date.split('/').reverse().join('-'));
     assert.match(d.added.date, /^\d{4}-\d{2}-\d{2}$/);
     assert.match(d.added.commit, /^[a-f0-9]{40}$/);

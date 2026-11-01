@@ -50,8 +50,11 @@ class BenchmarkReviewTests(unittest.TestCase):
                 if r['decision'] == 'narrow':
                     self.assertIn(r['original_entry']['name'], current['aliases'])
 
-    def test_existing_methods_and_analysis_are_byte_equivalent_as_records(self):
-        preserved = [self.by_id[key] for key in self.audit['unchanged_contribution_ids']]
+    def test_original_methods_and_analysis_remain_preserved(self):
+        method_audit = json.loads((ROOT / 'data/method_review.json').read_text())
+        originals = {r['entry_id']: r['original_entry'] for r in method_audit['records']}
+        preserved = [originals[key] if key in originals else self.by_id[key]
+                     for key in self.audit['unchanged_contribution_ids']]
         digest = hashlib.sha256(json.dumps(sorted(preserved, key=lambda e: e['id']), sort_keys=True).encode()).hexdigest()
         self.assertEqual(digest, self.audit['unchanged_contributions_sha256'])
         self.assertEqual(Counter(e['type'] for e in preserved), dict(mitigation=53, analysis=1))
