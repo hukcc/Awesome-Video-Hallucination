@@ -94,15 +94,6 @@ function details(paper) {
     item.append(node('strong', '', `${entry.name} / ${TYPE_LABELS[entry.type]}`));
     if (!matching.has(entry.id)) item.append(node('span', '', ' (outside current filters)'));
     item.append(node('p', '', entry.description));
-    const attribution = node('p', 'source-note', entry.scope_exception === 'community' ? 'Broader benchmark' : '');
-    for (const contribution of paper.detail.community_contributions || []) {
-      if (contribution.entry_id !== entry.id) continue;
-      const kind = contribution.kind === 'issue' ? 'Issue' : 'PR';
-      const prefix = entry.scope_exception === 'community' ? 'Community' : `${contribution.label}:`;
-      if (attribution.hasChildNodes()) attribution.append(document.createTextNode(' / '));
-      attribution.append(link(`${prefix} ${kind} #${contribution.number} (@${contribution.author})`, contribution.url));
-    }
-    if (attribution.hasChildNodes()) item.append(attribution);
     item.append(node('p', '', `${entry.mechanism} > ${entry.category} > ${entry.subtype}`));
     if (entry.type === 'mitigation') item.append(node('p', '', `Training-free: ${trainingValue(entry) === 'yes' ? 'Yes' : 'No'}`));
     if (entry.routes?.length) item.append(node('p', '', `Technical route: ${entry.routes.join(' / ')}`));
@@ -130,8 +121,8 @@ function details(paper) {
   if (paper.detail.note) container.append(node('p', 'source-note', paper.detail.note));
   if (paper.detail.scope_review) {
     const review = paper.detail.scope_review;
-    const hasScopeNote = paper.entries.some(entry => entry.scope_exception === 'community');
-    const note = node('p', 'source-note', hasScopeNote ? '' : `Scope: ${SCOPE_LABELS[review.scope]}. ${review.reason} `);
+    const isCommunityEntry = paper.entries.some(entry => entry.scope_exception === 'community');
+    const note = node('p', 'source-note', isCommunityEntry ? '' : `Scope: ${SCOPE_LABELS[review.scope]}. ${review.reason} `);
     note.append(link('Review evidence', review.source_url),
       document.createTextNode(` / ${review.evidence}; reviewed ${review.reviewed_on}.`));
     container.append(note);

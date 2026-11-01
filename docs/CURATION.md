@@ -18,9 +18,9 @@ Preserve previously accepted content from issues, pull requests, and other contr
 
 GameplayQA was accepted in [PR #2 by @wangyz1999](https://github.com/hukcc/Awesome-Video-Hallucination/pull/2). It is restored to its original benchmark category with all three resource badges. Its broader scientific scope remains explicit, so it is not counted among the 32 strict-scope benchmarks. DistractionBench's code and dataset from [PR #3 by @s-honcharenko](https://github.com/hukcc/Awesome-Video-Hallucination/pull/3) remain intact. No standalone issue was returned by the all-state GitHub issue listing during this check; the accepted contributions identified there are these two merged PRs. Unaccepted suggestions are not automatically admitted.
 
-Keep disputed community contributions visible and annotate the evidence or scope limitations. This preservation exception does not turn a general video-understanding benchmark into a dedicated hallucination benchmark. Future updates must record newly accepted community contributions and maintain their regression checks.
+Keep disputed community contributions visible and record the evidence or scope limitations in the audit records. This preservation exception does not turn a general video-understanding benchmark into a dedicated hallucination benchmark. Future updates must record newly accepted community contributions and maintain their regression checks.
 
-Keep public scope and attribution labels to one concise per-entry note. Do not repeat paper-specific caveats in the README introduction, section notes, or taxonomy tree; retain the full rationale in the audit records.
+Display accepted community contributions as ordinary paper entries, without special community/PR labels or exception notes in the README, browser entry, or taxonomy tree. Preserve provenance, contributor attribution, scope assessments, and the full rationale in the shared metadata and audit records. Standard relevance filters and labels remain unchanged.
 
 ## Editorial Rules
 

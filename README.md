@@ -512,8 +512,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
   <tbody>
     <tr>
       <td align="left"><a id="paper-benchmark--referential-inconsistency--scene-conflation--distractionbench--2605-27101"></a><b><a href="https://arxiv.org/abs/2605.27101">Pop-Up Distractions Reveal Bag-of-Events Behavior in Video Large Language Models</a></b><br>
-        <sub>Inserts advertising distractors into long videos to test whether models conflate subjects and events from unrelated segments.</sub><br>
-        <sub><a href="https://github.com/hukcc/Awesome-Video-Hallucination/pull/3">Community resources: PR #3 (@s-honcharenko)</a></sub></td>
+        <sub>Inserts advertising distractors into long videos to test whether models conflate subjects and events from unrelated segments.</sub></td>
       <td align="center"><b>DistractionBench</b></td>
       <td align="center">arXiv 2026<br><sub>05/2026</sub></td>
       <td align="center"><a href="https://github.com/lab-flair/video-llm-boe"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code" title="Code" /></a> <a href="https://huggingface.co/datasets/lab-flair/VideoLLM-BoE"><img src="https://img.shields.io/badge/Dataset-HuggingFace-yellow?logo=huggingface" alt="dataset" title="Dataset" /></a></td>
@@ -548,8 +547,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
   <tbody>
     <tr>
       <td align="left"><a id="paper-benchmark--context-driven-fabrication--object-action-hallucination--gameplayqa--2603-24329"></a><b><a href="https://arxiv.org/abs/2603.24329">GameplayQA: A Benchmarking Framework for Decision-Dense POV-Synced Multi-Video Understanding of 3D Virtual Agents</a></b><br>
-        <sub>Uses synchronized multiplayer gameplay views and structured distractors to test agent identity, role attribution, and grounded reasoning.</sub><br>
-        <sub>Broader benchmark &middot; <a href="https://github.com/hukcc/Awesome-Video-Hallucination/pull/2">Community PR #2 (@wangyz1999)</a></sub></td>
+        <sub>Uses synchronized multiplayer gameplay views and structured distractors to test agent identity, role attribution, and grounded reasoning.</sub></td>
       <td align="center"><b>GameplayQA</b></td>
       <td align="center">ACL 2026<br><sub>03/2026</sub></td>
       <td align="center"><a href="https://hats-ict.github.io/gameplayqa/"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?logo=readthedocs&amp;logoColor=white" alt="page" title="Project Page" /></a> <a href="https://github.com/HATS-ICT/GameplayQA"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code" title="Code" /></a> <a href="https://huggingface.co/datasets/wangyz1999/GameplayQA"><img src="https://img.shields.io/badge/Dataset-HuggingFace-yellow?logo=huggingface" alt="dataset" title="Dataset" /></a></td>

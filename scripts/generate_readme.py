@@ -121,7 +121,7 @@ def task_index(entries, metadata):
     return '\n'.join(lines).rstrip()
 
 
-def row(entry, related, detail=None):
+def row(entry, related):
     first = (
         f'<a id="{anchor(entry)}"></a><b>{link(entry["title"], entry["paper_url"])}</b><br>\n'
         f'        <sub>{escape(entry["description"])}</sub>'
@@ -131,15 +131,6 @@ def row(entry, related, detail=None):
         labels = {'benchmark': 'Related benchmark', 'mitigation': 'Related method', 'analysis': 'Related analysis'}
         refs = [link(f'{labels[e["type"]]}: {e["name"]}', '#' + anchor(e)) for e in siblings]
         first += '<br>\n        <sub>' + ' &middot; '.join(refs) + '</sub>'
-    notes = ['Broader benchmark'] if entry.get('scope_exception') == 'community' else []
-    for contribution in (detail or {}).get('community_contributions', []):
-        if contribution['entry_id'] == entry['id']:
-            kind = 'Issue' if contribution['kind'] == 'issue' else 'PR'
-            prefix = 'Community' if entry.get('scope_exception') == 'community' else contribution['label'] + ':'
-            label = f'{prefix} {kind} #{contribution["number"]} (@{contribution["author"]})'
-            notes.append(link(label, contribution['url']))
-    if notes:
-        first += '<br>\n        <sub>' + ' &middot; '.join(notes) + '</sub>'
     cells = [first, f'<b>{escape(entry["name"])}</b>',
              escape(entry['venue']) + '<br><sub>' + escape(entry['date']) + '</sub>']
     if entry['type'] == 'mitigation':
@@ -211,7 +202,7 @@ def paper_list(entries, metadata):
                         lines.append(f'      <th width="{width}%" align="{align}">{escape(label)}</th>')
                     lines += ['    </tr>', '  </thead>', '  <tbody>']
                     for entry in matching:
-                        lines += row(entry, groups[paper_key(entry)], details[paper_key(entry)])
+                        lines += row(entry, groups[paper_key(entry)])
                     lines += ['  </tbody>', '</table>', '', '</details>', '']
         lines += ['[Back to task index](#browse-by-task)', '', '---', '']
     if sorted(emitted) != sorted(e['id'] for e in entries):

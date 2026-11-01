@@ -90,23 +90,13 @@ def check():
         labels = {'benchmark': 'Related benchmark', 'mitigation': 'Related method', 'analysis': 'Related analysis'}
         if related:
             expected.append(' \u00b7 '.join(f'{labels[e["type"]]}: {e["name"]}' for e in related))
-        notes = ['Broader benchmark'] if entry.get('scope_exception') == 'community' else []
-        community = [c for c in details[entry['arxiv_id'] or entry['paper_url']].get('community_contributions', [])
-                     if c['entry_id'] == entry['id']]
-        for contribution in community:
-            kind = 'Issue' if contribution['kind'] == 'issue' else 'PR'
-            prefix = 'Community' if entry.get('scope_exception') == 'community' else contribution['label'] + ':'
-            notes.append(f'{prefix} {kind} #{contribution["number"]} (@{contribution["author"]})')
-        if notes:
-            expected.append(' \u00b7 '.join(notes))
         assert cells[0]['text'] == ' '.join(expected), entry['name']
         assert cells[1]['text'] == entry['name'], entry['name']
         assert cells[2]['text'] == entry['venue'] + ' ' + entry['date'], entry['name']
         assert len(cells) == (5 if entry['type'] == 'mitigation' else 4), entry['name']
         if entry['type'] == 'mitigation':
             assert cells[3]['text'] == entry['training_free'], entry['name']
-        assert cells[0]['links'] == ([entry['paper_url']] + ['#paper-' + e['id'] for e in related]
-                                     + [c['url'] for c in community]), entry['name']
+        assert cells[0]['links'] == ([entry['paper_url']] + ['#paper-' + e['id'] for e in related]), entry['name']
         assert sorted(cells[-1]['links']) == sorted(url for url in entry['resources'].values() if url), entry['name']
         assert sorted(image['href'] for image in cells[-1]['images']) == sorted(cells[-1]['links']), entry['name']
         assert all(image['src'].startswith('https://img.shields.io/badge/') and image['alt'] for image in cells[-1]['images']), entry['name']
