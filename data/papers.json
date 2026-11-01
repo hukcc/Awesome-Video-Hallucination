@@ -1,10 +1,33 @@
 {
   "description": "Curated contribution records shared by the README, paper browser, and taxonomy tree. Description sources are recorded in data/paper_details.json.",
-  "entry_count": 87,
-  "benchmark_count": 32,
+  "entry_count": 88,
+  "benchmark_count": 33,
   "mitigation_count": 53,
   "analysis_count": 2,
   "entries": [
+    {
+      "id": "benchmark--context-driven-fabrication--object-action-hallucination--gameplayqa--2603-24329",
+      "title": "GameplayQA: A Benchmarking Framework for Decision-Dense POV-Synced Multi-Video Understanding of 3D Virtual Agents",
+      "paper_url": "https://arxiv.org/abs/2603.24329",
+      "arxiv_id": "2603.24329",
+      "type": "benchmark",
+      "category": "Context-Driven Fabrication",
+      "mechanism": "Content Fabrication",
+      "subtype": "Object-Action Hallucination",
+      "name": "GameplayQA",
+      "description": "Uses synchronized multiplayer gameplay views and structured distractors to test agent identity, role attribution, and grounded reasoning.",
+      "venue": "ACL 2026",
+      "date": "03/2026",
+      "year": 2026,
+      "training_free": null,
+      "scope_exception": "community",
+      "resources": {
+        "project": "https://hats-ict.github.io/gameplayqa/",
+        "code": "https://github.com/HATS-ICT/GameplayQA",
+        "dataset": "https://huggingface.co/datasets/wangyz1999/GameplayQA",
+        "leaderboard": null
+      }
+    },
     {
       "id": "mitigation--context-driven-fabrication--scene-event-hallucination--arp-cd--2610-19728",
       "title": "Mitigating Video Hallucinations via Attention-Guided Representation Perturbation",

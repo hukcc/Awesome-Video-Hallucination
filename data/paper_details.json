@@ -13,6 +13,55 @@
     "Video Understanding"
   ],
   "papers": {
+    "2603.24329": {
+      "summary": "Uses synchronized multiplayer gameplay views and structured distractors to test agent identity, role attribution, and grounded reasoning.",
+      "tasks": [
+        "Video QA",
+        "Video Reasoning"
+      ],
+      "source_url": "https://arxiv.org/abs/2603.24329v2",
+      "evidence": "Abstract; Introduction; Section 4.2",
+      "reviewed_on": "2026-11-01",
+      "published_on": "2026-03-25",
+      "authors": [
+        "Yunzhe Wang",
+        "Runhui Xu",
+        "Kexin Zheng",
+        "Tianyi Zhang",
+        "Jayavibhav Niranjan Kogundi",
+        "Soham Hans",
+        "Volkan Ustun"
+      ],
+      "added": {
+        "date": "2026-06-11",
+        "commit": "fbdebdb81950d395bdb46cc2c843394ecb593bd5"
+      },
+      "community_contributions": [
+        {
+          "label": "Community contribution",
+          "kind": "pull_request",
+          "number": 2,
+          "author": "wangyz1999",
+          "url": "https://github.com/hukcc/Awesome-Video-Hallucination/pull/2",
+          "merge_commit": "c1211510f3c0b3637db7dd3efab6734f76878620",
+          "entry_id": "benchmark--context-driven-fabrication--object-action-hallucination--gameplayqa--2603-24329",
+          "paper_url": "https://arxiv.org/abs/2603.24329",
+          "resources": {
+            "project": "https://hats-ict.github.io/gameplayqa/",
+            "code": "https://github.com/HATS-ICT/GameplayQA",
+            "dataset": "https://huggingface.co/datasets/wangyz1999/GameplayQA"
+          }
+        }
+      ],
+      "scope_review": {
+        "scope": "broader",
+        "reason": "Broader benchmark retained as an accepted community contribution from PR #2. Structured hallucination distractors support error analysis, but the whole suite is not a dedicated video-hallucination benchmark.",
+        "source_url": "https://arxiv.org/html/2603.24329v2",
+        "evidence": "Abstract; Introduction; Section 4.2",
+        "reviewed_on": "2026-11-01",
+        "decision": "retain"
+      }
+    },
     "2610.19728": {
       "summary": "Uses attention-guided perturbations of visual hidden states to construct contrastive decoding negatives, evaluated on VideoHallucer and EventHallusion without additional parameter training.",
       "tasks": [
@@ -507,6 +556,22 @@
       }
     },
     "2605.27101": {
+      "community_contributions": [
+        {
+          "label": "Community resources",
+          "kind": "pull_request",
+          "number": 3,
+          "author": "s-honcharenko",
+          "url": "https://github.com/hukcc/Awesome-Video-Hallucination/pull/3",
+          "merge_commit": "67445740d38321299df9c69c9d864de600364dee",
+          "entry_id": "benchmark--referential-inconsistency--scene-conflation--distractionbench--2605-27101",
+          "paper_url": "https://arxiv.org/abs/2605.27101",
+          "resources": {
+            "code": "https://github.com/lab-flair/video-llm-boe",
+            "dataset": "https://huggingface.co/datasets/lab-flair/VideoLLM-BoE"
+          }
+        }
+      ],
       "summary": "Inserts advertising distractors into long videos to test whether models conflate subjects and events from unrelated segments.",
       "tasks": [
         "Video QA",

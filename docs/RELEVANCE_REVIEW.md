@@ -2,9 +2,9 @@
 
 Paper-level editorial scope assessment, not a quality ranking. The separate [benchmark audit](BENCHMARK_REVIEW.md) applies the stricter contribution-level inclusion rule and records removed, narrowed, and reclassified entries. The [53-method audit](METHOD_REVIEW.md) independently records interventions, evaluation limits, training requirements, and 14 proposed moves awaiting approval.
 
-Coverage: **74 papers / 87 contributions**. All abstracts were reviewed; **47 papers** additionally received introduction review, with evaluation sections inspected where indicated. This is not a full-text audit of every paper.
+Coverage: **75 papers / 88 contributions**. All abstracts were reviewed; **48 papers** additionally received introduction review, with evaluation sections inspected where indicated. This is not a full-text audit of every paper.
 
-Latest review: **2026-11-01**. **60 direct-focus**, **6 broader-evaluation**, and **8 related-work candidates**.
+Latest review: **2026-11-01**. **60 direct-focus**, **7 broader-evaluation**, and **8 related-work candidates**.
 
 ## Criteria
 
@@ -22,6 +22,7 @@ CoE, Video-ToC, and SToP include specific hallucination evaluations despite broa
 
 ## Contribution-Level Caveats
 
+- **GameplayQA:** restored as an accepted community contribution from [PR #2](https://github.com/hukcc/Awesome-Video-Hallucination/pull/2), with its original category and resources. It remains a broader benchmark, not a dedicated hallucination benchmark; community preservation does not override the scientific scope assessment.
 - **VideoChat-Online:** OVBench is no longer listed as a dedicated hallucination benchmark. The retained model is still a general streaming-video architecture, not a dedicated mitigation design.
 - **Vript-HAL / Vriptor:** only Vript-HAL is listed as the benchmark, while the corpus, other benchmark tasks, and captioning model have broader purposes. Do not transfer a subset-level claim to the whole suite.
 - **VHD / TRACE-RC:** the method changes reliability ordering and accepted coverage, not model answers. Its current placement means selective risk reduction, not factual correction; the method audit proposes moving it to related work pending approval.
@@ -51,6 +52,7 @@ Each row links both the existing README contribution and the exact reviewed sour
 | Paper / Contributions | Reason | Inspected Evidence |
 | --- | --- | --- |
 | [CoE](../README.md#paper-mitigation--spatiotemporal-dynamics--duration-distortion--coe--2601-07761) | General evidence-grounded reasoning framework explicitly evaluates mitigation on VidHal and EventHall, beyond its general QA results. | [Abstract; Introduction; Sections 4.1-4.2 (VidHal and EventHall evaluation)](https://arxiv.org/html/2601.07761v2) |
+| [GameplayQA](../README.md#paper-benchmark--context-driven-fabrication--object-action-hallucination--gameplayqa--2603-24329) | Broader benchmark retained as an accepted community contribution from PR #2. Structured hallucination distractors support error analysis, but the whole suite is not a dedicated video-hallucination benchmark. | [Abstract; Introduction; Section 4.2](https://arxiv.org/html/2603.24329v2) |
 | [SToP](../README.md#paper-mitigation--context-driven-fabrication--both-object-action-scene-event--stop--2604-20937) | Token-pruning study explicitly diagnoses and evaluates hallucinations on EventHallusion. Retain as broader evaluation; it is not equivalent to excluded EchoPrune. | [Abstract; Introduction (EventHallusion comparison and pruning analysis)](https://arxiv.org/html/2604.20937v2) |
 | [VHD](../README.md#paper-benchmark--context-driven-fabrication--compositional-and-factuality-hallucination--vhd--2609-13288) / [TRACE-RC](../README.md#paper-mitigation--context-driven-fabrication--compositional-and-factuality-hallucination--trace-rc--2609-13288) | The named diagnostic dataset directly targets shared confident video hallucinations. It is a development set, not the paper's independent held-out reliability-transfer test. | [Abstract; Introduction; Section 4.1; Appendix A.3](https://arxiv.org/html/2609.13288v1) |
 | [Video-ToC](../README.md#paper-mitigation--context-driven-fabrication--scene-event-hallucination--video-toc--2604-20473) | General tree-of-cue reasoning method includes direct VideoHallucer evaluation, supporting retention with a broader-scope label. | [Abstract; Introduction (VideoHallucer evaluation)](https://arxiv.org/html/2604.20473v1) |

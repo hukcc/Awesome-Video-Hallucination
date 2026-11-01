@@ -10,6 +10,7 @@ from generate_readme import resource_badge
 
 ROOT = Path(__file__).resolve().parent.parent
 DECISIONS = [('remove', 'Removed From the Benchmark List'),
+             ('retain_community', 'Retained Community Contributions'),
              ('narrow', 'Narrowed or Corrected Scope'),
              ('reclassify', 'Reclassified'), ('retain', 'Retained Benchmarks')]
 
@@ -22,10 +23,17 @@ def render(audit):
              'This is a scope and contribution-type audit, not a replication of experiments or a full-paper methodological endorsement.', '',
              f'Outcome: **{counts["retain"]} retained**, **{counts["narrow"]} narrowed or corrected**, '
              f'**{counts["remove"]} removed from the benchmark list**, and **{counts["reclassify"]} reclassified as evaluation analysis**. '
-             f'The main list now has **{counts["retain"] + counts["narrow"]} benchmark contributions**. '
+             f'An additional **{counts["retain_community"]} community contribution is retained with a broader-scope label**. '
+             f'The main list now has **{counts["retain"] + counts["narrow"] + counts["retain_community"]} benchmark contributions**, '
+             f'of which **{counts["retain"] + counts["narrow"]} meet the strict scope**. '
              'The benchmark-only pass preserved all 53 mitigation contributions and the existing analysis. '
              'The subsequent [method audit](METHOD_REVIEW.md) records method-specific corrections and pending scope recommendations.', '',
              '## Inclusion Rule', '',
+             '- Previously accepted community contributions are protected from automatic removal. '
+             'GameplayQA was restored after the initial strict audit under the owner\'s preservation instruction. '
+             'Its [accepted PR #2](https://github.com/hukcc/Awesome-Video-Hallucination/pull/2), '
+             'original category and resources remain visible; retention does not change the broader-scope assessment. '
+             'Disputed community entries require entry-specific human approval before removal or relocation.',
              '- The benchmark must centrally evaluate unsupported or contradicted language-model claims about input video, '
              'including video-caption factuality, targeted adversarial QA, hallucination detection, and audio-visual conflicts in videos.',
              '- General video QA, caption quality, object consistency, evidence grounding, or reasoning benchmarks do not qualify '
@@ -62,7 +70,7 @@ def render(audit):
               'Original paper identities and resource badges for removed benchmark contributions are retained below. '
               'They are provenance, not active benchmark recommendations. Resources may serve a whole paper, not only '
               'its hallucination component. The machine-readable register also preserves original contribution records '
-              'and metadata for papers no longer present in the main catalog.', '']
+              'and historical metadata snapshots, including GameplayQA before its subsequent restoration.', '']
     for row in audit['records']:
         if row['decision'] != 'remove':
             continue

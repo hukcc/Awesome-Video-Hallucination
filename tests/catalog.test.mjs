@@ -9,8 +9,8 @@ const papers = groupPapers(data.entries, metadata.papers);
 const select = filters => filterPapers(papers, filters);
 
 test('all contributions survive paper-level grouping', () => {
-  assert.equal(papers.length, 74);
-  assert.equal(data.entries.length, 87);
+  assert.equal(papers.length, 75);
+  assert.equal(data.entries.length, 88);
   assert.equal(papers.reduce((n, p) => n + p.entries.length, 0), data.entry_count);
   assert.equal(new Set(data.entries.map(e => e.id)).size, data.entry_count);
 });
@@ -62,7 +62,7 @@ test('contribution types match the reviewed catalog totals', () => {
 test('filters cannot borrow training status from a different contribution', () => {
   assert.equal(select({ type: 'benchmark', training: 'yes' }).length, 0);
   assert.equal(select({ type: 'benchmark', training: 'no' }).length, 0);
-  assert.equal(select({ type: 'benchmark', training: 'na' }).length, 32);
+  assert.equal(select({ type: 'benchmark', training: 'na' }).length, 33);
   const result = select({ search: 'DINO-HEAL', type: 'mitigation', training: 'yes' });
   assert.equal(result.length, 1);
   assert.equal(result[0].matches.length, 1);

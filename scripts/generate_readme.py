@@ -121,7 +121,7 @@ def task_index(entries, metadata):
     return '\n'.join(lines).rstrip()
 
 
-def row(entry, related):
+def row(entry, related, detail=None):
     first = (
         f'<a id="{anchor(entry)}"></a><b>{link(entry["title"], entry["paper_url"])}</b><br>\n'
         f'        <sub>{escape(entry["description"])}</sub>'
@@ -131,6 +131,13 @@ def row(entry, related):
         labels = {'benchmark': 'Related benchmark', 'mitigation': 'Related method', 'analysis': 'Related analysis'}
         refs = [link(f'{labels[e["type"]]}: {e["name"]}', '#' + anchor(e)) for e in siblings]
         first += '<br>\n        <sub>' + ' &middot; '.join(refs) + '</sub>'
+    if entry.get('scope_exception') == 'community':
+        first += '<br>\n        <sub>Broader benchmark retained as a community contribution.</sub>'
+    for contribution in (detail or {}).get('community_contributions', []):
+        if contribution['entry_id'] == entry['id']:
+            kind = 'Issue' if contribution['kind'] == 'issue' else 'PR'
+            label = f'{contribution["label"]}: {kind} #{contribution["number"]} by @{contribution["author"]}'
+            first += '<br>\n        <sub>' + link(label, contribution['url']) + '</sub>'
     cells = [first, f'<b>{escape(entry["name"])}</b>',
              escape(entry['venue']) + '<br><sub>' + escape(entry['date']) + '</sub>']
     if entry['type'] == 'mitigation':
@@ -156,7 +163,9 @@ def paper_list(entries, metadata):
                 '> [!NOTE]\n'
                 '> Newest first within each subtype. **Date** = first arXiv submission, '
                 'or publisher issue date when no arXiv record is used; venue years may differ. '
-                '[Sources and review notes](data/paper_details.json).', '',
+                '[Sources and review notes](data/paper_details.json). '
+                'GameplayQA is retained as a community-contributed broader benchmark, '
+                'not a dedicated hallucination benchmark.', '',
                 resource_legend(), '',
             ]
         elif kind == 'mitigation':
@@ -202,7 +211,7 @@ def paper_list(entries, metadata):
                         lines.append(f'      <th width="{width}%" align="{align}">{escape(label)}</th>')
                     lines += ['    </tr>', '  </thead>', '  <tbody>']
                     for entry in matching:
-                        lines += row(entry, groups[paper_key(entry)])
+                        lines += row(entry, groups[paper_key(entry)], details[paper_key(entry)])
                     lines += ['  </tbody>', '</table>', '', '</details>', '']
         lines += ['[Back to task index](#browse-by-task)', '', '---', '']
     if sorted(emitted) != sorted(e['id'] for e in entries):

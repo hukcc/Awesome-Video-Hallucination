@@ -94,6 +94,16 @@ function details(paper) {
     item.append(node('strong', '', `${entry.name} / ${TYPE_LABELS[entry.type]}`));
     if (!matching.has(entry.id)) item.append(node('span', '', ' (outside current filters)'));
     item.append(node('p', '', entry.description));
+    if (entry.scope_exception === 'community') {
+      item.append(node('p', 'source-note', 'Broader benchmark retained as a community contribution.'));
+    }
+    for (const contribution of paper.detail.community_contributions || []) {
+      if (contribution.entry_id !== entry.id) continue;
+      const note = node('p', 'source-note');
+      const kind = contribution.kind === 'issue' ? 'Issue' : 'PR';
+      note.append(link(`${contribution.label}: ${kind} #${contribution.number} by @${contribution.author}`, contribution.url));
+      item.append(note);
+    }
     item.append(node('p', '', `${entry.mechanism} > ${entry.category} > ${entry.subtype}`));
     if (entry.type === 'mitigation') item.append(node('p', '', `Training-free: ${trainingValue(entry) === 'yes' ? 'Yes' : 'No'}`));
     if (entry.routes?.length) item.append(node('p', '', `Technical route: ${entry.routes.join(' / ')}`));

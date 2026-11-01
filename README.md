@@ -1,12 +1,12 @@
 # Awesome-Video-Hallucination [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-[![arXiv](https://img.shields.io/badge/arXiv-2604.12944-b31b1b.svg)](https://arxiv.org/abs/2604.12944) [![ACL 2026 Findings](https://img.shields.io/badge/ACL%202026-Findings-2ea44f)](https://arxiv.org/abs/2604.12944) [![Entries](https://img.shields.io/badge/Entries-87-blue.svg)](#evaluation-benchmarks) [![Auto arXiv Update](https://img.shields.io/badge/arXiv%20Update-Monthly-blueviolet.svg)](new_papers.md) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Last Commit](https://img.shields.io/github/last-commit/hukcc/Awesome-Video-Hallucination)](https://github.com/hukcc/Awesome-Video-Hallucination/commits/main)
+[![arXiv](https://img.shields.io/badge/arXiv-2604.12944-b31b1b.svg)](https://arxiv.org/abs/2604.12944) [![ACL 2026 Findings](https://img.shields.io/badge/ACL%202026-Findings-2ea44f)](https://arxiv.org/abs/2604.12944) [![Entries](https://img.shields.io/badge/Entries-88-blue.svg)](#evaluation-benchmarks) [![Auto arXiv Update](https://img.shields.io/badge/arXiv%20Update-Monthly-blueviolet.svg)](new_papers.md) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Last Commit](https://img.shields.io/github/last-commit/hukcc/Awesome-Video-Hallucination)](https://github.com/hukcc/Awesome-Video-Hallucination/commits/main)
 
-A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs)**, covering **32 benchmarks**, **53 mitigation methods**, and **2 evaluation analyses**. The 87 entries represent 74 distinct papers; a paper may contribute both a benchmark and a method. Updated monthly via arXiv search and manual review.
+A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs)**, covering **33 benchmarks**, **53 mitigation methods**, and **2 evaluation analyses**. The 88 entries represent 75 distinct papers; a paper may contribute both a benchmark and a method. Benchmark coverage includes 32 strict-scope entries and one retained community-contributed broader benchmark. Updated monthly via arXiv search and manual review.
 
 > 📄 **Survey Paper**: *[Distorted or Fabricated? A Survey on Hallucination in Video LLMs](https://arxiv.org/abs/2604.12944)*
 
-> 🔎 **Interactive Browser**: [Browse 74 papers](https://hukcc.github.io/Awesome-Video-Hallucination/) with source-backed summaries, task tags, combined filters, and table or card views.
+> 🔎 **Interactive Browser**: [Browse 75 papers](https://hukcc.github.io/Awesome-Video-Hallucination/) with source-backed summaries, task tags, combined filters, and table or card views.
 
 ![Framework overview](imgs/teaser.png)
 
@@ -14,7 +14,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 
 - [Find Your Papers](#find-your-papers)
 - [Taxonomy of Video Hallucinations](#taxonomy-of-video-hallucinations)
-- [Evaluation Benchmarks](#evaluation-benchmarks) — 32 benchmarks
+- [Evaluation Benchmarks](#evaluation-benchmarks) — 33 benchmarks
 - [Mitigation Strategies](#mitigation-strategies) — 53 methods
 - [Evaluation Analyses](#evaluation-analyses) — 2 analyses
 - [Citation](#citation)
@@ -52,14 +52,14 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 
 **Start here:** [Reading guide](https://hukcc.github.io/Awesome-Video-Hallucination/?tab=guide), from the survey to benchmarks, mitigation, and evaluation limits.
 
-**Scope:** Benchmarks must primarily evaluate video hallucination. [Benchmark decisions](docs/BENCHMARK_REVIEW.md) and the [53-method audit](docs/METHOD_REVIEW.md) record source evidence. Fourteen proposed method moves await approval; the [paper-level review](docs/RELEVANCE_REVIEW.md) is a separate assessment.
+**Scope:** New benchmarks must primarily evaluate video hallucination. Previously accepted community contributions are preserved with explicit scope labels; GameplayQA remains a broader benchmark. [Benchmark decisions](docs/BENCHMARK_REVIEW.md) and the [53-method audit](docs/METHOD_REVIEW.md) record source evidence. Fourteen proposed method moves await approval; the [paper-level review](docs/RELEVANCE_REVIEW.md) is a separate assessment.
 
 <!-- BEGIN TASK INDEX -->
 
 #### Browse by Task
 
 <details>
-<summary><b>Task index</b> &middot; 9 topics &middot; 74 papers</summary>
+<summary><b>Task index</b> &middot; 9 topics &middot; 75 papers</summary>
 
 <p><sub>Paper-level task tags. Newest first; links lead to individual contributions below.</sub></p>
 
@@ -184,7 +184,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 </details>
 
 <details>
-<summary><b>Video QA</b> (37 papers)</summary>
+<summary><b>Video QA</b> (38 papers)</summary>
 
 <p>
 <a href="#paper-mitigation--context-driven-fabrication--scene-event-hallucination--arp-cd--2610-19728">ARP-CD</a> &middot;
@@ -203,6 +203,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 <a href="#paper-benchmark--context-driven-fabrication--compositional-and-factuality-hallucination--visualtexttrap--2604-17375">VisualTextTrap</a> / <a href="#paper-mitigation--context-driven-fabrication--both-object-action-scene-event--vthm-moe--2604-17375">VTHM-MoE</a> &middot;
 <a href="#paper-mitigation--context-driven-fabrication--both-object-action-scene-event--structured-rewards--2604-01460">Structured Rewards</a> &middot;
 <a href="#paper-mitigation--spatiotemporal-dynamics--duration-distortion--videotir--2603-25021">VideoTIR</a> &middot;
+<a href="#paper-benchmark--context-driven-fabrication--object-action-hallucination--gameplayqa--2603-24329">GameplayQA</a> &middot;
 <a href="#paper-mitigation--spatiotemporal-dynamics--duration-distortion--framerepeat--2603-16256">FrameRepeat</a> &middot;
 <a href="#paper-mitigation--context-driven-fabrication--scene-event-hallucination--cluenet--2603-15008">ClueNet</a> &middot;
 <a href="#paper-benchmark--context-driven-fabrication--compositional-and-factuality-hallucination--infact--2603-11481">INFACT</a> &middot;
@@ -229,7 +230,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 </details>
 
 <details>
-<summary><b>Video Reasoning</b> (24 papers)</summary>
+<summary><b>Video Reasoning</b> (25 papers)</summary>
 
 <p>
 <a href="#paper-analysis--context-driven-fabrication--compositional-and-factuality-hallucination--beneath-the-scores--2609-28991">Beneath the Scores</a> &middot;
@@ -241,6 +242,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 <a href="#paper-benchmark--context-driven-fabrication--compositional-and-factuality-hallucination--gasvideo-1000--2604-17873">GasVideo-1000</a> &middot;
 <a href="#paper-mitigation--context-driven-fabrication--both-object-action-scene-event--stear--2604-03045">STEAR</a> &middot;
 <a href="#paper-mitigation--context-driven-fabrication--both-object-action-scene-event--structured-rewards--2604-01460">Structured Rewards</a> &middot;
+<a href="#paper-benchmark--context-driven-fabrication--object-action-hallucination--gameplayqa--2603-24329">GameplayQA</a> &middot;
 <a href="#paper-mitigation--spatiotemporal-dynamics--duration-distortion--framerepeat--2603-16256">FrameRepeat</a> &middot;
 <a href="#paper-mitigation--context-driven-fabrication--scene-event-hallucination--cluenet--2603-15008">ClueNet</a> &middot;
 <a href="#paper-benchmark--context-driven-fabrication--compositional-and-factuality-hallucination--infact--2603-11481">INFACT</a> &middot;
@@ -297,7 +299,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 ## Taxonomy of Video Hallucinations
 
 <details>
-<summary><b>View the full taxonomy tree</b> (87 contributions)</summary>
+<summary><b>View the full taxonomy tree</b> (88 contributions)</summary>
 
 <p align="center">
     <a href="imgs/fig2_taxonomy.png"><img src="imgs/fig2_taxonomy.png" width="96%" alt="Mechanism-driven taxonomy of Vid-LLM hallucinations" /></a>
@@ -316,7 +318,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 ## Evaluation Benchmarks
 
 > [!NOTE]
-> Newest first within each subtype. **Date** = first arXiv submission, or publisher issue date when no arXiv record is used; venue years may differ. [Sources and review notes](data/paper_details.json).
+> Newest first within each subtype. **Date** = first arXiv submission, or publisher issue date when no arXiv record is used; venue years may differ. [Sources and review notes](data/paper_details.json). GameplayQA is retained as a community-contributed broader benchmark, not a dedicated hallucination benchmark.
 
 <details>
 <summary><b>Resource badge legend</b></summary>
@@ -510,7 +512,8 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
   <tbody>
     <tr>
       <td align="left"><a id="paper-benchmark--referential-inconsistency--scene-conflation--distractionbench--2605-27101"></a><b><a href="https://arxiv.org/abs/2605.27101">Pop-Up Distractions Reveal Bag-of-Events Behavior in Video Large Language Models</a></b><br>
-        <sub>Inserts advertising distractors into long videos to test whether models conflate subjects and events from unrelated segments.</sub></td>
+        <sub>Inserts advertising distractors into long videos to test whether models conflate subjects and events from unrelated segments.</sub><br>
+        <sub><a href="https://github.com/hukcc/Awesome-Video-Hallucination/pull/3">Community resources: PR #3 by @s-honcharenko</a></sub></td>
       <td align="center"><b>DistractionBench</b></td>
       <td align="center">arXiv 2026<br><sub>05/2026</sub></td>
       <td align="center"><a href="https://github.com/lab-flair/video-llm-boe"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code" title="Code" /></a> <a href="https://huggingface.co/datasets/lab-flair/VideoLLM-BoE"><img src="https://img.shields.io/badge/Dataset-HuggingFace-yellow?logo=huggingface" alt="dataset" title="Dataset" /></a></td>
@@ -531,7 +534,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 ### 🟠 Context-Driven Fabrication Benchmarks (Content Fabrication)
 
 <details open>
-<summary><b>Object-Action Hallucination</b> (1 entry)</summary>
+<summary><b>Object-Action Hallucination</b> (2 entries)</summary>
 
 <table width="100%">
   <thead>
@@ -543,6 +546,15 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td align="left"><a id="paper-benchmark--context-driven-fabrication--object-action-hallucination--gameplayqa--2603-24329"></a><b><a href="https://arxiv.org/abs/2603.24329">GameplayQA: A Benchmarking Framework for Decision-Dense POV-Synced Multi-Video Understanding of 3D Virtual Agents</a></b><br>
+        <sub>Uses synchronized multiplayer gameplay views and structured distractors to test agent identity, role attribution, and grounded reasoning.</sub><br>
+        <sub>Broader benchmark retained as a community contribution.</sub><br>
+        <sub><a href="https://github.com/hukcc/Awesome-Video-Hallucination/pull/2">Community contribution: PR #2 by @wangyz1999</a></sub></td>
+      <td align="center"><b>GameplayQA</b></td>
+      <td align="center">ACL 2026<br><sub>03/2026</sub></td>
+      <td align="center"><a href="https://hats-ict.github.io/gameplayqa/"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?logo=readthedocs&amp;logoColor=white" alt="page" title="Project Page" /></a> <a href="https://github.com/HATS-ICT/GameplayQA"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code" title="Code" /></a> <a href="https://huggingface.co/datasets/wangyz1999/GameplayQA"><img src="https://img.shields.io/badge/Dataset-HuggingFace-yellow?logo=huggingface" alt="dataset" title="Dataset" /></a></td>
+    </tr>
     <tr>
       <td align="left"><a id="paper-benchmark--context-driven-fabrication--object-action-hallucination--factvc--2303-02961"></a><b><a href="https://arxiv.org/abs/2303.02961">Models See Hallucinations: Evaluating the Factuality in Video Captioning</a></b><br>
         <sub>Provides human-annotated video-caption factuality datasets at paragraph, sentence, and word levels; FactVC is the associated metric, not the dataset name.</sub></td>

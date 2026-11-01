@@ -673,10 +673,13 @@
       "listed_type": "benchmark"
     },
     {
-      "decision": "remove",
+      "decision": "retain_community",
+      "previous_decision": "remove",
+      "restored_on": "2026-11-01",
+      "community_source": "https://github.com/hukcc/Awesome-Video-Hallucination/pull/2",
       "inspected_sections": "Abstract; Introduction; Section 4.2",
       "protocol": "Agent-centric gameplay QA across perception, temporal reasoning, and multi-POV understanding; distractor-conditioned error rates.",
-      "rationale": "The benchmark primarily tests embodied perception and reasoning. Structured hallucination distractors enable error analysis but do not make the whole collection a dedicated hallucination benchmark.",
+      "rationale": "The benchmark primarily tests embodied perception and reasoning. Structured hallucination distractors enable error analysis but do not make the whole collection a dedicated hallucination benchmark. Restored to its original category under the owner's community-contribution preservation instruction; the earlier removal is superseded, not the scientific scope assessment. Originally accepted through PR #2 by wangyz1999.",
       "entry_id": "benchmark--context-driven-fabrication--object-action-hallucination--gameplayqa--2603-24329",
       "original_entry": {
         "id": "benchmark--context-driven-fabrication--object-action-hallucination--gameplayqa--2603-24329",
@@ -703,8 +706,8 @@
       "paper_key": "2603.24329",
       "source_url": "https://arxiv.org/html/2603.24329v2",
       "reviewed_on": "2026-11-01",
-      "listed_name": null,
-      "listed_type": null
+      "listed_name": "GameplayQA",
+      "listed_type": "benchmark"
     },
     {
       "decision": "remove",

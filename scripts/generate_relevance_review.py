@@ -53,6 +53,10 @@ def render(data, metadata):
              'not because those evaluations are absent. '
              'EchoPrune remains excluded; it must not be conflated with SToP.', '',
              '## Contribution-Level Caveats', '',
+             '- **GameplayQA:** restored as an accepted community contribution from '
+             '[PR #2](https://github.com/hukcc/Awesome-Video-Hallucination/pull/2), with its original category and resources. '
+             'It remains a broader benchmark, not a dedicated hallucination benchmark; community preservation '
+             'does not override the scientific scope assessment.',
              '- **VideoChat-Online:** OVBench is no longer listed as a dedicated hallucination benchmark. '
              'The retained model is still a general streaming-video architecture, not a dedicated mitigation design.',
              '- **Vript-HAL / Vriptor:** only Vript-HAL is listed as the benchmark, while the corpus, other benchmark tasks, '

@@ -76,6 +76,8 @@ def collect_urls(data, metadata, readme, benchmark_review=None, method_review=No
         owners[canonical_url(detail['source_url'])].add(f'{key}: reviewed source')
         if detail.get('scope_review'):
             owners[canonical_url(detail['scope_review']['source_url'])].add(f'{key}: relevance evidence')
+        for contribution in detail.get('community_contributions', []):
+            owners[canonical_url(contribution['url'])].add(f'{key}: community provenance')
     for record in (benchmark_review or {}).get('records', []):
         original = record['original_entry']
         owners[canonical_url(record['source_url'])].add(f'{original["name"]}: benchmark evidence')

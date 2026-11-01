@@ -10,6 +10,15 @@
 - `new_papers.md` records discovery and inclusion decisions. Automated discovery is not automatic admission to the curated collection.
 - `data/benchmark_review.json` records contribution-level benchmark eligibility, inspected task/metric evidence, original entries, and archived metadata. `scripts/generate_benchmark_review.py` renders the complete audit, including exclusions.
 - `data/method_review.json` records each method's intervention, actual evaluation, training requirement, inspected sections, and scope recommendation. `scripts/generate_method_review.py` renders the audit. Pending moves remain in the catalog until approved.
+- `community_contributions` in each paper's metadata records accepted issue/PR provenance, the contributor, the affected entry, and protected paper/resource links. These records do not establish scientific relevance.
+
+## Community Contributions
+
+Preserve previously accepted content from issues, pull requests, and other contributors, including paper entries, valid resource links, badges, and contribution attribution. Check issue/PR discussions and Git history before any scope-driven removal. A general relevance-audit instruction does not authorize removing or relocating these contributions; obtain entry-specific human approval first. Corrections to factual descriptions remain source-backed and must not erase provenance.
+
+GameplayQA was accepted in [PR #2 by @wangyz1999](https://github.com/hukcc/Awesome-Video-Hallucination/pull/2). It is restored to its original benchmark category with all three resource badges. Its broader scientific scope remains explicit, so it is not counted among the 32 strict-scope benchmarks. DistractionBench's code and dataset from [PR #3 by @s-honcharenko](https://github.com/hukcc/Awesome-Video-Hallucination/pull/3) remain intact. No standalone issue was returned by the all-state GitHub issue listing during this check; the accepted contributions identified there are these two merged PRs. Unaccepted suggestions are not automatically admitted.
+
+Keep disputed community contributions visible and annotate the evidence or scope limitations. This preservation exception does not turn a general video-understanding benchmark into a dedicated hallucination benchmark. Future updates must record newly accepted community contributions and maintain their regression checks.
 
 ## Editorial Rules
 
@@ -95,7 +104,7 @@ Tables remain expanded and use four columns for benchmarks/analyses or five for 
 
 ## Update Checklist
 
-1. Verify scope, paper identity, current version, venue, and official resources against primary sources.
+1. Verify scope, paper identity, current version, venue, and official resources against primary sources. Check issue/PR provenance and protect accepted community contributions before proposing removals.
 2. Update paper entries and contribution descriptions, keeping stable IDs and prior contributors' valid links.
 3. Add or revise the paper-level summary, tasks, source URL, evidence section, review date, authors, and dates. Pin reviewed arXiv versions.
 4. Backfill the first README inclusion commit and date from Git history, not the current modification date.
@@ -132,7 +141,7 @@ The README description pass also checked the [HAVEN introduction](https://arxiv.
 
 All seven November discoveries received official abstract and introduction review. The initial pass admitted OmniCapBench and ARP-CD, excluded four video-generation/editing papers, and deferred Causal Chain Generation. The subsequent user-approved strict benchmark audit supersedes OmniCapBench's initial admission. See the [November decision log](../new_papers.md#reviewed---2026-11-01) for the historical decision and source provenance.
 
-All 43 benchmark entries then received abstract, introduction, and relevant task/metric review: 26 were retained, six narrowed or corrected, ten removed from the benchmark list, and VideoHEDGE reclassified as an evaluation analysis. The collection now has 74 papers and 87 contributions (32 benchmarks, 53 mitigation methods, two analyses). The benchmark-only pass preserved all 53 original methods, the original analysis, and eight pending paper-level review candidates. The [complete benchmark audit](BENCHMARK_REVIEW.md) records every decision.
+All 43 benchmark entries then received abstract, introduction, and relevant task/metric review: 26 were retained, six narrowed or corrected, ten initially removed from the benchmark list, and VideoHEDGE reclassified as an evaluation analysis. At that stage the collection had 74 papers and 87 contributions (32 benchmarks, 53 mitigation methods, two analyses). GameplayQA was subsequently restored under the community-preservation rule above, bringing the current totals to 75 papers and 88 contributions. The benchmark-only pass preserved all 53 original methods, the original analysis, and eight pending paper-level review candidates. The [complete benchmark audit](BENCHMARK_REVIEW.md) records every decision.
 
 The subsequent [method audit](METHOD_REVIEW.md) reviewed all 53 method abstracts, introductions, and relevant method/evaluation sections. It recommends retaining 39 and moving 14 to related work, pending human approval; no methods were removed. MoPE was renamed GRPO with MoPE, PEP-MEK's expansion was corrected, and six descriptions were clarified. Training flags, paper/resource URLs, stable IDs, and sibling benchmark decisions are unchanged. Original method records are preserved in the audit register. This is source-based scope review, not experimental replication or full-paper endorsement.
 
