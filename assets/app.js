@@ -345,7 +345,7 @@ async function init() {
     }
     const counts = $('#collection-counts');
     counts.replaceChildren();
-    [[state.papers.length, 'papers'], [data.benchmark_count, 'benchmarks'], [data.mitigation_count, 'methods'], [data.analysis_count, 'analysis']].forEach(([number, label]) => {
+    [[state.papers.length, 'papers'], [data.benchmark_count, 'benchmarks'], [data.mitigation_count, 'methods'], [data.analysis_count, data.analysis_count === 1 ? 'analysis' : 'analyses']].forEach(([number, label]) => {
       const item = node('span');
       item.append(node('strong', '', number), document.createTextNode(' ' + label));
       counts.append(item);

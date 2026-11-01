@@ -1,32 +1,10 @@
 {
   "description": "Curated contribution records shared by the README, paper browser, and taxonomy tree. Description sources are recorded in data/paper_details.json.",
-  "entry_count": 97,
-  "benchmark_count": 43,
+  "entry_count": 87,
+  "benchmark_count": 32,
   "mitigation_count": 53,
-  "analysis_count": 1,
+  "analysis_count": 2,
   "entries": [
-    {
-      "id": "benchmark--audio-visual-conflict--action-attribution--omnicapbench--2610-12458",
-      "title": "OmniCapBench: A Deep-Structured Evaluation Framework for Fine-Grained Audio-Visual Captioning",
-      "paper_url": "https://arxiv.org/abs/2610.12458",
-      "arxiv_id": "2610.12458",
-      "type": "benchmark",
-      "category": "Audio-Visual Conflict",
-      "mechanism": "Content Fabrication",
-      "subtype": "Action Attribution",
-      "name": "OmniCapBench",
-      "description": "Evaluates structured audio-visual captions using grounded precision, identity consistency, and event-shot association to expose hallucinated descriptions and cross-modal attribution errors.",
-      "venue": "NeurIPS 2026 E&D",
-      "date": "10/2026",
-      "year": 2026,
-      "training_free": null,
-      "resources": {
-        "project": "https://01yzzyu.github.io/OmniCapBench/",
-        "code": "https://github.com/Tencent-Hunyuan/OmniCapBench",
-        "dataset": "https://huggingface.co/datasets/OmniCapBench/OmniCapBench",
-        "leaderboard": "https://01yzzyu.github.io/OmniCapBench/#leaderboard"
-      }
-    },
     {
       "id": "mitigation--context-driven-fabrication--scene-event-hallucination--arp-cd--2610-19728",
       "title": "Mitigating Video Hallucinations via Attention-Guided Representation Perturbation",
@@ -41,7 +19,7 @@
       "venue": "arXiv 2026",
       "date": "10/2026",
       "year": 2026,
-      "training_free": "\u2714\ufe0e",
+      "training_free": "✔︎",
       "resources": {
         "project": null,
         "code": null,
@@ -127,8 +105,8 @@
       "category": "Spatiotemporal Dynamics",
       "mechanism": "Dynamic Distortion",
       "subtype": "Event Misordering",
-      "name": "KPM-Bench",
-      "description": "Evaluates fine-grained limb motion through video captioning and question answering, using kinematic parsing to assess motion descriptions.",
+      "name": "KPM-HA",
+      "description": "Evaluates hallucinated actions, temporal order, and motion direction in video captions using the dedicated KPM-HA subset and GPT-Hall/Mo-Hall metrics.",
       "venue": "arXiv 2026",
       "date": "02/2026",
       "year": 2026,
@@ -138,7 +116,10 @@
         "code": null,
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "aliases": [
+        "KPM-Bench"
+      ]
     },
     {
       "id": "benchmark--spatiotemporal-dynamics--event-misordering--argus--2506-07371",
@@ -150,7 +131,7 @@
       "mechanism": "Dynamic Distortion",
       "subtype": "Event Misordering",
       "name": "ARGUS",
-      "description": "Measures both fabricated content and missing information in free-form video captions against human-written reference descriptions.",
+      "description": "Measures sentence-level and temporal hallucinations in free-form video captions on ArgusBench, paired with omission cost to discourage empty descriptions.",
       "venue": "ICCV 2025",
       "date": "06/2025",
       "year": 2025,
@@ -229,28 +210,6 @@
       }
     },
     {
-      "id": "benchmark--spatiotemporal-dynamics--duration-distortion--ovbench--2501-00584",
-      "title": "Online Video Understanding: OVBench and VideoChat-Online",
-      "paper_url": "https://arxiv.org/abs/2501.00584",
-      "arxiv_id": "2501.00584",
-      "type": "benchmark",
-      "category": "Spatiotemporal Dynamics",
-      "mechanism": "Dynamic Distortion",
-      "subtype": "Duration Distortion",
-      "name": "OVBench",
-      "description": "Evaluates streaming-video question answering across online perception, memory, and reasoning tasks; its scope extends beyond hallucination-specific evaluation.",
-      "venue": "CVPR 2025",
-      "date": "12/2024",
-      "year": 2024,
-      "training_free": null,
-      "resources": {
-        "project": "https://videochat-online.github.io/",
-        "code": "https://github.com/mcg-nju/videochat-online",
-        "dataset": null,
-        "leaderboard": null
-      }
-    },
-    {
       "id": "benchmark--spatiotemporal-dynamics--frequency-confusion--vidhal--2411-16771",
       "title": "VidHal: Benchmarking Temporal Hallucinations in Vision LLMs",
       "paper_url": "https://arxiv.org/abs/2411.16771",
@@ -281,8 +240,8 @@
       "category": "Spatiotemporal Dynamics",
       "mechanism": "Dynamic Distortion",
       "subtype": "Frequency Confusion",
-      "name": "Vript",
-      "description": "Provides dense video descriptions and Vript-Hard evaluations targeting hallucinated captions, information retrieval, and temporal ordering of video events.",
+      "name": "Vript-HAL",
+      "description": "Evaluates object and action hallucinations in generated video captions using dense references, with recall balancing hallucination-sensitive precision.",
       "venue": "NeurIPS 2024",
       "date": "06/2024",
       "year": 2024,
@@ -292,7 +251,10 @@
         "code": "https://github.com/mutonix/Vript",
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "aliases": [
+        "Vript"
+      ]
     },
     {
       "id": "benchmark--referential-inconsistency--character-conflation--egoillusion--egoillusion-benchmarking-hallucinations-in-egocentric-video-understanding",
@@ -334,50 +296,6 @@
       "resources": {
         "project": null,
         "code": "https://github.com/HCYANG2000/MESH-Benchmark",
-        "dataset": null,
-        "leaderboard": null
-      }
-    },
-    {
-      "id": "benchmark--referential-inconsistency--character-conflation--toc-bench--2605-09904",
-      "title": "TOC-Bench: A Temporal Object Consistency Benchmark for Video Large Language Models",
-      "paper_url": "https://arxiv.org/abs/2605.09904",
-      "arxiv_id": "2605.09904",
-      "type": "benchmark",
-      "category": "Referential Inconsistency",
-      "mechanism": "Dynamic Distortion",
-      "subtype": "Character Conflation",
-      "name": "TOC-Bench",
-      "description": "Tests object identity, state, and continuity with trajectory-grounded questions designed to require temporally ordered visual evidence.",
-      "venue": "arXiv 2026",
-      "date": "05/2026",
-      "year": 2026,
-      "training_free": null,
-      "resources": {
-        "project": null,
-        "code": "https://github.com/cjzcjz666/toc_bench",
-        "dataset": null,
-        "leaderboard": null
-      }
-    },
-    {
-      "id": "benchmark--referential-inconsistency--character-conflation--strand--2609-29607",
-      "title": "STRAND: Benchmarking and Improving Object-Centric Spatio-Temporal Monitoring in Video Large Language Models",
-      "paper_url": "https://arxiv.org/abs/2609.29607",
-      "arxiv_id": "2609.29607",
-      "type": "benchmark",
-      "category": "Referential Inconsistency",
-      "mechanism": "Dynamic Distortion",
-      "subtype": "Character Conflation",
-      "name": "STRAND",
-      "description": "Evaluates object-state changes, identity persistence, and relational reasoning, requiring answers to satisfy jointly grounded spatiotemporal prerequisites.",
-      "venue": "arXiv 2026",
-      "date": "08/2026",
-      "year": 2026,
-      "training_free": null,
-      "resources": {
-        "project": "https://nguyentthong.github.io/strand/",
-        "code": "https://github.com/nguyentthong/video_hallucination",
         "dataset": null,
         "leaderboard": null
       }
@@ -427,50 +345,6 @@
       }
     },
     {
-      "id": "benchmark--context-driven-fabrication--object-action-hallucination--gameplayqa--2603-24329",
-      "title": "GameplayQA: A Benchmarking Framework for Decision-Dense POV-Synced Multi-Video Understanding of 3D Virtual Agents",
-      "paper_url": "https://arxiv.org/abs/2603.24329",
-      "arxiv_id": "2603.24329",
-      "type": "benchmark",
-      "category": "Context-Driven Fabrication",
-      "mechanism": "Content Fabrication",
-      "subtype": "Object-Action Hallucination",
-      "name": "GameplayQA",
-      "description": "Uses synchronized multiplayer gameplay views and structured distractors to test agent identity, role attribution, and grounded reasoning.",
-      "venue": "ACL 2026",
-      "date": "03/2026",
-      "year": 2026,
-      "training_free": null,
-      "resources": {
-        "project": "https://hats-ict.github.io/gameplayqa/",
-        "code": "https://github.com/HATS-ICT/GameplayQA",
-        "dataset": "https://huggingface.co/datasets/wangyz1999/GameplayQA",
-        "leaderboard": null
-      }
-    },
-    {
-      "id": "benchmark--context-driven-fabrication--object-action-hallucination--videohallu--2505-01481",
-      "title": "VideoHallu: Evaluating and Mitigating Multi-modal Hallucinations on Synthetic Video Understanding",
-      "paper_url": "https://arxiv.org/abs/2505.01481",
-      "arxiv_id": "2505.01481",
-      "type": "benchmark",
-      "category": "Context-Driven Fabrication",
-      "mechanism": "Content Fabrication",
-      "subtype": "Object-Action Hallucination",
-      "name": "VideoHallu",
-      "description": "Tests prior-driven hallucinations using synthetic videos that violate physical or logical expectations, challenging models to follow observed evidence.",
-      "venue": "NeurIPS 2025",
-      "date": "05/2025",
-      "year": 2025,
-      "training_free": null,
-      "resources": {
-        "project": null,
-        "code": "https://github.com/zli12321/VideoHallu",
-        "dataset": null,
-        "leaderboard": null
-      }
-    },
-    {
       "id": "benchmark--context-driven-fabrication--object-action-hallucination--factvc--2303-02961",
       "title": "Models See Hallucinations: Evaluating the Factuality in Video Captioning",
       "paper_url": "https://arxiv.org/abs/2303.02961",
@@ -479,8 +353,8 @@
       "category": "Context-Driven Fabrication",
       "mechanism": "Content Fabrication",
       "subtype": "Object-Action Hallucination",
-      "name": "FactVC",
-      "description": "Studies factual errors in video captions and introduces a weakly supervised factuality metric with human-annotated evaluation data.",
+      "name": "ActivityNet-Fact / YouCook2-Fact",
+      "description": "Provides human-annotated video-caption factuality datasets at paragraph, sentence, and word levels; FactVC is the associated metric, not the dataset name.",
       "venue": "EMNLP 2023",
       "date": "03/2023",
       "year": 2023,
@@ -490,29 +364,10 @@
         "code": "https://github.com/PKULiuHui/FactVC",
         "dataset": null,
         "leaderboard": null
-      }
-    },
-    {
-      "id": "benchmark--context-driven-fabrication--object-action-hallucination--flexbench--2609-36628",
-      "title": "Beyond Binary Preferences: Graded Preference Optimization for Limb-Motion Captioning",
-      "paper_url": "https://arxiv.org/abs/2609.36628",
-      "arxiv_id": "2609.36628",
-      "type": "benchmark",
-      "category": "Context-Driven Fabrication",
-      "mechanism": "Content Fabrication",
-      "subtype": "Object-Action Hallucination",
-      "name": "FlexBench",
-      "description": "Evaluates person-specific limb-motion captions across shots, distinguishing omissions from fabricated or incorrect actions through graded physical alignment.",
-      "venue": "arXiv 2026",
-      "date": "09/2026",
-      "year": 2026,
-      "training_free": null,
-      "resources": {
-        "project": null,
-        "code": null,
-        "dataset": null,
-        "leaderboard": null
-      }
+      },
+      "aliases": [
+        "FactVC"
+      ]
     },
     {
       "id": "benchmark--context-driven-fabrication--scene-event-hallucination--eventhallusion--2409-16597",
@@ -554,28 +409,6 @@
       "resources": {
         "project": "https://anonymous550520.github.io/",
         "code": "https://github.com/anonymous550520/NOAH",
-        "dataset": null,
-        "leaderboard": null
-      }
-    },
-    {
-      "id": "benchmark--context-driven-fabrication--scene-event-hallucination--roadsocial--2503-21459",
-      "title": "RoadSocial: A Diverse VideoQA Dataset and Benchmark for Road Event Understanding from Social Video Narratives",
-      "paper_url": "https://arxiv.org/abs/2503.21459",
-      "arxiv_id": "2503.21459",
-      "type": "benchmark",
-      "category": "Context-Driven Fabrication",
-      "mechanism": "Content Fabrication",
-      "subtype": "Scene-Event Hallucination",
-      "name": "RoadSocial",
-      "description": "Provides diverse social-media road videos and question-answer pairs for evaluating road-event understanding across viewpoints and geographic settings.",
-      "venue": "CVPR 2025",
-      "date": "03/2025",
-      "year": 2025,
-      "training_free": null,
-      "resources": {
-        "project": "https://roadsocial.github.io/",
-        "code": "https://github.com/roadsocial/roadsocial",
         "dataset": null,
         "leaderboard": null
       }
@@ -673,12 +506,12 @@
       "title": "VideoHEDGE: Entropy-Based Hallucination Detection for Video-VLMs via Semantic Clustering and Spatiotemporal Perturbations",
       "paper_url": "https://arxiv.org/abs/2601.08557",
       "arxiv_id": "2601.08557",
-      "type": "benchmark",
+      "type": "analysis",
       "category": "Context-Driven Fabrication",
       "mechanism": "Content Fabrication",
       "subtype": "Compositional and Factuality Hallucination",
       "name": "VideoHEDGE",
-      "description": "Estimates answer reliability by clustering responses to clean and perturbed videos and measuring semantic uncertainty across those responses.",
+      "description": "Studies entropy-based hallucination detection on SoccerChat video answers using semantic clustering, spatiotemporal perturbations, and ROC-AUC against judged reliability labels.",
       "venue": "arXiv 2026",
       "date": "01/2026",
       "year": 2026,
@@ -699,8 +532,8 @@
       "category": "Context-Driven Fabrication",
       "mechanism": "Content Fabrication",
       "subtype": "Compositional and Factuality Hallucination",
-      "name": "DualFact",
-      "description": "Evaluates procedural-caption factuality at conceptual and grounded argument levels, using either textual references or direct video evidence.",
+      "name": "YouCook3-Fact / CraftBench-Fact",
+      "description": "Benchmarks procedural video-caption factuality with role-annotated facts, distinguishing unsupported claims from salience errors and omissions through video-grounded verification.",
       "venue": "ACL 2026 Findings",
       "date": "04/2026",
       "year": 2026,
@@ -710,7 +543,10 @@
         "code": null,
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "aliases": [
+        "DualFact"
+      ]
     },
     {
       "id": "benchmark--context-driven-fabrication--compositional-and-factuality-hallucination--gasvideo-1000--2604-17873",
@@ -722,7 +558,7 @@
       "mechanism": "Content Fabrication",
       "subtype": "Compositional and Factuality Hallucination",
       "name": "GasVideo-1000",
-      "description": "Tests whether misleading conversational feedback causes video models to abandon correct judgments and invent unsupported spatiotemporal explanations.",
+      "description": "Tests gaslighting-induced video hallucinations through correct-to-incorrect answer reversals under misleading feedback, reporting conditional sycophancy rates rather than explanation-level hallucination rates.",
       "venue": "arXiv 2026",
       "date": "04/2026",
       "year": 2026,
@@ -853,8 +689,8 @@
       "category": "Audio-Visual Conflict",
       "mechanism": "Content Fabrication",
       "subtype": "Action Attribution",
-      "name": "CMM",
-      "description": "Investigates how unimodal priors and misleading correlations between language, vision, and audio cause multimodal hallucinations.",
+      "name": "CMM (video / audio-visual)",
+      "description": "Tests hallucinated objects and events under video-only and audio-visual inputs using presence probes; standalone audio-only evaluation is outside this entry.",
       "venue": "arXiv 2024",
       "date": "10/2024",
       "year": 2024,
@@ -864,7 +700,10 @@
         "code": "https://github.com/DAMO-NLP-SG/CMM",
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "aliases": [
+        "CMM"
+      ]
     },
     {
       "id": "benchmark--audio-visual-conflict--action-attribution--audio-hallucination-qa--2604-23860",
@@ -879,28 +718,6 @@
       "description": "Probes imagined foreground and background sounds in egocentric videos through questions targeting visible but inaudible events.",
       "venue": "ICASSP 2026",
       "date": "04/2026",
-      "year": 2026,
-      "training_free": null,
-      "resources": {
-        "project": null,
-        "code": null,
-        "dataset": null,
-        "leaderboard": null
-      }
-    },
-    {
-      "id": "benchmark--audio-visual-conflict--action-attribution--traceav-bench--2605-07593",
-      "title": "TraceAV-Bench: Benchmarking Multi-Hop Trajectory Reasoning over Long Audio-Visual Videos",
-      "paper_url": "https://arxiv.org/abs/2605.07593",
-      "arxiv_id": "2605.07593",
-      "type": "benchmark",
-      "category": "Audio-Visual Conflict",
-      "mechanism": "Content Fabrication",
-      "subtype": "Action Attribution",
-      "name": "TraceAV-Bench",
-      "description": "Tests multi-hop reasoning and hallucination robustness using explicit evidence trajectories distributed across long audio-visual recordings.",
-      "venue": "arXiv 2026",
-      "date": "05/2026",
       "year": 2026,
       "training_free": null,
       "resources": {
@@ -933,28 +750,6 @@
       }
     },
     {
-      "id": "benchmark--audio-visual-conflict--action-attribution--video-holmesv2--2609-17248",
-      "title": "Video-HolmesV2: Can MLLMs Reason with Spatio-Temporal Audio-Visual Evidence in Long Videos?",
-      "paper_url": "https://arxiv.org/abs/2609.17248",
-      "arxiv_id": "2609.17248",
-      "type": "benchmark",
-      "category": "Audio-Visual Conflict",
-      "mechanism": "Content Fabrication",
-      "subtype": "Action Attribution",
-      "name": "Video-HolmesV2",
-      "description": "Requires long-video answers to cite precise audio-visual evidence, using evidence-aware scoring to penalize guessing and fabricated support.",
-      "venue": "ECCV 2026",
-      "date": "09/2026",
-      "year": 2026,
-      "training_free": null,
-      "resources": {
-        "project": null,
-        "code": null,
-        "dataset": null,
-        "leaderboard": null
-      }
-    },
-    {
       "id": "benchmark--audio-visual-conflict--emotion-inference--emotionhallucer--2505-11405",
       "title": "EmotionHallucer: Evaluating Emotion Hallucinations in Multimodal Large Language Models",
       "paper_url": "https://arxiv.org/abs/2505.11405",
@@ -963,8 +758,8 @@
       "category": "Audio-Visual Conflict",
       "mechanism": "Content Fabrication",
       "subtype": "Emotion Inference",
-      "name": "EmotionHallucer",
-      "description": "Evaluates emotion hallucinations in psychological knowledge and multimodal perception through adversarial questions about emotional cues and their interpretation.",
+      "name": "EmotionHallucer (video)",
+      "description": "Evaluates emotion-category, intensity, and reasoning hallucinations in short and long videos using adversarial QA pairs; excludes non-video and psychology-only settings.",
       "venue": "arXiv 2025",
       "date": "05/2025",
       "year": 2025,
@@ -974,7 +769,10 @@
         "code": "https://github.com/xxtars/EmotionHallucer",
         "dataset": null,
         "leaderboard": null
-      }
+      },
+      "aliases": [
+        "EmotionHallucer"
+      ]
     },
     {
       "id": "mitigation--spatiotemporal-dynamics--event-misordering--season--2512-04643",

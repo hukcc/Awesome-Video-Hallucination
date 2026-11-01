@@ -18,8 +18,9 @@ def render(data, metadata):
     counts = Counter(r['scope'] for r in reviews.values())
     introductions = sum('Introduction' in r['evidence'] for r in reviews.values())
     lines = ['# Relevance Review', '',
-             'Editorial scope assessment, not a quality ranking or a removal decision. '
-             'All existing papers, contributions, links, and taxonomy placements remain unchanged.', '',
+             'Paper-level editorial scope assessment, not a quality ranking. '
+             'The separate [benchmark audit](BENCHMARK_REVIEW.md) applies the stricter contribution-level '
+             'inclusion rule and records removed, narrowed, and reclassified entries.', '',
              f'Coverage: **{len(groups)} papers / {len(data["entries"])} contributions**. '
              f'All abstracts were reviewed; **{introductions} papers** additionally received '
              'introduction review, with evaluation sections inspected where indicated. '
@@ -36,28 +37,30 @@ def render(data, metadata):
              'reviewed evidence does not establish a dedicated hallucination evaluation, or uses a substantially '
              'different definition. These are proposals for manual review, not assertions that a paper is irrelevant.', '',
              'The labels apply at paper level. A benchmark and method in the same paper can have different '
-             'degrees of relevance. The existing taxonomy and contribution counts are retained pending decisions.', '',
+             'degrees of relevance. A paper-level label does not override benchmark eligibility. '
+             'The benchmark audit does not newly approve or remove sibling mitigation contributions.', '',
              '## Manual Decision Queue', '',
              f'Review the {counts["related"]} candidates below before moving any entry. Decide whether '
              'coordinate/timestamp errors and general QA/correction metrics meet the intended collection scope. '
              'A move to Related Work is '
              'preferable to deletion when the paper remains useful background.', '',
-             'Do **not** exclude OVBench, RoadSocial, CoE, Video-ToC, or SToP solely from their broad titles: '
-             'the inspected source text establishes a specific hallucination evaluation. '
+             'CoE, Video-ToC, and SToP include specific hallucination evaluations despite broad titles. '
+             'OVBench and RoadSocial were removed from the benchmark list because their core targets are broader, '
+             'not because those evaluations are absent. '
              'EchoPrune remains excluded; it must not be conflated with SToP.', '',
              '## Contribution-Level Caveats', '',
-             '- **OVBench / VideoChat-Online:** the Temporal Hallucination Verification subset justifies paper-level '
-             'inclusion; the model is still a general streaming-video architecture, not a dedicated mitigation design.',
-             '- **Vript / Vriptor:** Vript-HAL is a hallucination benchmark, while the corpus, other benchmark tasks, '
+             '- **VideoChat-Online:** OVBench is no longer listed as a dedicated hallucination benchmark. '
+             'The retained model is still a general streaming-video architecture, not a dedicated mitigation design.',
+             '- **Vript-HAL / Vriptor:** only Vript-HAL is listed as the benchmark, while the corpus, other benchmark tasks, '
              'and captioning model have broader purposes. Do not transfer a subset-level claim to the whole suite.',
              '- **VHD / TRACE-RC:** the method changes reliability ordering and accepted coverage, not model answers. '
              'Its placement among mitigation strategies means selective risk reduction, not factual correction.',
-             '- **OmniCapBench:** a broader audio-visual captioning benchmark whose localized precision penalizes '
-             'unsupported descriptions. Structural deficits and semantic hallucination measures are not interchangeable; '
-             'the Action Attribution index does not imply exclusive coverage.',
-             '- **FactVC and Temporal Insight:** retain their explicit factuality/temporal-hallucination framing, '
-             'but note that caption factuality or timestamp localization is not interchangeable with generative '
-             'VideoLLM hallucination metrics.', '',
+             '- **FactVC / DualFact:** the benchmark entries now name their actual factuality datasets. '
+             'The metric/framework names remain searchable aliases; caption factuality is not identical to general QA accuracy.',
+             '- **VideoHEDGE:** retained as a hallucination-detection evaluation study on SoccerChat, not a new benchmark '
+             'or a method that corrects answers.',
+             '- **CMM / EmotionHallucer:** the listed benchmark scope is limited to video/audio-visual conditions; '
+             'standalone audio, image, and text evaluation does not establish video relevance.', '',
              '## Evidence Register', '',
              'Each row links both the existing README contribution and the exact reviewed source. '
              'Reasons are curator interpretations of those sources; the evidence column states the actual review depth.', '']

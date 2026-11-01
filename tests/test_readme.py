@@ -39,7 +39,8 @@ class ReadmeTests(unittest.TestCase):
         self.assertIn(f'The {count} entries represent {papers} distinct papers', text)
         self.assertIn(f'[Browse {papers} papers]', text)
         self.assertIn(f'View the full taxonomy tree</b> ({count} contributions)', text)
-        for key, label in [('benchmark', 'benchmarks'), ('mitigation', 'mitigation methods'), ('analysis', 'evaluation analysis')]:
+        analysis_label = 'evaluation analysis' if self.data['analysis_count'] == 1 else 'evaluation analyses'
+        for key, label in [('benchmark', 'benchmarks'), ('mitigation', 'mitigation methods'), ('analysis', analysis_label)]:
             self.assertIn(f'**{self.data[key + "_count"]} {label}**', text)
         for kind, label in [('code', 'code links'), ('project', 'project pages')]:
             missing = sum(not e['resources'][kind] for e in self.entries)
@@ -54,7 +55,7 @@ class ReadmeTests(unittest.TestCase):
 
     def test_recent_additions_use_history_and_link_all_sibling_contributions(self):
         output = recently_added(self.entries, self.metadata)
-        self.assertIn('2026-11-01 &middot; 2 papers', output)
+        self.assertIn('2026-11-01 &middot; 1 paper</summary>', output)
         self.assertNotIn('<details open>', output)
         doc = Document()
         doc.feed(output)
@@ -82,7 +83,9 @@ class ReadmeTests(unittest.TestCase):
         self.assertCountEqual(doc.ids, [anchor(e) for e in self.entries])
         self.assertEqual(len(doc.rows), len(self.entries))
         targets = [href[1:] for href in doc.links if href.startswith('#')]
-        self.assertEqual(len(targets), 34)
+        expected_links = sum(sum(other['paper_url'] == e['paper_url'] and other['id'] != e['id']
+                                 for other in self.entries) for e in self.entries)
+        self.assertEqual(len(targets), expected_links)
         self.assertTrue(set(targets) <= set(doc.ids))
         self.assertTrue(all(len(row) in (4, 5) for row in doc.rows))
 

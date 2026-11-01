@@ -66,7 +66,7 @@ def canonical_url(url):
     return urlunsplit(parsed._replace(fragment=''))
 
 
-def collect_urls(data, metadata, readme):
+def collect_urls(data, metadata, readme, benchmark_review=None):
     owners = defaultdict(set)
     for entry in data['entries']:
         for kind, url in [('paper', entry['paper_url']), *entry['resources'].items()]:
@@ -76,6 +76,12 @@ def collect_urls(data, metadata, readme):
         owners[canonical_url(detail['source_url'])].add(f'{key}: reviewed source')
         if detail.get('scope_review'):
             owners[canonical_url(detail['scope_review']['source_url'])].add(f'{key}: relevance evidence')
+    for record in (benchmark_review or {}).get('records', []):
+        original = record['original_entry']
+        owners[canonical_url(record['source_url'])].add(f'{original["name"]}: benchmark evidence')
+        for kind, url in [('paper', original['paper_url']), *original['resources'].items()]:
+            if url:
+                owners[canonical_url(url)].add(f'{original["name"]}: original {kind}')
     doc = Document()
     doc.feed(readme)
     badges = [url for url in doc.links if urlsplit(url).hostname == 'img.shields.io']
@@ -116,8 +122,15 @@ def classify(response):
         return 'missing', f'HTTP {status}; manually confirm before changing the link.'
     if not 200 <= status < 300:
         return 'unverified', f'HTTP {status}; retry before making an editorial decision.'
+    if response.get('content_type', '').split(';', 1)[0].strip().lower() == 'application/pdf':
+        if not response['body'].startswith('%PDF-'):
+            return 'review', 'PDF content type without a PDF signature; manually inspect the response.'
+        return 'reachable', 'HTTP success with PDF signature; reachability does not establish scientific correctness.'
     page = Page()
-    page.feed(response['body'])
+    try:
+        page.feed(response['body'])
+    except (AssertionError, ValueError):
+        return 'review', 'Response could not be parsed as HTML; manually inspect the source.'
     title = ' '.join(page.title).strip()
     if re.search(r'not found|page unavailable|^error\b|access denied|just a moment|^sign in|^log in', title, re.I):
         return 'review', f'Possible error, challenge, or login page: {title[:160]}'
@@ -202,7 +215,8 @@ def main():
         parser.error('Timeout must be positive and delay must be nonnegative.')
     data = json.loads((ROOT / 'data/papers.json').read_text())
     metadata = json.loads((ROOT / 'data/paper_details.json').read_text())
-    urls = collect_urls(data, metadata, (ROOT / 'README.md').read_text())
+    benchmark_review = json.loads((ROOT / 'data/benchmark_review.json').read_text())
+    urls = collect_urls(data, metadata, (ROOT / 'README.md').read_text(), benchmark_review)
     report = {'checked_at': datetime.now(timezone.utc).isoformat(), 'links': [], 'arxiv': []}
     responses = {}
     for index, (url, owners) in enumerate(urls.items(), 1):

@@ -13,45 +13,6 @@
     "Video Understanding"
   ],
   "papers": {
-    "2610.12458": {
-      "summary": "Benchmarks structured audio-visual captioning, separating hallucination-sensitive precision from omissions and diagnosing identity drift, temporal errors, and incorrect sound-to-shot associations.",
-      "tasks": [
-        "Audio-Visual Understanding",
-        "Video Captioning",
-        "Hallucination Detection",
-        "Temporal Grounding"
-      ],
-      "source_url": "https://arxiv.org/abs/2610.12458v1",
-      "evidence": "Abstract; Introduction; Sections 3.2 and 4.1-4.3; Table 4; author project and resource pages",
-      "reviewed_on": "2026-11-01",
-      "published_on": "2026-10-08",
-      "authors": [
-        "Zhongyu Yang",
-        "Jiale Tao",
-        "Ruitao Chen",
-        "Zuhao Yang",
-        "Yingfang Yuan",
-        "Xueliang Zhao",
-        "Auden",
-        "Kai Wang",
-        "Shuai Shao",
-        "Biao Wang",
-        "Steve Yves",
-        "Qinglin Lu"
-      ],
-      "added": {
-        "date": "2026-11-01",
-        "commit": "e6c4f5c538add0e6cfbfbae170175d018e3a13f2"
-      },
-      "scope_review": {
-        "scope": "broader",
-        "reason": "Broader audio-visual captioning benchmark with explicit prediction-to-reference precision penalizing hallucinated descriptions and dedicated sound-to-shot and speaker-attribution diagnostics.",
-        "source_url": "https://arxiv.org/html/2610.12458v1",
-        "evidence": "Abstract; Introduction; Sections 3.2 and 4.1-4.3; Table 4",
-        "reviewed_on": "2026-11-01",
-        "decision": "retain"
-      }
-    },
     "2610.19728": {
       "summary": "Uses attention-guided perturbations of visual hidden states to construct contrastive decoding negatives, evaluated on VideoHallucer and EventHallusion without additional parameter training.",
       "tasks": [
@@ -106,10 +67,10 @@
       },
       "scope_review": {
         "scope": "direct",
-        "reason": "Explicitly evaluates video action, event-order, and transition hallucinations and introduces a mitigation intervention.",
+        "reason": "The benchmark is explicitly constructed to diagnose action, temporal-sequence, and scene-transition hallucinations in video responses.",
         "source_url": "https://arxiv.org/html/2412.03735v2",
-        "evidence": "Abstract",
-        "reviewed_on": "2026-10-01",
+        "evidence": "Abstract; Introduction; Sections 3.2-3.4",
+        "reviewed_on": "2026-11-01",
         "decision": "retain"
       }
     },
@@ -141,10 +102,10 @@
       },
       "scope_review": {
         "scope": "direct",
-        "reason": "Dedicated video hallucination benchmark, causal-factor analysis, and reasoning-based mitigation framework.",
+        "reason": "Video hallucination is the benchmark objective and determines its causes-by-aspects-by-question-format design.",
         "source_url": "https://arxiv.org/html/2503.19622v1",
-        "evidence": "Abstract",
-        "reviewed_on": "2026-10-01",
+        "evidence": "Abstract; Introduction; Section 3.5",
+        "reviewed_on": "2026-11-01",
         "decision": "retain"
       }
     },
@@ -165,10 +126,10 @@
       },
       "scope_review": {
         "scope": "direct",
-        "reason": "Publisher abstract explicitly defines motion hallucination in video models and evaluates adversarial action videos.",
+        "reason": "Directly tests whether static appearance induces claims about absent or different motions.",
         "source_url": "https://ojs.aaai.org/index.php/AAAI/article/view/32463",
-        "evidence": "Abstract",
-        "reviewed_on": "2026-10-01",
+        "evidence": "Abstract; Introduction; Motion Hallucination Benchmark and Motion Hallucination Evaluation (AAAI PDF pp. 4403-4404)",
+        "reviewed_on": "2026-11-01",
         "decision": "retain"
       }
     },
@@ -196,10 +157,10 @@
       },
       "scope_review": {
         "scope": "direct",
-        "reason": "Contains a dedicated motion-caption hallucination evaluation and uses motion parsing to train more faithful captions.",
+        "reason": "Retain the explicitly named hallucination evaluation set KPM-HA, not the broader KPM-Cap/KPM-QA suite.",
         "source_url": "https://arxiv.org/html/2602.17768v1",
-        "evidence": "Abstract",
-        "reviewed_on": "2026-10-01",
+        "evidence": "Abstract; Introduction; Sections 3.4, 4.1, and 5.1",
+        "reviewed_on": "2026-11-01",
         "decision": "retain"
       }
     },
@@ -226,10 +187,10 @@
       },
       "scope_review": {
         "scope": "direct",
-        "reason": "Measures unsupported statements and omissions in free-form video captions against human descriptions.",
+        "reason": "Measuring unsupported free-form video claims is the central objective; omission scoring prevents empty captions from appearing optimal. ArgusBench is the dataset within ARGUS.",
         "source_url": "https://arxiv.org/html/2506.07371v2",
-        "evidence": "Abstract",
-        "reviewed_on": "2026-10-01",
+        "evidence": "Abstract; Introduction; Sections 3.1, 3.2.1, and 4.1",
+        "reviewed_on": "2026-11-01",
         "decision": "retain"
       }
     },
@@ -257,9 +218,9 @@
       },
       "scope_review": {
         "scope": "direct",
-        "reason": "Dedicated paired-video motion hallucination diagnosis with measurement-based verification.",
+        "reason": "Explicitly evaluates kinematic hallucinations rather than generic action-recognition accuracy.",
         "source_url": "https://arxiv.org/html/2606.23061v2",
-        "evidence": "Abstract; Introduction; Sections 3.2 and 4",
+        "evidence": "Abstract; Introduction; Section 3.2",
         "reviewed_on": "2026-11-01",
         "decision": "retain"
       }
@@ -287,10 +248,10 @@
       },
       "scope_review": {
         "scope": "direct",
-        "reason": "Explicitly tests motions absent from video and distinguishes recognition from hallucination resistance.",
+        "reason": "Targets co-occurrence, sequential-inference, and similarity-induced motion hallucinations; consistency alone is not its hallucination outcome.",
         "source_url": "https://arxiv.org/html/2607.01117v2",
-        "evidence": "Abstract",
-        "reviewed_on": "2026-10-01",
+        "evidence": "Abstract; Introduction; MoHallBench: Evaluation Metrics",
+        "reviewed_on": "2026-11-01",
         "decision": "retain"
       }
     },
@@ -317,10 +278,10 @@
       },
       "scope_review": {
         "scope": "direct",
-        "reason": "Dedicated intrinsic and extrinsic video hallucination evaluation using adversarial question pairs.",
+        "reason": "Dedicated intrinsic and extrinsic video hallucination evaluation, including unsupported facts that are true outside the video.",
         "source_url": "https://arxiv.org/html/2406.16338v1",
-        "evidence": "Abstract",
-        "reviewed_on": "2026-10-01",
+        "evidence": "Abstract; Introduction; Section 3.3",
+        "reviewed_on": "2026-11-01",
         "decision": "retain"
       }
     },
@@ -381,10 +342,10 @@
       },
       "scope_review": {
         "scope": "direct",
-        "reason": "Dedicated temporal hallucination benchmark with captions ordered by factual distortion.",
+        "reason": "The construction and ranking target explicitly measure nuanced video hallucination severity.",
         "source_url": "https://arxiv.org/html/2411.16771v3",
-        "evidence": "Abstract",
-        "reviewed_on": "2026-10-01",
+        "evidence": "Abstract; Introduction; Sections 4.1-4.2",
+        "reviewed_on": "2026-11-01",
         "decision": "retain"
       }
     },
@@ -415,10 +376,10 @@
       },
       "scope_review": {
         "scope": "broader",
-        "reason": "Broad captioning corpus and model study includes the explicit Vript-HAL object/action hallucination benchmark; distinguish that subset from Vript-RR and Vript-ERO.",
+        "reason": "Vript-HAL is a named dedicated hallucination benchmark. Vript corpus, Vript-RR, Vript-ERO, and Vriptor have broader purposes.",
         "source_url": "https://arxiv.org/html/2406.06040v2",
-        "evidence": "Abstract; Introduction (Vript-HAL versus broader tasks)",
-        "reviewed_on": "2026-10-01",
+        "evidence": "Abstract; Introduction; Section 5.1",
+        "reviewed_on": "2026-11-01",
         "decision": "retain"
       }
     },
@@ -440,10 +401,10 @@
       },
       "scope_review": {
         "scope": "direct",
-        "reason": "Publisher abstract explicitly evaluates visual and auditory hallucinations in egocentric videos.",
+        "reason": "Designed specifically to elicit and evaluate hallucinations in egocentric video understanding.",
         "source_url": "https://aclanthology.org/2025.emnlp-main.1446/",
-        "evidence": "Abstract",
-        "reviewed_on": "2026-10-01",
+        "evidence": "Abstract; Introduction; Section 4: Hallucination Evaluation (ACL PDF p. 28466)",
+        "reviewed_on": "2026-11-01",
         "decision": "retain"
       }
     },
@@ -473,41 +434,10 @@
       },
       "scope_review": {
         "scope": "direct",
-        "reason": "Explicit hallucination benchmark across objects, attributes, and subject-action relations in videos.",
+        "reason": "The primary diagnostic is video hallucination under progressively finer entity and action distinctions.",
         "source_url": "https://arxiv.org/html/2509.08538v2",
-        "evidence": "Abstract",
-        "reviewed_on": "2026-10-01",
-        "decision": "retain"
-      }
-    },
-    "2605.09904": {
-      "summary": "Tests object identity, state, and continuity with trajectory-grounded questions designed to require temporally ordered visual evidence.",
-      "tasks": [
-        "Video QA",
-        "Video Reasoning"
-      ],
-      "source_url": "https://arxiv.org/abs/2605.09904v2",
-      "evidence": "Abstract",
-      "reviewed_on": "2026-10-01",
-      "published_on": "2026-05-11",
-      "authors": [
-        "Junzhe Chen",
-        "Siyuan Meng",
-        "Yuxi Chen",
-        "Man Zhao",
-        "Wenyao Gui",
-        "Xiaojie Guo"
-      ],
-      "added": {
-        "date": "2026-06-13",
-        "commit": "80616d38f49fc37fd46d9efc0f44f26a79c0209a"
-      },
-      "scope_review": {
-        "scope": "broader",
-        "reason": "Object-consistency benchmark includes hallucination-aware variants and Hallucination Diagnostic Accuracy, providing direct relevance within a wider evaluation.",
-        "source_url": "https://arxiv.org/html/2605.09904v2",
-        "evidence": "Abstract; Introduction (hallucination-aware variants and HDA)",
-        "reviewed_on": "2026-10-01",
+        "evidence": "Abstract; Introduction; Section 4.1: Evaluation metric",
+        "reviewed_on": "2026-11-01",
         "decision": "retain"
       }
     },
@@ -569,10 +499,10 @@
       },
       "scope_review": {
         "scope": "direct",
-        "reason": "Dedicated long-video semantic aggregation hallucination evaluation and preference-based mitigation.",
+        "reason": "Specifically diagnoses semantic misattribution across events in long videos; SAH ratio is a proxy based on accuracy differences.",
         "source_url": "https://arxiv.org/html/2508.21496v2",
-        "evidence": "Abstract",
-        "reviewed_on": "2026-10-01",
+        "evidence": "Abstract; Introduction; Final Benchmark and Evaluation Metrics: Accuracy and SAH Ratio",
+        "reviewed_on": "2026-11-01",
         "decision": "retain"
       }
     },
@@ -601,42 +531,10 @@
       },
       "scope_review": {
         "scope": "direct",
-        "reason": "Controlled video insertions directly test hallucinated subject-event associations across unrelated segments.",
+        "reason": "The central measured failure is hallucinating interactions between subjects and events from disjoint video segments.",
         "source_url": "https://arxiv.org/html/2605.27101v2",
-        "evidence": "Abstract",
-        "reviewed_on": "2026-10-01",
-        "decision": "retain"
-      }
-    },
-    "2603.24329": {
-      "summary": "Uses synchronized multiplayer gameplay views and structured distractors to test agent identity, role attribution, and grounded reasoning.",
-      "tasks": [
-        "Video QA",
-        "Video Reasoning"
-      ],
-      "source_url": "https://arxiv.org/abs/2603.24329v2",
-      "evidence": "Abstract",
-      "reviewed_on": "2026-10-01",
-      "published_on": "2026-03-25",
-      "authors": [
-        "Yunzhe Wang",
-        "Runhui Xu",
-        "Kexin Zheng",
-        "Tianyi Zhang",
-        "Jayavibhav Niranjan Kogundi",
-        "Soham Hans",
-        "Volkan Ustun"
-      ],
-      "added": {
-        "date": "2026-06-11",
-        "commit": "fbdebdb81950d395bdb46cc2c843394ecb593bd5"
-      },
-      "scope_review": {
-        "scope": "broader",
-        "reason": "Agent-centric video understanding benchmark explicitly diagnoses temporal, role, and fabricated-content errors through structured distractors.",
-        "source_url": "https://arxiv.org/html/2603.24329v2",
-        "evidence": "Abstract; Introduction (structured distractor taxonomy)",
-        "reviewed_on": "2026-10-01",
+        "evidence": "Abstract; Introduction; Section 3.3",
+        "reviewed_on": "2026-11-01",
         "decision": "retain"
       }
     },
@@ -675,7 +573,7 @@
       }
     },
     "2303.02961": {
-      "summary": "Studies factual errors in video captions and introduces a weakly supervised factuality metric with human-annotated evaluation data.",
+      "summary": "Introduces ActivityNet-Fact and YouCook2-Fact for video-caption factuality annotation and FactVC, a learned metric evaluated against human judgments.",
       "tasks": [
         "Video Captioning",
         "Hallucination Detection"
@@ -694,10 +592,10 @@
       },
       "scope_review": {
         "scope": "direct",
-        "reason": "Directly measures factual errors unsupported by video captions' visual inputs, including pre-VideoLLM captioning models.",
+        "reason": "These are dedicated video-caption factuality datasets. FactVC is the associated learned metric, not the benchmark name; image-only experiments are outside this entry.",
         "source_url": "https://arxiv.org/html/2303.02961v1",
-        "evidence": "Abstract",
-        "reviewed_on": "2026-10-01",
+        "evidence": "Abstract; Introduction; Sections 3.3 and 7.1",
+        "reviewed_on": "2026-11-01",
         "decision": "retain"
       }
     },
@@ -758,10 +656,10 @@
       },
       "scope_review": {
         "scope": "direct",
-        "reason": "Dedicated event hallucination evaluation and temporal contrastive decoding intervention.",
+        "reason": "Dedicated to event hallucinations caused by language priors and spurious visual-event correlations.",
         "source_url": "https://arxiv.org/html/2409.16597v6",
-        "evidence": "Abstract",
-        "reviewed_on": "2026-10-01",
+        "evidence": "Abstract; Introduction; EventHallusion Benchmark: Evaluation Protocol",
+        "reviewed_on": "2026-11-01",
         "decision": "retain"
       }
     },
@@ -788,40 +686,10 @@
       },
       "scope_review": {
         "scope": "direct",
-        "reason": "Controlled clip insertions measure narrative-prior hallucinations and omissions in video outputs.",
+        "reason": "Narrative-prior-induced hallucination and omission are the benchmark targets, not incidental analyses of general caption quality.",
         "source_url": "https://arxiv.org/html/2511.06475v1",
-        "evidence": "Abstract",
-        "reviewed_on": "2026-10-01",
-        "decision": "retain"
-      }
-    },
-    "2503.21459": {
-      "summary": "Provides diverse social-media road videos and question-answer pairs for evaluating road-event understanding across viewpoints and geographic settings.",
-      "tasks": [
-        "Video QA",
-        "Video Understanding"
-      ],
-      "source_url": "https://arxiv.org/abs/2503.21459v1",
-      "evidence": "Abstract",
-      "reviewed_on": "2026-10-01",
-      "published_on": "2025-03-27",
-      "authors": [
-        "Chirag Parikh",
-        "Deepti Rawat",
-        "Rakshitha R. T.",
-        "Tathagata Ghosh",
-        "Ravi Kiran Sarvadevabhatla"
-      ],
-      "added": {
-        "date": "2026-08-05",
-        "commit": "f34e55bf3b810621b712e9f0daa85df63baea1fd"
-      },
-      "scope_review": {
-        "scope": "broader",
-        "reason": "Road-event VideoQA includes non-road videos and irrelevant/adversarial questions specifically testing hallucination robustness; the broad title does not justify exclusion.",
-        "source_url": "https://arxiv.org/html/2503.21459v1",
-        "evidence": "Abstract; Introduction (robustness evaluation contribution)",
-        "reviewed_on": "2026-10-01",
+        "evidence": "Abstract; Introduction; Sections 3.2 and 4.1",
+        "reviewed_on": "2026-11-01",
         "decision": "retain"
       }
     },
@@ -851,10 +719,10 @@
       },
       "scope_review": {
         "scope": "direct",
-        "reason": "Counterfactual traffic pairs explicitly diagnose negative hallucinations and inconsistent hazard judgments.",
+        "reason": "Unsupported traffic-event assertions and counterfactual rejection are central to construction and scoring, rather than an optional general VideoQA analysis. NegHall is conditional on failed quadruples, not a corpus-wide hallucination rate.",
         "source_url": "https://arxiv.org/html/2604.20460v1",
-        "evidence": "Abstract",
-        "reviewed_on": "2026-10-01",
+        "evidence": "Abstract; Introduction; Sections 3.4-3.5",
+        "reviewed_on": "2026-11-01",
         "decision": "retain"
       }
     },
@@ -883,9 +751,9 @@
       },
       "scope_review": {
         "scope": "direct",
-        "reason": "Directly tests whether generated caption events are supported by video and measures hallucination detection failures.",
+        "reason": "Despite a broad title, its actual benchmark task is detecting unsupported video-caption events.",
         "source_url": "https://arxiv.org/html/2609.21521v2",
-        "evidence": "Abstract; Introduction; Sections 3.1-3.4",
+        "evidence": "Abstract; Introduction; Sections 3.1 and 4.1",
         "reviewed_on": "2026-11-01",
         "decision": "retain"
       }
@@ -914,10 +782,10 @@
       },
       "scope_review": {
         "scope": "direct",
-        "reason": "Dedicated diagnostic evaluation of video faithfulness and factuality hallucinations under evidence interventions.",
+        "reason": "Hallucination diagnosis is explicit and central. World-knowledge factuality is distinct from video faithfulness; TSS measures response change, not correctness after perturbation.",
         "source_url": "https://arxiv.org/html/2603.11481v1",
-        "evidence": "Abstract",
-        "reviewed_on": "2026-10-01",
+        "evidence": "Abstract; Introduction; Section 3.4",
+        "reviewed_on": "2026-11-01",
         "decision": "retain"
       }
     },
@@ -945,10 +813,10 @@
       },
       "scope_review": {
         "scope": "direct",
-        "reason": "Explicitly benchmarks and mitigates isolated and compositional hallucinations in video models.",
+        "reason": "Designed to test unsupported claims involving interacting video entities, actions, temporal relations, and camera factors.",
         "source_url": "https://arxiv.org/html/2602.00559v1",
-        "evidence": "Abstract",
-        "reviewed_on": "2026-10-01",
+        "evidence": "Abstract; Introduction; Section 4.1: Evaluation Metrics",
+        "reviewed_on": "2026-11-01",
         "decision": "retain"
       }
     },
@@ -975,15 +843,15 @@
       },
       "scope_review": {
         "scope": "direct",
-        "reason": "Direct hallucination detection via semantic uncertainty over original and perturbed video responses.",
+        "reason": "VideoHEDGE is a hallucination-detection framework, not a newly introduced benchmark. Retain it under evaluation analyses as a detection study; do not imply it corrects generated answers.",
         "source_url": "https://arxiv.org/html/2601.08557v1",
-        "evidence": "Abstract",
-        "reviewed_on": "2026-10-01",
+        "evidence": "Abstract; Introduction; Sections 4.1 and 4.5-4.6",
+        "reviewed_on": "2026-11-01",
         "decision": "retain"
       }
     },
     "2604.25584": {
-      "summary": "Evaluates procedural-caption factuality at conceptual and grounded argument levels, using either textual references or direct video evidence.",
+      "summary": "Introduces YouCook3-Fact and CraftBench-Fact for procedural video-caption factuality, with DualFact separating unsupported claims, role-level errors, and omissions.",
       "tasks": [
         "Video Captioning",
         "Hallucination Detection"
@@ -1004,10 +872,10 @@
       },
       "scope_review": {
         "scope": "direct",
-        "reason": "Evaluates video-caption factuality through conceptual and visually grounded arguments, including hallucination judgments.",
+        "reason": "Retain the dedicated factuality datasets, not DualFact as a dataset name. Only video-grounded verification supports video hallucination judgments; textual verification can overcount them.",
         "source_url": "https://arxiv.org/html/2604.25584v1",
-        "evidence": "Abstract",
-        "reviewed_on": "2026-10-01",
+        "evidence": "Abstract; Introduction; Sections 4.4 and 5.4",
+        "reviewed_on": "2026-11-01",
         "decision": "retain"
       }
     },
@@ -1035,10 +903,10 @@
       },
       "scope_review": {
         "scope": "direct",
-        "reason": "Tests unsupported spatiotemporal explanations induced by misleading conversational feedback about videos.",
+        "reason": "The benchmark specifically probes conversationally induced, visually unsupported answers. Its operational outcome is answer reversal, not a separately quantified rate of fabricated explanatory details.",
         "source_url": "https://arxiv.org/html/2604.17873v1",
-        "evidence": "Abstract",
-        "reviewed_on": "2026-10-01",
+        "evidence": "Abstract; Introduction; Sections 2.3-2.4 and Limitations",
+        "reviewed_on": "2026-11-01",
         "decision": "retain"
       }
     },
@@ -1066,10 +934,10 @@
       },
       "scope_review": {
         "scope": "direct",
-        "reason": "Explicitly defines and measures video hallucinations induced by contradictory on-screen text.",
+        "reason": "Text-overlay-induced hallucination is the named failure mode and benchmark design target.",
         "source_url": "https://arxiv.org/html/2604.17375v1",
-        "evidence": "Abstract",
-        "reviewed_on": "2026-10-01",
+        "evidence": "Abstract; Introduction; Section 4.2.1",
+        "reviewed_on": "2026-11-01",
         "decision": "retain"
       }
     },
@@ -1100,10 +968,10 @@
       },
       "scope_review": {
         "scope": "direct",
-        "reason": "Dedicated spatial and temporal hallucination evaluation with background-controlled video pairs.",
+        "reason": "Explicitly diagnoses foreground-semantic hallucinations under controlled video differences, not video-generation quality.",
         "source_url": "https://arxiv.org/html/2606.31933v1",
-        "evidence": "Abstract",
-        "reviewed_on": "2026-10-01",
+        "evidence": "Abstract; Introduction; Section 4.1: Evaluations",
+        "reviewed_on": "2026-11-01",
         "decision": "retain"
       }
     },
@@ -1127,10 +995,10 @@
       },
       "scope_review": {
         "scope": "broader",
-        "reason": "Reliability estimation includes a hallucination diagnostic set. TRACE-RC improves ranking and selective deferral, not the underlying generated answers.",
+        "reason": "The named diagnostic dataset directly targets shared confident video hallucinations. It is a development set, not the paper's independent held-out reliability-transfer test.",
         "source_url": "https://arxiv.org/html/2609.13288v1",
-        "evidence": "Abstract; Introduction (unchanged answers and selective prediction)",
-        "reviewed_on": "2026-10-01",
+        "evidence": "Abstract; Introduction; Section 4.1; Appendix A.3",
+        "reviewed_on": "2026-11-01",
         "decision": "retain"
       }
     },
@@ -1156,10 +1024,10 @@
       },
       "scope_review": {
         "scope": "direct",
-        "reason": "Dedicated evaluation of video hallucination detectors on adversarial questions and captions.",
+        "reason": "The central task is evaluating video hallucination detectors, distinct from measuring hallucination generation by answering models.",
         "source_url": "https://arxiv.org/html/2609.09895v1",
-        "evidence": "Abstract",
-        "reviewed_on": "2026-10-01",
+        "evidence": "Abstract; Introduction; Section 3.4",
+        "reviewed_on": "2026-11-01",
         "decision": "retain"
       }
     },
@@ -1187,10 +1055,10 @@
       },
       "scope_review": {
         "scope": "direct",
-        "reason": "Explicit audio-visual hallucination evaluation and benchmark-based mitigation training.",
+        "reason": "Cross-modal hallucination in audio-visual videos is the benchmark's explicit core objective. Matching and captioning support that analysis, but ordinary caption metrics are not hallucination rates.",
         "source_url": "https://arxiv.org/html/2410.18325v2",
-        "evidence": "Abstract",
-        "reviewed_on": "2026-10-01",
+        "evidence": "Abstract; Introduction; Section 4.1: Evaluation metrics",
+        "reviewed_on": "2026-11-01",
         "decision": "retain"
       }
     },
@@ -1222,10 +1090,10 @@
       },
       "scope_review": {
         "scope": "direct",
-        "reason": "Explicitly diagnoses hallucinations caused by priors and correlations across language, visual, and audio inputs.",
+        "reason": "A dedicated multimodal hallucination benchmark with actual video inputs. Limit this entry to video and audio-visual conditions, not audio-only evaluation.",
         "source_url": "https://arxiv.org/html/2410.12787v1",
-        "evidence": "Abstract",
-        "reviewed_on": "2026-10-01",
+        "evidence": "Abstract; Introduction; Section 3.1",
+        "reviewed_on": "2026-11-01",
         "decision": "retain"
       }
     },
@@ -1260,45 +1128,10 @@
       },
       "scope_review": {
         "scope": "direct",
-        "reason": "Directly measures imagined sounds inferred from visible but inaudible events in egocentric videos.",
+        "reason": "Directly evaluates visually induced hallucinated sounds in video+audio understanding, not standalone audio generation.",
         "source_url": "https://arxiv.org/html/2604.23860v1",
-        "evidence": "Abstract",
-        "reviewed_on": "2026-10-01",
-        "decision": "retain"
-      }
-    },
-    "2605.07593": {
-      "summary": "Tests multi-hop reasoning and hallucination robustness using explicit evidence trajectories distributed across long audio-visual recordings.",
-      "tasks": [
-        "Audio-Visual Understanding",
-        "Video QA",
-        "Long-Video Understanding"
-      ],
-      "source_url": "https://arxiv.org/abs/2605.07593v2",
-      "evidence": "Abstract",
-      "reviewed_on": "2026-10-01",
-      "published_on": "2026-05-08",
-      "authors": [
-        "Hengyi Feng",
-        "Hao Liang",
-        "Mingrui Chen",
-        "Bohan Zeng",
-        "Meiyi Qiang",
-        "Zhengyang Zhao",
-        "Zimo Meng",
-        "Zeang Sheng",
-        "Wentao Zhang"
-      ],
-      "added": {
-        "date": "2026-06-13",
-        "commit": "80616d38f49fc37fd46d9efc0f44f26a79c0209a"
-      },
-      "scope_review": {
-        "scope": "broader",
-        "reason": "Long audio-visual reasoning benchmark explicitly includes a multimodal hallucination dimension alongside three broader reasoning dimensions.",
-        "source_url": "https://arxiv.org/html/2605.07593v2",
-        "evidence": "Abstract; Introduction (multimodal hallucination dimension)",
-        "reviewed_on": "2026-10-01",
+        "evidence": "Abstract; Introduction; Section 4",
+        "reviewed_on": "2026-11-01",
         "decision": "retain"
       }
     },
@@ -1327,49 +1160,10 @@
       },
       "scope_review": {
         "scope": "direct",
-        "reason": "Includes a dedicated audio-visual hallucination benchmark within a multimodal hallucination-ranking study.",
+        "reason": "A separately named, dedicated audio-visual hallucination benchmark within the broader CrossCheckGPT paper.",
         "source_url": "https://arxiv.org/html/2405.13684v1",
-        "evidence": "Abstract",
-        "reviewed_on": "2026-10-01",
-        "decision": "retain"
-      }
-    },
-    "2609.17248": {
-      "summary": "Requires long-video answers to cite precise audio-visual evidence, using evidence-aware scoring to penalize guessing and fabricated support.",
-      "tasks": [
-        "Audio-Visual Understanding",
-        "Video QA",
-        "Long-Video Understanding"
-      ],
-      "source_url": "https://arxiv.org/abs/2609.17248v1",
-      "evidence": "Abstract",
-      "reviewed_on": "2026-10-01",
-      "published_on": "2026-09-15",
-      "authors": [
-        "Zhaoyang Wei",
-        "Zipeng Wang",
-        "Yushe Cao",
-        "Chenhui Qiang",
-        "Shuaibing Cheng",
-        "Xuesong Yang",
-        "Sen Nie",
-        "Bowen Jiang",
-        "Wenchao Ding",
-        "Yanchao Hao",
-        "Zheng Wei",
-        "Xuehui Yu",
-        "Zhenjun Han"
-      ],
-      "added": {
-        "date": "2026-10-01",
-        "commit": "96e8786c440cb21d01c66c53fa86abe53e07191f"
-      },
-      "scope_review": {
-        "scope": "broader",
-        "reason": "Primarily long audio-visual reasoning, but evidence-conditioned scoring penalizes unsupported evidence. Its token-compression method is not separately listed as hallucination mitigation.",
-        "source_url": "https://arxiv.org/html/2609.17248v1",
-        "evidence": "Abstract; Introduction (evidence-conditioned evaluation)",
-        "reviewed_on": "2026-10-01",
+        "evidence": "Abstract; Introduction; Section 4",
+        "reviewed_on": "2026-11-01",
         "decision": "retain"
       }
     },
@@ -1397,10 +1191,10 @@
       },
       "scope_review": {
         "scope": "direct",
-        "reason": "Dedicated emotion hallucination study spanning multiple modalities, including video; its psychology-knowledge subset is not video-specific.",
+        "reason": "Retain the dedicated video emotion-hallucination conditions. Text-only psychology, image-only, and audio-only tests are outside this video entry; emotion labels remain annotation-dependent.",
         "source_url": "https://arxiv.org/html/2505.11405v1",
-        "evidence": "Abstract; Introduction (multimodal emotion scope)",
-        "reviewed_on": "2026-10-01",
+        "evidence": "Abstract; Introduction; Sections 3.1.2 and 3.3; Appendix A.1.4",
+        "reviewed_on": "2026-11-01",
         "decision": "retain"
       }
     },

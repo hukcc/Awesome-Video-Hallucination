@@ -4,9 +4,19 @@
 
 ## Reviewed - 2026-11-01
 
-All seven candidates were reviewed against their official abstracts and introductions, using the current arXiv versions linked below. Method and evaluation sections were additionally inspected for the two admitted papers and the borderline causal-reasoning paper. Two papers were added, four video-generation/editing papers were excluded, and one adjacent-domain candidate remains pending manual scope review. The curated collection contains **97 contributions from 80 papers: 43 benchmarks, 53 mitigation methods, and one analysis**. All previously collected entries and the eight existing manual-review candidates are retained.
+### Current outcome after strict benchmark audit
 
-### Added to the curated list
+ARP-CD is the retained November addition. OmniCapBench's initial admission below is **superseded** by the user-approved rule: only benchmarks whose core target is video hallucination belong in the main benchmark list. Its real hallucination-sensitive metrics are acknowledged, but the overall benchmark evaluates general audio-visual captioning.
+
+All **43 pre-audit benchmark entries** received abstract, introduction, and relevant task/metric review: **26 retained, six narrowed or corrected, ten removed, and one reclassified**. The collection now contains **87 contributions from 74 papers: 32 benchmarks, 53 mitigation methods, and two analyses**. All existing method entries, the original analysis, and eight pending paper-level review candidates remain unchanged. See the [complete evidence register and archived resource badges](docs/BENCHMARK_REVIEW.md) for the ten removals, narrower dataset names, and VideoHEDGE's corrected type.
+
+Post-audit verification: **56 tests passed** (34 Python and 22 JavaScript); README, both review reports, catalog counts, and LaTeX source checks passed. The tree was compiled and visually inspected, and all three PNG aliases match. Desktop and 390-pixel mobile checks confirmed benchmark filtering, excluded-paper absence, old-name search, VideoHEDGE's analysis label, and the refreshed tree without horizontal overflow. **303 unique URLs** were reachable, including archived resources and official PDF evidence; all **71 active arXiv records** matched reviewed versions with no withdrawal signal. Link reachability is not scientific validation. Original benchmark records and removed paper metadata were compared with the pre-audit commit; existing method records and resource badges remain preserved.
+
+### Initial discovery review (historical)
+
+All seven candidates were reviewed against their official abstracts and introductions, using the current arXiv versions linked below. Method and evaluation sections were additionally inspected for the two initially admitted papers and the borderline causal-reasoning paper. The initial pass added two papers, excluded four video-generation/editing papers, and deferred one candidate. At that stage the collection held 97 contributions from 80 papers. The following initial decisions and publication checks are preserved as history; current eligibility is governed by the strict audit above.
+
+### Initial additions (OmniCapBench subsequently removed)
 
 | Paper | Entry and primary category | Source-backed inclusion rationale |
 | --- | --- | --- |
@@ -29,7 +39,7 @@ All seven candidates were reviewed against their official abstracts and introduc
 - OmniCapBench was first submitted on **2026-10-08**; ARP-CD on **2026-10-14**. Both reviewed records are v1. November is their repository-addition month, not their publication month.
 - OmniCapBench's [author project](https://01yzzyu.github.io/OmniCapBench/) and [official code repository](https://github.com/Tencent-Hunyuan/OmniCapBench) identify **NeurIPS 2026, Evaluations & Datasets Track**. The linked OpenReview page presented a browser challenge during this review; the venue label is supported by the author pages and the arXiv acceptance comment, not an independently read OpenReview decision.
 - The author-linked [dataset](https://huggingface.co/datasets/OmniCapBench/OmniCapBench), code, project page, and [leaderboard](https://01yzzyu.github.io/OmniCapBench/#leaderboard) were verified. ARP-CD remains labeled arXiv 2026; no official release link was verified. A cited answer-parsing utility is not the ARP-CD implementation and is not advertised as its code.
-- Existing resource badges, prior contributor links, stable entry IDs, and exclusions including EchoPrune are preserved. No older paper was removed or reclassified.
+- The initial pass preserved existing resource badges, prior contributor links, stable entry IDs, and exclusions including EchoPrune. The later strict benchmark audit records older-entry removals and reclassification separately, preserving their provenance.
 
 ### Second-pass version review
 
@@ -37,7 +47,7 @@ All seven candidates were reviewed against their official abstracts and introduc
 - [MotionHalluc v2](https://arxiv.org/html/2606.23061v2): read the abstract, introduction, evaluation protocol in Section 3.2, and PPV pipeline in Section 4. The current expansion is **Perceive-Parse-Verify**, replacing the earlier display expansion **Plug-in Physical Verification** in the paper summary. The training-free status and existing placements remain supported. The paper links its now-verified [official code repository](https://github.com/Leocoding0971/MotionHalluc), which contains both benchmark evaluation and PPV examples; code badges were added to both existing contributions without replacing their dataset links.
 - [VidOmni-Bench v2](https://arxiv.org/html/2609.21521v2): read the abstract, introduction, and Sections 3.1-3.4. Sentence-level factual verification and human-labeled hallucinated captions remain explicit; the existing description and placement are retained. Both papers now cite the reviewed v2 evidence, preserving original publication and repository-addition dates.
 
-### Publication checks
+### Initial publication checks (historical)
 
 - The final remote audit returned successful responses for **307 unique URLs**; all **77 arXiv records** matched the reviewed versions, with no withdrawal signal detected. Publisher-only entries passed reachability checks, not a comprehensive publisher retraction audit. The OmniCapBench leaderboard anchor and both new papers' cited section anchors were also checked.
 - All **47 automated tests** passed (26 Python and 21 JavaScript), along with README generation, relevance-report generation, catalog consistency, and taxonomy-source checks. The LaTeX tree compiled successfully, was visually inspected, and all three PNG aliases are identical. Live README verification also caught and corrected a stale taxonomy disclosure count; a regression check now covers the manually maintained overview and resource-gap counts.

@@ -9,8 +9,8 @@ const papers = groupPapers(data.entries, metadata.papers);
 const select = filters => filterPapers(papers, filters);
 
 test('all contributions survive paper-level grouping', () => {
-  assert.equal(papers.length, 80);
-  assert.equal(data.entries.length, 97);
+  assert.equal(papers.length, 74);
+  assert.equal(data.entries.length, 87);
   assert.equal(papers.reduce((n, p) => n + p.entries.length, 0), data.entry_count);
   assert.equal(new Set(data.entries.map(e => e.id)).size, data.entry_count);
 });
@@ -47,7 +47,7 @@ test('contribution descriptions are concise, distinct within each paper, and sea
   assert.ok(metadata.papers['2503.19622'].summary.includes('thinking-based'));
 });
 
-test('contribution types retain their original totals', () => {
+test('contribution types match the reviewed catalog totals', () => {
   for (const type of ['benchmark', 'mitigation', 'analysis']) {
     assert.equal(select({ type }).reduce((n, p) => n + p.matches.length, 0), data[type + '_count']);
   }
@@ -56,7 +56,7 @@ test('contribution types retain their original totals', () => {
 test('filters cannot borrow training status from a different contribution', () => {
   assert.equal(select({ type: 'benchmark', training: 'yes' }).length, 0);
   assert.equal(select({ type: 'benchmark', training: 'no' }).length, 0);
-  assert.equal(select({ type: 'benchmark', training: 'na' }).length, 43);
+  assert.equal(select({ type: 'benchmark', training: 'na' }).length, 32);
   const result = select({ search: 'DINO-HEAL', type: 'mitigation', training: 'yes' });
   assert.equal(result.length, 1);
   assert.equal(result[0].matches.length, 1);
@@ -103,7 +103,7 @@ test('missing resource filters and resource merging are consistent', () => {
 });
 
 test('resource links do not leak across nonmatching contributions', () => {
-  const sample = structuredClone(data.entries[0]);
+  const sample = structuredClone(data.entries.find(e => e.type === 'benchmark'));
   const other = { ...sample, id: 'test-method', type: 'mitigation', training_free: '\u2714', resources: { ...sample.resources, code: 'https://example.com/method' } };
   sample.resources.code = null;
   const grouped = groupPapers([sample, other], metadata.papers);
@@ -124,7 +124,8 @@ test('sorting is chronological, stable, and does not mutate the input', () => {
 
 test('recently added uses repository history, not publication date', () => {
   const results = sortPapers(papers, 'added');
-  assert.ok(results.slice(0, 2).every(p => p.detail.added.date === '2026-11-01'));
+  assert.equal(results[0].detail.added.date, '2026-11-01');
+  assert.equal(results[0].key, '2610.19728');
   const a = { ...papers[0], key: 'old-recent', detail: { published_on: '2020-01', added: { date: '2026-10-01' } } };
   const b = { ...papers[0], key: 'new-earlier', detail: { published_on: '2026-09', added: { date: '2026-09-01' } } };
   const unknown = { ...a, key: 'unknown', detail: { published_on: '2026-10' } };
@@ -168,7 +169,7 @@ test('relevance judgments retain evidence and leave related-work decisions pendi
   }
   assert.equal(select({ scope: 'related' }).length, 8);
   assert.equal(select({ scope: 'direct' }).length + select({ scope: 'broader' }).length + select({ scope: 'related' }).length, papers.length);
-  for (const key of ['2501.00584', '2503.21459', '2604.20937', '2601.07761', '2604.20473']) {
+  for (const key of ['2501.00584', '2604.20937', '2601.07761', '2604.20473']) {
     assert.equal(metadata.papers[key].scope_review.scope, 'broader', key);
   }
   assert.equal(select({ scope: 'unknown' }).length, 0);
@@ -210,14 +211,23 @@ test('November additions retain verified scope, training requirements, and resou
   assert.equal(arp[0].key, '2610.19728');
   assert.equal(arp[0].detail.scope_review.scope, 'direct');
   assert.equal(arp[0].entries[0].resources.code, null);
-  const omni = select({ search: 'OmniCapBench', type: 'benchmark', scope: 'broader', task: 'Audio-Visual Understanding' });
-  assert.equal(omni.length, 1);
-  assert.equal(omni[0].key, '2610.12458');
-  assert.equal(omni[0].entries[0].venue, 'NeurIPS 2026 E&D');
-  assert.equal(resourcesFor(omni[0]).length, 4);
+  assert.equal(select({ search: 'OmniCapBench' }).length, 0);
   assert.equal(select({ search: 'OmniCapBench', training: 'yes' }).length, 0);
   for (const id of ['2610.33807', '2610.31466', '2610.28829', '2610.26069', '2610.26275']) {
     assert.ok(!papers.some(p => p.key === id), id);
+  }
+});
+
+test('strict benchmark scope keeps named datasets searchable and detection correctly typed', () => {
+  for (const [oldName, newName] of [['KPM-Bench', 'KPM-HA'], ['Vript', 'Vript-HAL'],
+    ['FactVC', 'ActivityNet-Fact / YouCook2-Fact'], ['DualFact', 'YouCook3-Fact / CraftBench-Fact']]) {
+    assert.ok(select({ search: oldName, type: 'benchmark' }).some(p => p.matches.some(e => e.name === newName)), oldName);
+  }
+  assert.equal(select({ search: 'VideoHEDGE', type: 'benchmark' }).length, 0);
+  assert.equal(select({ search: 'VideoHEDGE', type: 'analysis' }).length, 1);
+  for (const key of ['2501.00584', '2609.29607', '2505.01481', '2609.36628']) {
+    assert.equal(select({ search: key, type: 'benchmark' }).length, 0);
+    assert.equal(select({ search: key, type: 'mitigation' }).length, 1);
   }
 });
 

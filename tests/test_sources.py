@@ -43,6 +43,14 @@ class SourceTests(unittest.TestCase):
         self.assertEqual(classify(response('<svg><text>repo not found</text></svg>', url=url))[0], 'review')
         self.assertEqual(classify(response('not an image', url=url))[0], 'review')
 
+    def test_pdf_evidence_is_not_parsed_as_html(self):
+        pdf = {**response('%PDF-1.7\n<![binary data'), 'content_type': 'application/pdf'}
+        self.assertEqual(classify(pdf)[0], 'reachable')
+        self.assertEqual(classify({**pdf, 'body': '<html>Not a PDF</html>'})[0], 'review')
+
+    def test_malformed_html_is_reported_without_aborting_the_audit(self):
+        self.assertEqual(classify(response('<![broken markup>'))[0], 'review')
+
     def test_versions_require_matching_identity_and_parse_multi_digit_versions(self):
         result = arxiv_signals('1234.56789', 'https://arxiv.org/abs/1234.56789v2', response(arxiv(12)))
         self.assertEqual(result['status'], 'new-version')
@@ -98,6 +106,15 @@ class SourceTests(unittest.TestCase):
         self.assertIn('new-version', text)
         self.assertIn('HTTP 403', text)
 
+    def test_benchmark_evidence_and_archived_resources_are_checked(self):
+        audit = {'records': [{'source_url': 'https://example.org/pv1#section',
+                              'original_entry': {'name': 'Removed', 'paper_url': 'https://example.org/p',
+                                                 'resources': {'code': 'https://example.org/c', 'project': None}}}]}
+        urls = collect_urls({'entries': []}, {'papers': {}}, '', audit)
+        self.assertEqual(len(urls), 3)
+        self.assertEqual(urls['https://example.org/pv1'], ['Removed: benchmark evidence'])
+        self.assertEqual(urls['https://example.org/c'], ['Removed: original code'])
+
     def test_relevance_report_is_current_and_preserves_every_contribution(self):
         data = json.loads((ROOT / 'data/papers.json').read_text())
         metadata = json.loads((ROOT / 'data/paper_details.json').read_text())
@@ -106,7 +123,9 @@ class SourceTests(unittest.TestCase):
         for entry in data['entries']:
             self.assertEqual(text.count('../README.md#paper-' + entry['id'] + ')'), 1)
         self.assertIn('not a full-text audit of every paper', text)
-        self.assertIn('pending decisions', text)
+        self.assertIn('## Manual Decision Queue', text)
+        self.assertIn('[benchmark audit](BENCHMARK_REVIEW.md)', text)
+        self.assertIn('does not newly approve or remove sibling mitigation contributions', text)
 
 
 if __name__ == '__main__':

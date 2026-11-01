@@ -8,6 +8,7 @@
 - `data/paper_details.json` contains one record per distinct paper, keyed by arXiv ID or publisher URL. It adds a curator-written summary, task tags, primary-source link, evidence section, review date, first-publication date, and first recorded README appearance.
 - `figs/taxonomy_tree.tex` is generated from `data/papers.json`. The three taxonomy image aliases must remain identical.
 - `new_papers.md` records discovery and inclusion decisions. Automated discovery is not automatic admission to the curated collection.
+- `data/benchmark_review.json` records contribution-level benchmark eligibility, inspected task/metric evidence, original entries, and archived metadata. `scripts/generate_benchmark_review.py` renders the complete audit, including exclusions.
 
 ## Editorial Rules
 
@@ -35,6 +36,16 @@ Training-free means the listed method does not require learning additional param
 
 ## Relevance and Technical Routes
 
+### Strict Benchmark Eligibility
+
+The benchmark's core target must be video hallucination: unsupported or contradicted model claims about input video, including caption factuality, hallucination detection, targeted adversarial QA, and audio-visual conflicts. Read the official abstract, introduction, task construction, and relevant scoring protocol before admission. A title, keyword, general QA accuracy, or one hallucination-sensitive metric is not sufficient.
+
+Do not list a general captioning, reasoning, streaming-video, or object-consistency benchmark solely because it includes a hallucination task. A separately named dedicated hallucination dataset may be listed from a broad paper (for example, KPM-HA or Vript-HAL); do not invent a benchmark name for a general suite's subtask. Limit multimodal hallucination collections to actual video/audio-visual conditions. Use dataset names for datasets, not their associated metric or detection-framework names.
+
+Record every benchmark decision and exact inspected source in `data/benchmark_review.json`, then regenerate the audit. Preserve removed entries and their resource links in that register. Removal of a benchmark does not automatically remove or newly validate a sibling method. Detection studies without a new benchmark may be retained as evaluation analyses, explicitly labeled as detection rather than answer correction.
+
+### Paper-Level Scope and Method Routes
+
 `scope_review` in `data/paper_details.json` records a paper-level editorial assessment, reason, source, inspected sections, review date, and decision status. The [relevance report](RELEVANCE_REVIEW.md) is generated from these records. Direct focus, broader evaluation, and related-work candidates are distinct from taxonomy placement and scientific quality. Related-work candidates remain in the catalog until a human approves a move or removal. Missing scope evidence is displayed as Not reviewed, not as direct focus.
 
 Each mitigation contribution has one or more `routes` in `data/papers.json`. These are source-backed discovery labels, not mutually exclusive method classes:
@@ -50,7 +61,7 @@ Tags summarize the intervention described in the linked source, not every compon
 
 ## Remote Source Checks
 
-`python3 scripts/check_remote_sources.py` performs read-only GET checks of paper URLs, resource links, README badge images, and pinned evidence links. It also compares current arXiv submission histories with reviewed versions and flags explicit withdrawal notices. Results are saved as Markdown and JSON under `reports/remote-sources/`; this output is not committed by default.
+`python3 scripts/check_remote_sources.py` performs read-only GET checks of paper URLs, resource links, README badge images, and pinned evidence links, including benchmark-audit evidence and archived resources. It also compares current arXiv submission histories with reviewed versions and flags explicit withdrawal notices for active papers. Results are saved as Markdown and JSON under `reports/remote-sources/`; this output is not committed by default.
 
 The **Audit remote paper sources** workflow runs on relevant pull requests and main-branch updates, and can be started manually. It uploads the reports and displays a run summary; it does not block publication on a transient external failure or edit collection data. There is no recurring schedule. Existing monthly discovery is unchanged.
 
@@ -86,7 +97,7 @@ Tables remain expanded and use four columns for benchmarks/analyses or five for 
 3. Add or revise the paper-level summary, tasks, source URL, evidence section, review date, authors, and dates. Pin reviewed arXiv versions.
 4. Backfill the first README inclusion commit and date from Git history, not the current modification date.
 5. Run `python3 scripts/generate_readme.py` to regenerate the task index and paper list. Update the hand-maintained overview/counts and concise news only when necessary.
-   Also run `python3 scripts/generate_relevance_review.py` after changing scope evidence, and review remote-source audit flags before publishing.
+   Also run `python3 scripts/generate_relevance_review.py` after changing scope evidence and `python3 scripts/generate_benchmark_review.py` after benchmark decisions. Review remote-source audit flags before publishing.
 6. Regenerate the LaTeX taxonomy if entry names or placements change; compile and inspect the output, then refresh all three PNG aliases.
 7. Run the checks below and test README task/related links, desktop/mobile layouts, combined filters, empty states, shared URLs, browser history, copy actions, and the reading guide.
 
@@ -95,6 +106,7 @@ node --test tests/catalog.test.mjs
 python3 -m unittest discover -s tests -p 'test_*.py'
 python3 scripts/generate_readme.py --check
 python3 scripts/generate_relevance_review.py --check
+python3 scripts/generate_benchmark_review.py --check
 python3 scripts/check_catalog.py
 python3 scripts/generate_taxonomy_tree.py --check
 ```
@@ -114,7 +126,9 @@ The README description pass also checked the [HAVEN introduction](https://arxiv.
 
 ## Review Note: 2026-11-01
 
-All seven November discoveries received official abstract and introduction review. OmniCapBench and ARP-CD were admitted after additional method/evaluation checks; four video-generation/editing papers were excluded. Causal Chain Generation remains an uncollected manual-review candidate because its reported metrics primarily assess semantic alignment and causal recoverability. See the [November decision log](../new_papers.md#reviewed---2026-11-01) for versioned evidence and resource provenance. The 95 existing contributions and eight existing scope-review candidates were preserved; this update does not claim a new full-text review of older papers.
+All seven November discoveries received official abstract and introduction review. The initial pass admitted OmniCapBench and ARP-CD, excluded four video-generation/editing papers, and deferred Causal Chain Generation. The subsequent user-approved strict benchmark audit supersedes OmniCapBench's initial admission. See the [November decision log](../new_papers.md#reviewed---2026-11-01) for the historical decision and source provenance.
+
+All 43 benchmark entries then received abstract, introduction, and relevant task/metric review: 26 were retained, six narrowed or corrected, ten removed from the benchmark list, and VideoHEDGE reclassified as an evaluation analysis. The collection now has 74 papers and 87 contributions (32 benchmarks, 53 mitigation methods, two analyses). All 53 original methods, the original analysis, and eight pending paper-level review candidates are unchanged. The [complete benchmark audit](BENCHMARK_REVIEW.md) records every decision; this does not claim a new full-text review of all mitigation papers or independent replication of experiments.
 
 The remote audit also identified v2 revisions of MotionHalluc and VidOmni-Bench. Their abstracts, introductions, and relevant evaluation/method sections were checked before updating evidence links. MotionHalluc's summary now uses Perceive-Parse-Verify, and its official code links were added to the benchmark and PPV entries. Existing classifications, dataset links, publication dates, and addition records were retained.
 

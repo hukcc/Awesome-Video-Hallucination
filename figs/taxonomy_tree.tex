@@ -65,21 +65,21 @@
     [{\textbf{Dynamic}\\\textbf{Distortion}}, metaD
       [{\textbf{Spatiotemporal}\\\textbf{Dynamics}}, L1T
         [{Event Misordering ({\footnotesize\textcolor{tempEM}{Order}})}, L2T
-          [{VidHalluc (2024), HAVEN (2025), MHBench (2025), KPM-Bench (2026), ARGUS (2025),\\MotionHalluc (2026), MoHallBench (2026)}, benchT]
+          [{VidHalluc (2024), HAVEN (2025), MHBench (2025), KPM-HA (2026), ARGUS (2025),\\MotionHalluc (2026), MoHallBench (2026)}, benchT]
           [{SEASON (2025), Video-thinking (TDPO) (2025), SmartSight (2025), VideoTemp-o3 (2026),\\MixDPO (2026), PPV (2026)}, methT]
         ]
         [{Duration Distortion ({\footnotesize\textcolor{tempDD}{Dur}})}, L2T
-          [{VideoHallucer (2024), OVBench (2024)}, benchT]
+          [{VideoHallucer (2024)}, benchT]
           [{Temporal Insight (2024), DINO-HEAL (2024), TAAE (2025), VideoTIR (2026), FrameRepeat (2026),\\Video-TwG (2026), CoE (2026), DTR (2026), Reflect-R1 (2026)}, methT]
         ]
         [{Frequency Confusion ({\footnotesize\textcolor{tempFC}{Freq}})}, L2T
-          [{VidHal (2024), Vript (2024)}, benchT]
+          [{VidHal (2024), Vript-HAL (2024)}, benchT]
           [{VTG-LLM (2024), Vriptor (2024), MoPE (2026)}, methT]
         ]
       ]
       [{\textbf{Referential}\\\textbf{Inconsistency}}, L1A
         [{Character Conflation ({\footnotesize\textcolor{aggrCA}{Char}})}, L2A
-          [{EGOILLUSION (2025), MESH (2025), TOC-Bench (2026), STRAND (2026)}, benchA]
+          [{EGOILLUSION (2025), MESH (2025)}, benchA]
           [{Vista-LLaMA (2023), Video-DPL (2025), STRAND (Trajectory Reasoning) (2026)}, methA]
         ]
         [{Scene Conflation ({\footnotesize\textcolor{aggrSA}{Scn}})}, L2A
@@ -91,17 +91,17 @@
     [{\textbf{Content}\\\textbf{Fabrication}}, metaF
       [{\textbf{Context-Driven}\\\textbf{Fabrication}}, L1C
         [{Object--Action ({\footnotesize\textcolor{coocOA}{Obj-Act}})}, L2C
-          [{GameplayQA (2026), VideoHallu (2025), FactVC (2023), FlexBench (2026)}, benchC]
+          [{ActivityNet-Fact / YouCook2-Fact (2023)}, benchC]
           [{SANTA (2025), TCD (2024), STVG-R1 (2026), ProCap (2026), GM-DPO (2026)}, methC]
         ]
         [{Scene--Event ({\footnotesize\textcolor{coocSE}{Scn-Evt}})}, L2C
-          [{EventHallusion (2024), NOAH (2025), RoadSocial (2025), CCTVBench (2026),\\VidOmni-Bench (2026)}, benchC]
+          [{EventHallusion (2024), NOAH (2025), CCTVBench (2026), VidOmni-Bench (2026)}, benchC]
           [{ARP-CD (2026), MASH-VLM (2025), PaMi-VDPO (2025), MMA (2025), ClueNet (2026),\\GraphThinker (2026), MACD (2026), ViSSRes (2026), Video-ToC (2026), C-TCD (2026),\\VADER (2026)}, methC]
         ]
         [{Compositional \& Factuality ({\footnotesize\textcolor{coocSE}{Comp-Fact}})}, L2C
-          [{INFACT (2026), OmniVCHall (2026), VideoHEDGE (2026), DualFact (2026), GasVideo-1000 (2026),\\VisualTextTrap (2026), VidPair-Halluc (2026), VHD (2026), VidHalLoc (2026)}, benchC]
+          [{INFACT (2026), OmniVCHall (2026), YouCook3-Fact / CraftBench-Fact (2026),\\GasVideo-1000 (2026), VisualTextTrap (2026), VidPair-Halluc (2026), VHD (2026),\\VidHalLoc (2026)}, benchC]
           [{GroundedVQA (2026), TRACE-RC (2026)}, methC]
-          [{Beneath the Scores (2026)}, analysisC]
+          [{VideoHEDGE (2026), Beneath the Scores (2026)}, analysisC]
         ]
         [{Object--Action \& Scene--Event ({\footnotesize\textcolor{coocOA}{Both}})}, L2C
           [{VistaDPO (2025), VideoHallu-GRPO (2025), TriCD (2026), SToP (2026), VTHM-MoE (2026),\\STEAR (2026), Structured Rewards (2026), MultiToP (2026)}, methC]
@@ -109,11 +109,11 @@
       ]
       [{\textbf{Audio-Visual}\\\textbf{Conflict}}, L1V
         [{Action Attribution ({\footnotesize\textcolor{audioAA}{Act}})}, L2V
-          [{OmniCapBench (2026), AVHBench (2024), CMM (2024), Audio Hallucination QA (2026),\\TraceAV-Bench (2026), AVHalluBench (2024), Video-HolmesV2 (2026)}, benchV]
+          [{AVHBench (2024), CMM (video / audio-visual) (2024), Audio Hallucination QA (2026),\\AVHalluBench (2024)}, benchV]
           [{AVHModel-Align-FT (2024), AVCD (2025), mrDPO (2024)}, methV]
         ]
         [{Emotion Inference ({\footnotesize\textcolor{audioEI}{Emo}})}, L2V
-          [{EmotionHallucer (2025)}, benchV]
+          [{EmotionHallucer (video) (2025)}, benchV]
           [{PEP-MEK (2025)}, methV]
         ]
       ]

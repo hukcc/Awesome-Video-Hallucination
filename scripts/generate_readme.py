@@ -88,7 +88,8 @@ def recently_added(entries, metadata):
         return ''
     latest = max(details[paper_key(e)]['added']['date'] for e in dated)
     batch = newest_first([e for e in dated if details[paper_key(e)]['added']['date'] == latest], details)
-    lines = ['<details>', f'<summary><b>Recently added</b> &middot; {latest} &middot; {len(batch)} papers</summary>', '', '<p>']
+    noun = 'paper' if len(batch) == 1 else 'papers'
+    lines = ['<details>', f'<summary><b>Recently added</b> &middot; {latest} &middot; {len(batch)} {noun}</summary>', '', '<p>']
     labels = [' / '.join(link(e['name'], '#' + anchor(e)) for e in groups[paper_key(p)]) for p in batch[:8]]
     lines += [' &middot;\n'.join(labels), '</p>', '',
               '<p><sub>Repository additions, not publication dates. '
