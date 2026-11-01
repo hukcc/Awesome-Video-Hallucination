@@ -92,7 +92,7 @@ def recently_added(entries, metadata):
     lines = ['<details>', f'<summary><b>Recently added</b> &middot; {latest} &middot; {len(batch)} {noun}</summary>', '', '<p>']
     labels = [' / '.join(link(e['name'], '#' + anchor(e)) for e in groups[paper_key(p)]) for p in batch[:8]]
     lines += [' &middot;\n'.join(labels), '</p>', '',
-              '<p><sub>Repository additions, not publication dates. '
+              '<p><sub>'
               '<a href="https://hukcc.github.io/Awesome-Video-Hallucination/?sort=added">All recent additions</a>'
               '</sub></p>', '', '</details>']
     return '\n'.join(lines)
@@ -108,7 +108,6 @@ def task_index(entries, metadata):
         '#### Browse by Task', '',
         '<details>',
         f'<summary><b>Task index</b> &middot; {len(metadata["task_vocabulary"])} topics &middot; {len(groups)} papers</summary>', '',
-        '<p><sub>Paper-level task tags. Newest first; links lead to individual contributions below.</sub></p>', '',
     ]
     for task in metadata['task_vocabulary']:
         papers = [entry for entry in ordered if task in details[paper_key(entry)]['tasks']]
@@ -153,23 +152,17 @@ def paper_list(entries, metadata):
         lines += [f'## {title}', '']
         if kind == 'benchmark':
             lines += [
-                '> [!NOTE]\n'
-                '> Newest first within each subtype. **Date** = first arXiv submission, '
-                'or publisher issue date when no arXiv record is used; venue years may differ.', '',
                 resource_legend(), '',
             ]
         elif kind == 'mitigation':
             lines += [
-                '> [!NOTE]\n'
-                '> **Training-free:** \u2714\ufe0e No additional parameter learning; '
-                '\u2718 Training required, including auxiliary modules with a frozen backbone. '
-                'Dates use first publication; newest first within each subtype.', '',
+                '**Training-free:** \u2714\ufe0e No additional parameter learning; '
+                '\u2718 Training required.', '',
             ]
         else:
             lines += [
                 'Studies of evaluation validity and hallucination mechanisms without a standalone '
-                'benchmark or mitigation method. Cross-category studies use their closest primary '
-                'category. Dates use first publication.', '',
+                'benchmark or mitigation method.', '',
             ]
         for mechanism, _, categories in TAXONOMY:
             for category, _, _, subtypes in categories:

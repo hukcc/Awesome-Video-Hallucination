@@ -173,6 +173,35 @@ class ReadmeTests(unittest.TestCase):
         for content in ('imgs/teaser.png', 'imgs/fig2_taxonomy.png', '## Latest Updates', '## Citation', '@article{huang2026distorted,'):
             self.assertIn(content, text)
 
+    def test_reader_notes_are_compact_without_losing_the_training_legend(self):
+        text = (ROOT / 'README.md').read_text()
+        for note in ('> [!NOTE]', 'Repository additions, not publication dates.',
+                     'Paper-level task tags.', 'Placement indicates a primary indexing category',
+                     'Cross-category studies use their closest primary category.'):
+            self.assertNotIn(note, text)
+        self.assertIn('**Training-free:** \u2714\ufe0e No additional parameter learning; \u2718 Training required.', text)
+        self.assertIn('All recent additions</a>', text)
+
+    def test_browser_keeps_filtering_without_per_paper_editorial_labels(self):
+        app = (ROOT / 'assets/app.js').read_text()
+        page = (ROOT / 'index.html').read_text()
+        self.assertNotIn('SCOPE_LABELS[paper.detail.scope_review', app)
+        self.assertNotIn('paper.detail.added.commit', app)
+        self.assertNotIn('not as a performance ranking', page)
+        self.assertNotIn('not exclusive coverage', page)
+        self.assertIn('data-filter="scope"', page)
+        self.assertIn("state.filters.sort === 'added' && paper.detail.added", app)
+        self.assertIn('LaTeX source</a>', page)
+
+    def test_contribution_descriptions_omit_editorial_asides(self):
+        descriptions = '\n'.join(entry['description'] for entry in self.entries)
+        for note in ('not the dataset name', 'rather than explanation-level hallucination rates',
+                     'standalone audio-only evaluation is outside this entry',
+                     'excludes non-video and psychology-only settings',
+                     'rather than dedicated hallucination rates',
+                     'its scope extends beyond hallucination-specific evaluation'):
+            self.assertNotIn(note, descriptions)
+
 
 if __name__ == '__main__':
     unittest.main()

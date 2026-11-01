@@ -51,7 +51,13 @@ class SurveyCoverageTests(unittest.TestCase):
         self.assertEqual({r['original_entry']['name'] for r in restored}, {'OVBench', 'VideoHallu', 'RoadSocial'})
         for record in restored:
             self.assertEqual(record['previous_decision'], 'remove')
-            self.assertEqual(self.entries[record['entry_id']], record['original_entry'])
+            expected = dict(record['original_entry'])
+            if expected['name'] == 'OVBench':
+                expected['description'] = (
+                    'Evaluates models on streaming-video question answering across online perception, '
+                    'memory, and reasoning tasks.'
+                )
+            self.assertEqual(self.entries[record['entry_id']], expected)
             self.assertEqual(record['preservation_source'], self.coverage['source_url'] + '#S3.T1')
         self.assertEqual(self.metadata['2503.21459'], self.benchmarks['archived_papers']['2503.21459'])
         protected_methods = [r for r in self.methods['records'] if r['recommendation'] == 'retain_survey']

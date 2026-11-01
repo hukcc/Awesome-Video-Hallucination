@@ -1906,7 +1906,7 @@
       }
     },
     "https://www.ijcai.org/proceedings/2025/1019": {
-      "summary": "Trains multi-level semantic alignment to target video hallucinations, evaluated through general classification and question answering rather than dedicated hallucination rates.",
+      "summary": "Trains multi-level semantic alignment to target video hallucinations, evaluated through general classification and question answering.",
       "tasks": [
         "Video Understanding"
       ],

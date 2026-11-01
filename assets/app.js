@@ -102,12 +102,6 @@ function details(paper) {
   }
   container.append(list);
   if (paper.detail.authors?.length) container.append(node('p', 'source-note', paper.detail.authors.join(', ')));
-  if (paper.detail.added) {
-    const added = node('p', 'source-note');
-    added.append(link(`First listed ${paper.detail.added.date}`,
-      `https://github.com/hukcc/Awesome-Video-Hallucination/commit/${paper.detail.added.commit}`));
-    container.append(added);
-  }
   return container;
 }
 
@@ -133,7 +127,6 @@ function scope(paper) {
   const section = node('div');
   section.append(roles(paper), node('p', 'venue', [...new Set(paper.matches.map(e => e.venue))].join(' / ')));
   section.append(node('p', 'scope-text', [...new Set(paper.matches.map(e => e.category))].join('; ')));
-  section.append(node('p', 'scope-text', SCOPE_LABELS[paper.detail.scope_review?.scope || 'unreviewed']));
   const requirements = [...new Set(paper.matches.filter(e => e.type === 'mitigation').map(trainingValue))];
   if (requirements.length) section.append(node('p', 'scope-text', `Training-free: ${requirements.map(v => v === 'yes' ? 'Yes' : 'No').join(' / ')}`));
   return section;

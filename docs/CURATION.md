@@ -33,6 +33,8 @@ Display accepted community contributions as ordinary paper entries, without spec
 
 Keep review explanations, audit-report links, and discovery/review logs out of the reader-facing README and browser. Retain the source evidence and maintenance records in the repository; the website does not load or publish standalone audit registers or the discovery log. News covers substantive updates using concise counts or category-level summaries, without naming individual added papers. Keep the existing monthly bullet format; individual paper links belong in the separate Recently Added list and paper tables.
 
+Keep routine listings free of per-paper relevance verdicts, Git commit provenance links, and repeated editorial notes. Retain relevance filtering, factual contribution descriptions, essential video-subset qualifiers, and the training-free legend. Show repository-addition dates in Recently Added and when sorting by addition date; retain full provenance and scope limitations in maintenance data.
+
 ## Editorial Rules
 
 Read the official abstract before writing a summary or assigning tasks. Read the introduction or relevant method/evaluation sections when the abstract is insufficient, especially for training requirements or version changes. Link the reviewed arXiv version where possible, or the official publisher record. Record the sections actually inspected; do not imply a full-text review from an abstract alone.
@@ -71,7 +73,7 @@ Record every benchmark decision and exact inspected source in `data/benchmark_re
 
 The [method audit](METHOD_REVIEW.md) is contribution-specific and independent of paper-level labels. Core methods explicitly target unsupported video-grounded claims, including dedicated claim verification and audio-visual hallucination interventions. General QA, grounding, efficiency, and reliability methods do not automatically qualify because they mention hallucinations or include a hallucination test. Distinguish the research objective from evaluation strength: direct-focus work with indirect or narrow evidence can be retained with explicit limitations. Never equate detector accuracy, selective risk, grounding IoU, omission, or pooled multimodal scores with hallucination rates in generated video descriptions or answers.
 
-`scope_review` in `data/paper_details.json` records a paper-level editorial assessment, reason, source, inspected sections, review date, and decision status. The [relevance report](RELEVANCE_REVIEW.md) is generated from these records. Direct focus, broader evaluation, and related-work candidates are distinct from taxonomy placement and scientific quality. Related-work candidates remain in the catalog until a human approves a move or removal. Missing scope evidence is displayed as Unclassified, not as direct focus.
+`scope_review` in `data/paper_details.json` records a paper-level editorial assessment, reason, source, inspected sections, review date, and decision status. The [relevance report](RELEVANCE_REVIEW.md) is generated from these records. Direct focus, broader evaluation, and related-work candidates are distinct from taxonomy placement and scientific quality. Related-work candidates remain in the catalog until a human approves a move or removal. Missing scope evidence belongs to the Unclassified filter, never to direct focus; individual listings do not display these verdicts.
 
 Each mitigation contribution has one or more `routes` in `data/papers.json`. These are source-backed discovery labels, not mutually exclusive method classes:
 
