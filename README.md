@@ -314,7 +314,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 ## Taxonomy of Video Hallucinations
 
 <details>
-<summary><b>View the full taxonomy tree</b> (95 contributions)</summary>
+<summary><b>View the full taxonomy tree</b> (97 contributions)</summary>
 
 <p align="center">
     <a href="imgs/fig2_taxonomy.png"><img src="imgs/fig2_taxonomy.png" width="96%" alt="Mechanism-driven taxonomy of Vid-LLM hallucinations" /></a>

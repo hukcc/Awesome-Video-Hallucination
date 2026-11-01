@@ -31,6 +31,20 @@ class ReadmeTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             replace_region('no markers', 'TASK INDEX', 'new')
 
+    def test_manual_overview_counts_match_catalog(self):
+        text = (ROOT / 'README.md').read_text()
+        count = len(self.entries)
+        papers = len({e['arxiv_id'] or e['paper_url'] for e in self.entries})
+        self.assertIn(f'/badge/Entries-{count}-blue.svg', text)
+        self.assertIn(f'The {count} entries represent {papers} distinct papers', text)
+        self.assertIn(f'[Browse {papers} papers]', text)
+        self.assertIn(f'View the full taxonomy tree</b> ({count} contributions)', text)
+        for key, label in [('benchmark', 'benchmarks'), ('mitigation', 'mitigation methods'), ('analysis', 'evaluation analysis')]:
+            self.assertIn(f'**{self.data[key + "_count"]} {label}**', text)
+        for kind, label in [('code', 'code links'), ('project', 'project pages')]:
+            missing = sum(not e['resources'][kind] for e in self.entries)
+            self.assertIn(f'Add official {label} for **{missing}** entries', text)
+
     def test_sorting_does_not_mutate_catalog(self):
         before = copy.deepcopy(self.entries)
         ordered = newest_first(self.entries, self.metadata['papers'])
