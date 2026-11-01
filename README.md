@@ -2,7 +2,7 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv-2604.12944-b31b1b.svg)](https://arxiv.org/abs/2604.12944) [![ACL 2026 Findings](https://img.shields.io/badge/ACL%202026-Findings-2ea44f)](https://arxiv.org/abs/2604.12944) [![Entries](https://img.shields.io/badge/Entries-88-blue.svg)](#evaluation-benchmarks) [![Auto arXiv Update](https://img.shields.io/badge/arXiv%20Update-Monthly-blueviolet.svg)](new_papers.md) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Last Commit](https://img.shields.io/github/last-commit/hukcc/Awesome-Video-Hallucination)](https://github.com/hukcc/Awesome-Video-Hallucination/commits/main)
 
-A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs)**, covering **33 benchmarks**, **53 mitigation methods**, and **2 evaluation analyses**. The 88 entries represent 75 distinct papers; a paper may contribute both a benchmark and a method. Benchmark coverage includes 32 strict-scope entries and one retained community-contributed broader benchmark. Updated monthly via arXiv search and manual review.
+A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs)**, covering **33 benchmarks**, **53 mitigation methods**, and **2 evaluation analyses**. The 88 entries represent 75 distinct papers; a paper may contribute both a benchmark and a method. Updated monthly via arXiv search and manual review.
 
 > 📄 **Survey Paper**: *[Distorted or Fabricated? A Survey on Hallucination in Video LLMs](https://arxiv.org/abs/2604.12944)*
 
@@ -52,7 +52,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 
 **Start here:** [Reading guide](https://hukcc.github.io/Awesome-Video-Hallucination/?tab=guide), from the survey to benchmarks, mitigation, and evaluation limits.
 
-**Scope:** New benchmarks must primarily evaluate video hallucination. Previously accepted community contributions are preserved with explicit scope labels; GameplayQA remains a broader benchmark. [Benchmark decisions](docs/BENCHMARK_REVIEW.md) and the [53-method audit](docs/METHOD_REVIEW.md) record source evidence. Fourteen proposed method moves await approval; the [paper-level review](docs/RELEVANCE_REVIEW.md) is a separate assessment.
+**Review notes:** [Benchmarks](docs/BENCHMARK_REVIEW.md) · [Methods](docs/METHOD_REVIEW.md) · [Paper relevance](docs/RELEVANCE_REVIEW.md).
 
 <!-- BEGIN TASK INDEX -->
 
@@ -318,7 +318,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 ## Evaluation Benchmarks
 
 > [!NOTE]
-> Newest first within each subtype. **Date** = first arXiv submission, or publisher issue date when no arXiv record is used; venue years may differ. [Sources and review notes](data/paper_details.json). GameplayQA is retained as a community-contributed broader benchmark, not a dedicated hallucination benchmark.
+> Newest first within each subtype. **Date** = first arXiv submission, or publisher issue date when no arXiv record is used; venue years may differ. [Sources and review notes](data/paper_details.json).
 
 <details>
 <summary><b>Resource badge legend</b></summary>
@@ -513,7 +513,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
     <tr>
       <td align="left"><a id="paper-benchmark--referential-inconsistency--scene-conflation--distractionbench--2605-27101"></a><b><a href="https://arxiv.org/abs/2605.27101">Pop-Up Distractions Reveal Bag-of-Events Behavior in Video Large Language Models</a></b><br>
         <sub>Inserts advertising distractors into long videos to test whether models conflate subjects and events from unrelated segments.</sub><br>
-        <sub><a href="https://github.com/hukcc/Awesome-Video-Hallucination/pull/3">Community resources: PR #3 by @s-honcharenko</a></sub></td>
+        <sub><a href="https://github.com/hukcc/Awesome-Video-Hallucination/pull/3">Community resources: PR #3 (@s-honcharenko)</a></sub></td>
       <td align="center"><b>DistractionBench</b></td>
       <td align="center">arXiv 2026<br><sub>05/2026</sub></td>
       <td align="center"><a href="https://github.com/lab-flair/video-llm-boe"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code" title="Code" /></a> <a href="https://huggingface.co/datasets/lab-flair/VideoLLM-BoE"><img src="https://img.shields.io/badge/Dataset-HuggingFace-yellow?logo=huggingface" alt="dataset" title="Dataset" /></a></td>
@@ -549,8 +549,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
     <tr>
       <td align="left"><a id="paper-benchmark--context-driven-fabrication--object-action-hallucination--gameplayqa--2603-24329"></a><b><a href="https://arxiv.org/abs/2603.24329">GameplayQA: A Benchmarking Framework for Decision-Dense POV-Synced Multi-Video Understanding of 3D Virtual Agents</a></b><br>
         <sub>Uses synchronized multiplayer gameplay views and structured distractors to test agent identity, role attribution, and grounded reasoning.</sub><br>
-        <sub>Broader benchmark retained as a community contribution.</sub><br>
-        <sub><a href="https://github.com/hukcc/Awesome-Video-Hallucination/pull/2">Community contribution: PR #2 by @wangyz1999</a></sub></td>
+        <sub>Broader benchmark &middot; <a href="https://github.com/hukcc/Awesome-Video-Hallucination/pull/2">Community PR #2 (@wangyz1999)</a></sub></td>
       <td align="center"><b>GameplayQA</b></td>
       <td align="center">ACL 2026<br><sub>03/2026</sub></td>
       <td align="center"><a href="https://hats-ict.github.io/gameplayqa/"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?logo=readthedocs&amp;logoColor=white" alt="page" title="Project Page" /></a> <a href="https://github.com/HATS-ICT/GameplayQA"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code" title="Code" /></a> <a href="https://huggingface.co/datasets/wangyz1999/GameplayQA"><img src="https://img.shields.io/badge/Dataset-HuggingFace-yellow?logo=huggingface" alt="dataset" title="Dataset" /></a></td>

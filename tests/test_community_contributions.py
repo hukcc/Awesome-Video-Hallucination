@@ -66,8 +66,12 @@ class CommunityContributionTests(unittest.TestCase):
         exceptional = [e for e in self.entries.values() if e.get('scope_exception')]
         self.assertEqual([e['arxiv_id'] for e in exceptional], ['2603.24329'])
         self.assertEqual(self.metadata['2603.24329']['scope_review']['scope'], 'broader')
-        self.assertIn('[community; broader]', wrap_entries(exceptional))
-        self.assertIn('Broader benchmark retained as a community contribution.', (ROOT / 'README.md').read_text())
+        self.assertEqual(wrap_entries(exceptional), 'GameplayQA (2026)')
+        readme = (ROOT / 'README.md').read_text()
+        self.assertEqual(readme.count('Broader benchmark'), 1)
+        self.assertIn('Community PR #2 (@wangyz1999)', readme)
+        self.assertNotIn('retained as a community contribution', readme)
+        self.assertNotIn('Broader benchmark retained as a community contribution.', (ROOT / 'assets/app.js').read_text())
 
     def test_remote_checks_include_accepted_contribution_sources(self):
         urls = collect_urls({'entries': []}, {'papers': self.metadata}, '')

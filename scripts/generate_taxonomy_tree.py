@@ -174,9 +174,7 @@ def latex_escape(text):
 
 
 def wrap_entries(entries, width=92):
-    items = [f"{latex_escape(p['name'])} ({p['year']})" +
-             (" [community; broader]" if p.get('scope_exception') == 'community' else "")
-             for p in entries]
+    items = [f"{latex_escape(p['name'])} ({p['year']})" for p in entries]
     lines = []
     current = []
     current_length = 0

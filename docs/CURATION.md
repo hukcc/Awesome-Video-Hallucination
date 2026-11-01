@@ -20,6 +20,8 @@ GameplayQA was accepted in [PR #2 by @wangyz1999](https://github.com/hukcc/Aweso
 
 Keep disputed community contributions visible and annotate the evidence or scope limitations. This preservation exception does not turn a general video-understanding benchmark into a dedicated hallucination benchmark. Future updates must record newly accepted community contributions and maintain their regression checks.
 
+Keep public scope and attribution labels to one concise per-entry note. Do not repeat paper-specific caveats in the README introduction, section notes, or taxonomy tree; retain the full rationale in the audit records.
+
 ## Editorial Rules
 
 Read the official abstract before writing a summary or assigning tasks. Read the introduction or relevant method/evaluation sections when the abstract is insufficient, especially for training requirements or version changes. Link the reviewed arXiv version where possible, or the official publisher record. Record the sections actually inspected; do not imply a full-text review from an abstract alone.

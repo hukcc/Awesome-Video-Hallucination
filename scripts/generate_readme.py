@@ -131,13 +131,15 @@ def row(entry, related, detail=None):
         labels = {'benchmark': 'Related benchmark', 'mitigation': 'Related method', 'analysis': 'Related analysis'}
         refs = [link(f'{labels[e["type"]]}: {e["name"]}', '#' + anchor(e)) for e in siblings]
         first += '<br>\n        <sub>' + ' &middot; '.join(refs) + '</sub>'
-    if entry.get('scope_exception') == 'community':
-        first += '<br>\n        <sub>Broader benchmark retained as a community contribution.</sub>'
+    notes = ['Broader benchmark'] if entry.get('scope_exception') == 'community' else []
     for contribution in (detail or {}).get('community_contributions', []):
         if contribution['entry_id'] == entry['id']:
             kind = 'Issue' if contribution['kind'] == 'issue' else 'PR'
-            label = f'{contribution["label"]}: {kind} #{contribution["number"]} by @{contribution["author"]}'
-            first += '<br>\n        <sub>' + link(label, contribution['url']) + '</sub>'
+            prefix = 'Community' if entry.get('scope_exception') == 'community' else contribution['label'] + ':'
+            label = f'{prefix} {kind} #{contribution["number"]} (@{contribution["author"]})'
+            notes.append(link(label, contribution['url']))
+    if notes:
+        first += '<br>\n        <sub>' + ' &middot; '.join(notes) + '</sub>'
     cells = [first, f'<b>{escape(entry["name"])}</b>',
              escape(entry['venue']) + '<br><sub>' + escape(entry['date']) + '</sub>']
     if entry['type'] == 'mitigation':
@@ -163,9 +165,7 @@ def paper_list(entries, metadata):
                 '> [!NOTE]\n'
                 '> Newest first within each subtype. **Date** = first arXiv submission, '
                 'or publisher issue date when no arXiv record is used; venue years may differ. '
-                '[Sources and review notes](data/paper_details.json). '
-                'GameplayQA is retained as a community-contributed broader benchmark, '
-                'not a dedicated hallucination benchmark.', '',
+                '[Sources and review notes](data/paper_details.json).', '',
                 resource_legend(), '',
             ]
         elif kind == 'mitigation':

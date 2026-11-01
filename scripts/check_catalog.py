@@ -90,13 +90,15 @@ def check():
         labels = {'benchmark': 'Related benchmark', 'mitigation': 'Related method', 'analysis': 'Related analysis'}
         if related:
             expected.append(' \u00b7 '.join(f'{labels[e["type"]]}: {e["name"]}' for e in related))
-        if entry.get('scope_exception') == 'community':
-            expected.append('Broader benchmark retained as a community contribution.')
+        notes = ['Broader benchmark'] if entry.get('scope_exception') == 'community' else []
         community = [c for c in details[entry['arxiv_id'] or entry['paper_url']].get('community_contributions', [])
                      if c['entry_id'] == entry['id']]
         for contribution in community:
             kind = 'Issue' if contribution['kind'] == 'issue' else 'PR'
-            expected.append(f'{contribution["label"]}: {kind} #{contribution["number"]} by @{contribution["author"]}')
+            prefix = 'Community' if entry.get('scope_exception') == 'community' else contribution['label'] + ':'
+            notes.append(f'{prefix} {kind} #{contribution["number"]} (@{contribution["author"]})')
+        if notes:
+            expected.append(' \u00b7 '.join(notes))
         assert cells[0]['text'] == ' '.join(expected), entry['name']
         assert cells[1]['text'] == entry['name'], entry['name']
         assert cells[2]['text'] == entry['venue'] + ' ' + entry['date'], entry['name']
