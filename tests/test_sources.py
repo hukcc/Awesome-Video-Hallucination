@@ -4,6 +4,7 @@ import json
 import sys
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / 'scripts'))
@@ -48,8 +49,10 @@ class SourceTests(unittest.TestCase):
         self.assertEqual(classify(pdf)[0], 'reachable')
         self.assertEqual(classify({**pdf, 'body': '<html>Not a PDF</html>'})[0], 'review')
 
-    def test_malformed_html_is_reported_without_aborting_the_audit(self):
-        self.assertEqual(classify(response('<![broken markup>'))[0], 'review')
+    def test_html_parser_errors_are_reported_without_aborting_the_audit(self):
+        for error in (AssertionError, ValueError):
+            with patch('check_remote_sources.Page.feed', side_effect=error('Invalid markup')):
+                self.assertEqual(classify(response('<html>'))[0], 'review')
 
     def test_versions_require_matching_identity_and_parse_multi_digit_versions(self):
         result = arxiv_signals('1234.56789', 'https://arxiv.org/abs/1234.56789v2', response(arxiv(12)))
