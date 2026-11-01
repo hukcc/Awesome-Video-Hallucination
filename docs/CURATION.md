@@ -11,6 +11,15 @@
 - `data/benchmark_review.json` records contribution-level benchmark eligibility, inspected task/metric evidence, original entries, and archived metadata. `scripts/generate_benchmark_review.py` renders the complete audit, including exclusions.
 - `data/method_review.json` records each method's intervention, actual evaluation, training requirement, inspected sections, and scope recommendation. `scripts/generate_method_review.py` renders the audit. Pending moves remain in the catalog until approved.
 - `community_contributions` in each paper's metadata records accepted issue/PR provenance, the contributor, the affected entry, and protected paper/resource links. These records do not establish scientific relevance.
+- `data/survey_coverage.json` maps the original survey's 19 benchmark and 22 method entries to stable catalog IDs and exact source rows. Tests protect their continued inclusion and category placement.
+
+## Original Survey Preservation
+
+Retain papers appearing anywhere in the [original survey, arXiv v1](https://arxiv.org/html/2604.12944v1), including its text, tables, figures, and references. This owner-directed preservation rule takes precedence over scope-driven removal or relocation: a broader research objective is not a reason to remove an existing original-survey contribution. Check the original source and the coverage register before proposing any change to an existing entry. References cited only as background are not automatically added as new benchmarks or methods if they were never in the collection.
+
+All 19 benchmarks and 22 methods in Tables 1 and 2 are preserved. OVBench, VideoHallu, and RoadSocial have been restored to their original benchmark categories. VTG-LLM, Vriptor, and VideoChat-Online are no longer pending moves. Preserve verified name/scope corrections such as Vript-HAL and Video-DPL, original resource badges, stable IDs, and first-addition dates. Retention does not change scientific evidence or turn broad work into dedicated hallucination research.
+
+Display these contributions as ordinary table entries, without new survey-retention labels, audit explanations, or logs on the README or website. Keep the protection mapping and source evidence in maintenance data. The strict eligibility rules below continue to govern new candidates; accepted community contributions remain independently protected.
 
 ## Community Contributions
 
@@ -52,7 +61,7 @@ Training-free means the listed method does not require learning additional param
 
 ### Strict Benchmark Eligibility
 
-The benchmark's core target must be video hallucination: unsupported or contradicted model claims about input video, including caption factuality, hallucination detection, targeted adversarial QA, and audio-visual conflicts. Read the official abstract, introduction, task construction, and relevant scoring protocol before admission. A title, keyword, general QA accuracy, or one hallucination-sensitive metric is not sufficient.
+For new candidates, the benchmark's core target must be video hallucination: unsupported or contradicted model claims about input video, including caption factuality, hallucination detection, targeted adversarial QA, and audio-visual conflicts. Read the official abstract, introduction, task construction, and relevant scoring protocol before admission. A title, keyword, general QA accuracy, or one hallucination-sensitive metric is not sufficient. Original-survey and accepted community entries remain protected by the preservation rules above.
 
 Do not list a general captioning, reasoning, streaming-video, or object-consistency benchmark solely because it includes a hallucination task. A separately named dedicated hallucination dataset may be listed from a broad paper (for example, KPM-HA or Vript-HAL); do not invent a benchmark name for a general suite's subtask. Limit multimodal hallucination collections to actual video/audio-visual conditions. Use dataset names for datasets, not their associated metric or detection-framework names.
 
@@ -108,7 +117,7 @@ Tables remain expanded and use four columns for benchmarks/analyses or five for 
 
 ## Update Checklist
 
-1. Verify scope, paper identity, current version, venue, and official resources against primary sources. Check issue/PR provenance and protect accepted community contributions before proposing removals.
+1. Verify scope, paper identity, current version, venue, and official resources against primary sources. Check the original survey and issue/PR provenance first; retain original-survey entries and protect accepted community contributions before proposing removals.
 2. Update paper entries and contribution descriptions, keeping stable IDs and prior contributors' valid links.
 3. Add or revise the paper-level summary, tasks, source URL, evidence section, review date, authors, and dates. Pin reviewed arXiv versions.
 4. Backfill the first README inclusion commit and date from Git history, not the current modification date.
@@ -145,9 +154,9 @@ The README description pass also checked the [HAVEN introduction](https://arxiv.
 
 All seven November discoveries received official abstract and introduction review. The initial pass admitted OmniCapBench and ARP-CD, excluded four video-generation/editing papers, and deferred Causal Chain Generation. The subsequent user-approved strict benchmark audit supersedes OmniCapBench's initial admission. See the [November decision log](../new_papers.md#reviewed---2026-11-01) for the historical decision and source provenance.
 
-All 43 benchmark entries then received abstract, introduction, and relevant task/metric review: 26 were retained, six narrowed or corrected, ten initially removed from the benchmark list, and VideoHEDGE reclassified as an evaluation analysis. At that stage the collection had 74 papers and 87 contributions (32 benchmarks, 53 mitigation methods, two analyses). GameplayQA was subsequently restored under the community-preservation rule above, bringing the current totals to 75 papers and 88 contributions. The benchmark-only pass preserved all 53 original methods, the original analysis, and eight pending paper-level review candidates. The [complete benchmark audit](BENCHMARK_REVIEW.md) records every decision.
+All 43 benchmark entries then received abstract, introduction, and relevant task/metric review: 26 were retained, six narrowed or corrected, ten initially removed from the benchmark list, and VideoHEDGE reclassified as an evaluation analysis. GameplayQA was subsequently restored under the community-preservation rule; OVBench, VideoHallu, and RoadSocial were restored under the original-survey rule. The current collection contains 76 papers and 91 contributions (36 benchmarks, 53 mitigation methods, two analyses). The benchmark-only pass preserved all 53 original methods and the original analysis. The [complete benchmark audit](BENCHMARK_REVIEW.md) retains the initial assessments and the superseding preservation decisions.
 
-The subsequent [method audit](METHOD_REVIEW.md) reviewed all 53 method abstracts, introductions, and relevant method/evaluation sections. It recommends retaining 39 and moving 14 to related work, pending human approval; no methods were removed. MoPE was renamed GRPO with MoPE, PEP-MEK's expansion was corrected, and six descriptions were clarified. Training flags, paper/resource URLs, stable IDs, and sibling benchmark decisions are unchanged. Original method records are preserved in the audit register. This is source-based scope review, not experimental replication or full-paper endorsement.
+The subsequent [method audit](METHOD_REVIEW.md) reviewed all 53 method abstracts, introductions, and relevant method/evaluation sections. It initially recommended retaining 39 and moving 14 to related work; no methods were removed. Original-survey preservation supersedes the proposed moves for VTG-LLM, Vriptor, and VideoChat-Online, leaving 11 pending recommendations. The paper-level queue likewise excludes protected VTG-LLM. MoPE was renamed GRPO with MoPE, PEP-MEK's expansion was corrected, and six descriptions were clarified. Training flags, paper/resource URLs, and stable IDs are unchanged. Original records and scientific scope assessments remain in the audit register. This is source-based scope review, not experimental replication or full-paper endorsement.
 
 The remote audit also identified v2 revisions of MotionHalluc and VidOmni-Bench. Their abstracts, introductions, and relevant evaluation/method sections were checked before updating evidence links. MotionHalluc's summary now uses Perceive-Parse-Verify, and its official code links were added to the benchmark and PPV entries. Existing classifications, dataset links, publication dates, and addition records were retained.
 

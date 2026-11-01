@@ -10,6 +10,7 @@ from generate_readme import resource_badge
 
 ROOT = Path(__file__).resolve().parent.parent
 DECISIONS = [('remove', 'Removed From the Benchmark List'),
+             ('retain_survey', 'Retained Original-Survey Benchmarks'),
              ('retain_community', 'Retained Community Contributions'),
              ('narrow', 'Narrowed or Corrected Scope'),
              ('reclassify', 'Reclassified'), ('retain', 'Retained Benchmarks')]
@@ -23,12 +24,17 @@ def render(audit):
              'This is a scope and contribution-type audit, not a replication of experiments or a full-paper methodological endorsement.', '',
              f'Outcome: **{counts["retain"]} retained**, **{counts["narrow"]} narrowed or corrected**, '
              f'**{counts["remove"]} removed from the benchmark list**, and **{counts["reclassify"]} reclassified as evaluation analysis**. '
-             f'An additional **{counts["retain_community"]} community contribution is retained with a broader-scope label**. '
-             f'The main list now has **{counts["retain"] + counts["narrow"] + counts["retain_community"]} benchmark contributions**, '
+             f'An additional **{counts["retain_community"]} community contribution** and '
+             f'**{counts["retain_survey"]} original-survey benchmarks** are retained under preservation rules. '
+             f'The main list now has **{counts["retain"] + counts["narrow"] + counts["retain_community"] + counts["retain_survey"]} benchmark contributions**, '
              f'of which **{counts["retain"] + counts["narrow"]} meet the strict scope**. '
              'The benchmark-only pass preserved all 53 mitigation contributions and the existing analysis. '
              'The subsequent [method audit](METHOD_REVIEW.md) records method-specific corrections and pending scope recommendations.', '',
              '## Inclusion Rule', '',
+             '- Papers appearing in the [original survey](https://arxiv.org/html/2604.12944v1) are retained. '
+             'OVBench, VideoHallu, and RoadSocial are restored as ordinary benchmark entries; '
+             'their historical scope assessments below remain unchanged. This rule overrides scope-driven '
+             'removal or relocation, without claiming that every retained benchmark meets the stricter admission rule.',
              '- Previously accepted community contributions are protected from automatic removal. '
              'GameplayQA was restored after the initial strict audit under the owner\'s preservation instruction. '
              'Its [accepted PR #2](https://github.com/hukcc/Awesome-Video-Hallucination/pull/2), '
@@ -45,8 +51,8 @@ def render(audit):
              '- Detection frameworks and scoring metrics are not dataset names. Named factuality datasets are listed as such; '
              'a detection study without a new benchmark belongs in evaluation analyses.', '',
              'These are curator judgments under the stricter user-approved collection scope. Exclusion does not mean '
-             'a paper is false, scientifically weak, or unrelated. In particular, VideoHallu, STRAND, and FlexBench remain '
-             'relevant background but fall outside this conservative benchmark boundary. Existing sibling methods were not '
+             'a paper is false, scientifically weak, or unrelated. STRAND and FlexBench fall outside this conservative '
+             'benchmark boundary; original-survey entries are retained regardless of that boundary. Existing sibling methods were not '
              'removed or newly approved by this benchmark-only review.', '',
              '## Evidence Register', '',
              'The protocol column identifies the actual measured outcome. Accuracy, consistency, conditional answer-flip rates, '
@@ -62,6 +68,9 @@ def render(audit):
             if row['listed_name']:
                 label += f'<br>Listed: [{row["listed_name"]}](../README.md#paper-{row["entry_id"]})'
             reason = row['rationale'].replace('|', '\\|')
+            if row.get('preservation_source'):
+                reason = (f'[{row["preservation_reason"]}]({row["preservation_source"]})<br>'
+                          f'Historical scope assessment: {reason}')
             protocol = row['protocol'].replace('|', '\\|')
             evidence = f'[{row["inspected_sections"]}]({row["source_url"]})'
             lines.append(f'| {label} | {reason} | {protocol}<br>{evidence} |')

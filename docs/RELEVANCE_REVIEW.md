@@ -1,10 +1,10 @@
 # Relevance Review
 
-Paper-level editorial scope assessment, not a quality ranking. The separate [benchmark audit](BENCHMARK_REVIEW.md) applies the stricter contribution-level inclusion rule and records removed, narrowed, and reclassified entries. The [53-method audit](METHOD_REVIEW.md) independently records interventions, evaluation limits, training requirements, and 14 proposed moves awaiting approval.
+Paper-level editorial scope assessment, not a quality ranking. The separate [benchmark audit](BENCHMARK_REVIEW.md) applies the stricter contribution-level inclusion rule and records removed, narrowed, and reclassified entries. The [53-method audit](METHOD_REVIEW.md) independently records interventions, evaluation limits, training requirements, and 11 proposed moves awaiting approval. Original-survey contributions and accepted community contributions are protected from scope-driven removal.
 
-Coverage: **75 papers / 88 contributions**. All abstracts were reviewed; **48 papers** additionally received introduction review, with evaluation sections inspected where indicated. This is not a full-text audit of every paper.
+Coverage: **76 papers / 91 contributions**. All abstracts were reviewed; **49 papers** additionally received introduction review, with evaluation sections inspected where indicated. This is not a full-text audit of every paper.
 
-Latest review: **2026-11-01**. **60 direct-focus**, **7 broader-evaluation**, and **8 related-work candidates**.
+Latest review: **2026-11-01**. **60 direct-focus**, **8 broader-evaluation**, and **8 related-work assessments**; **7** remain pending manual decisions.
 
 ## Criteria
 
@@ -12,18 +12,18 @@ Latest review: **2026-11-01**. **60 direct-focus**, **7 broader-evaluation**, an
 - **Broader evaluation:** a general video task includes a concrete hallucination diagnostic, dedicated subset, or evidence-verification evaluation. Only that supported scope should be claimed.
 - **Related work (review):** grounding, QA accuracy, or self-correction is relevant, but the reviewed evidence does not establish a dedicated hallucination evaluation, or uses a substantially different definition. These are proposals for manual review, not assertions that a paper is irrelevant.
 
-The labels apply at paper level. A benchmark and method in the same paper can have different degrees of relevance. A paper-level label does not override benchmark eligibility. The benchmark audit does not newly approve or remove sibling mitigation contributions. The method audit is contribution-specific: a direct-focus paper can still contain a broader method. Its 14 pending method recommendations are distinct from the paper-level queue below.
+The labels apply at paper level. A benchmark and method in the same paper can have different degrees of relevance. A paper-level label does not override benchmark eligibility. The benchmark audit does not newly approve or remove sibling mitigation contributions. The method audit is contribution-specific: a direct-focus paper can still contain a broader method. Its 11 pending method recommendations are distinct from the paper-level queue below. Scientific scope labels do not override original-survey or community preservation.
 
 ## Manual Decision Queue
 
-Review the 8 candidates below before moving any entry. Decide whether coordinate/timestamp errors and general QA/correction metrics meet the intended collection scope. A move to Related Work is preferable to deletion when the paper remains useful background.
+Review the 7 unprotected related-work candidates below before moving any entry. VTG-LLM remains related in scientific scope but is retained as original-survey content, not a pending move. Decide whether coordinate/timestamp errors and general QA/correction metrics meet the intended collection scope. A move to Related Work is preferable to deletion when the paper remains useful background.
 
-CoE, Video-ToC, and SToP include specific hallucination evaluations despite broad titles. OVBench and RoadSocial were removed from the benchmark list because their core targets are broader, not because those evaluations are absent. EchoPrune remains excluded; it must not be conflated with SToP.
+CoE, Video-ToC, and SToP include specific hallucination evaluations despite broad titles. OVBench, VideoHallu, and RoadSocial are restored under original-survey preservation; their scope assessments remain unchanged. EchoPrune remains excluded; it must not be conflated with SToP.
 
 ## Contribution-Level Caveats
 
 - **GameplayQA:** restored as an accepted community contribution from [PR #2](https://github.com/hukcc/Awesome-Video-Hallucination/pull/2), with its original category and resources. It remains a broader benchmark, not a dedicated hallucination benchmark; community preservation does not override the scientific scope assessment.
-- **VideoChat-Online:** OVBench is no longer listed as a dedicated hallucination benchmark. The retained model is still a general streaming-video architecture, not a dedicated mitigation design.
+- **VideoChat-Online / OVBench:** both original-survey contributions are retained. The model remains a general streaming-video architecture, and OVBench includes a hallucination task within a broader evaluation suite.
 - **Vript-HAL / Vriptor:** only Vript-HAL is listed as the benchmark, while the corpus, other benchmark tasks, and captioning model have broader purposes. Do not transfer a subset-level claim to the whole suite.
 - **VHD / TRACE-RC:** the method changes reliability ordering and accepted coverage, not model answers. Its current placement means selective risk reduction, not factual correction; the method audit proposes moving it to related work pending approval.
 - **FactVC / DualFact:** the benchmark entries now name their actual factuality datasets. The metric/framework names remain searchable aliases; caption factuality is not identical to general QA accuracy.
@@ -34,7 +34,7 @@ CoE, Video-ToC, and SToP include specific hallucination evaluations despite broa
 
 Each row links both the existing README contribution and the exact reviewed source. Reasons are curator interpretations of those sources; the evidence column states the actual review depth.
 
-### Pending Manual Review
+### Related Work
 
 | Paper / Contributions | Reason | Inspected Evidence |
 | --- | --- | --- |
@@ -45,7 +45,7 @@ Each row links both the existing README contribution and the exact reviewed sour
 | [Video-TwG](../README.md#paper-mitigation--spatiotemporal-dynamics--duration-distortion--video-twg--2602-18702) | Grounding and QA results plus a qualitative hallucination example support indirect relevance; they should not be presented as a dedicated hallucination evaluation. | [Abstract; Introduction; Section 4.6 qualitative case study](https://arxiv.org/html/2602.18702v1) |
 | [VideoTemp-o3](../README.md#paper-mitigation--spatiotemporal-dynamics--event-misordering--videotemp-o3--2602-07801) | The primary evaluation concerns grounded QA and temporal localization. Hallucination motivates the work, but a separate hallucination measurement was not established in the reviewed sections. | [Abstract; Introduction; Section 5.1 (evaluation benchmarks)](https://arxiv.org/html/2602.07801v4) |
 | [VideoTIR](../README.md#paper-mitigation--spatiotemporal-dynamics--duration-distortion--videotir--2603-25021) | The work optimizes tool use and long-video QA accuracy and efficiency; hallucination is motivation rather than a separately measured outcome in the reviewed evaluation. | [Abstract; Introduction; Section 4.1 (evaluation benchmarks)](https://arxiv.org/html/2603.25021v3) |
-| [VTG-LLM](../README.md#paper-mitigation--spatiotemporal-dynamics--frequency-confusion--vtg-llm--2405-13382) | Timestamp localization and token compression are the primary contributions; the reviewed introduction and evaluation setup do not establish a dedicated hallucination assessment. | [Abstract; Introduction; Experiment Settings (datasets and metrics)](https://arxiv.org/html/2405.13382v3) |
+| [VTG-LLM](../README.md#paper-mitigation--spatiotemporal-dynamics--frequency-confusion--vtg-llm--2405-13382) | Retained as original-survey content; not a pending move. Timestamp localization and token compression are the primary contributions; the reviewed introduction and evaluation setup do not establish a dedicated hallucination assessment. | [Abstract; Introduction; Experiment Settings (datasets and metrics)](https://arxiv.org/html/2405.13382v3) |
 
 ### Broader Evaluations
 
@@ -53,10 +53,11 @@ Each row links both the existing README contribution and the exact reviewed sour
 | --- | --- | --- |
 | [CoE](../README.md#paper-mitigation--spatiotemporal-dynamics--duration-distortion--coe--2601-07761) | General evidence-grounded reasoning framework explicitly evaluates mitigation on VidHal and EventHall, beyond its general QA results. | [Abstract; Introduction; Sections 4.1-4.2 (VidHal and EventHall evaluation)](https://arxiv.org/html/2601.07761v2) |
 | [GameplayQA](../README.md#paper-benchmark--context-driven-fabrication--object-action-hallucination--gameplayqa--2603-24329) | Broader benchmark retained as an accepted community contribution from PR #2. Structured hallucination distractors support error analysis, but the whole suite is not a dedicated video-hallucination benchmark. | [Abstract; Introduction; Section 4.2](https://arxiv.org/html/2603.24329v2) |
+| [RoadSocial](../README.md#paper-benchmark--context-driven-fabrication--scene-event-hallucination--roadsocial--2503-21459) | Road-event VideoQA includes non-road videos and irrelevant/adversarial questions specifically testing hallucination robustness; the broad title does not justify exclusion. | [Abstract; Introduction (robustness evaluation contribution)](https://arxiv.org/html/2503.21459v1) |
 | [SToP](../README.md#paper-mitigation--context-driven-fabrication--both-object-action-scene-event--stop--2604-20937) | Token-pruning study explicitly diagnoses and evaluates hallucinations on EventHallusion. Retain as broader evaluation; it is not equivalent to excluded EchoPrune. | [Abstract; Introduction (EventHallusion comparison and pruning analysis)](https://arxiv.org/html/2604.20937v2) |
 | [VHD](../README.md#paper-benchmark--context-driven-fabrication--compositional-and-factuality-hallucination--vhd--2609-13288) / [TRACE-RC](../README.md#paper-mitigation--context-driven-fabrication--compositional-and-factuality-hallucination--trace-rc--2609-13288) | The named diagnostic dataset directly targets shared confident video hallucinations. It is a development set, not the paper's independent held-out reliability-transfer test. | [Abstract; Introduction; Section 4.1; Appendix A.3](https://arxiv.org/html/2609.13288v1) |
 | [Video-ToC](../README.md#paper-mitigation--context-driven-fabrication--scene-event-hallucination--video-toc--2604-20473) | General tree-of-cue reasoning method includes direct VideoHallucer evaluation, supporting retention with a broader-scope label. | [Abstract; Introduction (VideoHallucer evaluation)](https://arxiv.org/html/2604.20473v1) |
-| [VideoChat-Online](../README.md#paper-mitigation--referential-inconsistency--scene-conflation--videochat-online--2501-00584) | General streaming-video benchmark with a dedicated Temporal Hallucination Verification task; do not describe the entire benchmark or VideoChat-Online as hallucination-specific. | [Abstract; Introduction; Section 3.1 and Table 1 (Temporal Hallucination Verification)](https://arxiv.org/html/2501.00584v2) |
+| [VideoChat-Online](../README.md#paper-mitigation--referential-inconsistency--scene-conflation--videochat-online--2501-00584) / [OVBench](../README.md#paper-benchmark--spatiotemporal-dynamics--duration-distortion--ovbench--2501-00584) | General streaming-video benchmark with a dedicated Temporal Hallucination Verification task; do not describe the entire benchmark or VideoChat-Online as hallucination-specific. | [Abstract; Introduction; Section 3.1 and Table 1 (Temporal Hallucination Verification)](https://arxiv.org/html/2501.00584v2) |
 | [Vript-HAL](../README.md#paper-benchmark--spatiotemporal-dynamics--frequency-confusion--vript--2406-06040) / [Vriptor](../README.md#paper-mitigation--spatiotemporal-dynamics--frequency-confusion--vriptor--2406-06040) | Vript-HAL is a named dedicated hallucination benchmark. Vript corpus, Vript-RR, Vript-ERO, and Vriptor have broader purposes. | [Abstract; Introduction; Section 5.1](https://arxiv.org/html/2406.06040v2) |
 
 ### Direct Focus
@@ -110,7 +111,7 @@ Each row links both the existing README contribution and the exact reviewed sour
 | [Temporal Insight](../README.md#paper-mitigation--spatiotemporal-dynamics--duration-distortion--temporal-insight--2401-09861) | Explicitly studies event-level temporal hallucination, operationalized through event timestamp localization. | [Abstract](https://arxiv.org/html/2401.09861v1) |
 | [VADER](../README.md#paper-mitigation--context-driven-fabrication--scene-event-hallucination--vader--2608-08622) | Explicit video hallucination mitigation through attention intervention and contrastive evidence erasure. | [Abstract](https://arxiv.org/html/2608.08622v1) |
 | [Video-DPL](../README.md#paper-mitigation--referential-inconsistency--character-conflation--videoplr--2511-18463) | Separates video perception from reasoning and explicitly rewards hallucination-resistant evidence. | [Abstract](https://arxiv.org/html/2511.18463v3) |
-| [VideoHallu-GRPO](../README.md#paper-mitigation--context-driven-fabrication--both-object-action-scene-event--videohallu-grpo--2505-01481) | Tests video-model answers against deliberately implausible visual events; the subject is model hallucination, not merely synthetic-video artifacts. | [Abstract](https://arxiv.org/html/2505.01481v4) |
+| [VideoHallu-GRPO](../README.md#paper-mitigation--context-driven-fabrication--both-object-action-scene-event--videohallu-grpo--2505-01481) / [VideoHallu](../README.md#paper-benchmark--context-driven-fabrication--object-action-hallucination--videohallu--2505-01481) | Tests video-model answers against deliberately implausible visual events; the subject is model hallucination, not merely synthetic-video artifacts. | [Abstract](https://arxiv.org/html/2505.01481v4) |
 | [VideoHallucer](../README.md#paper-benchmark--spatiotemporal-dynamics--duration-distortion--videohallucer--2406-16338) | Dedicated intrinsic and extrinsic video hallucination evaluation, including unsupported facts that are true outside the video. | [Abstract; Introduction; Section 3.3](https://arxiv.org/html/2406.16338v1) |
 | [VideoHEDGE](../README.md#paper-benchmark--context-driven-fabrication--compositional-and-factuality-hallucination--videohedge--2601-08557) | VideoHEDGE is a hallucination-detection framework, not a newly introduced benchmark. Retain it under evaluation analyses as a detection study; do not imply it corrects generated answers. | [Abstract; Introduction; Sections 4.1 and 4.5-4.6](https://arxiv.org/html/2601.08557v1) |
 | [VidHal](../README.md#paper-benchmark--spatiotemporal-dynamics--frequency-confusion--vidhal--2411-16771) | The construction and ranking target explicitly measure nuanced video hallucination severity. | [Abstract; Introduction; Sections 4.1-4.2](https://arxiv.org/html/2411.16771v3) |
@@ -126,4 +127,4 @@ Each row links both the existing README contribution and the exact reviewed sour
 
 ## Maintenance
 
-Edit `scope_review` in `data/paper_details.json`, then run `python3 scripts/generate_relevance_review.py`. A new paper without a scope review is shown as Not reviewed in the browser, never silently classified as direct-focus. Apply approved inclusion or relocation decisions to the shared catalog and regenerate README and taxonomy together; this report does not apply them.
+Edit `scope_review` in `data/paper_details.json`, then run `python3 scripts/generate_relevance_review.py`. A new paper without a scope review is shown as Unclassified in the browser, never silently classified as direct-focus. Apply approved inclusion or relocation decisions to the shared catalog and regenerate README and taxonomy together; this report does not apply them.

@@ -1683,7 +1683,9 @@
         "source_url": "https://arxiv.org/html/2405.13382v3",
         "evidence": "Abstract; Introduction; Experiment Settings (datasets and metrics)",
         "reviewed_on": "2026-10-01",
-        "decision": "pending-manual-review"
+        "decision": "retain-original-survey",
+        "previous_decision": "pending-manual-review",
+        "preservation_source": "https://arxiv.org/html/2604.12944v1#S4.T2"
       }
     },
     "2312.08870": {
@@ -2379,6 +2381,36 @@
         "reason": "Directly investigates whether video benchmarks predict downstream hallucination and the effects of stage interventions.",
         "source_url": "https://arxiv.org/html/2609.28991v1",
         "evidence": "Abstract",
+        "reviewed_on": "2026-10-01",
+        "decision": "retain"
+      }
+    },
+    "2503.21459": {
+      "summary": "Provides diverse social-media road videos and question-answer pairs for evaluating road-event understanding across viewpoints and geographic settings.",
+      "tasks": [
+        "Video QA",
+        "Video Understanding"
+      ],
+      "source_url": "https://arxiv.org/abs/2503.21459v1",
+      "evidence": "Abstract",
+      "reviewed_on": "2026-10-01",
+      "published_on": "2025-03-27",
+      "authors": [
+        "Chirag Parikh",
+        "Deepti Rawat",
+        "Rakshitha R. T.",
+        "Tathagata Ghosh",
+        "Ravi Kiran Sarvadevabhatla"
+      ],
+      "added": {
+        "date": "2026-08-05",
+        "commit": "f34e55bf3b810621b712e9f0daa85df63baea1fd"
+      },
+      "scope_review": {
+        "scope": "broader",
+        "reason": "Road-event VideoQA includes non-road videos and irrelevant/adversarial questions specifically testing hallucination robustness; the broad title does not justify exclusion.",
+        "source_url": "https://arxiv.org/html/2503.21459v1",
+        "evidence": "Abstract; Introduction (robustness evaluation contribution)",
         "reviewed_on": "2026-10-01",
         "decision": "retain"
       }

@@ -14,17 +14,22 @@ ROOT = Path(__file__).resolve().parent.parent
 def render(audit):
     counts = Counter(r['recommendation'] for r in audit['records'])
     pending = counts['move_to_related']
-    retained = counts['retain'] + counts['correct']
+    retained = counts['retain'] + counts['correct'] + counts['retain_survey']
     lines = ['# Method Scope Audit', '',
              f'Reviewed **{audit["reviewed_on"]}**. All **{len(audit["records"])} method contributions** received '
              'official abstract, introduction, and relevant method/evaluation review. Sources are pinned arXiv versions '
              'or the official IJCAI PDF. This is a relevance, intervention, and evaluation-evidence audit, '
              'not experimental replication or a claim that every appendix was read.', '',
-             f'Outcome: **{retained} recommended for retention** (including a method-name correction) and '
+             f'Outcome: **{retained} retained** (including a method-name correction and '
+             f'{counts["retain_survey"]} original-survey preservation decisions) and '
              f'**{pending} proposed moves to related work, awaiting human approval**. '
              'No method has been removed. All existing training-free flags agree with the inspected sources. '
              'Paper URLs, resource badges, stable identifiers, and sibling benchmark decisions are preserved.', '',
              '## Scope Rule', '',
+             '- All original-survey contributions remain in their existing categories. '
+             'VTG-LLM, Vriptor, and VideoChat-Online are no longer proposed moves. Their broader-scope '
+             'assessments remain evidence, not pending removal instructions. Accepted community contributions '
+             'are independently protected.',
              '- A core method explicitly targets unsupported or contradicted claims about input video. '
              'Targeted post-hoc claim verification and audio-visual hallucination interventions qualify; '
              'general QA, grounding, efficiency, or reliability methods are not automatically dedicated mitigation methods.',
@@ -71,6 +76,7 @@ def render(audit):
               'and recommendation. Source-file SHA-256 hashes in the machine-readable register identify the '
               'downloaded evidence used for this pass; they are not a guarantee that an HTML rendering will remain byte-identical.', '']
     for recommendation, heading in [('move_to_related', 'Pending Scope Decisions'),
+                                    ('retain_survey', 'Retained Original-Survey Methods'),
                                     ('correct', 'Retained With a Name Correction'),
                                     ('retain', 'Retained Methods')]:
         lines += [f'### {heading}', '']
@@ -87,6 +93,8 @@ def render(audit):
                       f'- **Evaluation:** {record["evaluation"]}',
                       f'- **Assessment:** {record["rationale"]}',
                       f'- **Inspected:** [{record["inspected_sections"]}]({record["source_url"]}).', '']
+            if record.get('preservation_source'):
+                lines += [f'- **Retention:** [{record["preservation_reason"]}]({record["preservation_source"]}).', '']
             if recommendation == 'move_to_related':
                 badges = ' '.join(resource_badge(kind, url) for kind, url in entry['resources'].items() if url)
                 if badges:

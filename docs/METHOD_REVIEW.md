@@ -2,10 +2,11 @@
 
 Reviewed **2026-11-01**. All **53 method contributions** received official abstract, introduction, and relevant method/evaluation review. Sources are pinned arXiv versions or the official IJCAI PDF. This is a relevance, intervention, and evaluation-evidence audit, not experimental replication or a claim that every appendix was read.
 
-Outcome: **39 recommended for retention** (including a method-name correction) and **14 proposed moves to related work, awaiting human approval**. No method has been removed. All existing training-free flags agree with the inspected sources. Paper URLs, resource badges, stable identifiers, and sibling benchmark decisions are preserved.
+Outcome: **42 retained** (including a method-name correction and 3 original-survey preservation decisions) and **11 proposed moves to related work, awaiting human approval**. No method has been removed. All existing training-free flags agree with the inspected sources. Paper URLs, resource badges, stable identifiers, and sibling benchmark decisions are preserved.
 
 ## Scope Rule
 
+- All original-survey contributions remain in their existing categories. VTG-LLM, Vriptor, and VideoChat-Online are no longer proposed moves. Their broader-scope assessments remain evidence, not pending removal instructions. Accepted community contributions are independently protected.
 - A core method explicitly targets unsupported or contradicted claims about input video. Targeted post-hoc claim verification and audio-visual hallucination interventions qualify; general QA, grounding, efficiency, or reliability methods are not automatically dedicated mitigation methods.
 - Research objective and strength of evaluation are separate. Vista-LLaMA, MMA, and Temporal Insight explicitly target hallucinations but have indirect or narrow evaluation evidence. They are retained with limitations, not presented as validated by dedicated hallucination rates.
 - Dedicated hallucination tests in a broad method are real evidence, but do not by themselves make that method a core hallucination intervention. CoE, Video-ToC, and SToP are conservative boundary recommendations for manual review, not claims that their hallucination experiments are absent.
@@ -27,11 +28,8 @@ These are curator judgments about collection scope, not scientific-quality ranki
 | [TRACE-RC](#method-mitigation--context-driven-fabrication--compositional-and-factuality-hallucination--trace-rc--2609-13288) | Recommend moving out of the core mitigation list into related reliability work. The method targets general answer-risk ranking under shift, not answer correction or video-specific claim verification. Retain the separate VHD benchmark; lower selective risk is not lower full-coverage hallucination incidence. |
 | [Video-ToC](#method-mitigation--context-driven-fabrication--scene-event-hallucination--video-toc--2604-20473) | Strict-scope boundary recommendation: the central contribution is general perception-aware video reasoning, with hallucination evaluation as an additional benefit. This is not a claim that hallucination evidence is absent. |
 | [Video-TwG](#method-mitigation--spatiotemporal-dynamics--duration-distortion--video-twg--2602-18702) | A general long-video reasoning and grounding method; hallucination language is not accompanied by a dedicated reduction test in the inspected protocol. |
-| [VideoChat-Online](#method-mitigation--referential-inconsistency--scene-conflation--videochat-online--2501-00584) | Core contribution is general streaming perception, memory, and reasoning rather than a dedicated video-hallucination intervention. |
 | [VideoTemp-o3](#method-mitigation--spatiotemporal-dynamics--event-misordering--videotemp-o3--2602-07801) | Hallucination motivates better visual evidence, but the core contribution and reported protocol target general grounding/QA rather than dedicated video-hallucination mitigation. |
 | [VideoTIR](#method-mitigation--spatiotemporal-dynamics--duration-distortion--videotir--2603-25021) | Hallucination is a motivation, but the core method and evidence address efficient long-video QA and tool use. |
-| [Vriptor](#method-mitigation--spatiotemporal-dynamics--frequency-confusion--vriptor--2406-06040) | Vriptor is a general detailed-captioning model rather than a dedicated hallucination intervention. The separately introduced Vript-HAL benchmark remains eligible and must not be removed with the model. |
-| [VTG-LLM](#method-mitigation--spatiotemporal-dynamics--frequency-confusion--vtg-llm--2405-13382) | A temporal-grounding model, not a method whose central objective is video-hallucination mitigation. Timestamp localization accuracy alone is insufficient. |
 
 ## Corrections and Evidence Limits
 
@@ -154,19 +152,6 @@ Each entry records the inspected sections, intervention, actual evaluation, trai
 - **Assessment:** A general long-video reasoning and grounding method; hallucination language is not accompanied by a dedicated reduction test in the inspected protocol.
 - **Inspected:** [Abstract; Introduction; Section 3.4; Section 4.3](https://arxiv.org/html/2602.18702v1).
 
-<a id="method-mitigation--referential-inconsistency--scene-conflation--videochat-online--2501-00584"></a>
-
-#### VideoChat-Online
-
-[Online Video Understanding: OVBench and VideoChat-Online](https://arxiv.org/abs/2501.00584) ([catalog entry](../README.md#paper-mitigation--referential-inconsistency--scene-conflation--videochat-online--2501-00584)). **Training-free: No.**
-
-- **Intervention:** Trains offline-to-online video understanding with a pyramid memory bank and interleaved streaming instruction data.
-- **Evaluation:** OVBench and generic offline VideoQA accuracy; OVBench includes temporal-hallucination subtasks within a broader streaming suite.
-- **Assessment:** Core contribution is general streaming perception, memory, and reasoning rather than a dedicated video-hallucination intervention.
-- **Inspected:** [Abstract; Introduction; Sections 4.2, 5.2, and 5.3](https://arxiv.org/html/2501.00584v2).
-
-<a href="https://videochat-online.github.io/"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?logo=readthedocs&amp;logoColor=white" alt="page" title="Project Page" /></a> <a href="https://github.com/mcg-nju/videochat-online"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code" title="Code" /></a>
-
 <a id="method-mitigation--spatiotemporal-dynamics--event-misordering--videotemp-o3--2602-07801"></a>
 
 #### VideoTemp-o3
@@ -191,6 +176,21 @@ Each entry records the inspected sections, intervention, actual evaluation, trai
 - **Assessment:** Hallucination is a motivation, but the core method and evidence address efficient long-video QA and tool use.
 - **Inspected:** [Abstract; Introduction; Section 3.1; Section 4.1](https://arxiv.org/html/2603.25021v3).
 
+### Retained Original-Survey Methods
+
+<a id="method-mitigation--referential-inconsistency--scene-conflation--videochat-online--2501-00584"></a>
+
+#### VideoChat-Online
+
+[Online Video Understanding: OVBench and VideoChat-Online](https://arxiv.org/abs/2501.00584) ([catalog entry](../README.md#paper-mitigation--referential-inconsistency--scene-conflation--videochat-online--2501-00584)). **Training-free: No.**
+
+- **Intervention:** Trains offline-to-online video understanding with a pyramid memory bank and interleaved streaming instruction data.
+- **Evaluation:** OVBench and generic offline VideoQA accuracy; OVBench includes temporal-hallucination subtasks within a broader streaming suite.
+- **Assessment:** Core contribution is general streaming perception, memory, and reasoning rather than a dedicated video-hallucination intervention.
+- **Inspected:** [Abstract; Introduction; Sections 4.2, 5.2, and 5.3](https://arxiv.org/html/2501.00584v2).
+
+- **Retention:** [Retained in its existing method category under the owner's original-survey preservation rule; the scope rationale remains historical evidence, not a pending move.](https://arxiv.org/html/2604.12944v1#S4.T2).
+
 <a id="method-mitigation--spatiotemporal-dynamics--frequency-confusion--vriptor--2406-06040"></a>
 
 #### Vriptor
@@ -202,7 +202,7 @@ Each entry records the inspected sections, intervention, actual evaluation, trai
 - **Assessment:** Vriptor is a general detailed-captioning model rather than a dedicated hallucination intervention. The separately introduced Vript-HAL benchmark remains eligible and must not be removed with the model.
 - **Inspected:** [Abstract; Introduction; Section 4.1; Section 5.1 (Hallucination Evaluation Metrics; Evaluation)](https://arxiv.org/html/2406.06040v2).
 
-<a href="https://github.com/mutonix/Vript"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code" title="Code" /></a>
+- **Retention:** [Retained in its existing method category under the owner's original-survey preservation rule; the scope rationale remains historical evidence, not a pending move.](https://arxiv.org/html/2604.12944v1#S4.T2).
 
 <a id="method-mitigation--spatiotemporal-dynamics--frequency-confusion--vtg-llm--2405-13382"></a>
 
@@ -215,7 +215,7 @@ Each entry records the inspected sections, intervention, actual evaluation, trai
 - **Assessment:** A temporal-grounding model, not a method whose central objective is video-hallucination mitigation. Timestamp localization accuracy alone is insufficient.
 - **Inspected:** [Abstract; Introduction; Method: Overview of VTG-LLM; Experiments: Experiment Settings](https://arxiv.org/html/2405.13382v3).
 
-<a href="https://github.com/gyxxyg/VTG-LLM"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code" title="Code" /></a>
+- **Retention:** [Retained in its existing method category under the owner's original-survey preservation rule; the scope rationale remains historical evidence, not a pending move.](https://arxiv.org/html/2604.12944v1#S4.T2).
 
 ### Retained With a Name Correction
 

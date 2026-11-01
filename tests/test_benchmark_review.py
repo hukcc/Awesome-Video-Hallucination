@@ -25,11 +25,11 @@ class BenchmarkReviewTests(unittest.TestCase):
         self.assertEqual(render(self.audit), (ROOT / 'docs/BENCHMARK_REVIEW.md').read_text())
 
     def test_all_active_benchmarks_have_approved_contribution_level_review(self):
-        approved = {r['entry_id'] for r in self.records if r['decision'] in ('retain', 'narrow', 'retain_community')}
+        approved = {r['entry_id'] for r in self.records if r['decision'] in ('retain', 'narrow', 'retain_community', 'retain_survey')}
         self.assertEqual(approved, {e['id'] for e in self.entries if e['type'] == 'benchmark'})
         self.assertEqual(len(self.records), len({r['entry_id'] for r in self.records}))
         self.assertEqual(Counter(r['decision'] for r in self.records),
-                         dict(retain=26, narrow=6, remove=9, reclassify=1, retain_community=1))
+                         dict(retain=26, narrow=6, remove=6, reclassify=1, retain_community=1, retain_survey=3))
 
     def test_decisions_match_catalog_and_inspected_evidence(self):
         for r in self.records:
@@ -69,7 +69,7 @@ class BenchmarkReviewTests(unittest.TestCase):
         archived = self.audit['archived_papers']
         removed_keys = {r['paper_key'] for r in self.records if r['decision'] == 'remove'} - active
         restored = {r['paper_key'] for r in self.records if r.get('previous_decision') == 'remove'
-                    and r['decision'] == 'retain_community'}
+                    and r['decision'] in ('retain_community', 'retain_survey')} & set(archived)
         self.assertEqual(set(archived), removed_keys | restored)
         for r in self.records:
             if r['decision'] != 'remove':

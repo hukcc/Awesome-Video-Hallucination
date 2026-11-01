@@ -1,7 +1,7 @@
 {
   "description": "Curated contribution records shared by the README, paper browser, and taxonomy tree. Description sources are recorded in data/paper_details.json.",
-  "entry_count": 88,
-  "benchmark_count": 33,
+  "entry_count": 91,
+  "benchmark_count": 36,
   "mitigation_count": 53,
   "analysis_count": 2,
   "entries": [
@@ -2153,6 +2153,72 @@
       "resources": {
         "project": null,
         "code": null,
+        "dataset": null,
+        "leaderboard": null
+      }
+    },
+    {
+      "id": "benchmark--spatiotemporal-dynamics--duration-distortion--ovbench--2501-00584",
+      "title": "Online Video Understanding: OVBench and VideoChat-Online",
+      "paper_url": "https://arxiv.org/abs/2501.00584",
+      "arxiv_id": "2501.00584",
+      "type": "benchmark",
+      "category": "Spatiotemporal Dynamics",
+      "mechanism": "Dynamic Distortion",
+      "subtype": "Duration Distortion",
+      "name": "OVBench",
+      "description": "Evaluates streaming-video question answering across online perception, memory, and reasoning tasks; its scope extends beyond hallucination-specific evaluation.",
+      "venue": "CVPR 2025",
+      "date": "12/2024",
+      "year": 2024,
+      "training_free": null,
+      "resources": {
+        "project": "https://videochat-online.github.io/",
+        "code": "https://github.com/mcg-nju/videochat-online",
+        "dataset": null,
+        "leaderboard": null
+      }
+    },
+    {
+      "id": "benchmark--context-driven-fabrication--object-action-hallucination--videohallu--2505-01481",
+      "title": "VideoHallu: Evaluating and Mitigating Multi-modal Hallucinations on Synthetic Video Understanding",
+      "paper_url": "https://arxiv.org/abs/2505.01481",
+      "arxiv_id": "2505.01481",
+      "type": "benchmark",
+      "category": "Context-Driven Fabrication",
+      "mechanism": "Content Fabrication",
+      "subtype": "Object-Action Hallucination",
+      "name": "VideoHallu",
+      "description": "Tests prior-driven hallucinations using synthetic videos that violate physical or logical expectations, challenging models to follow observed evidence.",
+      "venue": "NeurIPS 2025",
+      "date": "05/2025",
+      "year": 2025,
+      "training_free": null,
+      "resources": {
+        "project": null,
+        "code": "https://github.com/zli12321/VideoHallu",
+        "dataset": null,
+        "leaderboard": null
+      }
+    },
+    {
+      "id": "benchmark--context-driven-fabrication--scene-event-hallucination--roadsocial--2503-21459",
+      "title": "RoadSocial: A Diverse VideoQA Dataset and Benchmark for Road Event Understanding from Social Video Narratives",
+      "paper_url": "https://arxiv.org/abs/2503.21459",
+      "arxiv_id": "2503.21459",
+      "type": "benchmark",
+      "category": "Context-Driven Fabrication",
+      "mechanism": "Content Fabrication",
+      "subtype": "Scene-Event Hallucination",
+      "name": "RoadSocial",
+      "description": "Provides diverse social-media road videos and question-answer pairs for evaluating road-event understanding across viewpoints and geographic settings.",
+      "venue": "CVPR 2025",
+      "date": "03/2025",
+      "year": 2025,
+      "training_free": null,
+      "resources": {
+        "project": "https://roadsocial.github.io/",
+        "code": "https://github.com/roadsocial/roadsocial",
         "dataset": null,
         "leaderboard": null
       }

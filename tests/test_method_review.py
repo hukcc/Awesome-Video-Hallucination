@@ -34,7 +34,7 @@ class MethodReviewTests(unittest.TestCase):
         self.assertEqual(methods, {r['entry_id'] for r in self.records})
         self.assertEqual(len(self.records), len(methods))
         self.assertEqual(Counter(r['recommendation'] for r in self.records),
-                         dict(retain=38, correct=1, move_to_related=14))
+                         dict(retain=38, correct=1, move_to_related=11, retain_survey=3))
         for record in self.records:
             expected = 'pending-manual-review' if record['recommendation'] == 'move_to_related' else 'reviewed'
             self.assertEqual(record['status'], expected)

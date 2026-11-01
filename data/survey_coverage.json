@@ -1,0 +1,419 @@
+{
+  "source_url": "https://arxiv.org/html/2604.12944v1",
+  "source_sha256": "48f3ecca6a33c9447a0dcc6f8f0fbfae832cac7d77573b13a9efe75652affcff",
+  "checked_on": "2026-11-01",
+  "inspected_sections": "Tables 1 and 2; Sections 4 and 5; References (catalog identity cross-check)",
+  "policy": "Retain every existing contribution from papers appearing anywhere in the original survey, including broader-scope work. The table mappings below protect the original 19 benchmarks and 22 methods; background-only references are not automatically added as new benchmarks or methods. Preserve verified name corrections, stable IDs, resources, and addition dates. No extra reader-facing labels or audit notes.",
+  "entries": [
+    {
+      "survey_name": "VidHalluc",
+      "paper_key": "2412.03735",
+      "entry_id": "benchmark--spatiotemporal-dynamics--event-misordering--vidhalluc--2412-03735",
+      "type": "benchmark",
+      "category": "Spatiotemporal Dynamics",
+      "subtype": "Event Misordering",
+      "source_url": "https://arxiv.org/html/2604.12944v1#S3.T1.30.1.3",
+      "reference_url": "https://arxiv.org/html/2604.12944v1#bib.bib28"
+    },
+    {
+      "survey_name": "VideoHallucer",
+      "paper_key": "2406.16338",
+      "entry_id": "benchmark--spatiotemporal-dynamics--duration-distortion--videohallucer--2406-16338",
+      "type": "benchmark",
+      "category": "Spatiotemporal Dynamics",
+      "subtype": "Duration Distortion",
+      "source_url": "https://arxiv.org/html/2604.12944v1#S3.T1.30.1.4",
+      "reference_url": "https://arxiv.org/html/2604.12944v1#bib.bib29"
+    },
+    {
+      "survey_name": "HAVEN",
+      "paper_key": "2503.19622",
+      "entry_id": "benchmark--spatiotemporal-dynamics--event-misordering--haven--2503-19622",
+      "type": "benchmark",
+      "category": "Spatiotemporal Dynamics",
+      "subtype": "Event Misordering",
+      "source_url": "https://arxiv.org/html/2604.12944v1#S3.T1.30.1.5",
+      "reference_url": "https://arxiv.org/html/2604.12944v1#bib.bib30"
+    },
+    {
+      "survey_name": "MHBench",
+      "paper_key": "https://ojs.aaai.org/index.php/AAAI/article/view/32463",
+      "entry_id": "benchmark--spatiotemporal-dynamics--event-misordering--mhbench--mhbench-demystifying-motion-hallucination-in-videollms",
+      "type": "benchmark",
+      "category": "Spatiotemporal Dynamics",
+      "subtype": "Event Misordering",
+      "source_url": "https://arxiv.org/html/2604.12944v1#S3.T1.30.1.6",
+      "reference_url": "https://arxiv.org/html/2604.12944v1#bib.bib24"
+    },
+    {
+      "survey_name": "VidHal",
+      "paper_key": "2411.16771",
+      "entry_id": "benchmark--spatiotemporal-dynamics--frequency-confusion--vidhal--2411-16771",
+      "type": "benchmark",
+      "category": "Spatiotemporal Dynamics",
+      "subtype": "Frequency Confusion",
+      "source_url": "https://arxiv.org/html/2604.12944v1#S3.T1.30.1.7",
+      "reference_url": "https://arxiv.org/html/2604.12944v1#bib.bib33"
+    },
+    {
+      "survey_name": "ARGUS",
+      "paper_key": "2506.07371",
+      "entry_id": "benchmark--spatiotemporal-dynamics--event-misordering--argus--2506-07371",
+      "type": "benchmark",
+      "category": "Spatiotemporal Dynamics",
+      "subtype": "Event Misordering",
+      "source_url": "https://arxiv.org/html/2604.12944v1#S3.T1.30.1.8",
+      "reference_url": "https://arxiv.org/html/2604.12944v1#bib.bib27"
+    },
+    {
+      "survey_name": "OVBench (THV)",
+      "paper_key": "2501.00584",
+      "entry_id": "benchmark--spatiotemporal-dynamics--duration-distortion--ovbench--2501-00584",
+      "type": "benchmark",
+      "category": "Spatiotemporal Dynamics",
+      "subtype": "Duration Distortion",
+      "source_url": "https://arxiv.org/html/2604.12944v1#S3.T1.30.1.9",
+      "reference_url": "https://arxiv.org/html/2604.12944v1#bib.bib31"
+    },
+    {
+      "survey_name": "Vript",
+      "paper_key": "2406.06040",
+      "entry_id": "benchmark--spatiotemporal-dynamics--frequency-confusion--vript--2406-06040",
+      "type": "benchmark",
+      "category": "Spatiotemporal Dynamics",
+      "subtype": "Frequency Confusion",
+      "source_url": "https://arxiv.org/html/2604.12944v1#S3.T1.30.1.10",
+      "reference_url": "https://arxiv.org/html/2604.12944v1#bib.bib23"
+    },
+    {
+      "survey_name": "EGOILLUSION",
+      "paper_key": "https://aclanthology.org/2025.emnlp-main.1446/",
+      "entry_id": "benchmark--referential-inconsistency--character-conflation--egoillusion--egoillusion-benchmarking-hallucinations-in-egocentric-video-understanding",
+      "type": "benchmark",
+      "category": "Referential Inconsistency",
+      "subtype": "Character Conflation",
+      "source_url": "https://arxiv.org/html/2604.12944v1#S3.T1.30.1.12",
+      "reference_url": "https://arxiv.org/html/2604.12944v1#bib.bib50"
+    },
+    {
+      "survey_name": "MESH",
+      "paper_key": "2509.08538",
+      "entry_id": "benchmark--referential-inconsistency--character-conflation--mesh--2509-08538",
+      "type": "benchmark",
+      "category": "Referential Inconsistency",
+      "subtype": "Character Conflation",
+      "source_url": "https://arxiv.org/html/2604.12944v1#S3.T1.30.1.13",
+      "reference_url": "https://arxiv.org/html/2604.12944v1#bib.bib48"
+    },
+    {
+      "survey_name": "ELV-Halluc",
+      "paper_key": "2508.21496",
+      "entry_id": "benchmark--referential-inconsistency--scene-conflation--elv-halluc--2508-21496",
+      "type": "benchmark",
+      "category": "Referential Inconsistency",
+      "subtype": "Scene Conflation",
+      "source_url": "https://arxiv.org/html/2604.12944v1#S3.T1.30.1.14",
+      "reference_url": "https://arxiv.org/html/2604.12944v1#bib.bib51"
+    },
+    {
+      "survey_name": "FactVC",
+      "paper_key": "2303.02961",
+      "entry_id": "benchmark--context-driven-fabrication--object-action-hallucination--factvc--2303-02961",
+      "type": "benchmark",
+      "category": "Context-Driven Fabrication",
+      "subtype": "Object-Action Hallucination",
+      "source_url": "https://arxiv.org/html/2604.12944v1#S3.T1.30.1.16",
+      "reference_url": "https://arxiv.org/html/2604.12944v1#bib.bib18"
+    },
+    {
+      "survey_name": "EventHallusion",
+      "paper_key": "2409.16597",
+      "entry_id": "benchmark--context-driven-fabrication--scene-event-hallucination--eventhallusion--2409-16597",
+      "type": "benchmark",
+      "category": "Context-Driven Fabrication",
+      "subtype": "Scene-Event Hallucination",
+      "source_url": "https://arxiv.org/html/2604.12944v1#S3.T1.30.1.17",
+      "reference_url": "https://arxiv.org/html/2604.12944v1#bib.bib45"
+    },
+    {
+      "survey_name": "NOAH",
+      "paper_key": "2511.06475",
+      "entry_id": "benchmark--context-driven-fabrication--scene-event-hallucination--noah--2511-06475",
+      "type": "benchmark",
+      "category": "Context-Driven Fabrication",
+      "subtype": "Scene-Event Hallucination",
+      "source_url": "https://arxiv.org/html/2604.12944v1#S3.T1.30.1.18",
+      "reference_url": "https://arxiv.org/html/2604.12944v1#bib.bib46"
+    },
+    {
+      "survey_name": "VideoHallu",
+      "paper_key": "2505.01481",
+      "entry_id": "benchmark--context-driven-fabrication--object-action-hallucination--videohallu--2505-01481",
+      "type": "benchmark",
+      "category": "Context-Driven Fabrication",
+      "subtype": "Object-Action Hallucination",
+      "source_url": "https://arxiv.org/html/2604.12944v1#S3.T1.30.1.19",
+      "reference_url": "https://arxiv.org/html/2604.12944v1#bib.bib40"
+    },
+    {
+      "survey_name": "RoadSocial",
+      "paper_key": "2503.21459",
+      "entry_id": "benchmark--context-driven-fabrication--scene-event-hallucination--roadsocial--2503-21459",
+      "type": "benchmark",
+      "category": "Context-Driven Fabrication",
+      "subtype": "Scene-Event Hallucination",
+      "source_url": "https://arxiv.org/html/2604.12944v1#S3.T1.30.1.20",
+      "reference_url": "https://arxiv.org/html/2604.12944v1#bib.bib44"
+    },
+    {
+      "survey_name": "AVHBench",
+      "paper_key": "2410.18325",
+      "entry_id": "benchmark--audio-visual-conflict--action-attribution--avhbench--2410-18325",
+      "type": "benchmark",
+      "category": "Audio-Visual Conflict",
+      "subtype": "Action Attribution",
+      "source_url": "https://arxiv.org/html/2604.12944v1#S3.T1.30.1.22",
+      "reference_url": "https://arxiv.org/html/2604.12944v1#bib.bib54"
+    },
+    {
+      "survey_name": "CMM",
+      "paper_key": "2410.12787",
+      "entry_id": "benchmark--audio-visual-conflict--action-attribution--cmm--2410-12787",
+      "type": "benchmark",
+      "category": "Audio-Visual Conflict",
+      "subtype": "Action Attribution",
+      "source_url": "https://arxiv.org/html/2604.12944v1#S3.T1.30.1.23",
+      "reference_url": "https://arxiv.org/html/2604.12944v1#bib.bib57"
+    },
+    {
+      "survey_name": "EmotionHallucer",
+      "paper_key": "2505.11405",
+      "entry_id": "benchmark--audio-visual-conflict--emotion-inference--emotionhallucer--2505-11405",
+      "type": "benchmark",
+      "category": "Audio-Visual Conflict",
+      "subtype": "Emotion Inference",
+      "source_url": "https://arxiv.org/html/2604.12944v1#S3.T1.30.1.24",
+      "reference_url": "https://arxiv.org/html/2604.12944v1#bib.bib56"
+    },
+    {
+      "survey_name": "SEASON",
+      "paper_key": "2512.04643",
+      "entry_id": "mitigation--spatiotemporal-dynamics--event-misordering--season--2512-04643",
+      "type": "mitigation",
+      "category": "Spatiotemporal Dynamics",
+      "subtype": "Event Misordering",
+      "source_url": "https://arxiv.org/html/2604.12944v1#S4.T2.30.1.3",
+      "reference_url": "https://arxiv.org/html/2604.12944v1#bib.bib37"
+    },
+    {
+      "survey_name": "Video-thinking",
+      "paper_key": "2503.19622",
+      "entry_id": "mitigation--spatiotemporal-dynamics--event-misordering--video-thinking-tdpo--2503-19622",
+      "type": "mitigation",
+      "category": "Spatiotemporal Dynamics",
+      "subtype": "Event Misordering",
+      "source_url": "https://arxiv.org/html/2604.12944v1#S4.T2.30.1.4",
+      "reference_url": "https://arxiv.org/html/2604.12944v1#bib.bib30"
+    },
+    {
+      "survey_name": "SmartSight",
+      "paper_key": "2512.18671",
+      "entry_id": "mitigation--spatiotemporal-dynamics--event-misordering--smartsight--2512-18671",
+      "type": "mitigation",
+      "category": "Spatiotemporal Dynamics",
+      "subtype": "Event Misordering",
+      "source_url": "https://arxiv.org/html/2604.12944v1#S4.T2.30.1.5",
+      "reference_url": "https://arxiv.org/html/2604.12944v1#bib.bib25"
+    },
+    {
+      "survey_name": "Temporal Insight",
+      "paper_key": "2401.09861",
+      "entry_id": "mitigation--spatiotemporal-dynamics--duration-distortion--temporal-insight--2401-09861",
+      "type": "mitigation",
+      "category": "Spatiotemporal Dynamics",
+      "subtype": "Duration Distortion",
+      "source_url": "https://arxiv.org/html/2604.12944v1#S4.T2.30.1.6",
+      "reference_url": "https://arxiv.org/html/2604.12944v1#bib.bib32"
+    },
+    {
+      "survey_name": "DINO-HEAL",
+      "paper_key": "2412.03735",
+      "entry_id": "mitigation--spatiotemporal-dynamics--duration-distortion--dino-heal--2412-03735",
+      "type": "mitigation",
+      "category": "Spatiotemporal Dynamics",
+      "subtype": "Duration Distortion",
+      "source_url": "https://arxiv.org/html/2604.12944v1#S4.T2.30.1.7",
+      "reference_url": "https://arxiv.org/html/2604.12944v1#bib.bib28"
+    },
+    {
+      "survey_name": "TAAE",
+      "paper_key": "2505.12826",
+      "entry_id": "mitigation--spatiotemporal-dynamics--duration-distortion--taae--2505-12826",
+      "type": "mitigation",
+      "category": "Spatiotemporal Dynamics",
+      "subtype": "Duration Distortion",
+      "source_url": "https://arxiv.org/html/2604.12944v1#S4.T2.30.1.8",
+      "reference_url": "https://arxiv.org/html/2604.12944v1#bib.bib26"
+    },
+    {
+      "survey_name": "VTG-LLM",
+      "paper_key": "2405.13382",
+      "entry_id": "mitigation--spatiotemporal-dynamics--frequency-confusion--vtg-llm--2405-13382",
+      "type": "mitigation",
+      "category": "Spatiotemporal Dynamics",
+      "subtype": "Frequency Confusion",
+      "source_url": "https://arxiv.org/html/2604.12944v1#S4.T2.30.1.9",
+      "reference_url": "https://arxiv.org/html/2604.12944v1#bib.bib53"
+    },
+    {
+      "survey_name": "Vriptor",
+      "paper_key": "2406.06040",
+      "entry_id": "mitigation--spatiotemporal-dynamics--frequency-confusion--vriptor--2406-06040",
+      "type": "mitigation",
+      "category": "Spatiotemporal Dynamics",
+      "subtype": "Frequency Confusion",
+      "source_url": "https://arxiv.org/html/2604.12944v1#S4.T2.30.1.10",
+      "reference_url": "https://arxiv.org/html/2604.12944v1#bib.bib23"
+    },
+    {
+      "survey_name": "Vista-llama",
+      "paper_key": "2312.08870",
+      "entry_id": "mitigation--referential-inconsistency--character-conflation--vista-llama--2312-08870",
+      "type": "mitigation",
+      "category": "Referential Inconsistency",
+      "subtype": "Character Conflation",
+      "source_url": "https://arxiv.org/html/2604.12944v1#S4.T2.30.1.12",
+      "reference_url": "https://arxiv.org/html/2604.12944v1#bib.bib49"
+    },
+    {
+      "survey_name": "VideoPLR",
+      "paper_key": "2511.18463",
+      "entry_id": "mitigation--referential-inconsistency--character-conflation--videoplr--2511-18463",
+      "type": "mitigation",
+      "category": "Referential Inconsistency",
+      "subtype": "Character Conflation",
+      "source_url": "https://arxiv.org/html/2604.12944v1#S4.T2.30.1.13",
+      "reference_url": "https://arxiv.org/html/2604.12944v1#bib.bib47"
+    },
+    {
+      "survey_name": "ELV-Halluc-DPO",
+      "paper_key": "2508.21496",
+      "entry_id": "mitigation--referential-inconsistency--scene-conflation--elv-halluc-dpo--2508-21496",
+      "type": "mitigation",
+      "category": "Referential Inconsistency",
+      "subtype": "Scene Conflation",
+      "source_url": "https://arxiv.org/html/2604.12944v1#S4.T2.30.1.14",
+      "reference_url": "https://arxiv.org/html/2604.12944v1#bib.bib51"
+    },
+    {
+      "survey_name": "VideoChat-Online",
+      "paper_key": "2501.00584",
+      "entry_id": "mitigation--referential-inconsistency--scene-conflation--videochat-online--2501-00584",
+      "type": "mitigation",
+      "category": "Referential Inconsistency",
+      "subtype": "Scene Conflation",
+      "source_url": "https://arxiv.org/html/2604.12944v1#S4.T2.30.1.15",
+      "reference_url": "https://arxiv.org/html/2604.12944v1#bib.bib31"
+    },
+    {
+      "survey_name": "SANTA",
+      "paper_key": "2512.04356",
+      "entry_id": "mitigation--context-driven-fabrication--object-action-hallucination--santa--2512-04356",
+      "type": "mitigation",
+      "category": "Context-Driven Fabrication",
+      "subtype": "Object-Action Hallucination",
+      "source_url": "https://arxiv.org/html/2604.12944v1#S4.T2.30.1.17",
+      "reference_url": "https://arxiv.org/html/2604.12944v1#bib.bib43"
+    },
+    {
+      "survey_name": "TCD",
+      "paper_key": "2409.16597",
+      "entry_id": "mitigation--context-driven-fabrication--object-action-hallucination--tcd--2409-16597",
+      "type": "mitigation",
+      "category": "Context-Driven Fabrication",
+      "subtype": "Object-Action Hallucination",
+      "source_url": "https://arxiv.org/html/2604.12944v1#S4.T2.30.1.18",
+      "reference_url": "https://arxiv.org/html/2604.12944v1#bib.bib45"
+    },
+    {
+      "survey_name": "MASH-VLM",
+      "paper_key": "2503.15871",
+      "entry_id": "mitigation--context-driven-fabrication--scene-event-hallucination--mash-vlm--2503-15871",
+      "type": "mitigation",
+      "category": "Context-Driven Fabrication",
+      "subtype": "Scene-Event Hallucination",
+      "source_url": "https://arxiv.org/html/2604.12944v1#S4.T2.30.1.19",
+      "reference_url": "https://arxiv.org/html/2604.12944v1#bib.bib42"
+    },
+    {
+      "survey_name": "PaMi-VDPO",
+      "paper_key": "2504.05810",
+      "entry_id": "mitigation--context-driven-fabrication--scene-event-hallucination--pami-vdpo--2504-05810",
+      "type": "mitigation",
+      "category": "Context-Driven Fabrication",
+      "subtype": "Scene-Event Hallucination",
+      "source_url": "https://arxiv.org/html/2604.12944v1#S4.T2.30.1.20",
+      "reference_url": "https://arxiv.org/html/2604.12944v1#bib.bib41"
+    },
+    {
+      "survey_name": "MMA",
+      "paper_key": "https://www.ijcai.org/proceedings/2025/1019",
+      "entry_id": "mitigation--context-driven-fabrication--scene-event-hallucination--mma--hallucination-reduction-in-video-language-models-via-hierarchical-multimodal-consistency",
+      "type": "mitigation",
+      "category": "Context-Driven Fabrication",
+      "subtype": "Scene-Event Hallucination",
+      "source_url": "https://arxiv.org/html/2604.12944v1#S4.T2.30.1.21",
+      "reference_url": "https://arxiv.org/html/2604.12944v1#bib.bib39"
+    },
+    {
+      "survey_name": "VistaDPO",
+      "paper_key": "2504.13122",
+      "entry_id": "mitigation--context-driven-fabrication--both-object-action-scene-event--vistadpo--2504-13122",
+      "type": "mitigation",
+      "category": "Context-Driven Fabrication",
+      "subtype": "Both Object-Action & Scene-Event",
+      "source_url": "https://arxiv.org/html/2604.12944v1#S4.T2.30.1.22",
+      "reference_url": "https://arxiv.org/html/2604.12944v1#bib.bib38"
+    },
+    {
+      "survey_name": "VideoHallu-GRPO",
+      "paper_key": "2505.01481",
+      "entry_id": "mitigation--context-driven-fabrication--both-object-action-scene-event--videohallu-grpo--2505-01481",
+      "type": "mitigation",
+      "category": "Context-Driven Fabrication",
+      "subtype": "Both Object-Action & Scene-Event",
+      "source_url": "https://arxiv.org/html/2604.12944v1#S4.T2.30.1.23",
+      "reference_url": "https://arxiv.org/html/2604.12944v1#bib.bib40"
+    },
+    {
+      "survey_name": "AVHModel-Align-FT",
+      "paper_key": "2410.18325",
+      "entry_id": "mitigation--audio-visual-conflict--action-attribution--avhmodel-align-ft--2410-18325",
+      "type": "mitigation",
+      "category": "Audio-Visual Conflict",
+      "subtype": "Action Attribution",
+      "source_url": "https://arxiv.org/html/2604.12944v1#S4.T2.30.1.25",
+      "reference_url": "https://arxiv.org/html/2604.12944v1#bib.bib54"
+    },
+    {
+      "survey_name": "AVCD",
+      "paper_key": "2505.20862",
+      "entry_id": "mitigation--audio-visual-conflict--action-attribution--avcd--2505-20862",
+      "type": "mitigation",
+      "category": "Audio-Visual Conflict",
+      "subtype": "Action Attribution",
+      "source_url": "https://arxiv.org/html/2604.12944v1#S4.T2.30.1.26",
+      "reference_url": "https://arxiv.org/html/2604.12944v1#bib.bib55"
+    },
+    {
+      "survey_name": "PEP-MEK",
+      "paper_key": "2505.11405",
+      "entry_id": "mitigation--audio-visual-conflict--emotion-inference--pep-mek--2505-11405",
+      "type": "mitigation",
+      "category": "Audio-Visual Conflict",
+      "subtype": "Emotion Inference",
+      "source_url": "https://arxiv.org/html/2604.12944v1#S4.T2.30.1.27",
+      "reference_url": "https://arxiv.org/html/2604.12944v1#bib.bib56"
+    }
+  ]
+}

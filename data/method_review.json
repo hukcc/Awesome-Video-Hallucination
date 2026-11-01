@@ -1,7 +1,7 @@
 {
   "reviewed_on": "2026-11-01",
   "baseline_commit": "ccbf4692d3dbce955b15feeda0c8776d10153018",
-  "policy": "Core video-hallucination interventions, with explicit task and evaluation boundaries. General video understanding methods are candidates for related work even when they include a hallucination test. Pending moves require human approval.",
+  "policy": "Core video-hallucination interventions, with explicit task and evaluation boundaries. General video understanding methods are candidates for related work even when they include a hallucination test. Pending moves require human approval. Original-survey entries and accepted community contributions are protected from scope-driven removal or relocation.",
   "records": [
     {
       "entry_id": "mitigation--context-driven-fabrication--scene-event-hallucination--arp-cd--2610-19728",
@@ -641,8 +641,8 @@
     {
       "entry_id": "mitigation--spatiotemporal-dynamics--frequency-confusion--vtg-llm--2405-13382",
       "paper_key": "2405.13382",
-      "recommendation": "move_to_related",
-      "status": "pending-manual-review",
+      "recommendation": "retain_survey",
+      "status": "reviewed",
       "source_url": "https://arxiv.org/html/2405.13382v3",
       "source_sha256": "a0c1e4af3dd523fdaac2c4348afb8bfb2225136b5a07e61975867407fa6faadc",
       "inspected_sections": "Abstract; Introduction; Method: Overview of VTG-LLM; Experiments: Experiment Settings",
@@ -676,13 +676,16 @@
           "Training",
           "Grounding"
         ]
-      }
+      },
+      "previous_recommendation": "move_to_related",
+      "preservation_source": "https://arxiv.org/html/2604.12944v1#S4.T2",
+      "preservation_reason": "Retained in its existing method category under the owner's original-survey preservation rule; the scope rationale remains historical evidence, not a pending move."
     },
     {
       "entry_id": "mitigation--spatiotemporal-dynamics--frequency-confusion--vriptor--2406-06040",
       "paper_key": "2406.06040",
-      "recommendation": "move_to_related",
-      "status": "pending-manual-review",
+      "recommendation": "retain_survey",
+      "status": "reviewed",
       "source_url": "https://arxiv.org/html/2406.06040v2",
       "source_sha256": "b5a74ee223dc429870772d5e9782ff0f7c5597bf5b185b6c69a1cb850867dbaa",
       "inspected_sections": "Abstract; Introduction; Section 4.1; Section 5.1 (Hallucination Evaluation Metrics; Evaluation)",
@@ -715,7 +718,10 @@
         "routes": [
           "Training"
         ]
-      }
+      },
+      "previous_recommendation": "move_to_related",
+      "preservation_source": "https://arxiv.org/html/2604.12944v1#S4.T2",
+      "preservation_reason": "Retained in its existing method category under the owner's original-survey preservation rule; the scope rationale remains historical evidence, not a pending move."
     },
     {
       "entry_id": "mitigation--spatiotemporal-dynamics--frequency-confusion--mope--2602-17768",
@@ -919,8 +925,8 @@
     {
       "entry_id": "mitigation--referential-inconsistency--scene-conflation--videochat-online--2501-00584",
       "paper_key": "2501.00584",
-      "recommendation": "move_to_related",
-      "status": "pending-manual-review",
+      "recommendation": "retain_survey",
+      "status": "reviewed",
       "source_url": "https://arxiv.org/html/2501.00584v2",
       "source_sha256": "0bc1658baf96e40f5d0e9d49904b4cb87a2ccdbb37d0fd71002ab2bff5615c72",
       "inspected_sections": "Abstract; Introduction; Sections 4.2, 5.2, and 5.3",
@@ -953,7 +959,10 @@
         "routes": [
           "Training"
         ]
-      }
+      },
+      "previous_recommendation": "move_to_related",
+      "preservation_source": "https://arxiv.org/html/2604.12944v1#S4.T2",
+      "preservation_reason": "Retained in its existing method category under the owner's original-survey preservation rule; the scope rationale remains historical evidence, not a pending move."
     },
     {
       "entry_id": "mitigation--context-driven-fabrication--object-action-hallucination--santa--2512-04356",

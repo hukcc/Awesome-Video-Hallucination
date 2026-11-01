@@ -2,10 +2,11 @@
 
 Reviewed **2026-11-01**. All **43 pre-audit benchmark entries** received abstract, introduction, and task/metric review against the versioned arXiv text or official publisher PDF. This is a scope and contribution-type audit, not a replication of experiments or a full-paper methodological endorsement.
 
-Outcome: **26 retained**, **6 narrowed or corrected**, **9 removed from the benchmark list**, and **1 reclassified as evaluation analysis**. An additional **1 community contribution is retained with a broader-scope label**. The main list now has **33 benchmark contributions**, of which **32 meet the strict scope**. The benchmark-only pass preserved all 53 mitigation contributions and the existing analysis. The subsequent [method audit](METHOD_REVIEW.md) records method-specific corrections and pending scope recommendations.
+Outcome: **26 retained**, **6 narrowed or corrected**, **6 removed from the benchmark list**, and **1 reclassified as evaluation analysis**. An additional **1 community contribution** and **3 original-survey benchmarks** are retained under preservation rules. The main list now has **36 benchmark contributions**, of which **32 meet the strict scope**. The benchmark-only pass preserved all 53 mitigation contributions and the existing analysis. The subsequent [method audit](METHOD_REVIEW.md) records method-specific corrections and pending scope recommendations.
 
 ## Inclusion Rule
 
+- Papers appearing in the [original survey](https://arxiv.org/html/2604.12944v1) are retained. OVBench, VideoHallu, and RoadSocial are restored as ordinary benchmark entries; their historical scope assessments below remain unchanged. This rule overrides scope-driven removal or relocation, without claiming that every retained benchmark meets the stricter admission rule.
 - Previously accepted community contributions are protected from automatic removal. GameplayQA was restored after the initial strict audit under the owner's preservation instruction. Its [accepted PR #2](https://github.com/hukcc/Awesome-Video-Hallucination/pull/2), original category and resources remain visible; retention does not change the broader-scope assessment. Disputed community entries require entry-specific human approval before removal or relocation.
 - The benchmark must centrally evaluate unsupported or contradicted language-model claims about input video, including video-caption factuality, targeted adversarial QA, hallucination detection, and audio-visual conflicts in videos.
 - General video QA, caption quality, object consistency, evidence grounding, or reasoning benchmarks do not qualify solely because they discuss hallucinations or contain one hallucination task/metric.
@@ -13,7 +14,7 @@ Outcome: **26 retained**, **6 narrowed or corrected**, **9 removed from the benc
 - Dedicated multimodal hallucination benchmarks are restricted to their actual video/audio-visual conditions. Audio-only, image-only, and text-only tests do not count as video evidence.
 - Detection frameworks and scoring metrics are not dataset names. Named factuality datasets are listed as such; a detection study without a new benchmark belongs in evaluation analyses.
 
-These are curator judgments under the stricter user-approved collection scope. Exclusion does not mean a paper is false, scientifically weak, or unrelated. In particular, VideoHallu, STRAND, and FlexBench remain relevant background but fall outside this conservative benchmark boundary. Existing sibling methods were not removed or newly approved by this benchmark-only review.
+These are curator judgments under the stricter user-approved collection scope. Exclusion does not mean a paper is false, scientifically weak, or unrelated. STRAND and FlexBench fall outside this conservative benchmark boundary; original-survey entries are retained regardless of that boundary. Existing sibling methods were not removed or newly approved by this benchmark-only review.
 
 ## Evidence Register
 
@@ -25,13 +26,18 @@ The protocol column identifies the actual measured outcome. Accuracy, consistenc
 | --- | --- | --- |
 | [FlexBench](https://arxiv.org/abs/2609.36628) | The primary objective is comprehensive limb-motion caption fidelity and coverage. GPA/WHR explicitly penalize fabricated actions, but the whole benchmark is broader than the approved dedicated-hallucination scope. GM-DPO is unchanged. | Limb-caption action/posture checklists and temporal coverage; GPA, weighted hallucination rate, and temporal-sequence accuracy.<br>[Abstract; Introduction; Section 3.3](https://arxiv.org/html/2609.36628v1) |
 | [OmniCapBench](https://arxiv.org/abs/2610.12458) | The core target is comprehensive audio-visual caption evaluation. Hallucination-sensitive precision is real, but does not make the whole benchmark a dedicated video-hallucination test. Removed under the explicitly approved strict policy. | Native Reference, Shot, and Event tracks; structural checks and localized semantic precision/recall.<br>[Abstract; Introduction; Sections 3.2 and 4.1-4.3 (Table 4)](https://arxiv.org/html/2610.12458v1) |
-| [OVBench](https://arxiv.org/abs/2501.00584) | The overall benchmark targets online perception, memory, and reasoning. THV is one task, not a separately introduced hallucination benchmark. VideoChat-Online remains a separate method entry. | Six streaming-video capabilities and 16 subtasks, including Temporal Hallucination Verification (THV).<br>[Abstract; Introduction; Sections 3.1-3.2](https://arxiv.org/html/2501.00584v2) |
-| [RoadSocial](https://arxiv.org/abs/2503.21459) | The hallucination tests are genuine but subordinate to general road-event understanding. The broad RoadSocial benchmark is excluded under the strict policy. | Twelve road-event QA tasks; GPT answer scores and temporal-grounding mAP, with incompatible/adversarial question tasks.<br>[Abstract; Introduction; Section 4.3; Appendices B.6-B.7](https://arxiv.org/html/2503.21459v1) |
 | [STRAND](https://arxiv.org/abs/2609.29607) | The core task is spatio-temporal monitoring and supported reasoning. Hallucination is a motivation and error category, but the benchmark is not dedicated to identifying unsupported claims. This is a conservative scope exclusion, not a claim of irrelevance; the trajectory-reasoning method is unchanged. | Object-centric target/sub-question QA; Faithful Accuracy requires every prerequisite and final answer to be correct.<br>[Abstract; Introduction; Section 4.3; Appendix C](https://arxiv.org/html/2609.29607v1) |
 | [TOC-Bench](https://arxiv.org/abs/2605.09904) | HDA genuinely tests hallucination, but it is an auxiliary diagnostic within an object-consistency benchmark. The whole TOC-Bench does not meet the strict core-target criterion. | Ten temporal-object-consistency dimensions; exact-match scores and HDA on nonexistent-object/event variants.<br>[Abstract; Introduction; Section 4.1; Appendix B.4](https://arxiv.org/html/2605.09904v2) |
 | [TraceAV-Bench](https://arxiv.org/abs/2605.07593) | The primary target is multi-hop long-form audio-visual reasoning. Its MH dimension is relevant, but the complete benchmark is not dedicated to hallucination. | Four dimensions and 15 subtasks; exact-match reasoning accuracy plus a separately reported multimodal-hallucination dimension.<br>[Abstract; Introduction; Section 4.1 (Table 3)](https://arxiv.org/html/2605.07593v2) |
 | [Video-HolmesV2](https://arxiv.org/abs/2609.17248) | The core objective is deep audio-visual reasoning and evidence grounding. Penalizing fabricated evidence does not make the overall benchmark a dedicated video-hallucination test. | Long-video reasoning answers plus temporal and semantic evidence scores; unmatched evidence is penalized.<br>[Abstract; Introduction; Section 4](https://arxiv.org/html/2609.17248v1) |
-| [VideoHallu](https://arxiv.org/abs/2505.01481) | Under the strict rule, the core target is out-of-distribution visual reasoning and anomaly recognition, not a dedicated unsupported-claim evaluation. Appendix F also includes language-only commonsense questions. Prior-driven hallucinations are discussed, so this is a conservative scope exclusion, not a denial of relevance. VideoHallu-GRPO is unchanged. | QA about synthetic-video abnormalities, physics, commonsense, alignment, and consistency; judged answer correctness.<br>[Abstract; Introduction; Sections 2 and 3: Answer Evaluation; Appendix F](https://arxiv.org/html/2505.01481v4) |
+
+### Retained Original-Survey Benchmarks
+
+| Entry | Decision and Scope | Task / Metric and Inspected Evidence |
+| --- | --- | --- |
+| [OVBench](https://arxiv.org/abs/2501.00584)<br>Listed: [OVBench](../README.md#paper-benchmark--spatiotemporal-dynamics--duration-distortion--ovbench--2501-00584) | [Retained under the owner's original-survey preservation rule; the scientific scope assessment is unchanged.](https://arxiv.org/html/2604.12944v1#S3.T1)<br>Historical scope assessment: The overall benchmark targets online perception, memory, and reasoning. THV is one task, not a separately introduced hallucination benchmark. VideoChat-Online remains a separate method entry. | Six streaming-video capabilities and 16 subtasks, including Temporal Hallucination Verification (THV).<br>[Abstract; Introduction; Sections 3.1-3.2](https://arxiv.org/html/2501.00584v2) |
+| [RoadSocial](https://arxiv.org/abs/2503.21459)<br>Listed: [RoadSocial](../README.md#paper-benchmark--context-driven-fabrication--scene-event-hallucination--roadsocial--2503-21459) | [Retained under the owner's original-survey preservation rule; the scientific scope assessment is unchanged.](https://arxiv.org/html/2604.12944v1#S3.T1)<br>Historical scope assessment: The hallucination tests are genuine but subordinate to general road-event understanding. The broad RoadSocial benchmark is excluded under the strict policy. | Twelve road-event QA tasks; GPT answer scores and temporal-grounding mAP, with incompatible/adversarial question tasks.<br>[Abstract; Introduction; Section 4.3; Appendices B.6-B.7](https://arxiv.org/html/2503.21459v1) |
+| [VideoHallu](https://arxiv.org/abs/2505.01481)<br>Listed: [VideoHallu](../README.md#paper-benchmark--context-driven-fabrication--object-action-hallucination--videohallu--2505-01481) | [Retained under the owner's original-survey preservation rule; the scientific scope assessment is unchanged.](https://arxiv.org/html/2604.12944v1#S3.T1)<br>Historical scope assessment: Under the strict rule, the core target is out-of-distribution visual reasoning and anomaly recognition, not a dedicated unsupported-claim evaluation. Appendix F also includes language-only commonsense questions. Prior-driven hallucinations are discussed, so this is a conservative scope exclusion, not a denial of relevance. VideoHallu-GRPO is unchanged. | QA about synthetic-video abnormalities, physics, commonsense, alignment, and consistency; judged answer correctness.<br>[Abstract; Introduction; Sections 2 and 3: Answer Evaluation; Appendix F](https://arxiv.org/html/2505.01481v4) |
 
 ### Retained Community Contributions
 
@@ -97,12 +103,6 @@ Original paper identities and resource badges for removed benchmark contribution
 
 <a href="https://01yzzyu.github.io/OmniCapBench/"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?logo=readthedocs&amp;logoColor=white" alt="page" title="Project Page" /></a> <a href="https://github.com/Tencent-Hunyuan/OmniCapBench"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code" title="Code" /></a> <a href="https://huggingface.co/datasets/OmniCapBench/OmniCapBench"><img src="https://img.shields.io/badge/Dataset-HuggingFace-yellow?logo=huggingface" alt="dataset" title="Dataset" /></a> <a href="https://01yzzyu.github.io/OmniCapBench/#leaderboard"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Leaderboard-228B22?logo=readthedocs&amp;logoColor=white" alt="leaderboard" title="Leaderboard" /></a>
 
-### OVBench
-
-[Online Video Understanding: OVBench and VideoChat-Online](https://arxiv.org/abs/2501.00584)
-
-<a href="https://videochat-online.github.io/"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?logo=readthedocs&amp;logoColor=white" alt="page" title="Project Page" /></a> <a href="https://github.com/mcg-nju/videochat-online"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code" title="Code" /></a>
-
 ### TOC-Bench
 
 [TOC-Bench: A Temporal Object Consistency Benchmark for Video Large Language Models](https://arxiv.org/abs/2605.09904)
@@ -115,23 +115,11 @@ Original paper identities and resource badges for removed benchmark contribution
 
 <a href="https://nguyentthong.github.io/strand/"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?logo=readthedocs&amp;logoColor=white" alt="page" title="Project Page" /></a> <a href="https://github.com/nguyentthong/video_hallucination"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code" title="Code" /></a>
 
-### VideoHallu
-
-[VideoHallu: Evaluating and Mitigating Multi-modal Hallucinations on Synthetic Video Understanding](https://arxiv.org/abs/2505.01481)
-
-<a href="https://github.com/zli12321/VideoHallu"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code" title="Code" /></a>
-
 ### FlexBench
 
 [Beyond Binary Preferences: Graded Preference Optimization for Limb-Motion Captioning](https://arxiv.org/abs/2609.36628)
 
 No verified resource link was recorded.
-
-### RoadSocial
-
-[RoadSocial: A Diverse VideoQA Dataset and Benchmark for Road Event Understanding from Social Video Narratives](https://arxiv.org/abs/2503.21459)
-
-<a href="https://roadsocial.github.io/"><img src="https://img.shields.io/badge/Page%20%F0%9F%94%97-Link-228B22?logo=readthedocs&amp;logoColor=white" alt="page" title="Project Page" /></a> <a href="https://github.com/roadsocial/roadsocial"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code" title="Code" /></a>
 
 ### TraceAV-Bench
 

@@ -1,7 +1,7 @@
 {
   "reviewed_on": "2026-11-01",
   "baseline_commit": "1ed4dcfd3dde024ec9f37be0022795cc0f8c12ef",
-  "policy": "Dedicated video-hallucination benchmarks only. Named dedicated datasets may be scoped separately; generic tasks or a hallucination metric alone do not qualify.",
+  "policy": "Dedicated video-hallucination benchmarks only. Named dedicated datasets may be scoped separately; generic tasks or a hallucination metric alone do not qualify. Original-survey entries and accepted community contributions are retained under the owner's preservation rules without changing their scientific scope assessments.",
   "unchanged_contribution_ids": [
     "mitigation--context-driven-fabrication--scene-event-hallucination--arp-cd--2610-19728",
     "mitigation--spatiotemporal-dynamics--event-misordering--season--2512-04643",
@@ -367,7 +367,7 @@
       "listed_type": "benchmark"
     },
     {
-      "decision": "remove",
+      "decision": "retain_survey",
       "inspected_sections": "Abstract; Introduction; Sections 3.1-3.2",
       "protocol": "Six streaming-video capabilities and 16 subtasks, including Temporal Hallucination Verification (THV).",
       "rationale": "The overall benchmark targets online perception, memory, and reasoning. THV is one task, not a separately introduced hallucination benchmark. VideoChat-Online remains a separate method entry.",
@@ -397,8 +397,11 @@
       "paper_key": "2501.00584",
       "source_url": "https://arxiv.org/html/2501.00584v2",
       "reviewed_on": "2026-11-01",
-      "listed_name": null,
-      "listed_type": null
+      "listed_name": "OVBench",
+      "listed_type": "benchmark",
+      "previous_decision": "remove",
+      "preservation_source": "https://arxiv.org/html/2604.12944v1#S3.T1",
+      "preservation_reason": "Retained under the owner's original-survey preservation rule; the scientific scope assessment is unchanged."
     },
     {
       "decision": "retain",
@@ -710,7 +713,7 @@
       "listed_type": "benchmark"
     },
     {
-      "decision": "remove",
+      "decision": "retain_survey",
       "inspected_sections": "Abstract; Introduction; Sections 2 and 3: Answer Evaluation; Appendix F",
       "protocol": "QA about synthetic-video abnormalities, physics, commonsense, alignment, and consistency; judged answer correctness.",
       "rationale": "Under the strict rule, the core target is out-of-distribution visual reasoning and anomaly recognition, not a dedicated unsupported-claim evaluation. Appendix F also includes language-only commonsense questions. Prior-driven hallucinations are discussed, so this is a conservative scope exclusion, not a denial of relevance. VideoHallu-GRPO is unchanged.",
@@ -740,8 +743,11 @@
       "paper_key": "2505.01481",
       "source_url": "https://arxiv.org/html/2505.01481v4",
       "reviewed_on": "2026-11-01",
-      "listed_name": null,
-      "listed_type": null
+      "listed_name": "VideoHallu",
+      "listed_type": "benchmark",
+      "previous_decision": "remove",
+      "preservation_source": "https://arxiv.org/html/2604.12944v1#S3.T1",
+      "preservation_reason": "Retained under the owner's original-survey preservation rule; the scientific scope assessment is unchanged."
     },
     {
       "decision": "narrow",
@@ -880,7 +886,7 @@
       "listed_type": "benchmark"
     },
     {
-      "decision": "remove",
+      "decision": "retain_survey",
       "inspected_sections": "Abstract; Introduction; Section 4.3; Appendices B.6-B.7",
       "protocol": "Twelve road-event QA tasks; GPT answer scores and temporal-grounding mAP, with incompatible/adversarial question tasks.",
       "rationale": "The hallucination tests are genuine but subordinate to general road-event understanding. The broad RoadSocial benchmark is excluded under the strict policy.",
@@ -910,8 +916,11 @@
       "paper_key": "2503.21459",
       "source_url": "https://arxiv.org/html/2503.21459v1",
       "reviewed_on": "2026-11-01",
-      "listed_name": null,
-      "listed_type": null
+      "listed_name": "RoadSocial",
+      "listed_type": "benchmark",
+      "previous_decision": "remove",
+      "preservation_source": "https://arxiv.org/html/2604.12944v1#S3.T1",
+      "preservation_reason": "Retained under the owner's original-survey preservation rule; the scientific scope assessment is unchanged."
     },
     {
       "decision": "retain",

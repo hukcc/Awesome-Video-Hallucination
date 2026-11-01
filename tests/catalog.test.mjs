@@ -9,8 +9,8 @@ const papers = groupPapers(data.entries, metadata.papers);
 const select = filters => filterPapers(papers, filters);
 
 test('all contributions survive paper-level grouping', () => {
-  assert.equal(papers.length, 75);
-  assert.equal(data.entries.length, 88);
+  assert.equal(papers.length, 76);
+  assert.equal(data.entries.length, 91);
   assert.equal(papers.reduce((n, p) => n + p.entries.length, 0), data.entry_count);
   assert.equal(new Set(data.entries.map(e => e.id)).size, data.entry_count);
 });
@@ -62,7 +62,7 @@ test('contribution types match the reviewed catalog totals', () => {
 test('filters cannot borrow training status from a different contribution', () => {
   assert.equal(select({ type: 'benchmark', training: 'yes' }).length, 0);
   assert.equal(select({ type: 'benchmark', training: 'no' }).length, 0);
-  assert.equal(select({ type: 'benchmark', training: 'na' }).length, 33);
+  assert.equal(select({ type: 'benchmark', training: 'na' }).length, 36);
   const result = select({ search: 'DINO-HEAL', type: 'mitigation', training: 'yes' });
   assert.equal(result.length, 1);
   assert.equal(result[0].matches.length, 1);
@@ -171,7 +171,9 @@ test('relevance judgments retain evidence and leave related-work decisions pendi
     assert.ok(review.reason && review.evidence.includes('Abstract'));
     assert.match(review.source_url, /^https:\/\//);
     assert.match(review.reviewed_on, /^\d{4}-\d{2}-\d{2}$/);
-    assert.equal(review.decision, review.scope === 'related' ? 'pending-manual-review' : 'retain');
+    const expected = paper.key === '2405.13382' ? 'retain-original-survey' :
+      (review.scope === 'related' ? 'pending-manual-review' : 'retain');
+    assert.equal(review.decision, expected);
   }
   assert.equal(select({ scope: 'related' }).length, 8);
   assert.equal(select({ scope: 'direct' }).length + select({ scope: 'broader' }).length + select({ scope: 'related' }).length, papers.length);
@@ -231,10 +233,22 @@ test('strict benchmark scope keeps named datasets searchable and detection corre
   }
   assert.equal(select({ search: 'VideoHEDGE', type: 'benchmark' }).length, 0);
   assert.equal(select({ search: 'VideoHEDGE', type: 'analysis' }).length, 1);
-  for (const key of ['2501.00584', '2609.29607', '2505.01481', '2609.36628']) {
+  for (const key of ['2609.29607', '2609.36628']) {
     assert.equal(select({ search: key, type: 'benchmark' }).length, 0);
     assert.equal(select({ search: key, type: 'mitigation' }).length, 1);
   }
+});
+
+test('original-survey benchmarks remain ordinary searchable contributions', () => {
+  for (const name of ['OVBench', 'VideoHallu', 'RoadSocial']) {
+    const exact = select({ search: name, type: 'benchmark' }).filter(p => p.matches.some(e => e.name === name));
+    assert.equal(exact.length, 1);
+  }
+  for (const key of ['2501.00584', '2505.01481']) {
+    assert.equal(select({ search: key, type: 'benchmark' }).length, 1);
+    assert.equal(select({ search: key, type: 'mitigation' }).length, 1);
+  }
+  assert.equal(metadata.papers['2503.21459'].added.date, '2026-08-05');
 });
 
 test('previous contributor resources and exclusions are preserved', () => {
