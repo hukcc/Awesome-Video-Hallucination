@@ -31,7 +31,7 @@ Keep disputed community contributions visible and record the evidence or scope l
 
 Display accepted community contributions as ordinary paper entries, without special community/PR labels or exception notes in the README, browser entry, or taxonomy tree. Preserve provenance, contributor attribution, scope assessments, and the full rationale in the shared metadata and audit records. Standard relevance filtering remains available.
 
-Keep review explanations, audit-report links, and discovery/review logs out of the reader-facing README and browser. Retain the source evidence and maintenance records in the repository; the website does not load or publish standalone audit registers or the discovery log. News covers substantive paper updates only.
+Keep review explanations, audit-report links, and discovery/review logs out of the reader-facing README and browser. Retain the source evidence and maintenance records in the repository; the website does not load or publish standalone audit registers or the discovery log. News covers substantive updates using concise counts or category-level summaries, without naming individual added papers. Keep the existing monthly bullet format; individual paper links belong in the separate Recently Added list and paper tables.
 
 ## Editorial Rules
 

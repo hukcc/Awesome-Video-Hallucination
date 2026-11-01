@@ -24,7 +24,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 
 ## Latest Updates
 
-- **[2026/11]** Added ARP-CD.
+- **[2026/11]** Added 1 hallucination mitigation paper.
 - **[2026/10]** Added 7 papers, introduced evaluation analyses, and updated the taxonomy.
 - **[2026/09]** Added 2 hallucination mitigation papers.
 - **[2026/04]** Our [survey](https://arxiv.org/abs/2604.12944) was accepted to **ACL 2026 Findings**.
