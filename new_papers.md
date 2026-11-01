@@ -37,6 +37,13 @@ All seven candidates were reviewed against their official abstracts and introduc
 - [MotionHalluc v2](https://arxiv.org/html/2606.23061v2): read the abstract, introduction, evaluation protocol in Section 3.2, and PPV pipeline in Section 4. The current expansion is **Perceive-Parse-Verify**, replacing the earlier display expansion **Plug-in Physical Verification** in the paper summary. The training-free status and existing placements remain supported. The paper links its now-verified [official code repository](https://github.com/Leocoding0971/MotionHalluc), which contains both benchmark evaluation and PPV examples; code badges were added to both existing contributions without replacing their dataset links.
 - [VidOmni-Bench v2](https://arxiv.org/html/2609.21521v2): read the abstract, introduction, and Sections 3.1-3.4. Sentence-level factual verification and human-labeled hallucinated captions remain explicit; the existing description and placement are retained. Both papers now cite the reviewed v2 evidence, preserving original publication and repository-addition dates.
 
+### Publication checks
+
+- The final remote audit returned successful responses for **307 unique URLs**; all **77 arXiv records** matched the reviewed versions, with no withdrawal signal detected. Publisher-only entries passed reachability checks, not a comprehensive publisher retraction audit. The OmniCapBench leaderboard anchor and both new papers' cited section anchors were also checked.
+- All **46 automated tests** passed (25 Python and 21 JavaScript), along with README generation, relevance-report generation, catalog consistency, and taxonomy-source checks. The LaTeX tree compiled successfully, was visually inspected, and all three PNG aliases are identical.
+- All **95 previous contributions** remain, with only the two verified MotionHalluc code-link additions to existing contribution records. All **74 existing resource badges** and their original destinations are preserved; there are now 80 resource badges. The two new papers' addition dates point to their actual first README inclusion commit, not their arXiv publication dates.
+- Browser checks covered desktop and 390/320-pixel mobile layouts, combined filters, empty results, reset, history restoration, shared URLs, source details, Markdown/BibTeX copying, recent-addition dates, and the reading guide. No browser console errors or narrow-screen overflow were observed. README, browser data, and taxonomy remain synchronized and English-only.
+
 <details>
 <summary>Original discovery metadata (7 candidates)</summary>
 

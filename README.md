@@ -32,16 +32,11 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
 <!-- BEGIN RECENT PAPERS -->
 
 <details>
-<summary><b>Recently added</b> &middot; 2026-10-01 &middot; 7 papers</summary>
+<summary><b>Recently added</b> &middot; 2026-11-01 &middot; 2 papers</summary>
 
 <p>
-<a href="#paper-benchmark--context-driven-fabrication--object-action-hallucination--flexbench--2609-36628">FlexBench</a> / <a href="#paper-mitigation--context-driven-fabrication--object-action-hallucination--gm-dpo--2609-36628">GM-DPO</a> &middot;
-<a href="#paper-analysis--context-driven-fabrication--compositional-and-factuality-hallucination--beneath-the-scores--2609-28991">Beneath the Scores</a> &middot;
-<a href="#paper-benchmark--context-driven-fabrication--scene-event-hallucination--vidomni-bench--2609-21521">VidOmni-Bench</a> &middot;
-<a href="#paper-benchmark--audio-visual-conflict--action-attribution--video-holmesv2--2609-17248">Video-HolmesV2</a> &middot;
-<a href="#paper-benchmark--context-driven-fabrication--compositional-and-factuality-hallucination--vhd--2609-13288">VHD</a> / <a href="#paper-mitigation--context-driven-fabrication--compositional-and-factuality-hallucination--trace-rc--2609-13288">TRACE-RC</a> &middot;
-<a href="#paper-benchmark--context-driven-fabrication--compositional-and-factuality-hallucination--vidhalloc--2609-09895">VidHalLoc</a> &middot;
-<a href="#paper-benchmark--referential-inconsistency--character-conflation--strand--2609-29607">STRAND</a> / <a href="#paper-mitigation--referential-inconsistency--character-conflation--strand-trajectory-reasoning--2609-29607">STRAND (Trajectory Reasoning)</a>
+<a href="#paper-mitigation--context-driven-fabrication--scene-event-hallucination--arp-cd--2610-19728">ARP-CD</a> &middot;
+<a href="#paper-benchmark--audio-visual-conflict--action-attribution--omnicapbench--2610-12458">OmniCapBench</a>
 </p>
 
 <p><sub>Repository additions, not publication dates. <a href="https://hukcc.github.io/Awesome-Video-Hallucination/?sort=added">All recent additions</a></sub></p>

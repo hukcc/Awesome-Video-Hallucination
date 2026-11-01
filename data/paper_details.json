@@ -39,7 +39,10 @@
         "Steve Yves",
         "Qinglin Lu"
       ],
-      "added": null,
+      "added": {
+        "date": "2026-11-01",
+        "commit": "e6c4f5c538add0e6cfbfbae170175d018e3a13f2"
+      },
       "scope_review": {
         "scope": "broader",
         "reason": "Broader audio-visual captioning benchmark with explicit prediction-to-reference precision penalizing hallucinated descriptions and dedicated sound-to-shot and speaker-attribution diagnostics.",
@@ -68,7 +71,10 @@
         "Chuantao Yin",
         "Wenge Rong"
       ],
-      "added": null,
+      "added": {
+        "date": "2026-11-01",
+        "commit": "e6c4f5c538add0e6cfbfbae170175d018e3a13f2"
+      },
       "scope_review": {
         "scope": "direct",
         "reason": "Explicitly targets unsupported VideoLLM responses through contrastive decoding and evaluates both VideoHallucer and EventHallusion; optimization changes input representations, not model parameters.",
