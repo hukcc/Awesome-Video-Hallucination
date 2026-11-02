@@ -60,7 +60,7 @@ export function filterPapers(papers, filters = {}) {
     const haystack = normalizeSearch([
       paper.title, paper.arxiv_id, paper.date, paper.detail.summary,
       ...(paper.detail.tasks || []), ...(paper.detail.aliases || []), ...(paper.detail.authors || []),
-      ...matches.flatMap(e => [e.name, e.description, e.type, e.venue, e.category, e.mechanism, e.subtype, ...(e.routes || [])]),
+      ...matches.flatMap(e => [e.name, ...(e.aliases || []), e.description, e.type, e.venue, e.category, e.mechanism, e.subtype, ...(e.routes || [])]),
     ].join(' '));
     if (!words.every(word => haystack.includes(word))) return [];
     return [{ ...paper, matches }];

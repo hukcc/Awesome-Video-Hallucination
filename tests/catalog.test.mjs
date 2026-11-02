@@ -100,6 +100,24 @@ test('old method names remain searchable but current training flags win', () => 
   assert.equal(select({ search: 'VideoPLR' })[0].entries[0].name, 'Video-DPL');
 });
 
+test('contribution aliases are searchable only within matching contributions', () => {
+  const benchmark = { ...data.entries.find(e => e.type === 'benchmark'),
+    title: 'A neutral paper title', name: 'Current dataset', description: 'Dataset description',
+    aliases: ['LegacyDatasetName'] };
+  const method = { ...benchmark, id: 'alias-test-method', type: 'mitigation',
+    name: 'Current method', description: 'Method description', training_free: '\u2714',
+    aliases: ['LegacyMethodName'] };
+  const grouped = groupPapers([benchmark, method], {});
+  assert.equal(filterPapers(grouped, { search: 'legacydatasetname', type: 'benchmark' }).length, 1);
+  assert.equal(filterPapers(grouped, { search: 'LegacyMethodName', type: 'mitigation' }).length, 1);
+  assert.equal(filterPapers(grouped, { search: 'LegacyMethodName', type: 'benchmark' }).length, 0);
+  assert.equal(filterPapers(grouped, { search: 'LegacyDatasetName', type: 'mitigation' }).length, 0);
+  assert.equal(filterPapers(grouped, { search: 'LegacyDatasetName' }).length, 1);
+  const noAliases = { ...benchmark };
+  delete noAliases.aliases;
+  assert.equal(filterPapers(groupPapers([noAliases], {}), { search: 'Current dataset' }).length, 1);
+});
+
 test('missing resource filters and resource merging are consistent', () => {
   for (const p of select({ resource: 'code' })) assert.ok(resourcesFor(p).some(r => r.kind === 'code'));
   for (const p of select({ resource: 'missing-code' })) assert.ok(p.matches.every(e => !e.resources.code));

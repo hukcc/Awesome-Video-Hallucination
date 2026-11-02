@@ -37,7 +37,7 @@ SEARCH_QUERIES = [
     'all:hallucination AND all:"video grounding"',
 ]
 
-MAX_RESULTS_PER_QUERY = 100
+RESULTS_PER_PAGE = 100
 SEARCH_DAYS = 60
 REQUEST_DELAY = 3
 
@@ -71,24 +71,58 @@ def save_known_papers(path, arxiv_ids):
         f.write("\n")
 
 
-def search_arxiv(query, max_results=50):
-    """Query the arXiv API and return parsed feed entries."""
-    params = {
-        "search_query": query,
-        "start": 0,
-        "max_results": max_results,
-        "sortBy": "submittedDate",
-        "sortOrder": "descending",
-    }
-    resp = requests.get(ARXIV_API_URL, params=params, timeout=30)
-    resp.raise_for_status()
-    feed = feedparser.parse(resp.text)
-    return feed.entries
+def publication_date(entry):
+    return datetime.strptime(entry.get("published", "")[:10], "%Y-%m-%d").date()
+
+
+def search_arxiv(query, page_size=RESULTS_PER_PAGE, cutoff=None):
+    """Read every result page until exhausted or older than the cutoff date."""
+    if not 1 <= page_size <= 2000:
+        raise ValueError("arXiv page size must be between 1 and 2000.")
+    entries = []
+    seen_ids = set()
+    start = 0
+    while True:
+        params = {
+            "search_query": query,
+            "start": start,
+            "max_results": page_size,
+            "sortBy": "submittedDate",
+            "sortOrder": "descending",
+        }
+        resp = requests.get(ARXIV_API_URL, params=params, timeout=30)
+        resp.raise_for_status()
+        feed = feedparser.parse(resp.content)
+        if feed.get("bozo"):
+            raise ValueError("arXiv returned a malformed feed.")
+        # HTTP 200 can contain an Atom error or an incomplete result page.
+        try:
+            total = int(feed.feed["opensearch_totalresults"])
+            page_start = int(feed.feed["opensearch_startindex"])
+        except (KeyError, TypeError, ValueError) as error:
+            raise ValueError("arXiv returned no valid pagination metadata.") from error
+        page = feed.entries
+        if page_start != start or total < start + len(page):
+            raise ValueError("arXiv returned inconsistent pagination metadata.")
+        if not page:
+            if start < total:
+                raise ValueError("arXiv returned an empty page before all results were read.")
+            return entries
+        page_ids = [extract_arxiv_id(entry) for entry in page]
+        if None in page_ids or len(set(page_ids)) != len(page_ids) or seen_ids.intersection(page_ids):
+            raise ValueError("arXiv returned missing or repeated paper IDs.")
+        dates = [publication_date(entry) for entry in page]
+        entries.extend(page)
+        seen_ids.update(page_ids)
+        start += len(page)
+        if start >= total or (cutoff is not None and min(dates) < cutoff):
+            return entries
+        time.sleep(REQUEST_DELAY)
 
 
 def extract_arxiv_id(entry):
     """Extract the bare arXiv ID (e.g. '2412.03735') from a feed entry."""
-    match = re.search(r"(\d{4}\.\d{4,5})", entry.id)
+    match = re.search(r"(\d{4}\.\d{4,5})", entry.get("id", ""))
     return match.group(1) if match else None
 
 
@@ -219,39 +253,36 @@ def main():
 
     # Collect entries from all queries, dedup by arXiv ID
     all_entries: dict = {}
-    successful_queries = 0
+    failed_queries = []
+    cutoff = (datetime.utcnow() - timedelta(days=SEARCH_DAYS)).date()
     for query in SEARCH_QUERIES:
         print(f"Searching: {query}")
         try:
-            entries = search_arxiv(query, MAX_RESULTS_PER_QUERY)
-            successful_queries += 1
+            entries = search_arxiv(query, cutoff=cutoff)
             for entry in entries:
                 arxiv_id = extract_arxiv_id(entry)
                 if arxiv_id and arxiv_id not in all_entries:
                     all_entries[arxiv_id] = entry
         except Exception as e:
+            failed_queries.append(query)
             print(f"  Error querying arXiv: {e}")
         time.sleep(REQUEST_DELAY)
 
-    if successful_queries == 0:
-        raise RuntimeError("All arXiv queries failed; refusing to update state.")
+    if failed_queries:
+        raise RuntimeError(
+            f"{len(failed_queries)} arXiv queries failed; refusing to publish incomplete results or update state."
+        )
 
     print(f"Total unique papers from arXiv: {len(all_entries)}")
 
-    cutoff = datetime.utcnow() - timedelta(days=SEARCH_DAYS)
     new_papers = []
 
     for arxiv_id, entry in all_entries.items():
         if arxiv_id in all_known_ids:
             continue
 
-        published = entry.get("published", "")
-        try:
-            pub_date = datetime.strptime(published[:10], "%Y-%m-%d")
-            if pub_date < cutoff:
-                continue
-        except (ValueError, IndexError):
-            pass
+        if publication_date(entry) < cutoff:
+            continue
 
         title = clean_text(entry.get("title", ""))
         abstract = clean_text(entry.get("summary", ""))

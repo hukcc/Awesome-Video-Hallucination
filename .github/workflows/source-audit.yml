@@ -5,11 +5,13 @@ on:
   push:
     branches: [main]
     paths:
+      - 'README.md'
       - 'data/**'
       - 'scripts/check_remote_sources.py'
       - '.github/workflows/source-audit.yml'
   pull_request:
     paths:
+      - 'README.md'
       - 'data/**'
       - 'scripts/check_remote_sources.py'
       - '.github/workflows/source-audit.yml'

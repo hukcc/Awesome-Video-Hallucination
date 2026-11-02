@@ -90,7 +90,9 @@ Tags summarize the intervention described in the linked source, not every compon
 
 `python3 scripts/check_remote_sources.py` performs read-only GET checks of paper URLs, resource links, README badge images, and pinned evidence links, including method-audit evidence, benchmark-audit evidence and archived resources. It also compares current arXiv submission histories with reviewed versions and flags explicit withdrawal notices for active papers. Results are saved as Markdown and JSON under `reports/remote-sources/`; this output is not committed by default.
 
-The **Audit remote paper sources** workflow runs on relevant pull requests and main-branch updates, and can be started manually. It uploads the reports and displays a run summary; it does not block publication on a transient external failure or edit collection data. There is no recurring schedule. Existing monthly discovery is unchanged.
+The **Audit remote paper sources** workflow runs on relevant pull requests and main-branch updates, including README-only badge or link edits, and can be started manually. It uploads the reports and displays a run summary; it does not block publication on a transient external failure or edit collection data. There is no recurring schedule. Existing monthly discovery is unchanged.
+
+Monthly discovery reads successive arXiv result pages through the 60-day cutoff, including the entire cutoff date, with a three-second pause between requests. A failed query, malformed feed, or incomplete pagination fails the run before discovery files or known IDs are updated. Discovery still requires human source review before catalog inclusion.
 
 Treat successful HTTP responses as reachability only. Recheck 404/410 responses before removal; 401/403/429, challenge pages, transport failures, or an unrecognized arXiv record remain unverified. Read a changed paper version before updating evidence. Publisher-only retractions and version changes still require manual publisher review. Automated checks never establish relevance or authenticity on their own.
 
@@ -107,7 +109,7 @@ Treat successful HTTP responses as reachability only. Recheck 404/410 responses 
 
 The default unit is a paper. All original contributions remain visible under its details. Type, mechanism, category, subtype, venue, resource, and training filters must match the same contribution. The result count distinguishes matching papers from matching contributions. Resource links in the main row belong to matching contributions; details retain resources for all contributions.
 
-Search uses all query words, independent of order, across titles, contribution names, summaries, tasks, authors, venues, and IDs. Common forms of VideoLLM, Video LLM, Vid-LLM, and Video Large Language Model are normalized. It is keyword search, not semantic retrieval.
+Search uses all query words, independent of order, across titles, contribution names and aliases, summaries, tasks, authors, venues, and IDs. Contribution aliases apply only to entries matching the active contribution filters; paper-level aliases apply to the whole paper. Common forms of VideoLLM, Video LLM, Vid-LLM, and Video Large Language Model are normalized. It is keyword search, not semantic retrieval.
 
 Filter, sort, layout, and reading-guide state are encoded in the URL. Desktop defaults to a table; narrow screens use cards. Publication sorting and repository-addition sorting are separate. The reading guide is an editorial path across complementary topics, not a performance ranking.
 
@@ -129,6 +131,7 @@ Tables remain expanded and use four columns for benchmarks/analyses or five for 
 7. Run the checks below and test README task/related links, desktop/mobile layouts, combined filters, empty states, shared URLs, browser history, copy actions, and the reading guide.
 
 ```sh
+python3 -m pip install -r scripts/requirements.txt
 node --test tests/catalog.test.mjs
 python3 -m unittest discover -s tests -p 'test_*.py'
 python3 scripts/generate_readme.py --check
