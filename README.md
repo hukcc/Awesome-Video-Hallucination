@@ -517,7 +517,7 @@ A curated paper list on **hallucination in Video Large Language Models (Vid-LLMs
       <td align="left"><a id="paper-benchmark--referential-inconsistency--scene-conflation--distractionbench--2605-27101"></a><b><a href="https://arxiv.org/abs/2605.27101">Pop-Up Distractions Reveal Bag-of-Events Behavior in Video Large Language Models</a></b><br>
         <sub>Inserts advertising distractors into long videos to test whether models conflate subjects and events from unrelated segments.</sub></td>
       <td align="center"><b>DistractionBench</b></td>
-      <td align="center">arXiv 2026<br><sub>05/2026</sub></td>
+      <td align="center">EACL 2027<br><sub>05/2026</sub></td>
       <td align="center"><a href="https://github.com/lab-flair/video-llm-boe"><img src="https://img.shields.io/badge/Code-Link-blue?logo=github" alt="code" title="Code" /></a> <a href="https://huggingface.co/datasets/lab-flair/VideoLLM-BoE"><img src="https://img.shields.io/badge/Dataset-HuggingFace-yellow?logo=huggingface" alt="dataset" title="Dataset" /></a></td>
     </tr>
     <tr>
