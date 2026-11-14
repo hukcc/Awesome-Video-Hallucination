@@ -570,6 +570,18 @@
             "code": "https://github.com/lab-flair/video-llm-boe",
             "dataset": "https://huggingface.co/datasets/lab-flair/VideoLLM-BoE"
           }
+        },
+        {
+          "label": "Venue update",
+          "kind": "pull_request",
+          "number": 4,
+          "author": "oscarchew",
+          "url": "https://github.com/hukcc/Awesome-Video-Hallucination/pull/4",
+          "merge_commit": "b3ad3068f746bdf1ac51e74b41e6332449431d74",
+          "entry_id": "benchmark--referential-inconsistency--scene-conflation--distractionbench--2605-27101",
+          "paper_url": "https://arxiv.org/abs/2605.27101",
+          "venue": "EACL 2027",
+          "resources": {}
         }
       ],
       "summary": "Inserts advertising distractors into long videos to test whether models conflate subjects and events from unrelated segments.",

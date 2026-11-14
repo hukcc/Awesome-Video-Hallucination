@@ -28,6 +28,11 @@ class CommunityContributionTests(unittest.TestCase):
         self.assertEqual(protected['2603.24329'][0]['number'], 2)
         self.assertEqual(protected['2605.27101'][0]['author'], 's-honcharenko')
         self.assertEqual(protected['2605.27101'][0]['number'], 3)
+        venue_update = next(c for c in protected['2605.27101'] if c['number'] == 4)
+        self.assertEqual(venue_update['author'], 'oscarchew')
+        self.assertEqual(venue_update['venue'], 'EACL 2027')
+        self.assertEqual(self.entries[venue_update['entry_id']]['venue'], venue_update['venue'])
+        self.assertEqual(self.metadata['2605.27101']['published_on'], '2026-05-26')
         for key, contributions in protected.items():
             for contribution in contributions:
                 entry = self.entries[contribution['entry_id']]
@@ -77,7 +82,7 @@ class CommunityContributionTests(unittest.TestCase):
 
     def test_remote_checks_include_accepted_contribution_sources(self):
         urls = collect_urls({'entries': []}, {'papers': self.metadata}, '')
-        for number in (2, 3):
+        for number in (2, 3, 4):
             self.assertIn(f'https://github.com/hukcc/Awesome-Video-Hallucination/pull/{number}', urls)
 
     def test_issue_provenance_is_audited_without_public_annotations(self):

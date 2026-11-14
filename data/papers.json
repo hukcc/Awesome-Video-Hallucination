@@ -356,7 +356,7 @@
       "subtype": "Scene Conflation",
       "name": "DistractionBench",
       "description": "Inserts advertising distractors into long videos to test whether models conflate subjects and events from unrelated segments.",
-      "venue": "arXiv 2026",
+      "venue": "EACL 2027",
       "date": "05/2026",
       "year": 2026,
       "training_free": null,
